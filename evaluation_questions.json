@@ -1,0 +1,82 @@
+[
+  {
+    "id": "Q1",
+    "question": "What are the security risks of public cloud computing?"
+  },
+  {
+    "id": "Q2",
+    "question": "What security challenges are associated with public cloud environments?"
+  },
+  {
+    "id": "Q3",
+    "question": "How can client-side malware affect public cloud security?"
+  },
+  {
+    "id": "Q4",
+    "question": "Why is governance important for public cloud security?"
+  },
+  {
+    "id": "Q5",
+    "question": "Who is responsible for security and privacy in public cloud computing?"
+  },
+  {
+    "id": "Q6",
+    "question": "What are the main security concerns when using public cloud services?"
+  },
+  {
+    "id": "Q7",
+    "question": "What privacy risks can arise when organizations use public cloud services?"
+  },
+  {
+    "id": "Q8",
+    "question": "How does loss of control affect security in public cloud computing?"
+  },
+  {
+    "id": "Q9",
+    "question": "What security issues can result from outsourcing services to a cloud provider?"
+  },
+  {
+    "id": "Q10",
+    "question": "What are the security implications of storing organizational data in the public cloud?"
+  },
+  {
+    "id": "Q11",
+    "question": "What responsibilities does an organization retain after moving to a public cloud?"
+  },
+  {
+    "id": "Q12",
+    "question": "What security responsibilities are shared between a cloud provider and a cloud customer?"
+  },
+  {
+    "id": "Q13",
+    "question": "What risks are associated with relying on a third-party cloud service provider?"
+  },
+  {
+    "id": "Q14",
+    "question": "How can social engineering attacks affect public cloud security?"
+  },
+  {
+    "id": "Q15",
+    "question": "How can malware on a client device threaten cloud services?"
+  },
+  {
+    "id": "Q16",
+    "question": "Why are security and privacy considerations important throughout the cloud system lifecycle?"
+  },
+  {
+    "id": "Q17",
+    "question": "What governance practices are important when using public cloud services?"
+  },
+  {
+    "id": "Q18",
+    "question": "What security concerns arise from moving organizational resources to the public cloud?"
+  },
+  {
+    "id": "Q19",
+    "question": "What challenges can organizations face when monitoring security in public cloud environments?"
+  },
+  {
+    "id": "Q20",
+    "question": "What factors should organizations consider when evaluating the security of a public cloud provider?"
+  }
+]

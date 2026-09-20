@@ -1,0 +1,31 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environment
+.venv/
+
+# Environment variables / secrets
+.env
+.env.*
+
+# Local databases / vector stores
+data/
+qdrant_data/
+qdrant_db/
+
+# IDE / editor files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+
+# Source documents
+documents/
