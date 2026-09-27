@@ -35,7 +35,8 @@ print("=" * 70)
 print("\nLoading BGE model...")
 
 embedding_model = SentenceTransformer(
-    EMBEDDING_MODEL
+    EMBEDDING_MODEL,
+    local_files_only=True
 )
 
 print("BGE model loaded.")
@@ -57,6 +58,8 @@ client = QdrantClient(
 )
 
 print("Qdrant connected.")
+def close_retriever():
+    client.close()
 
 
 # ============================================================

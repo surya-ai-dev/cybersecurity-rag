@@ -18,8 +18,10 @@ print("RERANKER")
 print("=" * 70)
 
 print("\nLoading reranker model...")
-
-reranker = CrossEncoder(RERANKER_MODEL_NAME)
+reranker = CrossEncoder(
+    RERANKER_MODEL_NAME,
+    local_files_only=True
+)
 
 print("✅ Reranker loaded")
 

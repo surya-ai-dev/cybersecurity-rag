@@ -1,8 +1,10 @@
-from retriever import retrieve
+from retriever import retrieve, close_retriever
 from reranker import rerank_documents
 from build_context import build_context
 from llm import generate_answer
+from query_rewriter import rewrite_question
 
+conversation_history = []
 
 # ============================================================
 # RAG PIPELINE
@@ -93,87 +95,90 @@ def main():
     print("CYBERSECURITY RAG SYSTEM")
     print("=" * 70)
 
-    question = input(
-        "\nEnter cybersecurity question: "
-    ).strip()
+    while True:
 
-    if not question:
-
-        print("❌ Question cannot be empty.")
-
-        return
-
-
-    answer, results = run_rag(
-        question
-    )
-
-
-    # --------------------------------------------------------
-    # FINAL ANSWER
-    # --------------------------------------------------------
-
-    print("\n")
-    print("=" * 70)
-    print("FINAL ANSWER")
-    print("=" * 70)
-
-    print(answer)
-
-
-    # --------------------------------------------------------
-    # SOURCES
-    # --------------------------------------------------------
-
-    print("\n")
-    print("=" * 70)
-    print("SOURCES")
-    print("=" * 70)
-
-    for index, result in enumerate(
-        results,
-        start=1
-    ):
-
-        metadata = result.get(
-            "metadata",
-            {}
+        question = input(
+            "\nEnter cybersecurity question (type 'exit' to quit): "
         )
 
-        document = metadata.get(
-            "document_id",
-            "Unknown"
+        if question.lower() == "exit":
+            break
+
+        if not question.strip():
+            print("❌ Question cannot be empty.")
+            continue
+
+        standalone_question = rewrite_question(
+            question,
+            conversation_history
         )
 
-        source_file = metadata.get(
-            "source_file",
-            "Unknown"
+     
+
+        answer, results = run_rag(
+            standalone_question
         )
 
-        section = metadata.get(
-            "section",
-            "Unknown"
-        )
+        conversation_history.append({
+            "user": question,
+            "assistant": answer
+        })
 
-        reranker_score = result.get(
-            "reranker_score",
-            0.0
-        )
+        # --------------------------------------------------------
+        # SOURCES
+        # --------------------------------------------------------
 
-        print(
-            f"[{index}] "
-            f"{document} | "
-            f"{source_file}"
-        )
+        print("\n")
+        print("=" * 70)
+        print("SOURCES")
+        print("=" * 70)
 
-        print(
-            f"    Section: {section}"
-        )
+        for index, result in enumerate(
+            results,
+            start=1
+        ):
 
-        print(
-            f"    Reranker score: "
-            f"{reranker_score:.4f}"
-        )
+            metadata = result.get(
+                "metadata",
+                {}
+            )
+
+            document = metadata.get(
+                "document_id",
+                "Unknown"
+            )
+
+            source_file = metadata.get(
+                "source_file",
+                "Unknown"
+            )
+
+            section = metadata.get(
+                "section",
+                "Unknown"
+            )
+
+            reranker_score = result.get(
+                "reranker_score",
+                0.0
+            )
+
+            print(
+                f"[{index}] "
+                f"{document} | "
+                f"{source_file}"
+            )
+
+            print(
+                f"    Section: {section}"
+            )
+
+            print(
+                f"    Reranker score: "
+                f"{reranker_score:.4f}"
+            )
+
+    close_retriever()
 
 
 # ============================================================

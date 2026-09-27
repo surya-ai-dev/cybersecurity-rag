@@ -22,8 +22,10 @@ print("=" * 70)
 # ============================================================
 
 def build_context(results):
-
+    
     context_parts = []
+ 
+    
 
     for index, result in enumerate(results, start=1):
 

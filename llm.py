@@ -1,4 +1,5 @@
 import os
+from urllib import response
 
 from dotenv import load_dotenv
 from groq import Groq
@@ -8,8 +9,7 @@ from groq import Groq
 # CONFIG
 # ============================================================
 
-load_dotenv()
-
+load_dotenv(override=True)
 GROQ_MODEL = "openai/gpt-oss-20b"
 
 
@@ -51,16 +51,25 @@ IMPORTANT RULES:
 2. Do not invent facts.
 3. If the context does not contain enough information, clearly
    say that the available context is insufficient.
-4. Keep the answer clear and technically accurate.
-5. Organize the answer using headings or bullet points when useful.
-6. Every important factual claim must include a source reference
-   such as [Source 1], [Source 2], etc.
-7. Use only source numbers that actually exist in the retrieved
-   context.
-8. Do not create new source numbers.
-9. At the end, include a "Sources Used" section listing only the
-   sources actually referenced in the answer.
-10. Do not copy large passages from the context. Summarize them.
+4. Answer ONLY the user's question.
+5. Do not provide additional background, related concepts,
+   examples, characteristics, advantages, disadvantages, or
+   recommendations unless they are directly required to answer
+   the question.
+6. Be concise. Use the minimum amount of information needed to
+   completely answer the question.
+7. If the question asks for a definition, give the definition
+   and only the essential clarification.
+8. If the question asks for specific points, provide only those
+   points.
+9. Do not turn a simple question into a detailed report.
+10. Do not add a summary or "Key Points" section unless it is
+    necessary to answer the question.
+11. Do not use tables unless the user explicitly asks for one.
+12. Every factual claim must be supported by the retrieved
+    context and include [Source X].
+13. Do not introduce information simply because it appears in
+    the retrieved context.
 
 USER QUESTION:
 {question}
@@ -71,18 +80,29 @@ RETRIEVED CONTEXT:
 Now provide the answer.
 """
 
-    response = client.chat.completions.create(
-        model=GROQ_MODEL,
-        messages=[
-            {
-                "role": "user",
-                "content": prompt
-            }
-        ],
-        temperature=0
-    )
+    stream = client.chat.completions.create(
+    model=GROQ_MODEL,
+    messages=[
+        {
+            "role": "user",
+            "content": prompt
+        }
+    ],
+    temperature=0,
+    max_completion_tokens=8192,
+    stream=True
+)
+    
+    answer = ""
 
-    return response.choices[0].message.content
+    for chunk in stream:
+        content = chunk.choices[0].delta.content
+
+        if content:
+            print(content, end="", flush=True)
+            answer += content
+
+    return answer
 
 
 # ============================================================
