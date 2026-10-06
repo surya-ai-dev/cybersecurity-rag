@@ -1,0 +1,134 @@
+================================================================================
+CYBERSECURITY RAG SYSTEM — ARCHITECTURE & PROJECT STRUCTURE
+================================================================================
+
+1. HIGH-LEVEL FLOW ARCHITECTURE
+--------------------------------------------------------------------------------
+
+User Query
+    │
+    ▼
+RAGEngine (app/pipeline/engine.py)
+    │
+    ├── 1. Conversation History ──> ConversationMemory (app/conversation/conversation_memory.py)
+    │
+    ├── 2. Query Rewriting ───────> QueryRewriter (app/conversation/query_rewriter.py)
+    │                                  │ (resolves conversational context/pronouns)
+    │                                  ▼
+    ├── 3. Candidate Retrieval ───> HybridRetriever (app/retrieval/hybrid.py)
+    │                                  ├── DenseRetriever (app/retrieval/dense.py)
+    │                                  │     (BGE-small-en-v1.5 + local Qdrant, Top-20)
+    │                                  ├── BM25Retriever (app/retrieval/bm25.py)
+    │                                  │     (Rank-BM25 over 7,703 chunks, Top-20)
+    │                                  └── RRFFusion (app/retrieval/rrf.py)
+    │                                        (Reciprocal Rank Fusion, K=60, Top-20)
+    │
+    ├── 4. Reranking ─────────────> CrossEncoderReranker (app/retrieval/reranker.py)
+    │                                  (ms-marco-MiniLM-L-6-v2, Top-5 selected)
+    │
+    ├── 5. Context Building ──────> ContextBuilder (app/generation/build_context.py)
+    │                                  (Pure formatting of Top-5 chunks into SOURCE blocks)
+    │
+    ├── 6. LLM Generation ────────> BaseLLMProvider / GroqProvider (app/generation/providers/groq_provider.py)
+    │                                  (Groq Cloud SDK, openai/gpt-oss-20b, temperature=0.0)
+    │
+    ├── 7. Turn Recording ────────> ConversationMemory.add_message()
+    │
+    └── 8. Result Delivery ───────> RAGResponse (app/core/models.py)
+                                       (Question, Standalone Question, Answer, Sources)
+
+
+2. PROJECT DIRECTORY STRUCTURE
+--------------------------------------------------------------------------------
+
+cybersecurity-rag/
+│
+├── main.py                             # Interactive CLI entry point using RAGEngine
+│
+├── app/                                # Core application package
+│   ├── __init__.py
+│   │
+│   ├── core/                           # Foundation layer (zero external app dependencies)
+│   │   ├── __init__.py
+│   │   ├── config.py                   # Centralized configuration (paths, models, hyperparameters)
+│   │   ├── interfaces.py               # Abstract protocols (BaseRetriever, BaseReranker, BaseLLMProvider, BaseConversationMemory)
+│   │   └── models.py                   # Domain models (RetrievedChunk, ChunkMetadata, Message, RAGResponse)
+│   │
+│   ├── retrieval/                      # Search and ranking layer
+│   │   ├── __init__.py
+│   │   ├── dense.py                    # DenseRetriever (BGE embeddings + Qdrant vector database)
+│   │   ├── bm25.py                     # BM25Retriever (Rank-BM25 keyword search)
+│   │   ├── rrf.py                      # RRFFusion (Reciprocal Rank Fusion algorithm)
+│   │   ├── hybrid.py                   # HybridRetriever (Orchestrates Dense + BM25 + RRF)
+│   │   ├── reranker.py                 # CrossEncoderReranker (Cross-encoder reranking)
+│   │   ├── retriever.py                # Backward-compatibility wrapper for legacy imports
+│   │   ├── bm25_retriever.py           # Backward-compatibility wrapper for legacy imports
+│   │   ├── rrf_fusion.py               # Backward-compatibility wrapper for legacy imports
+│   │   └── hybrid_reranker.py          # Backward-compatibility wrapper for legacy imports
+│   │
+│   ├── generation/                     # Context building and LLM generation layer
+│   │   ├── __init__.py
+│   │   ├── build_context.py            # Pure context builder (Formats chunks into prompt context)
+│   │   ├── llm.py                      # Backward-compatibility generation wrapper delegating to GroqProvider
+│   │   └── providers/
+│   │       ├── __init__.py
+│   │       └── groq_provider.py        # GroqProvider implementing BaseLLMProvider
+│   │
+│   ├── conversation/                   # Conversational state and rewriting layer
+│   │   ├── __init__.py
+│   │   ├── conversation_memory.py      # ConversationMemory implementing BaseConversationMemory
+│   │   └── query_rewriter.py           # Query rewriter resolving multi-turn context
+│   │
+│   ├── pipeline/                       # End-to-end orchestration layer
+│   │   ├── __init__.py
+│   │   ├── engine.py                   # RAGEngine (Main application orchestrator)
+│   │   └── rag_pipeline.py             # Backward-compatibility wrapper delegating to RAGEngine
+│   │
+│   └── ingestion/                      # Offline ingestion pipeline
+│       ├── __init__.py
+│       ├── collect_nist.py             # NIST document collection
+│       ├── extract_text.py             # PDF text extraction
+│       ├── clean_text.py               # Text normalization and cleaning
+│       ├── chunk_documents.py          # Token-aware text chunking
+│       ├── embed_documents.py          # BGE-M3 embedding generation
+│       ├── embed_documents_safe.py     # BGE-small safe embedding generation
+│       └── build_qdrant.py             # Qdrant collection population
+│
+├── evaluation/                         # Standalone evaluation benchmarks
+│   ├── __init__.py
+│   ├── evaluate_retrieval_metrics.py   # Dense retrieval benchmark (Hit@K, Precision@5, MRR)
+│   ├── evaluate_bm25.py                # BM25 keyword search benchmark
+│   ├── evaluate_rrf.py                 # Hybrid RRF fusion benchmark
+│   ├── evaluate_reranked_retrieval.py  # Cross-Encoder reranking benchmark
+│   ├── evaluate_retrieval.py           # Initial vector retrieval inspection
+│   ├── evaluate_hybrid_retrieval.py    # Weighted hybrid retrieval benchmark
+│   └── analyze_reranker.py             # Reranker scoring analysis
+│
+├── tests/                              # Unit, integration, and smoke tests
+│   ├── test_modular_rag.py             # Unit test suite for models, interfaces, and RAGEngine
+│   ├── test_llm.py                     # Groq LLM API connectivity test
+│   ├── embed_small_test.py             # BGE-small embedding unit test
+│   └── embed_test.py                   # BGE-M3 embedding unit test
+│
+├── scripts/                            # Operational and diagnostic utilities
+│   ├── inspect_q6.py                   # Query diagnostics for Q6
+│   ├── search_qdrant.py                # Direct Qdrant inspection script
+│   └── validate_embeddings.py          # Embedding vector verification script
+│
+├── data/                               # Data storage (git-ignored except evaluation benchmarks)
+│   ├── evaluation/                     # Version-controlled benchmark datasets
+│   │   ├── evaluation_questions.json   # 20 cybersecurity evaluation questions
+│   │   ├── retrieval_ground_truth.json # Ground truth chunk mappings (Q1–Q15)
+│   │   └── ground_truth.json           # Ground truth chunk mappings (Q1–Q5)
+│   ├── chunks/                         # Indexed text chunks (ignored)
+│   ├── cleaned_text/                   # Cleaned document texts (ignored)
+│   ├── embeddings/                     # Precomputed embeddings (ignored)
+│   ├── embeddings_small/               # BGE-small embeddings (ignored)
+│   ├── extracted_text/                 # Raw extracted PDF text (ignored)
+│   └── qdrant/                         # Embedded Qdrant database (ignored)
+│
+├── documents/                          # Source NIST Special Publications PDFs (git-ignored)
+├── .env                                # Local secrets & API keys (git-ignored)
+├── .gitignore                          # Git exclusion rules
+├── pyproject.toml                      # Project metadata and dependencies
+└── README.md                           # Project documentation

@@ -44,3 +44,27 @@ Top-20             Top-20
               ▼
       Grounded Answer
         + Citations
+```
+
+---
+
+## 🏗️ Architecture
+
+The codebase is organized into modular layers:
+- `app.core`: Centralized configuration (`config.py`), domain models (`models.py`), and abstract protocols (`interfaces.py`).
+- `app.retrieval`: Modular retrievers (`dense.py`, `bm25.py`), fusion (`rrf.py`), and reranking (`reranker.py`, `hybrid.py`).
+- `app.generation`: Pure context formatting (`build_context.py`) and Groq LLM provider (`providers/groq_provider.py`).
+- `app.conversation`: Multi-turn state tracking (`conversation_memory.py`) and query rewriting (`query_rewriter.py`).
+- `app.pipeline`: Central orchestrator (`engine.py` / `RAGEngine`).
+
+---
+
+## 💻 Running the Application
+
+```bash
+# Start the interactive CLI
+python main.py
+
+# Run unit tests
+python -m unittest discover -s tests
+```

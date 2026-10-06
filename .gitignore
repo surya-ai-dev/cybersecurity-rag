@@ -14,9 +14,14 @@ wheels/
 .env.*
 
 # Local databases / vector stores
-data/
+data/*
+!data/evaluation/
 qdrant_data/
 qdrant_db/
+
+# Caches and logs
+.pytest_cache/
+*.log
 
 # IDE / editor files
 .vscode/
