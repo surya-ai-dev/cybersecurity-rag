@@ -34,3 +34,7 @@ Thumbs.db
 
 # Source documents
 documents/
+
+
+# Temporary diagnostic and audit files
+/scratch/
