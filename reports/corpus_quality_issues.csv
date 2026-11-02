@@ -1,0 +1,986 @@
+doc_id,category,page_number,issue_type,severity,description,evidence_snippet
+NIST.SP.800-61r3,root,28,PAGE_WARNING,WARNING,Page 28 Table 'table_p28_1': High sparse/empty cell ratio (99/140 = 70.7%),"{'table_id': 'table_p28_1', 'issue': 'High sparse/empty cell ratio (99/140 = 70.7%)'}"
+NIST.SP.800-61r3,root,39,PAGE_WARNING,WARNING,Page 39 Table 'table_p39_1': High sparse/empty cell ratio (117/160 = 73.1%),"{'table_id': 'table_p39_1', 'issue': 'High sparse/empty cell ratio (117/160 = 73.1%)'}"
+NIST_SP_800-233,root,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.6%) across 4292 chars,"Service Mesh Proxy Models for Cloud-Native Applications 
+
+NIST SP 800-233 October 2024 
+
+
+
+| 527 . . . | Denial of Service (TR -7) 19 ................"
+NIST_SP_800-234,root,DOC,DOCUMENT_WARNING,WARNING,Document contains 5 page(s) with potential font encoding corruption.,{'count': 5}
+NIST_SP_800-234,root,11,PAGE_WARNING,WARNING,Page 11 exhibited suspicious encoding signals: Low alphanumeric density (21.1%).,{'issues': ['Low alphanumeric density (21.1%)']}
+NIST_SP_800-234,root,11,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (15.6%) across 2158 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-234,root,12,PAGE_WARNING,WARNING,Page 12 exhibited suspicious encoding signals: Low alphanumeric density (21.3%).,{'issues': ['Low alphanumeric density (21.3%)']}
+NIST_SP_800-234,root,12,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (15.9%) across 2148 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-234,root,13,PAGE_WARNING,WARNING,Page 13 exhibited suspicious encoding signals: Low alphanumeric density (20.3%).,{'issues': ['Low alphanumeric density (20.3%)']}
+NIST_SP_800-234,root,13,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (15.2%) across 2137 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-234,root,14,PAGE_WARNING,WARNING,Page 14 exhibited suspicious encoding signals: Low alphanumeric density (19.9%).,{'issues': ['Low alphanumeric density (19.9%)']}
+NIST_SP_800-234,root,14,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (14.7%) across 2119 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-234,root,15,PAGE_WARNING,WARNING,Page 15 exhibited suspicious encoding signals: Low alphanumeric density (21.0%).,{'issues': ['Low alphanumeric density (21.0%)']}
+NIST_SP_800-234,root,15,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (15.5%) across 2159 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-234,root,16,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.5%) across 1106 chars,"High-Performance Computing Security Overlay 
+
+NIST SP 800-234 
+
+May 2026 
+
+
+
+| CONTROL | Moderate Baseline | AllZones | Access Zone | Management Zone "
+NIST_SP_800-238,root,DOC,DOCUMENT_WARNING,WARNING,Page 19 has little text (0 chars) with 2 image(s); candidate for OCR verification,"{'text_length': 0, 'image_count': 2}"
+NIST_SP_800-238,root,1,PAGE_WARNING,WARNING,Page 1 has low text volume (74 characters).,{'text_length': 74}
+NIST_SP_800-238,root,1,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 85 characters: '**SPECIAL PUBLICATION 800-238** 
+
+
+
+CYBERSECURITY & PRIVACY ...'","**SPECIAL PUBLICATION 800-238** 
+
+
+
+CYBERSECURITY & PRIVACY PROGRAM **ANNUAL** REPORT"
+NIST_SP_800-238,root,19,PAGE_WARNING,WARNING,"Page 19 is an image-based text candidate (0 chars, 2 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-238,root,19,PAGE_WARNING,WARNING,Page 19 contains zero extractable text.,
+NIST_SP_800-238,root,19,EMPTY_PAGE,INFO,Empty page with 0 text characters. Image-only page (2 figures),Image-only page (2 figures)
+NIST_SP_800-144,cloud_application_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (16.1%) across 4709 chars,"#### **Table of Contents** 
+
+|**Execut**|**ive Summary ..............................................................................................."
+NIST_SP_800-146,cloud_application_security,7,PAGE_WARNING,WARNING,"Page 7: Significant volume divergence between raw (3752 chars) and structured text (6265 chars, divergence 40.1%).","{'raw_len': 3752, 'struct_len': 6265, 'divergence': 0.401}"
+NIST_SP_800-146,cloud_application_security,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.2%) across 745 chars,"CLOUD COMPUTING SYNOPSIS AND RECOMMENDATIONS 
+
+##### List of Appendices 
+
+|**Appendix A— Roles and Responsibilities .................................."
+NIST_SP_800-190,cloud_application_security,4,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (10.0%) across 840 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **コンピュータシステムの技術に関する報告書** 
+
+NIST の情報技術ラボラトリ（ITL：Information Technology Laboratory）は、米国の度量衡と標準規格に関する基盤 に"
+NIST_SP_800-190,cloud_application_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.6%) across 721 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **謝辞** 
+
+著者は、本文書のドラフト版をレビューし、策定中に技術的な内容に貢献してくれた同僚、特に Intel Corporation の Raghuram Yeluri 氏、Cisco Syste"
+NIST_SP_800-190,cloud_application_security,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (6.6%) across 1280 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **概要** 
+
+オペレーティングシステム（OS）の仮想化は、各アプリケーションそれぞれに、OS の仮想化されたビューを提供 する。したがって、各アプリケーションは、サーバ上の他のすべてのアプリケーションから"
+NIST_SP_800-190,cloud_application_security,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.9%) across 1609 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+###### **アタックサーフェスを減らすために、汎用ホスト OS ではなく、コンテナ専用ホスト OS を使用する。** 
+
+コンテナ専用ホスト OS は、他のすべてのサービスと機能を無効にし、読み取り専用ファイル"
+NIST_SP_800-190,cloud_application_security,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (5.6%) across 862 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+###### **トラステッドコンピューティングの基盤を提供するために、ハードウェアによる対策を検討する。** 
+
+セキュリティは、コンテナ技術のすべての階層に及ぶことが望ましい。これを実現する現在の手段は、業界標準"
+NIST_SP_800-190,cloud_application_security,9,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.2%) across 5480 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+###### **目次** 
+
+|**概要 ......................................................................................"
+NIST_SP_800-190,cloud_application_security,10,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.6%) across 6364 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+
+
+| Column_1 | Column_2 |
+| --- | --- |
+|  | 3 5 .2 共有カ ーネル 18 . ..........................................."
+NIST_SP_800-190,cloud_application_security,11,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.7%) across 2367 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+|6.3実装フェーズ.................................................................................................."
+NIST_SP_800-190,cloud_application_security,12,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (6.5%) across 1366 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **1  はじめに** 
+
+#### **1.1  目的とスコープ** 
+
+本文書の目的は、アプリケーションコンテナ技術に関連するセキュリティ上の懸念事項を説明し、コンテナの計画、 実装、保守を行う際に、それ"
+NIST_SP_800-190,cloud_application_security,13,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (11.8%) across 136 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+- 付録 C では、本文書の頭字語と略語のリストを示す。 
+
+- 付録 D では、本文書から選択された用語の用語集を示す。 
+
+- 付録 E には、本文書の参考文献のリストを示す。 
+
+2"
+NIST_SP_800-190,cloud_application_security,14,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (8.7%) across 1979 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **2  アプリケーションコンテナの概要** 
+
+本節では、サーバアプリケーション（アプリ）に使われるコンテナの概要について説明する。最初に、本文書の残り の部分を理解するために必要なアプリケーション仮想化と"
+NIST_SP_800-190,cloud_application_security,15,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.2%) across 1932 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+ブルになる。また、機能がより自己完結的になるため、開発がより簡単となる。しかし、管理しなければならないオ ブジェクトが増えるため、アプリの管理、セキュリティツールとプロセスに問題が生じる可能性がある。 
+
+ほとんどの"
+NIST_SP_800-190,cloud_application_security,16,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (19.4%) across 1603 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+#### **2.2  コンテナとホストオペレーティングシステム** 
+
+コンテナ内でのアプリのデプロイは、多くの読者がすでに知っているハードウェア仮想化技術の仮想マシン（VM） 内でのアプリのデプロイと比較すること"
+NIST_SP_800-190,cloud_application_security,17,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (12.6%) across 2156 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+んどないので、簡素化されたアップグレードプロセスを利用している。 
+
+コンテナの実行に使用されるすべてのホスト OS は、各コンテナの環境を確立して維持するバイナリファイルを有し ており、これは **コンテナランタイ"
+NIST_SP_800-190,cloud_application_security,18,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.9%) across 669 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+共通のインタフェース形式を提供している。 
+
+コンテナは強力な分離を提供するが、VM ほど明確で具体的なセキュリティ境界を提供しない。コンテナは同じカー ネルを共有し、ホスト上で様々な機能と権限で実行できるため、コン"
+NIST_SP_800-190,cloud_application_security,19,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (6.7%) across 1293 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+1. 開発者用システム（イメージを生成し、テストや認定へ送る） 
+
+2. テスト/認定システム（イメージの内容の妥当性確認・検証、イメージへの署名、レジストリへのイメージ の送付） 
+
+3. レジストリ（イメージを保"
+NIST_SP_800-190,cloud_application_security,20,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (11.5%) across 1877 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **2.3.1  イメージの作成、テスト、認定** 
+
+コンテナのライフサイクルの最初のフェーズでは、アプリのコンポーネントが構築され、イメージ（または複数のイ メージ）に配置される。 **イメージ** "
+NIST_SP_800-190,cloud_application_security,21,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (5.5%) across 1833 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+レジストリは、共通的なイメージ関連のタスクを自動化するための API を提供する。例えば、組織は、イメージの作 成フェーズで、テストに合格すると自動的にイメージをレジストリに配信するトリガーを持っても良い。レジストリ"
+NIST_SP_800-190,cloud_application_security,22,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.4%) across 1702 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+行われると、組織は、通常はオーケストレータを活用することで、最新のバージョンを確実に使用することができ る。オーケストレータは通常、最新のバージョンのイメージをレジストリから引き出すよう設定されているため、ア プリは"
+NIST_SP_800-190,cloud_application_security,23,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (5.7%) across 1415 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+ウトすることが容易になる。さらに、コンテナは一般的にステートレスであるため、不要になったら簡単に 廃止することができる。 
+
+- 開発者が最初からマイクロサービスアーキテクチャに合わせて構築できるクラウドネイティブア"
+NIST_SP_800-190,cloud_application_security,24,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.0%) across 1460 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **3  コンテナ技術のコアコンポーネントの主なリスク** 
+
+本節では、コンテナ技術のコアコンポーネントであるイメージ、レジストリ、オーケストレータ、コンテナ、ホスト OS の主要なリスクを特定し、分析する"
+NIST_SP_800-190,cloud_application_security,25,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.7%) across 1353 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+される可能性があるように、設定に不備があるイメージは、含まれているすべてのコンポーネントが最新の状態であ っても、リスクが高まる可能性がある。 
+
+##### **3.1.3 埋め込まれたマルウェア** 
+
+イメージ"
+NIST_SP_800-190,cloud_application_security,26,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.2%) across 1294 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **3.2.2 レジストリ内の古いイメージ** 
+
+レジストリは通常、組織がデプロイするすべてのイメージのソースとなる場所であるため、レジストリに保存された 一連のイメージに、時がたつにつれて多くの脆弱性"
+NIST_SP_800-190,cloud_application_security,27,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.2%) across 1364 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **3.3.3 コンテナ間ネットワークトラフィックの不十分な分離** 
+
+ほとんどのコンテナ化された環境では、個々のノード間のトラフィックは、仮想オーバーレイネットワークを介して ルーティングされる。この"
+NIST_SP_800-190,cloud_application_security,28,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (6.3%) across 1584 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+#### **3.4  コンテナのリスク** 
+
+##### **3.4.1 ランタイムソフトウェア内の脆弱性** 
+
+比較的まれではあるが、悪意のあるソフトウェアが他のコンテナやホスト OS 自体のリソースを攻撃す"
+NIST_SP_800-190,cloud_application_security,29,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.8%) across 1236 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **3.4.4 アプリの脆弱性** 
+
+組織が、本文書で推奨されている予防策を講じている場合でも、コンテナが実行するアプリの不具合により、コンテ ナが侵害される可能性がある。これはコンテナ自体の問題ではな"
+NIST_SP_800-190,cloud_application_security,30,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.3%) across 817 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+##### **3.5.3 ホストOS コンポーネントの脆弱性** 
+
+コンテナ専用 OS であっても、すべてのホスト OS は、リモート接続の認証に使用される暗号ライブラリや、一般的 なプロセスの呼び出しと管理に使"
+NIST_SP_800-190,cloud_application_security,31,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.9%) across 1337 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **4  主なリスクへの対策** 
+
+この節では、3 節で識別した主なリスクに対する対策を推奨する。 
+
+#### **4.1  イメージの対策** 
+
+##### **4.1.1 イメージの脆弱性** 
+
+"
+NIST_SP_800-190,cloud_application_security,32,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (10.9%) across 1682 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+イメージ設定の最終的な推奨事項としては、SSH やその他のリモートシェルをホストに提供するように設計された リモート管理ツールは、コンテナ内では決して有効にしないことが望ましい。コンテナは、その使用による最大のセ キ"
+NIST_SP_800-190,cloud_application_security,33,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (12.1%) across 1687 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+- 環境内で、信頼できるイメージとレジストリを厳密に一元管理する機能 
+
+- NIST で認証済みの実装<sup>6</sup> を使用した暗号署名による各イメージの個別識別 
+
+- 環境内のすべてのホストが、これら"
+NIST_SP_800-190,cloud_application_security,34,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.6%) across 1495 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+組織は、自社のアカウントやクラウドサービスのプロバイダのディレクトリサービスなどの既存のアカウントとの連 携を考慮し、それらのアカウントに対してすでに実施されているセキュリティ管理を活用することが望ましい。レジ スト"
+NIST_SP_800-190,cloud_application_security,35,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.1%) across 1896 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+きる。例えば、社外に公開されるアプリは、仮想ネットワークを共有し、社内のアプリは別の仮想ネットワークを使 用し、両者間の通信は少数の明確に定義されたインタフェースを介して行われることが望ましい。 
+
+##### **"
+NIST_SP_800-190,cloud_application_security,36,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.0%) across 1675 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+ーションを活用する場合もある。例えば、組織は独立したホスティングゾーンかネットワークを実装し、ハイパーバ イザ内でこれらのコンテナを分離するだけでなく、ネットワークトラフィックをより個別に分離し、ある機微性レベ ルの"
+NIST_SP_800-190,cloud_application_security,37,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (11.0%) across 1725 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+る特性に基づいて、このトラフィックをフィルタリングするために使用されるルールを動的に生成できることが望ま しい。このような動的なルール管理は、コンテナ化されたアプリのスケールと変更の頻度、およびその一時的なネッ トワ"
+NIST_SP_800-190,cloud_application_security,38,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (5.6%) across 1466 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+らのツールは、振る舞いの学習を使用してコンテナ化されたアプリを自動的にプロファイリングし、セキュリティプ ロファイルを構築して、人間の操作を最小限に抑えることができるようにする。これらのプロファイルは、以下のよ うな"
+NIST_SP_800-190,cloud_application_security,39,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.0%) across 1626 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+ナランタイムだけでなく、コンテナがセキュアで区分化された運用を行うために依存しているカーネルのような下位 レベルのコンポーネントに対しても、迅速にアップデートを適用することが望ましい。 
+
+##### **4.5.2"
+NIST_SP_800-190,cloud_application_security,40,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (8.7%) across 1742 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+ファイルの変更は、この目的のために特別に割り当てられたストレージのボリューム内で行われる。コンテナがホス トのファイルシステム上の機微性の高いディレクトリ、特にオペレーティングシステムの構成設定を含むディレクト リを"
+NIST_SP_800-190,cloud_application_security,42,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (2.1%) across 1356 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **5  コンテナの脅威シナリオの例** 
+
+4 節で推奨した対策の有効性を説明するために、以下のコンテナの脅威シナリオの例を考えてみる。 
+
+#### **5.1  イメージ内の脆弱性の悪用** 
+
+コンテ"
+NIST_SP_800-190,cloud_application_security,43,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (3.5%) across 772 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+トに関する掲示板で標的が活動しており、そのプロジェクトのウェブサイトで提供されたイメージを使用していると 判断した場合、これらのイメージの悪意のあるバージョンを作成して攻撃に使用しようとする可能性がある。 
+
+関連す"
+NIST_SP_800-190,cloud_application_security,44,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.1%) across 1538 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **6  コンテナ技術のライフサイクルにおけるセキュリティに関する考慮事 項** 
+
+コンテナ技術のインストール、設定、およびデプロイを行う前に、慎重に計画を立てることが非常に重要である。こ れにより、コンテ"
+NIST_SP_800-190,cloud_application_security,45,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (8.8%) across 1832 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+プロセス、メモリ、およびディスクのインシデントレスポンスアクティビティに精通している組織では、コンテナを 使用して作業する際も、ほぼ同様のアクティビティとなることが理解できるだろう。しかし、注意すべき違いもいく つか"
+NIST_SP_800-190,cloud_application_security,46,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.2%) across 1718 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+管理、コードリポジトリ、認証サーバなどの既存のセキュリティ管理や技術の構成を変更して、コンテナと直接連携 したり、これらの新しいコンテナセキュリティツールと統合したりすることが含まれることもある。 
+
+プロトタイプの"
+NIST_SP_800-190,cloud_application_security,47,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (4.0%) across 400 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+#### **6.5  廃棄フェーズ** 
+
+コンテナがアプリのニーズに基づいて自動的にデプロイされ、破棄される機能は、非常に効率的なシステムを可能に するが、記録保持、フォレンジック、イベントデータの要件にいくつか"
+NIST_SP_800-190,cloud_application_security,48,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (1.1%) across 1687 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **7  結論** 
+
+コンテナは、アプリの構築方法と実行方法の変革を象徴しているが、劇的に新しいセキュリティのベストプラクティ スを必要とするものではない。むしろコンテナのセキュリティの最も重要な側面は、確"
+NIST_SP_800-190,cloud_application_security,53,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (10.2%) across 1461 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+   - PR.DS-6: 完全性チェックメカニズムが、ソフトウェア、ファームウェア、および情報の完全性を検証す るために使用されている。 
+
+- 
+
+   - **防御：情報を保護するためのプロセス及び手順** 
+"
+NIST_SP_800-190,cloud_application_security,59,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (16.6%) across 1522 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+### **付録 D – 用語集** 
+
+
+
+| アプリケ ーションの仮想化 | 仮想化の一形態で 、単 一の共有オペレ ーティングシステムカ ーネルを 、複数の |
+| --- | --- |
+| Applicat"
+NIST_SP_800-190,cloud_application_security,60,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (12.1%) across 840 chars,"アプリケーションコンテナセキュリティガイド 
+
+NIST SP 800-190 
+
+
+
+| オ ケストレ タ ー ー | DevOps のペルソナや 、ペルソナに代わって作業する自動化を可能にするツ ー |
+| --- | --- |
+| Orchestrator | ルで 、レジストリからイメ ー"
+NIST_SP_800-107,cryptography_security,22,PAGE_WARNING,WARNING,"Page 22: Significant volume divergence between raw (2294 chars) and structured text (4228 chars, divergence 45.7%).","{'raw_len': 2294, 'struct_len': 4228, 'divergence': 0.457}"
+NIST_SP_800-111,cryptography_security,9,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"GUIDE TO STORAGE ENCRYPTION TECHNOLOGIES FOR END USER DEVICES 
+
+##### **<mark>1. Introduction</mark>"
+NIST_SP_800-130,cryptography_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.3%) across 4851 chars,"SP 800-130                                                                                               August 2013 
+
+### **Contents** 
+
+|1. Introduc"
+NIST_SP_800-131,cryptography_security,15,PAGE_WARNING,WARNING,Page 15 Table 'table_p15_1': High sparse/empty cell ratio (11/15 = 73.3%),"{'table_id': 'table_p15_1', 'issue': 'High sparse/empty cell ratio (11/15 = 73.3%)'}"
+NIST_SP_800-131,cryptography_security,49,PAGE_WARNING,WARNING,Page 49 Table 'table_p49_1': High sparse/empty cell ratio (175/210 = 83.3%),"{'table_id': 'table_p49_1', 'issue': 'High sparse/empty cell ratio (175/210 = 83.3%)'}"
+NIST_SP_800-131,cryptography_security,51,PAGE_WARNING,WARNING,Page 51 Table 'table_p51_1': High sparse/empty cell ratio (135/168 = 80.4%),"{'table_id': 'table_p51_1', 'issue': 'High sparse/empty cell ratio (135/168 = 80.4%)'}"
+NIST_SP_800-133,cryptography_security,12,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 46 characters: 'Best regards, Niranjan Sharma IEEE Senior 
+
+12...'","Best regards, Niranjan Sharma IEEE Senior 
+
+12"
+NIST_SP_800-133,cryptography_security,50,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 55 characters: '##### Steve Weymann Co-Founder, KeyPair Consulting 
+
+50...'","##### Steve Weymann Co-Founder, KeyPair Consulting 
+
+50"
+NIST_SP_800-133,cryptography_security,73,PAGE_WARNING,WARNING,Page 73 Table 'table_p73_1': High sparse/empty cell ratio (3/4 = 75.0%),"{'table_id': 'table_p73_1', 'issue': 'High sparse/empty cell ratio (3/4 = 75.0%)'}"
+NIST_SP_800-133,cryptography_security,74,PAGE_WARNING,WARNING,Page 74 Table 'table_p74_1': High sparse/empty cell ratio (18/24 = 75.0%),"{'table_id': 'table_p74_1', 'issue': 'High sparse/empty cell ratio (18/24 = 75.0%)'}"
+NIST_SP_800-185,cryptography_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (16.5%) across 4008 chars,"NIST SP 800-185 
+
+SHA-3 DERIVED FUNCTIONS: CSHAKE, KMAC, TUPLEHASH, AND PARALLELHASH 
+
+### **Table of Contents** 
+
+
+
+| Column_1 | Column_2 |
+| --- | -"
+NIST_SP_800-197,cryptography_security,20,PAGE_WARNING,WARNING,"Page 20: Significant volume divergence between raw (242 chars) and structured text (416 chars, divergence 41.8%).","{'raw_len': 242, 'struct_len': 416, 'divergence': 0.418}"
+NIST_SP_800-197,cryptography_security,23,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 4 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","2(7) 
+
+- We think Acc128, Acc256, and BBBAcc, based on HCTR2 [4], provide a strong starting point if"
+NIST_SP_800-197,cryptography_security,24,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 2 replacement/control characters (e.g. ['0xfffd', '0xfffd'])","3(7) 
+
+amount of information an attacker could recover to no more than ≈ 2<sup>%&'.)*</sup> ≈ 0.0007"
+NIST_SP_800-197,cryptography_security,25,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 6 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","4(7) 
+
+Regarding Rijndael-256, we have trust in Rijndael-256 as currently specified [16]. ETSI SAGE "
+NIST_SP_800-208,cryptography_security,16,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 6 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-208 
+
+RECOMMENDATION FOR STATEFUL HASH-BASED SIGNATURE SCHEMES 
+
+### **<mark>3 General D"
+NIST_SP_800-208,cryptography_security,19,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 8 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-208 
+
+RECOMMENDATION FOR STATEFUL HASH-BASED SIGNATURE SCHEMES 
+
+As described in Section"
+NIST_SP_800-232,cryptography_security,22,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 3 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","Ascon-Based Lightweight Cryptography Standards for Constrained Devices 
+
+NIST SP 800-232 August 2025"
+NIST_SP_800-232,cryptography_security,26,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 3 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","Ascon-Based Lightweight Cryptography Standards for Constrained Devices 
+
+NIST SP 800-232 August 2025"
+NIST_SP_800-38,cryptography_security,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (19.8%) across 2420 chars,"NIST SP 800-38Gr1 2pd (Second Public Draft) February 2025 
+
+Block Cipher Modes of Operation Methods for Format-Preserving Encryption 
+
+46 
+
+### **Tabl"
+NIST_SP_800-57,cryptography_security,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-57,cryptography_security,16,PAGE_WARNING,WARNING,Page 16 exhibited suspicious encoding signals: Abnormally long unbroken token (64 chars).,{'issues': ['Abnormally long unbroken token (64 chars)']}
+NIST_SP_800-57,cryptography_security,38,PAGE_WARNING,WARNING,Page 38 Table 'table_p38_1': High sparse/empty cell ratio (62/78 = 79.5%),"{'table_id': 'table_p38_1', 'issue': 'High sparse/empty cell ratio (62/78 = 79.5%)'}"
+NIST_SP_800-78,cryptography_security,30,PAGE_WARNING,WARNING,"Page 30: Significant volume divergence between raw (677 chars) and structured text (1400 chars, divergence 51.6%).","{'raw_len': 677, 'struct_len': 1400, 'divergence': 0.516}"
+NIST_SP_800-116,identity_access,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.2%) across 4249 chars,"NIST SP 800-116 REV. 1 
+
+GUIDELINES FOR THE USE OF PIV CREDENTIALS IN FACILITY ACCESS 
+
+### **Table of Contents** 
+
+|**1.**|**Introduction ..........."
+NIST_SP_800-116,identity_access,32,PAGE_WARNING,WARNING,Page 32 Table 'table_p32_1': High sparse/empty cell ratio (26/36 = 72.2%),"{'table_id': 'table_p32_1', 'issue': 'High sparse/empty cell ratio (26/36 = 72.2%)'}"
+NIST_SP_800-116,identity_access,33,PAGE_WARNING,WARNING,Page 33 Table 'table_p33_1': High sparse/empty cell ratio (1/1 = 100.0%),"{'table_id': 'table_p33_1', 'issue': 'High sparse/empty cell ratio (1/1 = 100.0%)'}"
+NIST_SP_800-116,identity_access,60,PAGE_WARNING,WARNING,"Page 60: Significant volume divergence between raw (2086 chars) and structured text (558 chars, divergence 73.3%).","{'raw_len': 2086, 'struct_len': 558, 'divergence': 0.733}"
+NIST_SP_800-132,identity_access,4,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.8%) across 2515 chars,"SP 800-132         Recommendation for Password-Based Key Derivation            December 2010 
+
+#### **Table of Contents** 
+
+|1|......................."
+NIST_SP_800-162,identity_access,18,PAGE_WARNING,WARNING,"Page 18: Significant volume divergence between raw (1125 chars) and structured text (1974 chars, divergence 43.0%).","{'raw_len': 1125, 'struct_len': 1974, 'divergence': 0.43}"
+NIST_SP_800-178,identity_access,10,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.6%) across 3691 chars,"NIST SP 800-178 
+
+COMPARISON OF ABAC STANDARDS FOR DATA SERVICES: XACML AND NGAC 
+
+#### **Table of Contents** 
+
+|**Executiv**|**e Summary ............"
+NIST_SP_800-192,identity_access,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.0%) across 4159 chars,"NIST SP 800-192 
+
+VERIFICATION & TEST METHODS FOR ACCESS CONTROL POLICIES/MODELS 
+
+#### **Table of Contents** 
+
+|**EXECUTIVESUMMARY .................."
+NIST_SP_800-192,identity_access,46,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 2 replacement/control characters (e.g. ['0xfffd', '0xfffd'])","NIST SP 800-192 
+
+VERIFICATION & TEST METHODS FOR ACCESS CONTROL POLICIES/MODELS 
+
+_Method_ :  Let _"
+NIST_SP_800-192,identity_access,52,PAGE_WARNING,WARNING,Page 52 Table 'table_p52_1': High sparse/empty cell ratio (3/4 = 75.0%),"{'table_id': 'table_p52_1', 'issue': 'High sparse/empty cell ratio (3/4 = 75.0%)'}"
+NIST_SP_800-192,identity_access,60,PAGE_WARNING,WARNING,"Page 60: Significant volume divergence between raw (232 chars) and structured text (138 chars, divergence 40.5%).","{'raw_len': 232, 'struct_len': 138, 'divergence': 0.405}"
+NIST_SP_800-205,identity_access,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (17.9%) across 5900 chars,"NIST SP 800-205 
+
+ATTRIBUTE CONSIDERATIONS FOR ACCESS CONTROL SYSTEMS 
+
+### **Table of Contents** 
+
+|**Ex**|**ecutiv**|**e Sum**|**mary .............."
+NIST_SP_800-210,identity_access,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.9%) across 4423 chars,"NIST SP 800-210 
+
+GENERAL ACCESS CONTROL GUIDANCE FOR CLOUD SYSTEMS 
+
+### **Table of Contents** 
+
+|**Exe**|**cutive**|**Summary ......................"
+NIST_SP_800-224,identity_access,29,PAGE_WARNING,WARNING,"Page 29: Significant volume divergence between raw (1632 chars) and structured text (582 chars, divergence 64.3%).","{'raw_len': 1632, 'struct_len': 582, 'divergence': 0.643}"
+NIST_SP_800-224,identity_access,30,PAGE_WARNING,WARNING,"Page 30: Significant volume divergence between raw (1325 chars) and structured text (225 chars, divergence 83.0%).","{'raw_len': 1325, 'struct_len': 225, 'divergence': 0.83}"
+NIST_SP_800-73,identity_access,9,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.5%) across 1921 chars,"Interfaces for Personal Identity Verification: Part 1 PIV Card Application Namespace, Data Model, and Representation 
+
+NIST SP 800-73pt1-5 July 2024 
+"
+NIST_SP_800-76,identity_access,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (18.6%) across 7968 chars,"#### **Table of Contents** 
+
+|**1.** **Intro**|**duction**|**........................................................................................."
+NIST_SP_800-76,identity_access,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.4%) across 8049 chars,||5.7.1<br>5.7.2|Scope ...............................................................................................................................
+NIST_SP_800-76,identity_access,27,PAGE_WARNING,WARNING,Page 27 Table 'table_p27_1': High sparse/empty cell ratio (270/372 = 72.6%),"{'table_id': 'table_p27_1', 'issue': 'High sparse/empty cell ratio (270/372 = 72.6%)'}"
+NIST_SP_800-79,identity_access,110,PAGE_WARNING,WARNING,Page 110 Table 'table_p110_1': High sparse/empty cell ratio (9/12 = 75.0%),"{'table_id': 'table_p110_1', 'issue': 'High sparse/empty cell ratio (9/12 = 75.0%)'}"
+NIST_SP_800-101,incident_response,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.8%) across 4488 chars,"Guidelines on Mobile Device Forensics 
+
+|Table of Contents|
+|---|
+|TABLE OF CONTENTS ................................................................."
+NIST_SP_800-101,incident_response,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.1%) across 1020 chars,"Guidelines on Mobile Device Forensics 
+
+|7. REPORTING ................................................................................................"
+NIST_SP_800-101,incident_response,46,PAGE_WARNING,WARNING,Page 46 has low text volume (87 characters).,{'text_length': 87}
+NIST_SP_800-101,incident_response,46,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 89 characters: 'Guidelines on Mobile Device Forensics 
+
+
+
+**Figure 7: Generi...'","Guidelines on Mobile Device Forensics 
+
+
+
+**Figure 7: Generic Triage Decision Tree** 
+
+36"
+NIST_SP_800-201,incident_response,26,PAGE_WARNING,WARNING,"Page 26: Significant volume divergence between raw (3885 chars) and structured text (7821 chars, divergence 50.3%).","{'raw_len': 3885, 'struct_len': 7821, 'divergence': 0.503}"
+NIST_SP_800-201,incident_response,39,PAGE_WARNING,WARNING,"Page 39: Significant volume divergence between raw (980 chars) and structured text (1915 chars, divergence 48.8%).","{'raw_len': 980, 'struct_len': 1915, 'divergence': 0.488}"
+NIST_SP_800-72,incident_response,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-72,incident_response,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (13.0%) across 4417 chars,"Guidelines on PDA Forensics 
+
+###### Table of Contents 
+
+|TABL|E OF CONTENTS.........................................................................."
+NIST_SP_800-72,incident_response,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (16.5%) across 1466 chars,"Guidelines on PDA Forensics 
+
+|6. ACQUISITION........................................................................................................."
+NIST_SP_800-72,incident_response,15,PAGE_WARNING,WARNING,Page 15 exhibited suspicious encoding signals: Abnormally long unbroken token (63 chars).,{'issues': ['Abnormally long unbroken token (63 chars)']}
+NIST_SP_800-72,incident_response,34,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"Guidelines on PDA Forensics 
+
+###### 5. Preservation 
+
+Evidence preservation is the process of seizi"
+NIST_SP_800-72,incident_response,53,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"Guidelines on PDA Forensics 
+
+###### 7. Examination and Analysis 
+
+The examination process gives lig"
+NIST_SP_800-83,incident_response,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.7%) across 5432 chars,"#### **Table of Contents** 
+
+|**Exe**|**cutive**|**Summ**|**ary ......................................................................................"
+NIST_SP_800-83,incident_response,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.1%) across 581 chars,"#### **List of Appendices** 
+
+|**Appendix A— Glossary ................................................................................................"
+NIST_SP_800-86,incident_response,2,PAGE_WARNING,WARNING,Page 2 contains zero extractable text.,
+NIST_SP_800-86,incident_response,2,EMPTY_PAGE,INFO,Empty page with 0 text characters. Completely blank page (likely intentional separator),Completely blank page (likely intentional separator)
+NIST_SP_800-86,incident_response,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (20.1%) across 5470 chars,"GUIDE TO INTEGRATING FORENSIC TECHNIQUES INTO INCIDENT RESPONSE 
+
+##### Table of Contents 
+
+|**Exe**|**cutiv**|**e Summary............................"
+NIST_SP_800-86,incident_response,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.9%) across 5930 chars,"GUIDE TO INTEGRATING FORENSIC TECHNIQUES INTO INCIDENT RESPONSE 
+
+|5.1.1|Non-Volatile Data............................................................"
+NIST_SP_800-86,incident_response,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.7%) across 3630 chars,"GUIDE TO INTEGRATING FORENSIC TECHNIQUES INTO INCIDENT RESPONSE 
+
+||7.4|Examining and Analyzing Application Data......................................"
+NIST_SP_800-161,risk_management,9,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.7%) across 4536 chars,"Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations 
+
+NIST SP 800-161r1-upd1 May 2022 
+
+|C.1.2. SCENARIO 2: Telecommuni"
+NIST_SP_800-161,risk_management,10,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.4%) across 4321 chars,"Cybersecurity Supply Chain Risk Management Practices for Systems and Organizations 
+
+NIST SP 800-161r1-upd1 May 2022 
+
+|D.3.1.11. Revision and Mainten"
+NIST_SP_800-161,risk_management,216,PAGE_WARNING,WARNING,Page 216 Table 'table_p216_1': High sparse/empty cell ratio (10/10 = 100.0%),"{'table_id': 'table_p216_1', 'issue': 'High sparse/empty cell ratio (10/10 = 100.0%)'}"
+NIST_SP_800-161,risk_management,222,PAGE_WARNING,WARNING,Page 222 Table 'table_p222_1': High sparse/empty cell ratio (10/10 = 100.0%),"{'table_id': 'table_p222_1', 'issue': 'High sparse/empty cell ratio (10/10 = 100.0%)'}"
+NIST_SP_800-161,risk_management,224,PAGE_WARNING,WARNING,Page 224 Table 'table_p224_1': High sparse/empty cell ratio (13/16 = 81.2%),"{'table_id': 'table_p224_1', 'issue': 'High sparse/empty cell ratio (13/16 = 81.2%)'}"
+NIST_SP_800-161,risk_management,226,PAGE_WARNING,WARNING,Page 226 Table 'table_p226_1': High sparse/empty cell ratio (21/21 = 100.0%),"{'table_id': 'table_p226_1', 'issue': 'High sparse/empty cell ratio (21/21 = 100.0%)'}"
+NIST_SP_800-161,risk_management,228,PAGE_WARNING,WARNING,Page 228 Table 'table_p228_1': High sparse/empty cell ratio (25/30 = 83.3%),"{'table_id': 'table_p228_1', 'issue': 'High sparse/empty cell ratio (25/30 = 83.3%)'}"
+NIST_SP_800-161,risk_management,229,PAGE_WARNING,WARNING,Page 229 Table 'table_p229_1': High sparse/empty cell ratio (15/15 = 100.0%),"{'table_id': 'table_p229_1', 'issue': 'High sparse/empty cell ratio (15/15 = 100.0%)'}"
+NIST_SP_800-161,risk_management,243,PAGE_WARNING,WARNING,Page 243 Table 'table_p243_1': High sparse/empty cell ratio (15/15 = 100.0%),"{'table_id': 'table_p243_1', 'issue': 'High sparse/empty cell ratio (15/15 = 100.0%)'}"
+NIST_SP_800-221,risk_management,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.9%) across 1459 chars,"ICT Risk Outcomes 
+
+NIST SP 800-221A November 2023 
+
+### **Table of Contents** 
+
+||**Introduction ...................................................."
+NIST_SP_800-226,risk_management,DOC,DOCUMENT_WARNING,WARNING,Document contains 2 page(s) with potential font encoding corruption.,{'count': 2}
+NIST_SP_800-226,risk_management,9,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (19.3%) across 238 chars,"### **List of Appendices** 
+
+Glossary . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 71 Technical Details ."
+NIST_SP_800-226,risk_management,44,PAGE_WARNING,WARNING,Page 44 Table 'table_p44_1': High sparse/empty cell ratio (10/14 = 71.4%),"{'table_id': 'table_p44_1', 'issue': 'High sparse/empty cell ratio (10/14 = 71.4%)'}"
+NIST_SP_800-226,risk_management,75,PAGE_WARNING,WARNING,Page 75 exhibited suspicious encoding signals: Abnormally long unbroken token (65 chars).,{'issues': ['Abnormally long unbroken token (65 chars)']}
+NIST_SP_800-226,risk_management,78,PAGE_WARNING,WARNING,Page 78 exhibited suspicious encoding signals: Abnormally long unbroken token (67 chars).,{'issues': ['Abnormally long unbroken token (67 chars)']}
+NIST_SP_800-50,risk_management,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.8%) across 3090 chars,"Building a Cybersecurity and Privacy Learning Program 
+
+NIST SP 800-50r1 September 2024 
+
+### **Table of Contents** 
+
+|**Executive Summary ..........."
+NIST_SP_800-50,risk_management,83,PAGE_WARNING,WARNING,"Page 83: Significant volume divergence between raw (3378 chars) and structured text (5735 chars, divergence 41.1%).","{'raw_len': 3378, 'struct_len': 5735, 'divergence': 0.411}"
+NIST_SP_800-61,risk_management,28,PAGE_WARNING,WARNING,Page 28 Table 'table_p28_1': High sparse/empty cell ratio (99/140 = 70.7%),"{'table_id': 'table_p28_1', 'issue': 'High sparse/empty cell ratio (99/140 = 70.7%)'}"
+NIST_SP_800-61,risk_management,39,PAGE_WARNING,WARNING,Page 39 Table 'table_p39_1': High sparse/empty cell ratio (117/160 = 73.1%),"{'table_id': 'table_p39_1', 'issue': 'High sparse/empty cell ratio (117/160 = 73.1%)'}"
+NIST_SP_800-204,supply_chain_security,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-204,supply_chain_security,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.7%) across 2845 chars,"Software Supply Chain Security in DevSecOps CI/CD Pipelines 
+
+NIST SP 800-204D February 2024 
+
+### **Table of Contents** 
+
+|**Executive Summary ......"
+NIST_SP_800-204,supply_chain_security,33,PAGE_WARNING,WARNING,Page 33 exhibited suspicious encoding signals: Abnormally long unbroken token (69 chars).,{'issues': ['Abnormally long unbroken token (69 chars)']}
+NIST_SP_800-223,threats_malware,DOC,DOCUMENT_WARNING,WARNING,Document contains 2 page(s) with potential font encoding corruption.,{'count': 2}
+NIST_SP_800-223,threats_malware,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.1%) across 3506 chars,"High-Performance Computing Security 
+
+NIST SP 800-223 February 2024 
+
+### **Table of Contents** 
+
+|**1. Introduction ................................."
+NIST_SP_800-223,threats_malware,28,PAGE_WARNING,WARNING,Page 28 exhibited suspicious encoding signals: Abnormally long unbroken token (64 chars).,{'issues': ['Abnormally long unbroken token (64 chars)']}
+NIST_SP_800-223,threats_malware,29,PAGE_WARNING,WARNING,Page 29 exhibited suspicious encoding signals: Abnormally long unbroken token (67 chars).,{'issues': ['Abnormally long unbroken token (67 chars)']}
+NIST_SP_800-115,vulnerability_management,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (21.6%) across 5379 chars,"TECHNICAL GUIDE TO INFORMATION SECURITY TESTING AND ASSESSMENT 
+
+### Table of Contents 
+
+|**Executiv**|**e Summary...................................."
+NIST_SP_800-115,vulnerability_management,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.9%) across 4005 chars,"TECHNICAL GUIDE TO INFORMATION SECURITY TESTING AND ASSESSMENT 
+
+|6.4|Assessment Logistics ..........................................................."
+NIST_SP_800-115,vulnerability_management,27,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"TECHNICAL GUIDE TO INFORMATION SECURITY TESTING AND ASSESSMENT 
+
+placing the scanner on a segment th"
+NIST_SP_800-218,vulnerability_management,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-218,vulnerability_management,26,PAGE_WARNING,WARNING,Page 26 Table 'table_p26_1': High sparse/empty cell ratio (86/116 = 74.1%),"{'table_id': 'table_p26_1', 'issue': 'High sparse/empty cell ratio (86/116 = 74.1%)'}"
+NIST_SP_800-218,vulnerability_management,32,PAGE_WARNING,WARNING,Page 32 Table 'table_p32_1': High sparse/empty cell ratio (88/120 = 73.3%),"{'table_id': 'table_p32_1', 'issue': 'High sparse/empty cell ratio (88/120 = 73.3%)'}"
+NIST_SP_800-218,vulnerability_management,48,PAGE_WARNING,WARNING,Page 48 Table 'table_p48_1': High sparse/empty cell ratio (3/4 = 75.0%),"{'table_id': 'table_p48_1', 'issue': 'High sparse/empty cell ratio (3/4 = 75.0%)'}"
+NIST_SP_800-218,vulnerability_management,49,PAGE_WARNING,WARNING,Page 49 exhibited suspicious encoding signals: Abnormally long unbroken token (62 chars).,{'issues': ['Abnormally long unbroken token (62 chars)']}
+NIST_SP_800-231,vulnerability_management,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-231,vulnerability_management,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.5%) across 3026 chars,"NIST SP 800-231 July 2024 
+
+### **Table of Contents** 
+
+|1. Intro|ducton . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . .|. . . . . . . ."
+NIST_SP_800-231,vulnerability_management,13,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 3 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+The BF formalism guarantees precise descriptons with clear causality of "
+NIST_SP_800-231,vulnerability_management,15,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 7 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+a bug or another fault or be induced by a hardware defect. Only in the c"
+NIST_SP_800-231,vulnerability_management,16,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 6 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+
+
+<!-- Start of picture text -->
+BF Weakness States<br>Cause Consequence"
+NIST_SP_800-231,vulnerability_management,17,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 8 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+state. A _final error_ is the result of the operaton from the final impr"
+NIST_SP_800-231,vulnerability_management,18,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 9 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+harmful if only one were present. The chained faults-only vulnerabilites"
+NIST_SP_800-231,vulnerability_management,19,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 11 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+#### **3.4. BF Bug Identficaton** 
+
+If there is a cybersecurity failure,"
+NIST_SP_800-231,vulnerability_management,21,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 5 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+The BF security concept definitons are contextually visualized in Fig. 7"
+NIST_SP_800-231,vulnerability_management,22,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 2 replacement/control characters (e.g. ['0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+#### **5. BF Bugs Models** 
+
+The BF security bugs and related faults lan"
+NIST_SP_800-231,vulnerability_management,23,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 7 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+#### **5.2. BF Memory (** **~~M~~ EM) Bugs Model** 
+
+The BF Memory ( MEM"
+NIST_SP_800-231,vulnerability_management,25,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 4 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+
+
+<!-- Start of picture text -->
+BF Data Type (_DAT) Bugs Model<br>Space"
+NIST_SP_800-231,vulnerability_management,27,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 15 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+
+
+<!-- Start of picture text -->
+Bugs Framework (BF)<br>Input/Output Che"
+NIST_SP_800-231,vulnerability_management,28,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 13 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+###### Bugs Framework (BF) 
+
+
+
+<!-- Start of picture text -->
+Memory Cor"
+NIST_SP_800-231,vulnerability_management,29,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 6 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+
+
+<!-- Start of picture text -->
+Bugs Framework (BF)<br><!-- End of pict"
+NIST_SP_800-231,vulnerability_management,31,PAGE_WARNING,WARNING,Page 31 has low text volume (58 characters).,{'text_length': 58}
+NIST_SP_800-231,vulnerability_management,31,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 66 characters: 'NIST SP 800-231 July 2024 
+
+
+
+**Fig. 14.** BF taxonomy in XM...'","NIST SP 800-231 July 2024 
+
+
+
+**Fig. 14.** BF taxonomy in XML 
+
+25"
+NIST_SP_800-231,vulnerability_management,33,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 8 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+
+
+<!-- Start of picture text -->
+BF Weakness Class Methodology<br>1. Rel"
+NIST_SP_800-231,vulnerability_management,36,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 13 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","##### NIST SP 800-231 July 2024 
+
+|Final ErrorNk|…||FailureN<br>BF, I. Bojanova<br>)<br>(exploitN,ve"
+NIST_SP_800-231,vulnerability_management,37,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 3 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+For example, in Fig. 16, _Chain A_ starts from the _Inital StateA_ 1, wh"
+NIST_SP_800-231,vulnerability_management,42,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 30 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+Causaton between vulnerabilites is by _exploit result type_ ↷ _fault typ"
+NIST_SP_800-231,vulnerability_management,43,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 17 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+For example, the BF specificaton view of Heartbleed, CVE-2014-0160, is p"
+NIST_SP_800-231,vulnerability_management,51,PAGE_WARNING,WARNING,"Page 51: Significant volume divergence between raw (1818 chars) and structured text (799 chars, divergence 56.1%).","{'raw_len': 1818, 'struct_len': 799, 'divergence': 0.561}"
+NIST_SP_800-231,vulnerability_management,57,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 8 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+The methodology for the definiton of secure coding principles by sofware"
+NIST_SP_800-231,vulnerability_management,59,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 31 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+ple, the natural language descriptons, demonstratve examples, and potent"
+NIST_SP_800-231,vulnerability_management,62,PAGE_WARNING,WARNING,Page 62 has low text volume (51 characters).,{'text_length': 51}
+NIST_SP_800-231,vulnerability_management,62,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 61 characters: 'NIST SP 800-231 July 2024 
+
+
+
+
+
+**Fig. 25.** BF GUI tool 
+
+5...'","NIST SP 800-231 July 2024 
+
+
+
+
+
+**Fig. 25.** BF GUI tool 
+
+56"
+NIST_SP_800-231,vulnerability_management,64,PAGE_WARNING,WARNING,Page 64 has low text volume (60 characters).,{'text_length': 60}
+NIST_SP_800-231,vulnerability_management,64,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 68 characters: 'NIST SP 800-231 July 2024 
+
+
+
+**Fig. 26.** BF Heartbleed in ...'","NIST SP 800-231 July 2024 
+
+
+
+**Fig. 26.** BF Heartbleed in XML 
+
+58"
+NIST_SP_800-231,vulnerability_management,70,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 5 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","NIST SP 800-231 July 2024 
+
+###### BF Vulnerability Classifica�on Model 
+
+
+
+<!-- Start of picture te"
+NIST_SP_800-231,vulnerability_management,75,PAGE_WARNING,WARNING,Page 75 exhibited suspicious encoding signals: Abnormally long unbroken token (62 chars).,{'issues': ['Abnormally long unbroken token (62 chars)']}
+NIST_SP_800-51,vulnerability_management,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.4%) across 2405 chars,"GUIDE TO USING VULNERABILITY NAMING SCHEMES 
+
+#### Table of Contents 
+
+|**1.**|**Intro**|**duction ..................................................."
+NIST_SP_800-114,zero_trust_network_security,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.8%) across 4931 chars,"NIST SP 800-114 REV. 1 
+
+USER'S GUIDE TO TELEWORK AND BYOD SECURITY 
+
+### **Table of Contents** 
+
+|**Exe**|**cutive**|**Summ**|**ary ................."
+NIST_SP_800-125,zero_trust_network_security,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.8%) across 5818 chars,"NIST SP 800-125B 
+
+SECURE VIRTUAL NETWORK CONFIGURATION FOR VM PROTECTION 
+
+#### **Table of Contents** 
+
+|**Executive Summary ........................"
+NIST_SP_800-153,zero_trust_network_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.1%) across 2928 chars,"GUIDELINES FOR SECURING WIRELESS LOCAL AREA NETWORKS (WLANS) 
+
+##### Table of Contents 
+
+|**Executiv**|**e Summary ..................................."
+NIST_SP_800-153,zero_trust_network_security,20,PAGE_WARNING,WARNING,"Page 20: Significant volume divergence between raw (1906 chars) and structured text (3198 chars, divergence 40.4%).","{'raw_len': 1906, 'struct_len': 3198, 'divergence': 0.404}"
+NIST_SP_800-183,zero_trust_network_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.9%) across 2768 chars,"NIST SP 800-183 
+
+NETWORKS OF ‘THINGS’ 
+
+#### **Table of Contents** 
+
+|**1**<br>**Introduction ......................................................."
+NIST_SP_800-183,zero_trust_network_security,12,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"NIST SP 800-183 
+
+NETWORKS OF ‘THINGS’ 
+
+7. Redundant sensors may increase a sensor’s weight if a gr"
+NIST_SP_800-215,zero_trust_network_security,DOC,DOCUMENT_WARNING,WARNING,Document contains 1 page(s) with potential font encoding corruption.,{'count': 1}
+NIST_SP_800-215,zero_trust_network_security,39,PAGE_WARNING,WARNING,Page 39 exhibited suspicious encoding signals: Abnormally long unbroken token (62 chars).,{'issues': ['Abnormally long unbroken token (62 chars)']}
+NIST_SP_800-41,zero_trust_network_security,5,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.4%) across 5348 chars,"GUIDELINES ON FIREWALLS AND FIREWALL POLICY 
+
+#### Table of Contents 
+
+|**Executiv**|**e Summary......................................................"
+NIST_SP_800-41,zero_trust_network_security,6,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.7%) across 1798 chars,"GUIDELINES ON FIREWALLS AND FIREWALL POLICY 
+
+|5.2.2 Policy Configuration............................................................................."
+NIST_SP_800-152,cryptography_security,7,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (24.8%) across 3824 chars,"SP 800-152 
+
+A Profile for U.S. Federal CKMS 
+
+
+
+| Column_1 | Column_2 |
+| --- | --- |
+|  | 4 7 Interrelationships among Policies 25 . ..............."
+NIST_SP_800-152,cryptography_security,30,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 74 replacement/control characters (e.g. ['0xfffd', '0xfffd', '0xfffd'])","SP 800-152 
+
+A Profile for U.S. Federal CKMS 
+
+
+
+<!-- Start of picture text -->
+CKMS�Security�Policy"
+NIST_SP_800-152,cryptography_security,103,PAGE_WARNING,WARNING,Page 103 has low text volume (49 characters).,{'text_length': 49}
+NIST_SP_800-152,cryptography_security,103,SUSPICIOUSLY_SHORT_PAGE,INFO,"Page with only 49 characters: 'SP 800-152 
+
+A Profile for U.S. Federal CKMS 
+
+93...'","SP 800-152 
+
+A Profile for U.S. Federal CKMS 
+
+93"
+NIST_SP_800-152,cryptography_security,115,PAGE_WARNING,WARNING,"Page 115: Significant volume divergence between raw (1859 chars) and structured text (870 chars, divergence 53.2%).","{'raw_len': 1859, 'struct_len': 870, 'divergence': 0.532}"
+NIST_SP_800-186,cryptography_security,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.7%) across 3204 chars,"Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters 
+
+NIST SP 800-186 February 2023 
+
+## **Table of Contents** 
+
+|**Executive Summ"
+NIST_SP_800-186,cryptography_security,15,REPLACEMENT_OR_CONTROL_CHAR,WARNING,Found 1 replacement/control characters (e.g. ['0xfffd']),"Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters 
+
+NIST SP 800-186 February 2"
+NIST_SP_800-186,cryptography_security,59,REPLACEMENT_OR_CONTROL_CHAR,WARNING,"Found 2 replacement/control characters (e.g. ['0xfffd', '0xfffd'])","Discrete Logarithm-based Cryptography: Elliptic Curve Domain Parameters 
+
+NIST SP 800-186 February 2"
+NIST_SP_800-39,risk_management,8,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (23.3%) across 3554 chars,"Special Publication 800-39 
+
+Managing Information Security Risk Organization, Mission, and Information System View 
+
+#### **Table of Contents** 
+
+|**C"
+NIST_SP_800-53,risk_management,13,PAGE_WARNING,WARNING,"Page 13: Significant volume divergence between raw (779 chars) and structured text (462 chars, divergence 40.7%).","{'raw_len': 779, 'struct_len': 462, 'divergence': 0.407}"
+NIST_SP_800-53,risk_management,15,LOW_ALPHANUMERIC_DENSITY,WARNING,Low alphanumeric density (22.7%) across 5059 chars,"NIST SP 800-53, REV. 5 SECURITY AND PRIVACY CONTROLS FOR INFORMATION SYSTEMS AND ORGANIZATIONS 
+
+### **Table of Contents** 
+
+|**CHAPTER ONE** INTRODUC"
+NIST_SP_800-53,risk_management,109,PAGE_WARNING,WARNING,"Page 109: Significant volume divergence between raw (494 chars) and structured text (182 chars, divergence 63.2%).","{'raw_len': 494, 'struct_len': 182, 'divergence': 0.632}"
+NIST_SP_800-53,risk_management,157,PAGE_WARNING,WARNING,"Page 157: Significant volume divergence between raw (498 chars) and structured text (193 chars, divergence 61.2%).","{'raw_len': 498, 'struct_len': 193, 'divergence': 0.612}"
+NIST_SP_800-53,risk_management,188,PAGE_WARNING,WARNING,"Page 188: Significant volume divergence between raw (693 chars) and structured text (393 chars, divergence 43.3%).","{'raw_len': 693, 'struct_len': 393, 'divergence': 0.433}"
+NIST_SP_800-53,risk_management,229,PAGE_WARNING,WARNING,"Page 229: Significant volume divergence between raw (682 chars) and structured text (358 chars, divergence 47.5%).","{'raw_len': 682, 'struct_len': 358, 'divergence': 0.475}"
+NIST_SP_800-53,risk_management,471,PAGE_WARNING,WARNING,"Page 471: Significant volume divergence between raw (608 chars) and structured text (320 chars, divergence 47.4%).","{'raw_len': 608, 'struct_len': 320, 'divergence': 0.474}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Page 5 has little text (32 chars) with 3 image(s); candidate for OCR verification,"{'text_length': 32, 'image_count': 3}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Page 9 has little text (48 chars) with 3 image(s); candidate for OCR verification,"{'text_length': 48, 'image_count': 3}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Page 15 has little text (36 chars) with 3 image(s); candidate for OCR verification,"{'text_length': 36, 'image_count': 3}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Page 17 has little text (44 chars) with 3 image(s); candidate for OCR verification,"{'text_length': 44, 'image_count': 3}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Page 29 has little text (7 chars) with 1 image(s); candidate for OCR verification,"{'text_length': 7, 'image_count': 1}"
+NIST_SP_800-236,root,DOC,DOCUMENT_WARNING,WARNING,Document contains 5 page(s) flagged for OCR verification.,{'count': 5}
+NIST_SP_800-236,root,1,PAGE_WARNING,WARNING,Page 1 has low text volume (95 characters).,{'text_length': 95}
+NIST_SP_800-236,root,5,PAGE_WARNING,WARNING,"Page 5 is an image-based text candidate (32 chars, 2 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-236,root,5,PAGE_WARNING,WARNING,Page 5 has low text volume (32 characters).,{'text_length': 32}
+NIST_SP_800-236,root,5,PAGE_WARNING,WARNING,Page 5 has low text (32 chars) but contains 2 embedded images; candidate for OCR verification.,"{'text_length': 32, 'figure_count': 2}"
+NIST_SP_800-236,root,7,PAGE_WARNING,WARNING,Page 7 has low text volume (70 characters).,{'text_length': 70}
+NIST_SP_800-236,root,9,PAGE_WARNING,WARNING,"Page 9 is an image-based text candidate (48 chars, 2 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-236,root,9,PAGE_WARNING,WARNING,Page 9 has low text volume (48 characters).,{'text_length': 48}
+NIST_SP_800-236,root,9,PAGE_WARNING,WARNING,Page 9 has low text (48 chars) but contains 2 embedded images; candidate for OCR verification.,"{'text_length': 48, 'figure_count': 2}"
+NIST_SP_800-236,root,11,PAGE_WARNING,WARNING,Page 11 has low text volume (58 characters).,{'text_length': 58}
+NIST_SP_800-236,root,13,PAGE_WARNING,WARNING,Page 13 has low text volume (51 characters).,{'text_length': 51}
+NIST_SP_800-236,root,15,PAGE_WARNING,WARNING,"Page 15 is an image-based text candidate (36 chars, 2 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-236,root,15,PAGE_WARNING,WARNING,Page 15 has low text volume (36 characters).,{'text_length': 36}
+NIST_SP_800-236,root,15,PAGE_WARNING,WARNING,Page 15 has low text (36 chars) but contains 2 embedded images; candidate for OCR verification.,"{'text_length': 36, 'figure_count': 2}"
+NIST_SP_800-236,root,17,PAGE_WARNING,WARNING,"Page 17 is an image-based text candidate (44 chars, 2 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-236,root,17,PAGE_WARNING,WARNING,Page 17 has low text volume (44 characters).,{'text_length': 44}
+NIST_SP_800-236,root,17,PAGE_WARNING,WARNING,Page 17 has low text (44 chars) but contains 2 embedded images; candidate for OCR verification.,"{'text_length': 44, 'figure_count': 2}"
+NIST_SP_800-236,root,19,PAGE_WARNING,WARNING,Page 19 has low text volume (59 characters).,{'text_length': 59}
+NIST_SP_800-236,root,21,PAGE_WARNING,WARNING,Page 21 has low text volume (79 characters).,{'text_length': 79}
+NIST_SP_800-236,root,24,PAGE_WARNING,WARNING,Page 24 has low text volume (54 characters).,{'text_length': 54}
+NIST_SP_800-236,root,29,PAGE_WARNING,WARNING,"Page 29 is an image-based text candidate (7 chars, 1 images), but OCR fallback is disabled in ExtractionConfig.",
+NIST_SP_800-236,root,29,PAGE_WARNING,WARNING,Page 29 has low text volume (7 characters).,{'text_length': 7}
+NIST_SP_800-236,root,29,PAGE_WARNING,WARNING,Page 29 has low text (7 chars) but contains 1 embedded images; candidate for OCR verification.,"{'text_length': 7, 'figure_count': 1}"
+NIST_SP_800-236,root,29,SUSPICIOUSLY_SHORT_PAGE,INFO,Page with only 7 characters: 'PAGE 29...',PAGE 29

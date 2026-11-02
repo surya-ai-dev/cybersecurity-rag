@@ -1,6 +1,6 @@
 """Application-level orchestrator for the Cybersecurity RAG system."""
 
-from typing import Any, Callable, Iterator, List, Optional, Sequence, Union
+from typing import Any, Callable, Iterator, List, Optional, Sequence, Tuple, Union
 
 from app.core.config import settings
 from app.core.interfaces import (
@@ -15,6 +15,7 @@ from app.conversation.query_rewriter import rewrite_question
 from app.generation.build_context import build_context
 from app.generation.providers.groq_provider import GroqProvider
 from app.retrieval.hybrid import HybridRetriever
+from app.retrieval.query_rewriter import QueryRewriter
 from app.retrieval.reranker import CrossEncoderReranker
 
 
@@ -70,30 +71,57 @@ class RAGEngine:
         context_builder: Optional[Callable[[Sequence[Any]], str]] = None,
         llm_provider: Optional[BaseLLMProvider] = None,
         memory: Optional[BaseConversationMemory] = None,
+        retrieval_query_rewriter: Optional[QueryRewriter] = None,
+        confidence_evaluator: Optional[Any] = None,
         retrieval_top_k: Optional[int] = None,
         rerank_top_n: Optional[int] = None,
+        enable_reranking: Optional[bool] = None,
     ) -> None:
         """Initialize RAGEngine with injected component strategies.
 
         Args:
             retriever: Component implementing BaseRetriever (default: HybridRetriever).
             reranker: Component implementing BaseReranker (default: CrossEncoderReranker).
-            query_rewriter: Function/callable for query rewriting (default: rewrite_question).
+            query_rewriter: Function/callable for conversation rewriting (default: rewrite_question).
             context_builder: Function/callable for context formatting (default: build_context).
             llm_provider: Component implementing BaseLLMProvider (default: GroqProvider).
             memory: Component implementing BaseConversationMemory (default: ConversationMemory).
+            retrieval_query_rewriter: Component implementing QueryRewriter for search query optimization.
+            confidence_evaluator: Component implementing ConfidenceEvaluator for adaptive rewriting decisions.
             retrieval_top_k: Candidate retrieval limit (default: 20).
             rerank_top_n: Reranked top document limit (default: 5).
+            enable_reranking: Optional flag to toggle cross-encoder reranking (default: settings.enable_reranking).
         """
+        from app.retrieval.confidence import ConfidenceEvaluator
+
         self.retriever: BaseRetriever = retriever if retriever is not None else HybridRetriever()
         self.reranker: BaseReranker = reranker if reranker is not None else CrossEncoderReranker()
         self.query_rewriter: Callable[..., str] = query_rewriter if query_rewriter is not None else rewrite_question
         self.context_builder: Callable[[Sequence[Any]], str] = context_builder if context_builder is not None else build_context
         self.llm_provider: BaseLLMProvider = llm_provider if llm_provider is not None else GroqProvider()
         self.memory: BaseConversationMemory = memory if memory is not None else ConversationMemory()
+        rewriter_enabled = (
+            getattr(settings, "enable_query_rewriting", False)
+            or getattr(settings, "enable_adaptive_query_rewriting", False)
+        )
+        self.retrieval_query_rewriter: Optional[QueryRewriter] = (
+            retrieval_query_rewriter
+            if retrieval_query_rewriter is not None
+            else QueryRewriter(enabled=rewriter_enabled)
+        )
+        self.confidence_evaluator: ConfidenceEvaluator = (
+            confidence_evaluator
+            if confidence_evaluator is not None
+            else ConfidenceEvaluator()
+        )
 
         self.retrieval_top_k: int = retrieval_top_k or getattr(settings, "dense_top_k", 20)
         self.rerank_top_n: int = rerank_top_n or getattr(settings, "final_top_n", 5)
+        self.enable_reranking: bool = (
+            enable_reranking
+            if enable_reranking is not None
+            else getattr(settings, "enable_reranking", True)
+        )
 
     def _rewrite_query(self, question: str, history: List[Union[Message, dict]]) -> str:
         """Rewrite question into standalone form using conversational history."""
@@ -108,6 +136,105 @@ class RAGEngine:
     def _build_prompt(self, question: str, context: str) -> str:
         """Build grounded prompt formatted with standalone question and context blocks."""
         return RAG_PROMPT_TEMPLATE.format(question=question, context=context)
+
+    def _retrieve_and_rank(
+        self,
+        standalone_question: str,
+    ) -> Tuple[List[RetrievedChunk], str]:
+        """Execute unified candidate retrieval, adaptive query rewriting, and optional reranking.
+
+        Shared by query(), stream(), and run() to guarantee identical retrieval semantics.
+
+        Args:
+            standalone_question: Standalone disambiguated user query.
+
+        Returns:
+            Tuple of (final_ranked_chunks, effective_search_query).
+        """
+        search_query = standalone_question
+        candidates = None
+
+        always_on = getattr(settings, "enable_query_rewriting", False)
+        adaptive_on = getattr(settings, "enable_adaptive_query_rewriting", False)
+
+        if always_on and self.retrieval_query_rewriter is not None:
+            if not getattr(self.retrieval_query_rewriter, "enabled", True):
+                self.retrieval_query_rewriter.enabled = True
+            rewrite_res = self.retrieval_query_rewriter.rewrite(standalone_question)
+            if rewrite_res.success and not rewrite_res.fallback_used and rewrite_res.rewritten_query:
+                search_query = rewrite_res.rewritten_query
+            print("\n" + "=" * 70)
+            print("STEP 1 — RETRIEVING DOCUMENTS (ALWAYS-ON REWRITE)")
+            print("=" * 70)
+            candidates = self.retriever.retrieve(
+                search_query,
+                top_k=self.retrieval_top_k,
+            )
+        elif adaptive_on and self.retrieval_query_rewriter is not None:
+            from app.retrieval.confidence import merge_candidate_pools
+
+            print("\n" + "=" * 70)
+            print("STEP 1 — RETRIEVING DOCUMENTS (ADAPTIVE INITIAL PASS)")
+            print("=" * 70)
+            initial_candidates = self.retriever.retrieve(
+                standalone_question,
+                top_k=self.retrieval_top_k,
+            )
+            conf_res = self.confidence_evaluator.evaluate(initial_candidates, query=standalone_question)
+            if conf_res.is_confident:
+                candidates = initial_candidates
+                search_query = standalone_question
+                print(f"\n[Adaptive] Initial retrieval confident [Level: {getattr(conf_res, 'level', 'HIGH')}] ({conf_res.reason}). Skipping rewrite.")
+            else:
+                print(f"\n[Adaptive] Initial retrieval low/medium confidence [Level: {getattr(conf_res, 'level', 'LOW')}] ({conf_res.reason}). Triggering query rewrite...")
+                if not getattr(self.retrieval_query_rewriter, "enabled", True):
+                    self.retrieval_query_rewriter.enabled = True
+                rewrite_res = self.retrieval_query_rewriter.rewrite(standalone_question)
+                if rewrite_res.success and not rewrite_res.fallback_used and rewrite_res.rewritten_query:
+                    search_query = rewrite_res.rewritten_query
+                    print(f"[Adaptive] Second retrieval pass using rewritten query: {search_query[:75]}...")
+                    rewritten_candidates = self.retriever.retrieve(
+                        search_query,
+                        top_k=self.retrieval_top_k,
+                    )
+                    candidates = merge_candidate_pools(
+                        initial_candidates,
+                        rewritten_candidates,
+                        limit=self.retrieval_top_k,
+                    )
+                else:
+                    print("[Adaptive] Rewriter fallback used; retaining initial candidates.")
+                    candidates = initial_candidates
+                    search_query = standalone_question
+        else:
+            print("\n" + "=" * 70)
+            print("STEP 1 — RETRIEVING DOCUMENTS")
+            print("=" * 70)
+            candidates = self.retriever.retrieve(
+                search_query,
+                top_k=self.retrieval_top_k,
+            )
+        print(f"\nRetrieved candidate documents: {len(candidates)}")
+
+        # Step 2: Cross-encoder reranking (optional)
+        if self.enable_reranking:
+            print("\n" + "=" * 70)
+            print("STEP 2 — RERANKING DOCUMENTS")
+            print("=" * 70)
+            final_chunks = self.reranker.rerank(
+                standalone_question,
+                candidates,
+                top_n=self.rerank_top_n,
+            )
+            print(f"\nFinal reranked documents: {len(final_chunks)}")
+        else:
+            print("\n" + "=" * 70)
+            print("STEP 2 — RERANKING BYPASSED (DISABLED)")
+            print("=" * 70)
+            final_chunks = list(candidates)[:self.rerank_top_n]
+            print(f"\nFinal top documents: {len(final_chunks)}")
+
+        return final_chunks, search_query
 
     def query(
         self,
@@ -129,35 +256,17 @@ class RAGEngine:
         # 2. Rewrite query if needed
         standalone_question = self._rewrite_query(question, history)
 
-        # 3. Hybrid candidate retrieval
-        print("\n" + "=" * 70)
-        print("STEP 1 — RETRIEVING DOCUMENTS")
-        print("=" * 70)
-        candidates = self.retriever.retrieve(
-            standalone_question,
-            top_k=self.retrieval_top_k,
-        )
-        print(f"\nRRF candidate documents: {len(candidates)}")
+        # 3. Retrieve candidates, adaptively rewrite, and rerank
+        final_chunks, search_query = self._retrieve_and_rank(standalone_question)
 
-        # 4. Cross-encoder reranking
-        print("\n" + "=" * 70)
-        print("STEP 2 — RERANKING DOCUMENTS")
-        print("=" * 70)
-        reranked_chunks = self.reranker.rerank(
-            standalone_question,
-            candidates,
-            top_n=self.rerank_top_n,
-        )
-        print(f"\nFinal reranked documents: {len(reranked_chunks)}")
-
-        # 5. Build prompt context
+        # 4. Build prompt context
         print("\n" + "=" * 70)
         print("STEP 3 — BUILDING CONTEXT")
         print("=" * 70)
-        context = self.context_builder(reranked_chunks)
-        print(f"Context built from {len(reranked_chunks)} chunks.")
+        context = self.context_builder(final_chunks)
+        print(f"Context built from {len(final_chunks)} chunks.")
 
-        # 6. Generate answer
+        # 5. Generate answer
         print("\n" + "=" * 70)
         print("STEP 4 — GENERATING ANSWER")
         print("=" * 70)
@@ -180,14 +289,14 @@ class RAGEngine:
                 max_tokens=settings.llm_max_tokens,
             )
 
-        # 7. Record turn to memory
+        # 6. Record turn to memory
         self.memory.add_message(question, answer)
 
         return RAGResponse(
             question=question,
             standalone_question=standalone_question,
             answer=answer,
-            sources=list(reranked_chunks),
+            sources=list(final_chunks),
         )
 
     def run(self, question: str, stream: bool = True) -> RAGResponse:
@@ -203,9 +312,8 @@ class RAGEngine:
         history = self.memory.get_messages()
         standalone_question = self._rewrite_query(question, history)
 
-        candidates = self.retriever.retrieve(standalone_question, top_k=self.retrieval_top_k)
-        reranked_chunks = self.reranker.rerank(standalone_question, candidates, top_n=self.rerank_top_n)
-        context = self.context_builder(reranked_chunks)
+        final_chunks, search_query = self._retrieve_and_rank(standalone_question)
+        context = self.context_builder(final_chunks)
         prompt = self._build_prompt(standalone_question, context)
 
         full_answer = []

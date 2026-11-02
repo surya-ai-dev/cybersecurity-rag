@@ -67,13 +67,50 @@ def build_context(
         else:
             document, source, section, rrf_score, text = "Unknown", "Unknown", "Unknown", 0.0, str(result)
 
+        # Determine appropriate stage score label
+        score_label = "RRF Score"
+        formatted_score = f"{rrf_score:.6f}"
+
+        if isinstance(result, RetrievedChunk):
+            if result.reranker_score is not None:
+                score_label = "Reranker Score"
+                formatted_score = f"{float(result.reranker_score):.4f}"
+            elif result.rrf_score is not None and result.rrf_score > 0:
+                score_label = "RRF Score"
+                formatted_score = f"{float(result.rrf_score):.6f}"
+            elif result.dense_score is not None:
+                score_label = "Dense Score"
+                formatted_score = f"{float(result.dense_score):.4f}"
+            elif result.bm25_score is not None:
+                score_label = "BM25 Score"
+                formatted_score = f"{float(result.bm25_score):.4f}"
+            elif result.score is not None and result.score > 0:
+                score_label = "Score"
+                formatted_score = f"{float(result.score):.4f}"
+        elif isinstance(result, dict):
+            if result.get("reranker_score") is not None:
+                score_label = "Reranker Score"
+                formatted_score = f"{float(result['reranker_score']):.4f}"
+            elif result.get("rrf_score") is not None and float(result.get("rrf_score", 0)) > 0:
+                score_label = "RRF Score"
+                formatted_score = f"{float(result['rrf_score']):.6f}"
+            elif result.get("dense_score") is not None:
+                score_label = "Dense Score"
+                formatted_score = f"{float(result['dense_score']):.4f}"
+            elif result.get("bm25_score") is not None:
+                score_label = "BM25 Score"
+                formatted_score = f"{float(result['bm25_score']):.4f}"
+            elif result.get("score") is not None and float(result.get("score", 0)) > 0:
+                score_label = "Score"
+                formatted_score = f"{float(result['score']):.4f}"
+
         context = f"""
 SOURCE {index}
 
 Document: {document}
 Source File: {source}
 Section: {section}
-RRF Score: {rrf_score:.6f}
+{score_label}: {formatted_score}
 
 Content:
 {text}

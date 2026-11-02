@@ -28,6 +28,26 @@ def dense_retrieve(
     top_k: int = 20,
 ) -> List[RetrievedChunk]:
     """Execute dense semantic search using the default DenseRetriever."""
+    from app.core.config import settings
+    if getattr(settings, "enable_query_rewriting", False):
+        from app.retrieval.query_rewriter import rewrite_query
+        question = rewrite_query(question)
+        return get_default_retriever().dense_retriever.retrieve(question, top_k=top_k)
+    elif getattr(settings, "enable_adaptive_query_rewriting", False):
+        from app.retrieval.confidence import ConfidenceEvaluator, merge_candidate_pools
+        from app.retrieval.query_rewriter import QueryRewriter
+        retriever = get_default_retriever().dense_retriever
+        initial_cands = retriever.retrieve(question, top_k=top_k)
+        evaluator = ConfidenceEvaluator()
+        conf = evaluator.evaluate(initial_cands)
+        if conf.is_confident:
+            return initial_cands
+        rewriter = QueryRewriter()
+        res = rewriter.rewrite(question)
+        if res.success and not res.fallback_used and res.rewritten_query:
+            rewritten_cands = retriever.retrieve(res.rewritten_query, top_k=top_k)
+            return merge_candidate_pools(initial_cands, rewritten_cands, limit=top_k)
+        return initial_cands
     return get_default_retriever().dense_retriever.retrieve(question, top_k=top_k)
 
 
@@ -36,6 +56,26 @@ def retrieve(
     top_k: int = 20,
 ) -> List[RetrievedChunk]:
     """Execute hybrid retrieval (dense + BM25 + RRF)."""
+    from app.core.config import settings
+    if getattr(settings, "enable_query_rewriting", False):
+        from app.retrieval.query_rewriter import rewrite_query
+        question = rewrite_query(question)
+        return get_default_retriever().retrieve(question, top_k=top_k)
+    elif getattr(settings, "enable_adaptive_query_rewriting", False):
+        from app.retrieval.confidence import ConfidenceEvaluator, merge_candidate_pools
+        from app.retrieval.query_rewriter import QueryRewriter
+        retriever = get_default_retriever()
+        initial_cands = retriever.retrieve(question, top_k=top_k)
+        evaluator = ConfidenceEvaluator()
+        conf = evaluator.evaluate(initial_cands)
+        if conf.is_confident:
+            return initial_cands
+        rewriter = QueryRewriter()
+        res = rewriter.rewrite(question)
+        if res.success and not res.fallback_used and res.rewritten_query:
+            rewritten_cands = retriever.retrieve(res.rewritten_query, top_k=top_k)
+            return merge_candidate_pools(initial_cands, rewritten_cands, limit=top_k)
+        return initial_cands
     return get_default_retriever().retrieve(question, top_k=top_k)
 
 

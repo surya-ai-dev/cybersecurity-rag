@@ -1,0 +1,162 @@
+[
+  {
+    "id": "Q1",
+    "question": "What are the security risks of public cloud computing?"
+  },
+  {
+    "id": "Q2",
+    "question": "What security challenges are associated with public cloud environments?"
+  },
+  {
+    "id": "Q3",
+    "question": "How can client-side malware affect public cloud security?"
+  },
+  {
+    "id": "Q4",
+    "question": "Why is governance important for public cloud security?"
+  },
+  {
+    "id": "Q5",
+    "question": "Who is responsible for security and privacy in public cloud computing?"
+  },
+  {
+    "id": "Q6",
+    "question": "What are the main security concerns when using public cloud services?"
+  },
+  {
+    "id": "Q7",
+    "question": "What privacy risks can arise when organizations use public cloud services?"
+  },
+  {
+    "id": "Q8",
+    "question": "How does loss of control affect security in public cloud computing?"
+  },
+  {
+    "id": "Q9",
+    "question": "What security issues can result from outsourcing services to a cloud provider?"
+  },
+  {
+    "id": "Q10",
+    "question": "What are the security implications of storing organizational data in the public cloud?"
+  },
+  {
+    "id": "Q11",
+    "question": "What responsibilities does an organization retain after moving to a public cloud?"
+  },
+  {
+    "id": "Q12",
+    "question": "What security responsibilities are shared between a cloud provider and a cloud customer?"
+  },
+  {
+    "id": "Q13",
+    "question": "What risks are associated with relying on a third-party cloud service provider?"
+  },
+  {
+    "id": "Q14",
+    "question": "How can social engineering attacks affect public cloud security?"
+  },
+  {
+    "id": "Q15",
+    "question": "How can malware on a client device threaten cloud services?"
+  },
+  {
+    "id": "Q16",
+    "question": "Why are security and privacy considerations important throughout the cloud system lifecycle?"
+  },
+  {
+    "id": "Q17",
+    "question": "What governance practices are important when using public cloud services?"
+  },
+  {
+    "id": "Q18",
+    "question": "What security concerns arise from moving organizational resources to the public cloud?"
+  },
+  {
+    "id": "Q19",
+    "question": "What challenges can organizations face when monitoring security in public cloud environments?"
+  },
+  {
+    "id": "Q20",
+    "question": "What factors should organizations consider when evaluating the security of a public cloud provider?"
+  },
+  {
+    "id": "Q21",
+    "question": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?"
+  },
+  {
+    "id": "Q22",
+    "question": "What key considerations and trade-offs should guide organizations when making malware containment decisions?"
+  },
+  {
+    "id": "Q23",
+    "question": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?"
+  },
+  {
+    "id": "Q24",
+    "question": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?"
+  },
+  {
+    "id": "Q25",
+    "question": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?"
+  },
+  {
+    "id": "Q26",
+    "question": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?"
+  },
+  {
+    "id": "Q27",
+    "question": "What are the three tiers in the multitiered risk management approach and what scope does each cover?"
+  },
+  {
+    "id": "Q28",
+    "question": "How does the security control tailoring process modify initial control baselines for specific organizational systems?"
+  },
+  {
+    "id": "Q29",
+    "question": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?"
+  },
+  {
+    "id": "Q30",
+    "question": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?"
+  },
+  {
+    "id": "Q31",
+    "question": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?"
+  },
+  {
+    "id": "Q32",
+    "question": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?"
+  },
+  {
+    "id": "Q33",
+    "question": "What security controls and client software configurations are required to protect remote access in enterprise telework?"
+  },
+  {
+    "id": "Q34",
+    "question": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?"
+  },
+  {
+    "id": "Q35",
+    "question": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?"
+  },
+  {
+    "id": "Q36",
+    "question": "What are the four phases of the digital forensics process and what is the primary objective of each phase?"
+  },
+  {
+    "id": "Q37",
+    "question": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?"
+  },
+  {
+    "id": "Q38",
+    "question": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?"
+  },
+  {
+    "id": "Q39",
+    "question": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?"
+  },
+  {
+    "id": "Q40",
+    "question": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?"
+  }
+]

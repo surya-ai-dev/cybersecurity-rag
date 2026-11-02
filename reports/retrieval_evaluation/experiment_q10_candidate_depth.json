@@ -1,0 +1,487 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-21T04:55:06.790611",
+    "question_id": "Q10",
+    "question": "What are the security implications of storing organizational data in the public cloud?",
+    "ground_truth_chunks": [
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00081",
+      "NIST_SP_800-144_txt_00082"
+    ],
+    "final_top_k": 5
+  },
+  "configurations": {
+    "A": {
+      "config_id": "A",
+      "config_name": "Baseline (Dense 20 / BM25 20 / RRF 20 -> Reranker)",
+      "dense_depth": 20,
+      "bm25_depth": 20,
+      "rrf_pool": 20,
+      "enable_reranker": true,
+      "latencies_ms": {
+        "dense": 4855.17,
+        "bm25": 178.4,
+        "rrf": 0.42,
+        "retrieval_total": 5034.0,
+        "reranking": 7190.68,
+        "end_to_end_total": 12224.68
+      },
+      "metrics": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "target_diagnostics": {
+        "NIST_SP_800-144_txt_00080": {
+          "chunk_id": "NIST_SP_800-144_txt_00080",
+          "in_dense": true,
+          "dense_rank": 19,
+          "dense_score": 0.6492,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": false,
+          "rerank_rank": null,
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00081": {
+          "chunk_id": "NIST_SP_800-144_txt_00081",
+          "in_dense": true,
+          "dense_rank": 18,
+          "dense_score": 0.6493,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": false,
+          "rerank_rank": null,
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00082": {
+          "chunk_id": "NIST_SP_800-144_txt_00082",
+          "in_dense": false,
+          "dense_rank": null,
+          "dense_score": null,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": false,
+          "rerank_rank": null,
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        }
+      },
+      "final_top5_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "NIST_SP_800-144_txt_00021",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+          "score": 3.7604,
+          "is_target": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "NIST_SP_800-144_txt_00043",
+          "document_id": "NIST_SP_800-144",
+          "section": "**3.2 The Security and Privacy Upside**",
+          "score": 3.7304,
+          "is_target": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "NIST_SP_800-144_txt_00038",
+          "document_id": "NIST_SP_800-144",
+          "section": "**2.3 Outsourcing and Accountability**",
+          "score": 3.5729,
+          "is_target": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "NIST_SP_800-146_txt_00135",
+          "document_id": "NIST_SP_800-146",
+          "section": "Unknown",
+          "score": 3.046,
+          "is_target": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "NIST_SP_800-144_txt_00024",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+          "score": 2.7044,
+          "is_target": false
+        }
+      ]
+    },
+    "B": {
+      "config_id": "B",
+      "config_name": "Expanded Retrieval (Dense 30 / BM25 30 / RRF 30 -> Reranker)",
+      "dense_depth": 30,
+      "bm25_depth": 30,
+      "rrf_pool": 30,
+      "enable_reranker": true,
+      "latencies_ms": {
+        "dense": 899.73,
+        "bm25": 250.16,
+        "rrf": 0.56,
+        "retrieval_total": 1150.45,
+        "reranking": 7712.71,
+        "end_to_end_total": 8863.16
+      },
+      "metrics": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "target_diagnostics": {
+        "NIST_SP_800-144_txt_00080": {
+          "chunk_id": "NIST_SP_800-144_txt_00080",
+          "in_dense": true,
+          "dense_rank": 19,
+          "dense_score": 0.6492,
+          "in_bm25": true,
+          "bm25_rank": 30,
+          "bm25_score": 28.2844,
+          "in_rrf_pool": true,
+          "rrf_rank": 14,
+          "rrf_score": 0.023769,
+          "in_rerank_pool": true,
+          "rerank_rank": 8,
+          "rerank_score": 2.5924,
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00081": {
+          "chunk_id": "NIST_SP_800-144_txt_00081",
+          "in_dense": true,
+          "dense_rank": 18,
+          "dense_score": 0.6493,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": true,
+          "rrf_rank": 29,
+          "rrf_score": 0.012821,
+          "in_rerank_pool": true,
+          "rerank_rank": 26,
+          "rerank_score": -0.3122,
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00082": {
+          "chunk_id": "NIST_SP_800-144_txt_00082",
+          "in_dense": false,
+          "dense_rank": null,
+          "dense_score": null,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": false,
+          "rerank_rank": null,
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        }
+      },
+      "final_top5_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "NIST_SP_800-144_txt_00021",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+          "score": 3.7604,
+          "is_target": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "NIST_SP_800-144_txt_00043",
+          "document_id": "NIST_SP_800-144",
+          "section": "**3.2 The Security and Privacy Upside**",
+          "score": 3.7304,
+          "is_target": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "NIST_SP_800-144_txt_00038",
+          "document_id": "NIST_SP_800-144",
+          "section": "**2.3 Outsourcing and Accountability**",
+          "score": 3.5729,
+          "is_target": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "NIST_SP_800-146_txt_00135",
+          "document_id": "NIST_SP_800-146",
+          "section": "**8.5 Information Security**",
+          "score": 3.046,
+          "is_target": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "NIST_SP_800-144_txt_00024",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+          "score": 2.7044,
+          "is_target": false
+        }
+      ]
+    },
+    "C": {
+      "config_id": "C",
+      "config_name": "Larger Candidate Pool (Dense 50 / BM25 50 / RRF 50 -> Reranker)",
+      "dense_depth": 50,
+      "bm25_depth": 50,
+      "rrf_pool": 50,
+      "enable_reranker": true,
+      "latencies_ms": {
+        "dense": 635.4,
+        "bm25": 131.6,
+        "rrf": 1.07,
+        "retrieval_total": 768.08,
+        "reranking": 8794.38,
+        "end_to_end_total": 9562.46
+      },
+      "metrics": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "target_diagnostics": {
+        "NIST_SP_800-144_txt_00080": {
+          "chunk_id": "NIST_SP_800-144_txt_00080",
+          "in_dense": true,
+          "dense_rank": 19,
+          "dense_score": 0.6492,
+          "in_bm25": true,
+          "bm25_rank": 30,
+          "bm25_score": 28.2844,
+          "in_rrf_pool": true,
+          "rrf_rank": 16,
+          "rrf_score": 0.023769,
+          "in_rerank_pool": true,
+          "rerank_rank": 8,
+          "rerank_score": 2.5924,
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00081": {
+          "chunk_id": "NIST_SP_800-144_txt_00081",
+          "in_dense": true,
+          "dense_rank": 18,
+          "dense_score": 0.6493,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": true,
+          "rrf_rank": 36,
+          "rrf_score": 0.012821,
+          "in_rerank_pool": true,
+          "rerank_rank": 38,
+          "rerank_score": -0.3122,
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00082": {
+          "chunk_id": "NIST_SP_800-144_txt_00082",
+          "in_dense": false,
+          "dense_rank": null,
+          "dense_score": null,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": false,
+          "rerank_rank": null,
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        }
+      },
+      "final_top5_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "NIST_SP_800-144_txt_00021",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+          "score": 3.7604,
+          "is_target": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "NIST_SP_800-144_txt_00043",
+          "document_id": "NIST_SP_800-144",
+          "section": "**3.2 The Security and Privacy Upside**",
+          "score": 3.7304,
+          "is_target": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "NIST_SP_800-144_txt_00038",
+          "document_id": "NIST_SP_800-144",
+          "section": "**2.3 Outsourcing and Accountability**",
+          "score": 3.5729,
+          "is_target": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "NIST_SP_800-146_txt_00135",
+          "document_id": "NIST_SP_800-146",
+          "section": "**8.5 Information Security**",
+          "score": 3.046,
+          "is_target": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "NIST_SP_800-144_txt_00024",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+          "score": 2.7044,
+          "is_target": false
+        }
+      ]
+    },
+    "D": {
+      "config_id": "D",
+      "config_name": "Larger Candidate Pool Without Reranking (Dense 50 / BM25 50 / RRF 50)",
+      "dense_depth": 50,
+      "bm25_depth": 50,
+      "rrf_pool": 50,
+      "enable_reranker": false,
+      "latencies_ms": {
+        "dense": 415.79,
+        "bm25": 103.57,
+        "rrf": 0.41,
+        "retrieval_total": 519.76,
+        "reranking": 0.0,
+        "end_to_end_total": 519.76
+      },
+      "metrics": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "precision@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      },
+      "target_diagnostics": {
+        "NIST_SP_800-144_txt_00080": {
+          "chunk_id": "NIST_SP_800-144_txt_00080",
+          "in_dense": true,
+          "dense_rank": 19,
+          "dense_score": 0.6492,
+          "in_bm25": true,
+          "bm25_rank": 30,
+          "bm25_score": 28.2844,
+          "in_rrf_pool": true,
+          "rrf_rank": 16,
+          "rrf_score": 0.023769,
+          "in_rerank_pool": "N/A",
+          "rerank_rank": "N/A",
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00081": {
+          "chunk_id": "NIST_SP_800-144_txt_00081",
+          "in_dense": true,
+          "dense_rank": 18,
+          "dense_score": 0.6493,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": true,
+          "rrf_rank": 36,
+          "rrf_score": 0.012821,
+          "in_rerank_pool": "N/A",
+          "rerank_rank": "N/A",
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        },
+        "NIST_SP_800-144_txt_00082": {
+          "chunk_id": "NIST_SP_800-144_txt_00082",
+          "in_dense": false,
+          "dense_rank": null,
+          "dense_score": null,
+          "in_bm25": false,
+          "bm25_rank": null,
+          "bm25_score": null,
+          "in_rrf_pool": false,
+          "rrf_rank": null,
+          "rrf_score": null,
+          "in_rerank_pool": "N/A",
+          "rerank_rank": "N/A",
+          "rerank_score": "N/A",
+          "in_final_top5": false,
+          "final_rank": null
+        }
+      },
+      "final_top5_chunks": [
+        {
+          "rank": 1,
+          "chunk_id": "NIST_SP_800-144_txt_00040",
+          "document_id": "NIST_SP_800-144",
+          "section": "**<mark>3. Public Cloud Services</mark>**",
+          "score": 0.0325,
+          "is_target": false
+        },
+        {
+          "rank": 2,
+          "chunk_id": "NIST_SP_800-144_txt_00094",
+          "document_id": "NIST_SP_800-144",
+          "section": "**<mark>5. Public Cloud Outsourcing</mark>**",
+          "score": 0.0311,
+          "is_target": false
+        },
+        {
+          "rank": 3,
+          "chunk_id": "NIST_SP_800-144_txt_00024",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+          "score": 0.0302,
+          "is_target": false
+        },
+        {
+          "rank": 4,
+          "chunk_id": "NIST_SP_800-144_txt_00043",
+          "document_id": "NIST_SP_800-144",
+          "section": "**3.2 The Security and Privacy Upside**",
+          "score": 0.0302,
+          "is_target": false
+        },
+        {
+          "rank": 5,
+          "chunk_id": "NIST_SP_800-144_txt_00021",
+          "document_id": "NIST_SP_800-144",
+          "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+          "score": 0.0292,
+          "is_target": false
+        }
+      ]
+    }
+  }
+}

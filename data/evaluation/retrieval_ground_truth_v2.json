@@ -1,0 +1,515 @@
+{
+  "Q1": {
+    "question_id": "Q1",
+    "question": "What are the security risks of public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00047",
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00054"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly explains foundational public cloud security and privacy risks: system complexity, large attack surface, co-mingled multi-tenancy, and lack of physical resource boundaries."
+  },
+  "Q3": {
+    "question_id": "Q3",
+    "question": "How can client-side malware affect public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00025",
+      "NIST_SP_800-144_txt_00052",
+      "NIST_SP_800-146_txt_00067"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Analyzes how client-side malware, web browser vulnerabilities, keyloggers, and botnets steal cloud credentials and compromise public cloud sessions."
+  },
+  "Q4": {
+    "question_id": "Q4",
+    "question": "Why is governance important for public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00055",
+      "NIST_SP_800-144_txt_00056"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines governance in cloud computing as oversight over policies, procedures, and service acquisition; details severe risks when governance is absent (shadow IT, compliance violations, unmonitored costs)."
+  },
+  "Q5": {
+    "question_id": "Q5",
+    "question": "Who is responsible for security and privacy in public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00026",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00060"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explicitly details division of responsibilities across service models and affirms that organizations retain ultimate accountability for data security and privacy under law."
+  },
+  "Q7": {
+    "question_id": "Q7",
+    "question": "What privacy risks can arise when organizations use public cloud services?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00108"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details privacy risks from shared multi-tenant storage, unauthorized disclosure of PII, and the five core privacy protection principles (Notice, Choice, Access, Integrity, Enforcement)."
+  },
+  "Q8": {
+    "question_id": "Q8",
+    "question": "How does loss of control affect security in public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00062",
+      "NIST_SP_800-146_txt_00080"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Analyzes the consequences of relinquishing direct physical and administrative control to an external provider, requiring high trust and contractual safeguards."
+  },
+  "Q9": {
+    "question_id": "Q9",
+    "question": "What security issues can result from outsourcing services to a cloud provider?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00094",
+      "NIST_SP_800-144_txt_00099",
+      "NIST_SP_800-144_txt_00100"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Identifies outsourcing hazards: rigid standardized contracts, provider site failures, sub-contracting chains, and jurisdictional legal conflicts."
+  },
+  "Q10": {
+    "question_id": "Q10",
+    "question": "What are the security implications of storing organizational data in the public cloud?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00081",
+      "NIST_SP_800-144_txt_00082"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details data storage implications: data co-residency, legal seizure/subpoena spillovers onto co-located tenants, sanitization failures, and data-at-rest encryption requirements."
+  },
+  "Q11": {
+    "question_id": "Q11",
+    "question": "What responsibilities does an organization retain after moving to a public cloud?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00026",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00039",
+      "NIST_SP_800-144_txt_00060"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Enumerates retained client responsibilities: compliance oversight, client-side endpoint defense, credential lifecycle management, and non-delegable legal accountability."
+  },
+  "Q12": {
+    "question_id": "Q12",
+    "question": "What security responsibilities are shared between a cloud provider and a cloud customer?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00036",
+      "NIST_SP_800-146_txt_00080",
+      "NIST_SP_800-146_txt_00094"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Maps the shared responsibility matrix across SaaS, PaaS, and IaaS layers: platform vs application management, virtualization vs guest operating system security."
+  },
+  "Q13": {
+    "question_id": "Q13",
+    "question": "What risks are associated with relying on a third-party cloud service provider?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00064",
+      "NIST_SP_800-144_txt_00086",
+      "NIST_SP_800-146_txt_00122"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Focuses on third-party provider risks: provider business discontinuation/bankruptcy, composite cloud dependencies, cascading outages, and unilateral contract revisions."
+  },
+  "Q14": {
+    "question_id": "Q14",
+    "question": "How can social engineering attacks affect public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00073",
+      "NIST_SP_800-144_txt_00025"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how social media, personal webmail, and public sites serve as attack avenues for social engineering that compromise client browsers and devices with spyware, backdoor Trojans, and keystroke loggers, undermining the security, confidentiality, and session privacy of accessed public cloud services."
+  },
+  "Q16": {
+    "question_id": "Q16",
+    "question": "Why are security and privacy considerations important throughout the cloud system lifecycle?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00021",
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00115"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Traces security and privacy across full cloud lifecycle: pre-acquisition requirements specification, contract negotiation, operational oversight, and decommissioning data sanitization."
+  },
+  "Q17": {
+    "question_id": "Q17",
+    "question": "What governance practices are important when using public cloud services?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00055",
+      "NIST_SP_800-144_txt_00056"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Identifies key governance practices: formal acquisition review, policy adherence monitoring, continuous compliance auditing, and central cloud steering committees."
+  },
+  "Q19": {
+    "question_id": "Q19",
+    "question": "What challenges can organizations face when monitoring security in public cloud environments?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00065",
+      "NIST_SP_800-144_txt_00087",
+      "NIST_SP_800-146_txt_00134"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details monitoring challenges in public clouds: superficial provider status dashboards, lack of low-level hypervisor log access, and multi-tenant forensics barriers."
+  },
+  "Q20": {
+    "question_id": "Q20",
+    "question": "What factors should organizations consider when evaluating the security of a public cloud provider?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00041",
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00111",
+      "NIST_SP_800-144_txt_00112"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Comprehensive factors for evaluating cloud providers: third-party compliance audits/certifications, financial viability, SLA penalty terms, data sanitization proof, and multi-tenant isolation mechanisms."
+  },
+  "Q21": {
+    "question_id": "Q21",
+    "question": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?",
+    "document_ids": [
+      "NIST_SP_800-83"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-83_txt_00071"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly defines the four core phases of the incident response life cycle as established in NIST guidance: (1) Preparation, (2) Detection and Analysis, (3) Containment, Eradication, and Recovery, and (4) Post-Incident Activity, citing the life cycle structure from NIST SP 800-61."
+  },
+  "Q22": {
+    "question_id": "Q22",
+    "question": "What key considerations and trade-offs should guide organizations when making malware containment decisions?",
+    "document_ids": [
+      "NIST_SP_800-83"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-83_txt_00090"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains that malware containment requires balancing stopping spread with preventing further host damage, evaluating operational impact of disconnecting critical hosts, and avoiding premature assumptions of safety."
+  },
+  "Q23": {
+    "question_id": "Q23",
+    "question": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?",
+    "document_ids": [
+      "NIST_SP_800-207"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-207_txt_00009"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Articulates the basic tenet of Zero Trust to eliminate implicit trust based solely on network location/perimeter and transition to authentication and authorization policies anchored in user and application identities."
+  },
+  "Q24": {
+    "question_id": "Q24",
+    "question": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?",
+    "document_ids": [
+      "NIST_SP_800-125"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-125_txt_00053"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Provides explicit security recommendations (VM-NS-R1 through VM-NS-R4) for network segmentation in virtualized environments, specifying isolation of VM management traffic, grouping VMs by sensitivity, and using virtual firewalls."
+  },
+  "Q25": {
+    "question_id": "Q25",
+    "question": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?",
+    "document_ids": [
+      "NIST_SP_800-218"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-218_txt_00029"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details the fundamental sound practice groups of the SSDF: Prepare the Organization (PO), Protect the Software (PS), Produce Well-Secured Software (PW), and Respond to Vulnerabilities (RV)."
+  },
+  "Q26": {
+    "question_id": "Q26",
+    "question": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?",
+    "document_ids": [
+      "NIST_SP_800-40"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-40_txt_00049"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains the role of enterprise-level patching metrics in estimating vulnerability importance, determining whether to deploy routine vs emergency patching, and prioritizing remediation resources."
+  },
+  "Q27": {
+    "question_id": "Q27",
+    "question": "What are the three tiers in the multitiered risk management approach and what scope does each cover?",
+    "document_ids": [
+      "NIST_SP_800-39"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-39_txt_00045",
+      "NIST_SP_800-39_txt_00046",
+      "NIST_SP_800-39_txt_00047"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Substantively details the three tiers of the multitiered risk management approach: Tier 1 (Organization view covering risk framing, mission prioritization, and investment strategies), Tier 2 (Mission/Business Process view covering process definitions, information flows, and enterprise security architecture), and Tier 3 (Information Systems view covering system categorization, security control allocation, and SDLC continuous monitoring)."
+  },
+  "Q28": {
+    "question_id": "Q28",
+    "question": "How does the security control tailoring process modify initial control baselines for specific organizational systems?",
+    "document_ids": [
+      "NIST_SP_800-53"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-53_txt_00547"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how tailoring adapts control baselines using scoping guidance, compensating controls, specification of organization-defined parameters, and operational requirement alignment."
+  },
+  "Q29": {
+    "question_id": "Q29",
+    "question": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?",
+    "document_ids": [
+      "NIST_SP_800-63"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-63_txt_00081"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines AAL2 requirements, specifying that authentication requires two distinct authentication factors (multi-factor authentication) using approved cryptographic authenticators."
+  },
+  "Q30": {
+    "question_id": "Q30",
+    "question": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?",
+    "document_ids": [
+      "NIST_SP_800-162"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-162_txt_00007",
+      "NIST_SP_800-162_txt_00044"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines the core components of ABAC: subject attributes, object/resource attributes, environmental conditions, and administrative policy rules governing authorization."
+  },
+  "Q31": {
+    "question_id": "Q31",
+    "question": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?",
+    "document_ids": [
+      "NIST_SP_800-111"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-111_txt_00049"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Compares full disk encryption (hardware/OS layer protection, transparent operation) with file and folder encryption (granular user-level access controls, multi-user separation, persistence across transmission)."
+  },
+  "Q32": {
+    "question_id": "Q32",
+    "question": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?",
+    "document_ids": [
+      "NIST_SP_800-41"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-41_txt_00042"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Contrasts packet filtering with application-proxy gateways that terminate connections, inspect application-layer payload contents, and enforce protocol-specific compliance."
+  },
+  "Q33": {
+    "question_id": "Q33",
+    "question": "What security controls and client software configurations are required to protect remote access in enterprise telework?",
+    "document_ids": [
+      "NIST_SP_800-46"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-46_txt_00030",
+      "NIST_SP_800-46_txt_00076"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Specifies remote access client software security requirements, including personal firewalls, antivirus, software patch currency, and cryptographic tunnel integrity."
+  },
+  "Q34": {
+    "question_id": "Q34",
+    "question": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?",
+    "document_ids": [
+      "NIST_SP_800-150"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-150_txt_00040"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how threat sharing provides early warning, improves defensive posture by leveraging shared indicators of compromise (IOCs), and enhances collective situational awareness."
+  },
+  "Q35": {
+    "question_id": "Q35",
+    "question": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?",
+    "document_ids": [
+      "NIST_SP_800-115"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-115_txt_00039"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Clarifies the distinction between passive/automated vulnerability scanning (identifying potential flaws) and active penetration testing (simulating adversary exploitation to validate actual impact and circumvention)."
+  },
+  "Q36": {
+    "question_id": "Q36",
+    "question": "What are the four phases of the digital forensics process and what is the primary objective of each phase?",
+    "document_ids": [
+      "NIST_SP_800-86"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-86_txt_00073"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines the four phases of the digital forensics process and the primary objective of each phase: Collection (identifying, labeling, and securing event data while preserving integrity), Examination (extracting relevant information using forensic tools), Analysis (interpreting results to answer investigative questions), and Reporting (documenting findings, actions taken, and process improvements)."
+  },
+  "Q37": {
+    "question_id": "Q37",
+    "question": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?",
+    "document_ids": [
+      "NIST_SP_800-161"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-161_txt_00147"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains that foundational C-SCRM practices establish core visibility, supplier requirements, and baseline policies, while sustaining practices institutionalize continuous monitoring, supplier auditing, and threat-informed lifecycle adaptation."
+  },
+  "Q38": {
+    "question_id": "Q38",
+    "question": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?",
+    "document_ids": [
+      "NIST_SP_800-145"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-145_txt_00012"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Enumerates and defines the five essential cloud characteristics: On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, and Measured service."
+  },
+  "Q39": {
+    "question_id": "Q39",
+    "question": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?",
+    "document_ids": [
+      "NIST_SP_800-154"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-154_txt_00050"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Outlines Step 3 of data-centric threat modeling: identifying and documenting security control alterations, additions, or reconfigurations necessary to mitigate each selected attack vector targeting high-value data."
+  },
+  "Q40": {
+    "question_id": "Q40",
+    "question": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?",
+    "document_ids": [
+      "NIST_SP_800-207",
+      "NIST_SP_800-233"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-207_txt_00028",
+      "NIST_SP_800-207_txt_00032",
+      "NIST_SP_800-233_txt_00023"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how service mesh architectures provide core security assurances for cloud-native microservices applications through dedicated data plane sidecar proxies operating at L4/L7, enforcing encrypted connections, connection-level service authentication via mutual TLS (mTLS), built-in service identity provisioning, fine-grained service-to-service authorization, and access control policies (NGAC/ABAC) ensuring application confidentiality and integrity."
+  }
+}

@@ -1,0 +1,294 @@
+[
+  {
+    "qid": "Q10",
+    "query": "What are the security implications of storing organizational data in the public cloud?",
+    "expected": [
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00081",
+      "NIST_SP_800-144_txt_00082"
+    ],
+    "adaptive_decision": {
+      "triggered": true,
+      "reason": "low_confidence(top1=0.6928<0.7350 or mean3=0.6768<0.7000)",
+      "rewritten_query": "What are the security implications of storing organizational data in the public cloud?"
+    },
+    "methods": {
+      "Dense (BGE-M3)": {
+        "latency_ms": 39069.85790000181,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": true,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00080",
+          "NIST_SP_800-144_txt_00081"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00024",
+          "NIST_SP_800-144_txt_00060",
+          "NIST_SP_800-144_txt_00048"
+        ]
+      },
+      "BM25 (Okapi)": {
+        "latency_ms": 13586.972499993863,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-146_txt_00048",
+          "NIST_SP_800-144_txt_00023"
+        ]
+      },
+      "Hybrid (RRF)": {
+        "latency_ms": 52657.17400000722,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00024",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00021"
+        ]
+      },
+      "Hybrid + Adaptive Rewriting": {
+        "latency_ms": 53443.189100013115,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00024",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00021"
+        ]
+      },
+      "Hybrid + BGE Reranker": {
+        "latency_ms": 145289.16369999934,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00021"
+        ]
+      }
+    }
+  },
+  {
+    "qid": "Q13",
+    "query": "What risks are associated with relying on a third-party cloud service provider?",
+    "expected": [
+      "NIST_SP_800-144_txt_00064",
+      "NIST_SP_800-144_txt_00086",
+      "NIST_SP_800-146_txt_00122"
+    ],
+    "adaptive_decision": {
+      "triggered": true,
+      "reason": "low_confidence(top1=0.6600<0.7350 or mean3=0.6580<0.7000)",
+      "rewritten_query": "What risks are associated with relying on a third-party cloud service provider?"
+    },
+    "methods": {
+      "Dense (BGE-M3)": {
+        "latency_ms": 4648.603199995705,
+        "hit@5": false,
+        "hit@10": true,
+        "hit@20": true,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00067"
+        ]
+      },
+      "BM25 (Okapi)": {
+        "latency_ms": 739.2166999925394,
+        "hit@5": false,
+        "hit@10": true,
+        "hit@20": true,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-146_txt_00108",
+          "NIST_SP_800-63_txt_00042",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00087",
+          "NIST_SP_800-144_txt_00038"
+        ]
+      },
+      "Hybrid (RRF)": {
+        "latency_ms": 5390.499399989494,
+        "hit@5": true,
+        "hit@10": true,
+        "hit@20": true,
+        "retrieved_in_5": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00066",
+          "NIST_SP_800-144_txt_00099"
+        ]
+      },
+      "Hybrid + Adaptive Rewriting": {
+        "latency_ms": 6248.645999992732,
+        "hit@5": true,
+        "hit@10": true,
+        "hit@20": true,
+        "retrieved_in_5": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00066",
+          "NIST_SP_800-144_txt_00099"
+        ]
+      },
+      "Hybrid + BGE Reranker": {
+        "latency_ms": 84491.09439998574,
+        "hit@5": true,
+        "hit@10": true,
+        "hit@20": true,
+        "retrieved_in_5": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "retrieved_in_20": [
+          "NIST_SP_800-144_txt_00064"
+        ],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00100",
+          "NIST_SP_800-144_txt_00066"
+        ]
+      }
+    }
+  },
+  {
+    "qid": "Q19",
+    "query": "What challenges can organizations face when monitoring security in public cloud environments?",
+    "expected": [
+      "NIST_SP_800-144_txt_00065",
+      "NIST_SP_800-144_txt_00087",
+      "NIST_SP_800-146_txt_00134"
+    ],
+    "adaptive_decision": {
+      "triggered": true,
+      "reason": "low_confidence(top1=0.7106<0.7350 or mean3=0.6888<0.7000)",
+      "rewritten_query": "What challenges can organizations face when monitoring security in public cloud environments?"
+    },
+    "methods": {
+      "Dense (BGE-M3)": {
+        "latency_ms": 4266.437600002973,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00054"
+        ]
+      },
+      "BM25 (Okapi)": {
+        "latency_ms": 570.8129999984521,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00051",
+          "NIST_SP_800-201_txt_00035",
+          "NIST_SP_800-144_txt_00008",
+          "NIST_SP_800-144_txt_00020",
+          "NIST_SP_800-57_txt_00032"
+        ]
+      },
+      "Hybrid (RRF)": {
+        "latency_ms": 4838.4370999992825,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00051",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00040"
+        ]
+      },
+      "Hybrid + Adaptive Rewriting": {
+        "latency_ms": 5666.7763000004925,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00051",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00040"
+        ]
+      },
+      "Hybrid + BGE Reranker": {
+        "latency_ms": 96784.43550001248,
+        "hit@5": false,
+        "hit@10": false,
+        "hit@20": false,
+        "retrieved_in_5": [],
+        "retrieved_in_20": [],
+        "top5_chunks": [
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00020",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00022"
+        ]
+      }
+    }
+  }
+]

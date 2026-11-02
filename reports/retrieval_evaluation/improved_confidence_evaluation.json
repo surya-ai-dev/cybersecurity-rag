@@ -1,0 +1,3067 @@
+{
+  "timestamp": "2026-11-01T15:52:23.284825+00:00",
+  "aggregates": {
+    "baseline": {
+      "hit@1": 50.0,
+      "hit@5": 83.33,
+      "recall@5": 59.03,
+      "precision@5": 18.89,
+      "mrr@5": 0.6222,
+      "ndcg@5": 0.5262,
+      "mean_latency_ms": 5636.6
+    },
+    "old_adaptive": {
+      "hit@1": 50.0,
+      "hit@5": 83.33,
+      "recall@5": 59.03,
+      "precision@5": 18.89,
+      "mrr@5": 0.6199,
+      "ndcg@5": 0.5243,
+      "mean_latency_ms": 6264.5
+    },
+    "improved_adaptive": {
+      "hit@1": 50.0,
+      "hit@5": 83.33,
+      "recall@5": 59.03,
+      "precision@5": 18.89,
+      "mrr@5": 0.6199,
+      "ndcg@5": 0.5243,
+      "mean_latency_ms": 6125.2
+    }
+  },
+  "statistics": {
+    "old_rewriting_triggers": 30,
+    "old_rewriting_rate": 83.3,
+    "new_rewriting_triggers": 16,
+    "new_rewriting_rate": 44.4,
+    "rewrite_reduction_count": 14,
+    "rewrite_reduction_percent": 46.7,
+    "decision_distribution": {
+      "HIGH": 12,
+      "MEDIUM": 17,
+      "LOW": 7
+    },
+    "medium_breakdown": {
+      "skipped_sufficient": 8,
+      "triggered_rewrite": 9
+    },
+    "false_confidence_old": [],
+    "false_confidence_new": [
+      "Q25",
+      "Q33",
+      "Q38"
+    ],
+    "unnecessary_rewrites_old": [
+      "Q1",
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q7",
+      "Q11",
+      "Q12",
+      "Q13",
+      "Q14",
+      "Q16",
+      "Q17",
+      "Q20",
+      "Q21",
+      "Q22",
+      "Q23",
+      "Q27",
+      "Q28",
+      "Q29",
+      "Q30",
+      "Q31",
+      "Q35",
+      "Q36",
+      "Q39",
+      "Q40"
+    ],
+    "unnecessary_rewrites_new": [
+      "Q3",
+      "Q4",
+      "Q5",
+      "Q11",
+      "Q13",
+      "Q14",
+      "Q16",
+      "Q17",
+      "Q21",
+      "Q23",
+      "Q28",
+      "Q29",
+      "Q36"
+    ]
+  },
+  "per_question_results": [
+    {
+      "qid": "Q1",
+      "query": "What are the security risks of public cloud computing?",
+      "rewritten_query": "public cloud computing security risks shared environment multi-tenant isolation data co-location data at rest encryption cryptographic key management",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00054",
+        "NIST_SP_800-144_txt_00048",
+        "NIST_SP_800-144_txt_00047"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00030",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00040"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.6667,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.7039
+        },
+        "latency_ms": 5320.76
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.675,
+        "mean3": 0.6912,
+        "top5": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00030",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00040"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.6667,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.7039
+        },
+        "latency_ms": 6647.28
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7340>=0.7250, mean3=0.7022>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.734,
+          "dense_mean3": 0.7022,
+          "dense_mean5": 0.6903,
+          "top_bm25": 29.15,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00047",
+          "NIST_SP_800-144_txt_00030",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00040"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.6667,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.7039
+        },
+        "latency_ms": 5323.49
+      }
+    },
+    {
+      "qid": "Q3",
+      "query": "How can client-side malware affect public cloud security?",
+      "rewritten_query": "client-side malware public cloud security endpoint compromise credential theft lateral movement",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00025",
+        "NIST_SP_800-146_txt_00067",
+        "NIST_SP_800-144_txt_00052"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00072",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-83_txt_00078"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 7709.97
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6652,
+        "mean3": 0.6463,
+        "top5": [
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00072",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00048"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 9667.19
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6652<0.6800 or mean3=0.6559<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6652,
+          "dense_mean3": 0.6559,
+          "dense_mean5": 0.6489,
+          "top_bm25": 27.17,
+          "overlap_count": 4,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00072",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00048"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 9653.48
+      }
+    },
+    {
+      "qid": "Q4",
+      "query": "Why is governance important for public cloud security?",
+      "rewritten_query": "public cloud security governance shared responsibility model compliance risk management policy enforcement",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00055",
+        "NIST_SP_800-144_txt_00056"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00055",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00021"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.3066
+        },
+        "latency_ms": 8875.54
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6338,
+        "mean3": 0.6474,
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00055",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00021"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.3066
+        },
+        "latency_ms": 11861.12
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6638<0.6800 or mean3=0.6573<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6638,
+          "dense_mean3": 0.6573,
+          "dense_mean5": 0.6511,
+          "top_bm25": 17.7,
+          "overlap_count": 5,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00055",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00021"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.3066
+        },
+        "latency_ms": 10590.47
+      }
+    },
+    {
+      "qid": "Q5",
+      "query": "Who is responsible for security and privacy in public cloud computing?",
+      "rewritten_query": "public cloud computing shared responsibility model security privacy provider customer",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-144_txt_00026",
+        "NIST_SP_800-144_txt_00060",
+        "NIST_SP_800-144_txt_00022"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00031",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00002",
+          "NIST_SP_800-144_txt_00027",
+          "NIST_SP_800-144_txt_00043"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2463
+        },
+        "latency_ms": 6834.44
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6568,
+        "mean3": 0.6459,
+        "top5": [
+          "NIST_SP_800-144_txt_00031",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00002",
+          "NIST_SP_800-144_txt_00027",
+          "NIST_SP_800-144_txt_00039"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2463
+        },
+        "latency_ms": 7823.45
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6634<0.6800 or mean3=0.6615<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6634,
+          "dense_mean3": 0.6615,
+          "dense_mean5": 0.6598,
+          "top_bm25": 32.41,
+          "overlap_count": 7,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00031",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00002",
+          "NIST_SP_800-144_txt_00027",
+          "NIST_SP_800-144_txt_00039"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2463
+        },
+        "latency_ms": 8337.58
+      }
+    },
+    {
+      "qid": "Q7",
+      "query": "What privacy risks can arise when organizations use public cloud services?",
+      "rewritten_query": "public cloud services privacy risks data co-location multi-tenant isolation data at rest encryption cryptographic key management provider audit controls",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00108",
+        "NIST_SP_800-144_txt_00048",
+        "NIST_SP_800-144_txt_00080"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00030"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 6838.86
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.715,
+        "mean3": 0.7103,
+        "top5": [
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00030"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 7248.54
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7388>=0.7250, mean3=0.7297>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7388,
+          "dense_mean3": 0.7297,
+          "dense_mean5": 0.7227,
+          "top_bm25": 23.79,
+          "overlap_count": 6,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00030"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 6839.62
+      }
+    },
+    {
+      "qid": "Q8",
+      "query": "How does loss of control affect security in public cloud computing?",
+      "rewritten_query": "loss of control public cloud computing security shared responsibility model provider tenant",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-146_txt_00080",
+        "NIST_SP_800-144_txt_00062"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00027",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00120"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4221.79
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6712,
+        "mean3": 0.6395,
+        "top5": [
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00047"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 5446.42
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6712<0.6800 or mean3=0.6533<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6712,
+          "dense_mean3": 0.6533,
+          "dense_mean5": 0.6474,
+          "top_bm25": 28.52,
+          "overlap_count": 7,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00048",
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00047"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 5455.44
+      }
+    },
+    {
+      "qid": "Q9",
+      "query": "What security issues can result from outsourcing services to a cloud provider?",
+      "rewritten_query": "cloud computing security risks outsourcing shared responsibility model data co-location multi-tenant isolation provider audit controls",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00099",
+        "NIST_SP_800-144_txt_00094",
+        "NIST_SP_800-144_txt_00100"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00032",
+          "NIST_SP_800-144_txt_00101"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 4558.71
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7765,
+        "mean3": 0.7333,
+        "top5": [
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00032",
+          "NIST_SP_800-144_txt_00101"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 4558.71
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7765>=0.7250, mean3=0.7333>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7765,
+          "dense_mean3": 0.7333,
+          "dense_mean5": 0.7164,
+          "top_bm25": 33.54,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00099",
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00032",
+          "NIST_SP_800-144_txt_00101"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 4559.09
+      }
+    },
+    {
+      "qid": "Q10",
+      "query": "What are the security implications of storing organizational data in the public cloud?",
+      "rewritten_query": "public cloud data storage security implications data protection shared environment multi-tenant isolation data co-location database isolation data at rest encryption cryptographic key management",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00081",
+        "NIST_SP_800-144_txt_00082",
+        "NIST_SP_800-144_txt_00080"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-146_txt_00135",
+          "NIST_SP_800-144_txt_00024"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 5036.77
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6928,
+        "mean3": 0.6768,
+        "top5": [
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-146_txt_00135",
+          "NIST_SP_800-144_txt_00024"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 5797.61
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(top1=0.6928<0.7050, mean3=0.6822<0.6850)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6928,
+          "dense_mean3": 0.6822,
+          "dense_mean5": 0.677,
+          "top_bm25": 33.2,
+          "overlap_count": 9,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043",
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-146_txt_00135",
+          "NIST_SP_800-144_txt_00024"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 7600.0
+      }
+    },
+    {
+      "qid": "Q11",
+      "query": "What responsibilities does an organization retain after moving to a public cloud?",
+      "rewritten_query": "shared responsibility model public cloud provider customer responsibilities retained",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-144_txt_00026",
+        "NIST_SP_800-144_txt_00039",
+        "NIST_SP_800-144_txt_00060"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-146_txt_00130",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00024"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.3904
+        },
+        "latency_ms": 5282.83
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6826,
+        "mean3": 0.6852,
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00024",
+          "NIST_SP_800-144_txt_00063"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.3904
+        },
+        "latency_ms": 6027.77
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(top1=0.7008<0.7050)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7008,
+          "dense_mean3": 0.6852,
+          "dense_mean5": 0.677,
+          "top_bm25": 26.31,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00039",
+          "NIST_SP_800-144_txt_00094",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00024",
+          "NIST_SP_800-144_txt_00063"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.3904
+        },
+        "latency_ms": 6657.61
+      }
+    },
+    {
+      "qid": "Q12",
+      "query": "What security responsibilities are shared between a cloud provider and a cloud customer?",
+      "rewritten_query": "shared responsibility model cloud provider customer security responsibilities",
+      "ground_truth": [
+        "NIST_SP_800-146_txt_00094",
+        "NIST_SP_800-146_txt_00080",
+        "NIST_SP_800-144_txt_00036",
+        "NIST_SP_800-144_txt_00022"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-146_txt_00152",
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-210_txt_00030",
+          "NIST_SP_800-144_txt_00036"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.5414
+        },
+        "latency_ms": 4814.22
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7257,
+        "mean3": 0.7045,
+        "top5": [
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-146_txt_00152",
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-210_txt_00030",
+          "NIST_SP_800-144_txt_00036"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.5414
+        },
+        "latency_ms": 5435.86
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7257>=0.7250, mean3=0.7097>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7257,
+          "dense_mean3": 0.7097,
+          "dense_mean5": 0.6959,
+          "top_bm25": 39.82,
+          "overlap_count": 6,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-146_txt_00152",
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-210_txt_00030",
+          "NIST_SP_800-144_txt_00036"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.5414
+        },
+        "latency_ms": 4815.19
+      }
+    },
+    {
+      "qid": "Q13",
+      "query": "What risks are associated with relying on a third-party cloud service provider?",
+      "rewritten_query": "third-party cloud service provider risks shared responsibility model data co-location multi-tenant isolation provider audit controls incident response forensics limitations",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00064",
+        "NIST_SP_800-146_txt_00122",
+        "NIST_SP_800-144_txt_00086"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00066",
+          "NIST_SP_800-144_txt_00087",
+          "NIST_SP_800-144_txt_00100"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 4742.88
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.66,
+        "mean3": 0.658,
+        "top5": [
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00066",
+          "NIST_SP_800-144_txt_00087",
+          "NIST_SP_800-144_txt_00063"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 5985.77
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6678<0.6800 or mean3=0.6647<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6678,
+          "dense_mean3": 0.6647,
+          "dense_mean5": 0.6605,
+          "top_bm25": 26.68,
+          "overlap_count": 4,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00038",
+          "NIST_SP_800-144_txt_00064",
+          "NIST_SP_800-144_txt_00066",
+          "NIST_SP_800-144_txt_00087",
+          "NIST_SP_800-144_txt_00063"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 5522.84
+      }
+    },
+    {
+      "qid": "Q14",
+      "query": "How can social engineering attacks affect public cloud security?",
+      "rewritten_query": "social engineering attacks public cloud security phishing credential theft multi-tenant environment access control identity management",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00025",
+        "NIST_SP_800-144_txt_00073"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-115_txt_00092",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-146_txt_00050"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4814.37
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6835,
+        "mean3": 0.6306,
+        "top5": [
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-115_txt_00092",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00047"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5317.24
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6835<0.6800 or mean3=0.6416<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6835,
+          "dense_mean3": 0.6416,
+          "dense_mean5": 0.6301,
+          "top_bm25": 22.1,
+          "overlap_count": 4,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00073",
+          "NIST_SP_800-144_txt_00025",
+          "NIST_SP_800-115_txt_00092",
+          "NIST_SP_800-144_txt_00063",
+          "NIST_SP_800-144_txt_00047"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5760.07
+      }
+    },
+    {
+      "qid": "Q16",
+      "query": "Why are security and privacy considerations important throughout the cloud system lifecycle?",
+      "rewritten_query": "cloud system lifecycle security privacy considerations design implementation operation decommissioning",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00115",
+        "NIST_SP_800-144_txt_00104",
+        "NIST_SP_800-144_txt_00021"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-53_txt_00669",
+          "NIST_SP_800-144_txt_00065",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.2021
+        },
+        "latency_ms": 5038.49
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6829,
+        "mean3": 0.6718,
+        "top5": [
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-53_txt_00669",
+          "NIST_SP_800-144_txt_00065",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.2021
+        },
+        "latency_ms": 5723.32
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(top1=0.6829<0.7050, mean3=0.6786<0.6850)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6829,
+          "dense_mean3": 0.6786,
+          "dense_mean5": 0.6753,
+          "top_bm25": 29.34,
+          "overlap_count": 7,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-53_txt_00669",
+          "NIST_SP_800-144_txt_00065",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00043"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.2021
+        },
+        "latency_ms": 5931.65
+      }
+    },
+    {
+      "qid": "Q17",
+      "query": "What governance practices are important when using public cloud services?",
+      "rewritten_query": "cloud governance practices public cloud services shared responsibility model compliance risk management",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00055",
+        "NIST_SP_800-144_txt_00056"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00104",
+          "NIST_SP_800-144_txt_00056",
+          "NIST_SP_800-144_txt_00055"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.5013
+        },
+        "latency_ms": 5579.86
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6862,
+        "mean3": 0.6654,
+        "top5": [
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00104",
+          "NIST_SP_800-144_txt_00056",
+          "NIST_SP_800-144_txt_00055"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.5013
+        },
+        "latency_ms": 6151.79
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(top1=0.6862<0.7050, mean3=0.6700<0.6850, bm25=19.0<25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6862,
+          "dense_mean3": 0.67,
+          "dense_mean5": 0.6646,
+          "top_bm25": 18.96,
+          "overlap_count": 7,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00021",
+          "NIST_SP_800-144_txt_00104",
+          "NIST_SP_800-144_txt_00056",
+          "NIST_SP_800-144_txt_00055"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.5013
+        },
+        "latency_ms": 6214.22
+      }
+    },
+    {
+      "qid": "Q19",
+      "query": "What challenges can organizations face when monitoring security in public cloud environments?",
+      "rewritten_query": "public cloud security monitoring challenges event logs provider audit controls incident response forensics limitations",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00087",
+        "NIST_SP_800-146_txt_00134",
+        "NIST_SP_800-144_txt_00065"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-144_txt_00030",
+          "NIST_SP_800-144_txt_00008",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00050"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4817.24
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7106,
+        "mean3": 0.6888,
+        "top5": [
+          "NIST_SP_800-144_txt_00008",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00027"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 6144.37
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(bm25=23.5<25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7106,
+          "dense_mean3": 0.6963,
+          "dense_mean5": 0.6913,
+          "top_bm25": 23.47,
+          "overlap_count": 6,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-144_txt_00008",
+          "NIST_SP_800-144_txt_00120",
+          "NIST_SP_800-144_txt_00026",
+          "NIST_SP_800-144_txt_00050",
+          "NIST_SP_800-144_txt_00027"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 7457.72
+      }
+    },
+    {
+      "qid": "Q20",
+      "query": "What factors should organizations consider when evaluating the security of a public cloud provider?",
+      "rewritten_query": "public cloud provider security evaluation factors shared responsibility model third-party risk assessment",
+      "ground_truth": [
+        "NIST_SP_800-144_txt_00041",
+        "NIST_SP_800-144_txt_00104",
+        "NIST_SP_800-144_txt_00112",
+        "NIST_SP_800-144_txt_00111"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00112",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.1952
+        },
+        "latency_ms": 12858.72
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7252,
+        "mean3": 0.7227,
+        "top5": [
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00112",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.1952
+        },
+        "latency_ms": 10405.73
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7262>=0.7250, mean3=0.7227>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7262,
+          "dense_mean3": 0.7227,
+          "dense_mean5": 0.7154,
+          "top_bm25": 32.18,
+          "overlap_count": 6,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-146_txt_00016",
+          "NIST_SP_800-144_txt_00022",
+          "NIST_SP_800-144_txt_00112",
+          "NIST_SP_800-144_txt_00040",
+          "NIST_SP_800-144_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.1952
+        },
+        "latency_ms": 12862.83
+      }
+    },
+    {
+      "qid": "Q21",
+      "query": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?",
+      "rewritten_query": "NIST incident handling guidance incident response life cycle core phases preparation detection and analysis containment eradication recovery post-incident activity",
+      "ground_truth": [
+        "NIST_SP_800-83_txt_00071"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-83_txt_00071",
+          "NIST_SP_800-83_txt_00032",
+          "NIST.SP.800-61r3_txt_00030",
+          "NIST_SP_800-61_txt_00030",
+          "NIST.SP.800-61r3_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 9501.48
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.68,
+        "mean3": 0.6821,
+        "top5": [
+          "NIST_SP_800-83_txt_00071",
+          "NIST_SP_800-83_txt_00032",
+          "NIST.SP.800-61r3_txt_00030",
+          "NIST_SP_800-61_txt_00030",
+          "NIST.SP.800-61r3_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 9481.28
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(top1=0.6862<0.7050, mean3=0.6841<0.6850)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6862,
+          "dense_mean3": 0.6841,
+          "dense_mean5": 0.6799,
+          "top_bm25": 51.6,
+          "overlap_count": 12,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-83_txt_00071",
+          "NIST_SP_800-83_txt_00032",
+          "NIST.SP.800-61r3_txt_00030",
+          "NIST_SP_800-61_txt_00030",
+          "NIST.SP.800-61r3_txt_00023"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 9013.79
+      }
+    },
+    {
+      "qid": "Q22",
+      "query": "What key considerations and trade-offs should guide organizations when making malware containment decisions?",
+      "rewritten_query": "malware containment decisions trade-offs incident response preparation detection analysis containment eradication recovery",
+      "ground_truth": [
+        "NIST_SP_800-83_txt_00090"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-83_txt_00033",
+          "NIST_SP_800-83_txt_00090",
+          "NIST_SP_800-83_txt_00093",
+          "NIST_SP_800-83_txt_00100",
+          "NIST_SP_800-83_txt_00032"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 6985.12
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7185,
+        "mean3": 0.6959,
+        "top5": [
+          "NIST_SP_800-83_txt_00033",
+          "NIST_SP_800-83_txt_00090",
+          "NIST_SP_800-83_txt_00093",
+          "NIST_SP_800-83_txt_00100",
+          "NIST_SP_800-83_txt_00032"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 7775.03
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(cross_modal_consensus: top1=0.7185>=0.7050, mean3=0.7030>=0.6850, overlap=8>=6, bm25=35.0>=25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7185,
+          "dense_mean3": 0.703,
+          "dense_mean5": 0.6963,
+          "top_bm25": 35.0,
+          "overlap_count": 8,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-83_txt_00033",
+          "NIST_SP_800-83_txt_00090",
+          "NIST_SP_800-83_txt_00093",
+          "NIST_SP_800-83_txt_00100",
+          "NIST_SP_800-83_txt_00032"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 6988.94
+      }
+    },
+    {
+      "qid": "Q23",
+      "query": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?",
+      "rewritten_query": "Zero Trust Architecture implicit trust network perimeter boundary continuous verification",
+      "ground_truth": [
+        "NIST_SP_800-207_txt_00009"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-207_txt_00009",
+          "NIST_SP_800-207_txt_00023",
+          "NIST_SP_800-215_txt_00057",
+          "NIST_SP_800-207_txt_00020",
+          "NIST_SP_800-207_txt_00022"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6671.86
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6996,
+        "mean3": 0.674,
+        "top5": [
+          "NIST_SP_800-207_txt_00009",
+          "NIST_SP_800-207_txt_00023",
+          "NIST_SP_800-215_txt_00057",
+          "NIST_SP_800-207_txt_00020",
+          "NIST_SP_800-207_txt_00022"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 7233.63
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(mean3=0.6768<0.6850)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7099,
+          "dense_mean3": 0.6768,
+          "dense_mean5": 0.6487,
+          "top_bm25": 48.69,
+          "overlap_count": 12,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-207_txt_00009",
+          "NIST_SP_800-207_txt_00023",
+          "NIST_SP_800-215_txt_00057",
+          "NIST_SP_800-207_txt_00020",
+          "NIST_SP_800-207_txt_00022"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6496.19
+      }
+    },
+    {
+      "qid": "Q24",
+      "query": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?",
+      "rewritten_query": "network segmentation virtual machine protection security recommendations",
+      "ground_truth": [
+        "NIST_SP_800-125_txt_00053"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-125_txt_00053",
+          "NIST_SP_800-125_txt_00054",
+          "NIST_SP_800-125_txt_00010",
+          "NIST_SP_800-125_txt_00058",
+          "NIST_SP_800-125_txt_00029"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5959.44
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7421,
+        "mean3": 0.7324,
+        "top5": [
+          "NIST_SP_800-125_txt_00053",
+          "NIST_SP_800-125_txt_00054",
+          "NIST_SP_800-125_txt_00010",
+          "NIST_SP_800-125_txt_00058",
+          "NIST_SP_800-125_txt_00029"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5959.44
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7435>=0.7250, mean3=0.7324>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7435,
+          "dense_mean3": 0.7324,
+          "dense_mean5": 0.7084,
+          "top_bm25": 35.18,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-125_txt_00053",
+          "NIST_SP_800-125_txt_00054",
+          "NIST_SP_800-125_txt_00010",
+          "NIST_SP_800-125_txt_00058",
+          "NIST_SP_800-125_txt_00029"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5960.06
+      }
+    },
+    {
+      "qid": "Q25",
+      "query": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?",
+      "rewritten_query": "SSDF Secure Software Development Framework core practice groups Prepare the Organization PO Protect Software PS Produce Well-Secured Software PW Respond to Vulnerabilities RV",
+      "ground_truth": [
+        "NIST_SP_800-218_txt_00029"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-218_txt_00011",
+          "NIST_SP_800-218_txt_00023",
+          "NIST_SP_800-218_txt_00028",
+          "NIST_SP_800-218_txt_00026",
+          "NIST_SP_800-218_txt_00012"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4981.66
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7095,
+        "mean3": 0.6905,
+        "top5": [
+          "NIST_SP_800-218_txt_00011",
+          "NIST_SP_800-218_txt_00023",
+          "NIST_SP_800-218_txt_00028",
+          "NIST_SP_800-218_txt_00026",
+          "NIST_SP_800-218_txt_00012"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 6022.03
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(exact_identifier=['SSDF'], bm25=40.9>=25.0, mean3=0.6955>=0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7095,
+          "dense_mean3": 0.6955,
+          "dense_mean5": 0.686,
+          "top_bm25": 40.9,
+          "overlap_count": 15,
+          "query_identifiers": [
+            "SSDF"
+          ],
+          "verified_identifiers": [
+            "SSDF"
+          ],
+          "has_exact_match": true,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-218_txt_00011",
+          "NIST_SP_800-218_txt_00023",
+          "NIST_SP_800-218_txt_00028",
+          "NIST_SP_800-218_txt_00026",
+          "NIST_SP_800-218_txt_00012"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4985.92
+      }
+    },
+    {
+      "qid": "Q26",
+      "query": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?",
+      "rewritten_query": "enterprise patch management actionable metrics remediation prioritization vulnerability risk scoring",
+      "ground_truth": [
+        "NIST_SP_800-40_txt_00049"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-40_txt_00049",
+          "NIST_SP_800-40_txt_00050",
+          "NIST_SP_800-40_txt_00051",
+          "NIST_SP_800-57_txt_00026",
+          "NIST_SP_800-40_txt_00005"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4420.53
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7435,
+        "mean3": 0.7021,
+        "top5": [
+          "NIST_SP_800-40_txt_00049",
+          "NIST_SP_800-40_txt_00050",
+          "NIST_SP_800-40_txt_00051",
+          "NIST_SP_800-57_txt_00026",
+          "NIST_SP_800-40_txt_00005"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4420.53
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7435>=0.7250, mean3=0.7168>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7435,
+          "dense_mean3": 0.7168,
+          "dense_mean5": 0.698,
+          "top_bm25": 41.67,
+          "overlap_count": 11,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-40_txt_00049",
+          "NIST_SP_800-40_txt_00050",
+          "NIST_SP_800-40_txt_00051",
+          "NIST_SP_800-57_txt_00026",
+          "NIST_SP_800-40_txt_00005"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4420.91
+      }
+    },
+    {
+      "qid": "Q27",
+      "query": "What are the three tiers in the multitiered risk management approach and what scope does each cover?",
+      "rewritten_query": "multitiered risk management approach three tiers scope",
+      "ground_truth": [
+        "NIST_SP_800-39_txt_00047",
+        "NIST_SP_800-39_txt_00046",
+        "NIST_SP_800-39_txt_00045"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-39_txt_00045",
+          "NIST_SP_800-39_txt_00037",
+          "NIST_SP_800-39_txt_00121",
+          "NIST_SP_800-39_txt_00035",
+          "NIST_SP_800-161_txt_00104"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 7893.42
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7686,
+        "mean3": 0.6765,
+        "top5": [
+          "NIST_SP_800-39_txt_00045",
+          "NIST_SP_800-39_txt_00037",
+          "NIST_SP_800-39_txt_00121",
+          "NIST_SP_800-39_txt_00035",
+          "NIST_SP_800-161_txt_00104"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 6292.62
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7686>=0.7250, mean3=0.7005>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7686,
+          "dense_mean3": 0.7005,
+          "dense_mean5": 0.6814,
+          "top_bm25": 45.41,
+          "overlap_count": 8,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-39_txt_00045",
+          "NIST_SP_800-39_txt_00037",
+          "NIST_SP_800-39_txt_00121",
+          "NIST_SP_800-39_txt_00035",
+          "NIST_SP_800-161_txt_00104"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 0.4693
+        },
+        "latency_ms": 7894.18
+      }
+    },
+    {
+      "qid": "Q28",
+      "query": "How does the security control tailoring process modify initial control baselines for specific organizational systems?",
+      "rewritten_query": "security control tailoring process modify initial control baselines organizational systems",
+      "ground_truth": [
+        "NIST_SP_800-53_txt_00547"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-53_txt_00547",
+          "NIST_SP_800-161_txt_00189",
+          "NIST_SP_800-63_txt_00088",
+          "NIST_SP_800-53_txt_00546",
+          "NIST_SP_800-63_txt_00346"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6538.18
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7214,
+        "mean3": 0.6798,
+        "top5": [
+          "NIST_SP_800-53_txt_00547",
+          "NIST_SP_800-161_txt_00189",
+          "NIST_SP_800-63_txt_00088",
+          "NIST_SP_800-53_txt_00546",
+          "NIST_SP_800-63_txt_00346"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6971.5
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(overlap=5<6)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7214,
+          "dense_mean3": 0.6953,
+          "dense_mean5": 0.6821,
+          "top_bm25": 36.97,
+          "overlap_count": 5,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-53_txt_00547",
+          "NIST_SP_800-161_txt_00189",
+          "NIST_SP_800-63_txt_00088",
+          "NIST_SP_800-53_txt_00546",
+          "NIST_SP_800-63_txt_00346"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6905.2
+      }
+    },
+    {
+      "qid": "Q29",
+      "query": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?",
+      "rewritten_query": "Authenticator Assurance Level AAL2 requirements authentication factors NIST SP 800-63B",
+      "ground_truth": [
+        "NIST_SP_800-63_txt_00081"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-63_txt_00081",
+          "NIST_SP_800-63_txt_00085",
+          "NIST_SP_800-53_txt_00384",
+          "NIST_SP_800-215_txt_00053",
+          "NIST_SP_800-63_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5552.81
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7254,
+        "mean3": 0.6713,
+        "top5": [
+          "NIST_SP_800-63_txt_00081",
+          "NIST_SP_800-63_txt_00085",
+          "NIST_SP_800-53_txt_00384",
+          "NIST_SP_800-215_txt_00053",
+          "NIST_SP_800-63_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 5829.15
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "MEDIUM",
+        "action": "trigger_rewrite",
+        "reason": "low_confidence_medium_evidence(mean3=0.6844<0.6850, overlap=5<6)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7254,
+          "dense_mean3": 0.6844,
+          "dense_mean5": 0.6626,
+          "top_bm25": 40.01,
+          "overlap_count": 5,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-63_txt_00081",
+          "NIST_SP_800-63_txt_00085",
+          "NIST_SP_800-53_txt_00384",
+          "NIST_SP_800-215_txt_00053",
+          "NIST_SP_800-63_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 6328.72
+      }
+    },
+    {
+      "qid": "Q30",
+      "query": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?",
+      "rewritten_query": "Attribute Based Access Control ABAC attribute types subject attributes resource attributes environment attributes action attributes",
+      "ground_truth": [
+        "NIST_SP_800-162_txt_00007",
+        "NIST_SP_800-162_txt_00044"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-162_txt_00022",
+          "NIST_SP_800-205_txt_00086",
+          "NIST_SP_800-178_txt_00038",
+          "NIST_SP_800-162_txt_00027",
+          "NIST_SP_800-162_txt_00007"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.2372
+        },
+        "latency_ms": 4776.76
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7005,
+        "mean3": 0.6919,
+        "top5": [
+          "NIST_SP_800-162_txt_00022",
+          "NIST_SP_800-205_txt_00086",
+          "NIST_SP_800-178_txt_00038",
+          "NIST_SP_800-162_txt_00027",
+          "NIST_SP_800-162_txt_00007"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.2372
+        },
+        "latency_ms": 5213.27
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(exact_identifier=['ABAC'], bm25=39.4>=25.0, mean3=0.6991>=0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7005,
+          "dense_mean3": 0.6991,
+          "dense_mean5": 0.6964,
+          "top_bm25": 39.42,
+          "overlap_count": 8,
+          "query_identifiers": [
+            "ABAC"
+          ],
+          "verified_identifiers": [
+            "ABAC"
+          ],
+          "has_exact_match": true,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-162_txt_00022",
+          "NIST_SP_800-205_txt_00086",
+          "NIST_SP_800-178_txt_00038",
+          "NIST_SP_800-162_txt_00027",
+          "NIST_SP_800-162_txt_00007"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.2372
+        },
+        "latency_ms": 4777.73
+      }
+    },
+    {
+      "qid": "Q31",
+      "query": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?",
+      "rewritten_query": "Full Disk Encryption FDE File Folder Encryption operational characteristics protection differences",
+      "ground_truth": [
+        "NIST_SP_800-111_txt_00049"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-111_txt_00049",
+          "NIST_SP_800-111_txt_00050",
+          "NIST_SP_800-111_txt_00047",
+          "NIST_SP_800-111_txt_00039",
+          "NIST_SP_800-111_txt_00051"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4225.33
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7105,
+        "mean3": 0.6955,
+        "top5": [
+          "NIST_SP_800-111_txt_00049",
+          "NIST_SP_800-111_txt_00050",
+          "NIST_SP_800-111_txt_00047",
+          "NIST_SP_800-111_txt_00039",
+          "NIST_SP_800-111_txt_00051"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4637.73
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(cross_modal_consensus: top1=0.7105>=0.7050, mean3=0.6956>=0.6850, overlap=12>=6, bm25=53.3>=25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7105,
+          "dense_mean3": 0.6956,
+          "dense_mean5": 0.6886,
+          "top_bm25": 53.31,
+          "overlap_count": 12,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-111_txt_00049",
+          "NIST_SP_800-111_txt_00050",
+          "NIST_SP_800-111_txt_00047",
+          "NIST_SP_800-111_txt_00039",
+          "NIST_SP_800-111_txt_00051"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4225.76
+      }
+    },
+    {
+      "qid": "Q32",
+      "query": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?",
+      "rewritten_query": "application-proxy gateway packet filtering firewall network traffic inspection stateful inspection",
+      "ground_truth": [
+        "NIST_SP_800-41_txt_00042"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-41_txt_00042",
+          "NIST_SP_800-41_txt_00041",
+          "NIST_SP_800-41_txt_00043",
+          "NIST_SP_800-41_txt_00098",
+          "NIST_SP_800-41_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4036.2
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7428,
+        "mean3": 0.7303,
+        "top5": [
+          "NIST_SP_800-41_txt_00042",
+          "NIST_SP_800-41_txt_00041",
+          "NIST_SP_800-41_txt_00043",
+          "NIST_SP_800-41_txt_00098",
+          "NIST_SP_800-41_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4036.2
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7428>=0.7250, mean3=0.7303>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7428,
+          "dense_mean3": 0.7303,
+          "dense_mean5": 0.7077,
+          "top_bm25": 48.81,
+          "overlap_count": 12,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-41_txt_00042",
+          "NIST_SP_800-41_txt_00041",
+          "NIST_SP_800-41_txt_00043",
+          "NIST_SP_800-41_txt_00098",
+          "NIST_SP_800-41_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4036.54
+      }
+    },
+    {
+      "qid": "Q33",
+      "query": "What security controls and client software configurations are required to protect remote access in enterprise telework?",
+      "rewritten_query": "remote access security controls client software configuration enterprise telework",
+      "ground_truth": [
+        "NIST_SP_800-46_txt_00076",
+        "NIST_SP_800-46_txt_00030"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-46_txt_00074",
+          "NIST_SP_800-46_txt_00092",
+          "NIST_SP_800-46_txt_00036",
+          "NIST_SP_800-46_txt_00034",
+          "NIST_SP_800-46_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 3817.13
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7173,
+        "mean3": 0.7196,
+        "top5": [
+          "NIST_SP_800-46_txt_00112",
+          "NIST_SP_800-46_txt_00074",
+          "NIST_SP_800-46_txt_00092",
+          "NIST_SP_800-46_txt_00036",
+          "NIST_SP_800-46_txt_00034"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4364.9
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7289>=0.7250, mean3=0.7282>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7289,
+          "dense_mean3": 0.7282,
+          "dense_mean5": 0.725,
+          "top_bm25": 40.82,
+          "overlap_count": 12,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-46_txt_00074",
+          "NIST_SP_800-46_txt_00092",
+          "NIST_SP_800-46_txt_00036",
+          "NIST_SP_800-46_txt_00034",
+          "NIST_SP_800-46_txt_00079"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 3817.73
+      }
+    },
+    {
+      "qid": "Q34",
+      "query": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?",
+      "rewritten_query": "cyber threat information sharing strategic benefits operational capabilities threat intelligence sharing ISAC ISAO",
+      "ground_truth": [
+        "NIST_SP_800-150_txt_00040"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-150_txt_00040",
+          "NIST_SP_800-150_txt_00012",
+          "NIST_SP_800-150_txt_00041",
+          "NIST_SP_800-150_txt_00017",
+          "NIST_SP_800-150_txt_00076"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 3957.62
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7388,
+        "mean3": 0.7303,
+        "top5": [
+          "NIST_SP_800-150_txt_00040",
+          "NIST_SP_800-150_txt_00012",
+          "NIST_SP_800-150_txt_00041",
+          "NIST_SP_800-150_txt_00017",
+          "NIST_SP_800-150_txt_00076"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 3957.62
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7400>=0.7250, mean3=0.7386>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.74,
+          "dense_mean3": 0.7386,
+          "dense_mean5": 0.7333,
+          "top_bm25": 47.96,
+          "overlap_count": 13,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-150_txt_00040",
+          "NIST_SP_800-150_txt_00012",
+          "NIST_SP_800-150_txt_00041",
+          "NIST_SP_800-150_txt_00017",
+          "NIST_SP_800-150_txt_00076"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 3957.93
+      }
+    },
+    {
+      "qid": "Q35",
+      "query": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?",
+      "rewritten_query": "technical penetration testing automated vulnerability scanning security assessment manual exploitation",
+      "ground_truth": [
+        "NIST_SP_800-115_txt_00039"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-53_txt_00286",
+          "NIST_SP_800-115_txt_00087",
+          "NIST_SP_800-115_txt_00040",
+          "NIST_SP_800-115_txt_00085",
+          "NIST_SP_800-115_txt_00039"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.3869
+        },
+        "latency_ms": 3851.41
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7273,
+        "mean3": 0.6839,
+        "top5": [
+          "NIST_SP_800-53_txt_00286",
+          "NIST_SP_800-115_txt_00087",
+          "NIST_SP_800-115_txt_00040",
+          "NIST_SP_800-115_txt_00085",
+          "NIST_SP_800-115_txt_00039"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.3869
+        },
+        "latency_ms": 4291.29
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(cross_modal_consensus: top1=0.7273>=0.7050, mean3=0.6859>=0.6850, overlap=9>=6, bm25=34.4>=25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7273,
+          "dense_mean3": 0.6859,
+          "dense_mean5": 0.6742,
+          "top_bm25": 34.44,
+          "overlap_count": 9,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-53_txt_00286",
+          "NIST_SP_800-115_txt_00087",
+          "NIST_SP_800-115_txt_00040",
+          "NIST_SP_800-115_txt_00085",
+          "NIST_SP_800-115_txt_00039"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "ndcg@5": 0.3869
+        },
+        "latency_ms": 3851.82
+      }
+    },
+    {
+      "qid": "Q36",
+      "query": "What are the four phases of the digital forensics process and what is the primary objective of each phase?",
+      "rewritten_query": "digital forensics process four phases primary objective evidence collection preservation analysis presentation",
+      "ground_truth": [
+        "NIST_SP_800-86_txt_00073"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-86_txt_00251",
+          "NIST_SP_800-86_txt_00088",
+          "NIST_SP_800-86_txt_00073",
+          "NIST_SP_800-86_txt_00057",
+          "NIST_SP_800-86_txt_00058"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333,
+          "ndcg@5": 0.5
+        },
+        "latency_ms": 4131.05
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6658,
+        "mean3": 0.6494,
+        "top5": [
+          "NIST_SP_800-86_txt_00251",
+          "NIST_SP_800-86_txt_00088",
+          "NIST_SP_800-86_txt_00246",
+          "NIST_SP_800-86_txt_00073",
+          "NIST_SP_800-86_txt_00057"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.4307
+        },
+        "latency_ms": 6672.3
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": true,
+        "level": "LOW",
+        "action": "trigger_rewrite",
+        "reason": "low_dense_confidence(top1=0.6658<0.6800 or mean3=0.6529<0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.6658,
+          "dense_mean3": 0.6529,
+          "dense_mean5": 0.6442,
+          "top_bm25": 55.93,
+          "overlap_count": 8,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-86_txt_00251",
+          "NIST_SP_800-86_txt_00088",
+          "NIST_SP_800-86_txt_00246",
+          "NIST_SP_800-86_txt_00073",
+          "NIST_SP_800-86_txt_00057"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "ndcg@5": 0.4307
+        },
+        "latency_ms": 4989.04
+      }
+    },
+    {
+      "qid": "Q37",
+      "query": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?",
+      "rewritten_query": "Cybersecurity Supply Chain Risk Management C-SCRM foundational practices sustaining practices",
+      "ground_truth": [
+        "NIST_SP_800-161_txt_00147"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-161_txt_00147",
+          "NIST_SP_800-161_txt_00145",
+          "NIST_SP_800-161_txt_00144",
+          "NIST_SP_800-161_txt_00100",
+          "NIST_SP_800-161_txt_00149"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4454.54
+      },
+      "old_adaptive": {
+        "triggered_rewrite": false,
+        "top1": 0.7537,
+        "mean3": 0.7076,
+        "top5": [
+          "NIST_SP_800-161_txt_00147",
+          "NIST_SP_800-161_txt_00145",
+          "NIST_SP_800-161_txt_00144",
+          "NIST_SP_800-161_txt_00100",
+          "NIST_SP_800-161_txt_00149"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4454.54
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "HIGH",
+        "action": "skip_rewrite",
+        "reason": "confident_high_dense(top1=0.7537>=0.7250, mean3=0.7311>=0.7000)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7537,
+          "dense_mean3": 0.7311,
+          "dense_mean5": 0.7094,
+          "top_bm25": 53.45,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-161_txt_00147",
+          "NIST_SP_800-161_txt_00145",
+          "NIST_SP_800-161_txt_00144",
+          "NIST_SP_800-161_txt_00100",
+          "NIST_SP_800-161_txt_00149"
+        ],
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "ndcg@5": 1.0
+        },
+        "latency_ms": 4455.23
+      }
+    },
+    {
+      "qid": "Q38",
+      "query": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?",
+      "rewritten_query": "NIST SP 800-145 five essential characteristics cloud computing on-demand self-service broad network access resource pooling rapid elasticity measured service",
+      "ground_truth": [
+        "NIST_SP_800-145_txt_00012"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-146_txt_00021",
+          "NIST_SP_800-201_txt_00031",
+          "NIST_SP_800-145_txt_00011",
+          "NIST_SP_800-201_txt_00064",
+          "NIST_SP_800-144_txt_00033"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4123.41
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.7337,
+        "mean3": 0.6773,
+        "top5": [
+          "NIST_SP_800-146_txt_00021",
+          "NIST_SP_800-201_txt_00031",
+          "NIST_SP_800-145_txt_00011",
+          "NIST_SP_800-201_txt_00064",
+          "NIST_SP_800-144_txt_00033"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 7167.11
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(exact_identifier=['NIST SP 800-145', 'SP 800-145'], bm25=49.7>=25.0, mean3=0.6792>=0.6600)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7337,
+          "dense_mean3": 0.6792,
+          "dense_mean5": 0.6533,
+          "top_bm25": 49.74,
+          "overlap_count": 12,
+          "query_identifiers": [
+            "NIST SP 800-145",
+            "SP 800-145"
+          ],
+          "verified_identifiers": [
+            "NIST SP 800-145",
+            "SP 800-145"
+          ],
+          "has_exact_match": true,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-146_txt_00021",
+          "NIST_SP_800-201_txt_00031",
+          "NIST_SP_800-145_txt_00011",
+          "NIST_SP_800-201_txt_00064",
+          "NIST_SP_800-144_txt_00033"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "recall@5": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "ndcg@5": 0.0
+        },
+        "latency_ms": 4125.0
+      }
+    },
+    {
+      "qid": "Q39",
+      "query": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?",
+      "rewritten_query": "data-centric threat modeling security controls mitigation attack vectors procedure",
+      "ground_truth": [
+        "NIST_SP_800-154_txt_00050"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-154_txt_00042",
+          "NIST_SP_800-154_txt_00050",
+          "NIST_SP_800-154_txt_00016",
+          "NIST_SP_800-154_txt_00052",
+          "NIST_SP_800-46_txt_00037"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 5732.28
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6514,
+        "mean3": 0.6826,
+        "top5": [
+          "NIST_SP_800-154_txt_00042",
+          "NIST_SP_800-154_txt_00050",
+          "NIST_SP_800-154_txt_00016",
+          "NIST_SP_800-154_txt_00049",
+          "NIST_SP_800-46_txt_00037"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 5769.97
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(cross_modal_consensus: top1=0.7262>=0.7050, mean3=0.6967>=0.6850, overlap=16>=6, bm25=57.7>=25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7262,
+          "dense_mean3": 0.6967,
+          "dense_mean5": 0.6776,
+          "top_bm25": 57.74,
+          "overlap_count": 16,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-154_txt_00042",
+          "NIST_SP_800-154_txt_00050",
+          "NIST_SP_800-154_txt_00016",
+          "NIST_SP_800-154_txt_00052",
+          "NIST_SP_800-46_txt_00037"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.6309
+        },
+        "latency_ms": 5733.34
+      }
+    },
+    {
+      "qid": "Q40",
+      "query": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?",
+      "rewritten_query": "service mesh infrastructure security assurances cloud-native microservices mutual TLS mTLS service-to-service authentication authorization encryption in transit traffic policy observability",
+      "ground_truth": [
+        "NIST_SP_800-207_txt_00032",
+        "NIST_SP_800-233_txt_00023",
+        "NIST_SP_800-207_txt_00028"
+      ],
+      "baseline": {
+        "top5": [
+          "NIST_SP_800-204_txt_00026",
+          "NIST_SP_800-233_txt_00023",
+          "NIST_SP_800-233_txt_00095",
+          "NIST_SP_800-207_txt_00024",
+          "NIST_SP_800-233_txt_00025"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 3962.33
+      },
+      "old_adaptive": {
+        "triggered_rewrite": true,
+        "top1": 0.6933,
+        "mean3": 0.6874,
+        "top5": [
+          "NIST_SP_800-204_txt_00026",
+          "NIST_SP_800-233_txt_00023",
+          "NIST_SP_800-233_txt_00095",
+          "NIST_SP_800-207_txt_00024",
+          "NIST_SP_800-233_txt_00025"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 4729.42
+      },
+      "improved_adaptive": {
+        "triggered_rewrite": false,
+        "level": "MEDIUM",
+        "action": "skip_rewrite",
+        "reason": "confident_medium_resolved_sufficient(cross_modal_consensus: top1=0.7073>=0.7050, mean3=0.6972>=0.6850, overlap=10>=6, bm25=47.4>=25.0)",
+        "features": {
+          "candidate_count": 20,
+          "dense_top1": 0.7073,
+          "dense_mean3": 0.6972,
+          "dense_mean5": 0.6909,
+          "top_bm25": 47.43,
+          "overlap_count": 10,
+          "query_identifiers": [],
+          "verified_identifiers": [],
+          "has_exact_match": false,
+          "identifier_search_depth": 5
+        },
+        "top5": [
+          "NIST_SP_800-204_txt_00026",
+          "NIST_SP_800-233_txt_00023",
+          "NIST_SP_800-233_txt_00095",
+          "NIST_SP_800-207_txt_00024",
+          "NIST_SP_800-233_txt_00025"
+        ],
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "recall@5": 0.3333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "ndcg@5": 0.2961
+        },
+        "latency_ms": 3962.56
+      }
+    }
+  ]
+}

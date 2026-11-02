@@ -30,7 +30,7 @@ RERANKER_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
 QUESTIONS_FILE = PROJECT_ROOT / "data" / "evaluation" / "evaluation_questions.json"
 
-GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth.json"
+GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth_current.json"
 
 DENSE_TOP_K = 20
 BM25_TOP_K = 20

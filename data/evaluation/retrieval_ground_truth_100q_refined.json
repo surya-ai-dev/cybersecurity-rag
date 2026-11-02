@@ -1,0 +1,1493 @@
+{
+  "Q1": {
+    "question_id": "Q1",
+    "question": "What are the security risks of public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00047",
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00054"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly explains foundational public cloud security and privacy risks: system complexity, large attack surface, co-mingled multi-tenancy, and lack of physical resource boundaries."
+  },
+  "Q3": {
+    "question_id": "Q3",
+    "question": "How can client-side malware affect public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00025",
+      "NIST_SP_800-144_txt_00052",
+      "NIST_SP_800-146_txt_00067"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Analyzes how client-side malware, web browser vulnerabilities, keyloggers, and botnets steal cloud credentials and compromise public cloud sessions."
+  },
+  "Q4": {
+    "question_id": "Q4",
+    "question": "Why is governance important for public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00055"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly explains why cloud governance is essential (shadow IT risks, bypassing capital expenditure controls under operational expenses, regulatory and privacy exposure)."
+  },
+  "Q5": {
+    "question_id": "Q5",
+    "question": "Who is responsible for security and privacy in public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00026",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00060"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explicitly details division of responsibilities across service models and affirms that organizations retain ultimate accountability for data security and privacy under law."
+  },
+  "Q7": {
+    "question_id": "Q7",
+    "question": "What privacy risks can arise when organizations use public cloud services?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00108"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details privacy risks from shared multi-tenant storage, unauthorized disclosure of PII, and the five core privacy protection principles (Notice, Choice, Access, Integrity, Enforcement)."
+  },
+  "Q8": {
+    "question_id": "Q8",
+    "question": "How does loss of control affect security in public cloud computing?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00062",
+      "NIST_SP_800-146_txt_00080"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Analyzes the consequences of relinquishing direct physical and administrative control to an external provider, requiring high trust and contractual safeguards."
+  },
+  "Q9": {
+    "question_id": "Q9",
+    "question": "What security issues can result from outsourcing services to a cloud provider?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00094",
+      "NIST_SP_800-144_txt_00099",
+      "NIST_SP_800-144_txt_00100"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Identifies outsourcing hazards: rigid standardized contracts, provider site failures, sub-contracting chains, and jurisdictional legal conflicts."
+  },
+  "Q10": {
+    "question_id": "Q10",
+    "question": "What are the security implications of storing organizational data in the public cloud?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00081",
+      "NIST_SP_800-144_txt_00082"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details data storage implications: data co-residency, legal seizure/subpoena spillovers onto co-located tenants, sanitization failures, and data-at-rest encryption requirements."
+  },
+  "Q11": {
+    "question_id": "Q11",
+    "question": "What responsibilities does an organization retain after moving to a public cloud?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00026",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00039",
+      "NIST_SP_800-144_txt_00060"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Enumerates retained client responsibilities: compliance oversight, client-side endpoint defense, credential lifecycle management, and non-delegable legal accountability."
+  },
+  "Q12": {
+    "question_id": "Q12",
+    "question": "What security responsibilities are shared between a cloud provider and a cloud customer?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00036",
+      "NIST_SP_800-146_txt_00080",
+      "NIST_SP_800-146_txt_00094"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Maps the shared responsibility matrix across SaaS, PaaS, and IaaS layers: platform vs application management, virtualization vs guest operating system security."
+  },
+  "Q13": {
+    "question_id": "Q13",
+    "question": "What risks are associated with relying on a third-party cloud service provider?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00064",
+      "NIST_SP_800-144_txt_00086",
+      "NIST_SP_800-146_txt_00122"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Focuses on third-party provider risks: provider business discontinuation/bankruptcy, composite cloud dependencies, cascading outages, and unilateral contract revisions."
+  },
+  "Q14": {
+    "question_id": "Q14",
+    "question": "How can social engineering attacks affect public cloud security?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00073",
+      "NIST_SP_800-144_txt_00025"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how social media, personal webmail, and public sites serve as attack avenues for social engineering that compromise client browsers and devices with spyware, backdoor Trojans, and keystroke loggers, undermining the security, confidentiality, and session privacy of accessed public cloud services."
+  },
+  "Q16": {
+    "question_id": "Q16",
+    "question": "Why are security and privacy considerations important throughout the cloud system lifecycle?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00021",
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00115"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Traces security and privacy across full cloud lifecycle: pre-acquisition requirements specification, contract negotiation, operational oversight, and decommissioning data sanitization."
+  },
+  "Q17": {
+    "question_id": "Q17",
+    "question": "What governance practices are important when using public cloud services?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00056"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly specifies key operational governance practices for public cloud (extending organizational policies/standards to cloud, negotiating audit rights, defining provider roles/responsibilities, and dynamic risk management)."
+  },
+  "Q19": {
+    "question_id": "Q19",
+    "question": "What challenges can organizations face when monitoring security in public cloud environments?",
+    "document_ids": [
+      "NIST_SP_800-144",
+      "NIST_SP_800-146"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00065",
+      "NIST_SP_800-144_txt_00087",
+      "NIST_SP_800-146_txt_00134"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details monitoring challenges in public clouds: superficial provider status dashboards, lack of low-level hypervisor log access, and multi-tenant forensics barriers."
+  },
+  "Q20": {
+    "question_id": "Q20",
+    "question": "What factors should organizations consider when evaluating the security of a public cloud provider?",
+    "document_ids": [
+      "NIST_SP_800-144"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-144_txt_00041",
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00111",
+      "NIST_SP_800-144_txt_00112"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Comprehensive factors for evaluating cloud providers: third-party compliance audits/certifications, financial viability, SLA penalty terms, data sanitization proof, and multi-tenant isolation mechanisms."
+  },
+  "Q21": {
+    "question_id": "Q21",
+    "question": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?",
+    "document_ids": [
+      "NIST_SP_800-83"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-83_txt_00071"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Directly defines the four core phases of the incident response life cycle as established in NIST guidance: (1) Preparation, (2) Detection and Analysis, (3) Containment, Eradication, and Recovery, and (4) Post-Incident Activity, citing the life cycle structure from NIST SP 800-61."
+  },
+  "Q22": {
+    "question_id": "Q22",
+    "question": "What key considerations and trade-offs should guide organizations when making malware containment decisions?",
+    "document_ids": [
+      "NIST_SP_800-83"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-83_txt_00090"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains that malware containment requires balancing stopping spread with preventing further host damage, evaluating operational impact of disconnecting critical hosts, and avoiding premature assumptions of safety."
+  },
+  "Q23": {
+    "question_id": "Q23",
+    "question": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?",
+    "document_ids": [
+      "NIST_SP_800-207"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-207_txt_00009"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Articulates the basic tenet of Zero Trust to eliminate implicit trust based solely on network location/perimeter and transition to authentication and authorization policies anchored in user and application identities."
+  },
+  "Q24": {
+    "question_id": "Q24",
+    "question": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?",
+    "document_ids": [
+      "NIST_SP_800-125"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-125_txt_00053"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Provides explicit security recommendations (VM-NS-R1 through VM-NS-R4) for network segmentation in virtualized environments, specifying isolation of VM management traffic, grouping VMs by sensitivity, and using virtual firewalls."
+  },
+  "Q25": {
+    "question_id": "Q25",
+    "question": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?",
+    "document_ids": [
+      "NIST_SP_800-218"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-218_txt_00029"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Details the fundamental sound practice groups of the SSDF: Prepare the Organization (PO), Protect the Software (PS), Produce Well-Secured Software (PW), and Respond to Vulnerabilities (RV)."
+  },
+  "Q26": {
+    "question_id": "Q26",
+    "question": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?",
+    "document_ids": [
+      "NIST_SP_800-40"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-40_txt_00049"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains the role of enterprise-level patching metrics in estimating vulnerability importance, determining whether to deploy routine vs emergency patching, and prioritizing remediation resources."
+  },
+  "Q27": {
+    "question_id": "Q27",
+    "question": "What are the three tiers in the multitiered risk management approach and what scope does each cover?",
+    "document_ids": [
+      "NIST_SP_800-39"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-39_txt_00045",
+      "NIST_SP_800-39_txt_00046",
+      "NIST_SP_800-39_txt_00047"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Substantively details the three tiers of the multitiered risk management approach: Tier 1 (Organization view covering risk framing, mission prioritization, and investment strategies), Tier 2 (Mission/Business Process view covering process definitions, information flows, and enterprise security architecture), and Tier 3 (Information Systems view covering system categorization, security control allocation, and SDLC continuous monitoring)."
+  },
+  "Q28": {
+    "question_id": "Q28",
+    "question": "How does the security control tailoring process modify initial control baselines for specific organizational systems?",
+    "document_ids": [
+      "NIST_SP_800-53"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-53_txt_00547"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how tailoring adapts control baselines using scoping guidance, compensating controls, specification of organization-defined parameters, and operational requirement alignment."
+  },
+  "Q29": {
+    "question_id": "Q29",
+    "question": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?",
+    "document_ids": [
+      "NIST_SP_800-63"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-63_txt_00081"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines AAL2 requirements, specifying that authentication requires two distinct authentication factors (multi-factor authentication) using approved cryptographic authenticators."
+  },
+  "Q30": {
+    "question_id": "Q30",
+    "question": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?",
+    "document_ids": [
+      "NIST_SP_800-162"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-162_txt_00007",
+      "NIST_SP_800-162_txt_00044"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines the core components of ABAC: subject attributes, object/resource attributes, environmental conditions, and administrative policy rules governing authorization."
+  },
+  "Q31": {
+    "question_id": "Q31",
+    "question": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?",
+    "document_ids": [
+      "NIST_SP_800-111"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-111_txt_00049"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Compares full disk encryption (hardware/OS layer protection, transparent operation) with file and folder encryption (granular user-level access controls, multi-user separation, persistence across transmission)."
+  },
+  "Q32": {
+    "question_id": "Q32",
+    "question": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?",
+    "document_ids": [
+      "NIST_SP_800-41"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-41_txt_00042"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Contrasts packet filtering with application-proxy gateways that terminate connections, inspect application-layer payload contents, and enforce protocol-specific compliance."
+  },
+  "Q33": {
+    "question_id": "Q33",
+    "question": "What security controls and client software configurations are required to protect remote access in enterprise telework?",
+    "document_ids": [
+      "NIST_SP_800-46"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-46_txt_00030",
+      "NIST_SP_800-46_txt_00076"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Specifies remote access client software security requirements, including personal firewalls, antivirus, software patch currency, and cryptographic tunnel integrity."
+  },
+  "Q34": {
+    "question_id": "Q34",
+    "question": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?",
+    "document_ids": [
+      "NIST_SP_800-150"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-150_txt_00040"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how threat sharing provides early warning, improves defensive posture by leveraging shared indicators of compromise (IOCs), and enhances collective situational awareness."
+  },
+  "Q35": {
+    "question_id": "Q35",
+    "question": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?",
+    "document_ids": [
+      "NIST_SP_800-115"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-115_txt_00039"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Clarifies the distinction between passive/automated vulnerability scanning (identifying potential flaws) and active penetration testing (simulating adversary exploitation to validate actual impact and circumvention)."
+  },
+  "Q36": {
+    "question_id": "Q36",
+    "question": "What are the four phases of the digital forensics process and what is the primary objective of each phase?",
+    "document_ids": [
+      "NIST_SP_800-86"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-86_txt_00073"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Defines the four phases of the digital forensics process and the primary objective of each phase: Collection (identifying, labeling, and securing event data while preserving integrity), Examination (extracting relevant information using forensic tools), Analysis (interpreting results to answer investigative questions), and Reporting (documenting findings, actions taken, and process improvements)."
+  },
+  "Q37": {
+    "question_id": "Q37",
+    "question": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?",
+    "document_ids": [
+      "NIST_SP_800-161"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-161_txt_00147"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains that foundational C-SCRM practices establish core visibility, supplier requirements, and baseline policies, while sustaining practices institutionalize continuous monitoring, supplier auditing, and threat-informed lifecycle adaptation."
+  },
+  "Q38": {
+    "question_id": "Q38",
+    "question": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?",
+    "document_ids": [
+      "NIST_SP_800-145"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-145_txt_00012"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Enumerates and defines the five essential cloud characteristics: On-demand self-service, Broad network access, Resource pooling, Rapid elasticity, and Measured service."
+  },
+  "Q39": {
+    "question_id": "Q39",
+    "question": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?",
+    "document_ids": [
+      "NIST_SP_800-154"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-154_txt_00050"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Outlines Step 3 of data-centric threat modeling: identifying and documenting security control alterations, additions, or reconfigurations necessary to mitigate each selected attack vector targeting high-value data."
+  },
+  "Q40": {
+    "question_id": "Q40",
+    "question": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?",
+    "document_ids": [
+      "NIST_SP_800-207",
+      "NIST_SP_800-233"
+    ],
+    "relevant_chunks": [
+      "NIST_SP_800-207_txt_00028",
+      "NIST_SP_800-207_txt_00032",
+      "NIST_SP_800-233_txt_00023"
+    ],
+    "verification_status": "verified",
+    "evaluation_eligible": true,
+    "rationale": "Explains how service mesh architectures provide core security assurances for cloud-native microservices applications through dedicated data plane sidecar proxies operating at L4/L7, enforcing encrypted connections, connection-level service authentication via mutual TLS (mTLS), built-in service identity provisioning, fine-grained service-to-service authorization, and access control policies (NGAC/ABAC) ensuring application confidentiality and integrity."
+  },
+  "Q41": {
+    "question_id": "Q41",
+    "question": "In the public comment matrix for NIST SP 800-131A Rev. 3, what specific concern is raised regarding legacy-use algorithms and the lack of transition guidance for existing deployments?",
+    "category": "table_structured",
+    "primary_document": "NIST_SP_800-131",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-131_tbl_00003_p01"
+    ],
+    "expected_answer_summary": "The public comment table highlights concerns that SP 800-131A provides transition guidance for new systems but lacks clear legacy-use transition rules and timelines for existing operational deployments.",
+    "source_section": "Table on Page 12",
+    "source_page": "14",
+    "verification_status": "verified",
+    "verification_notes": "Table chunk from comment matrix on Page 14 specifically recording stakeholder feedback on legacy-use algorithms."
+  },
+  "Q42": {
+    "question_id": "Q42",
+    "question": "In the High-Performance Computing (HPC) Security Overlay moderate baseline table, which zone allocations are designated for Access Control controls AC-2 and AC-3?",
+    "category": "table_structured",
+    "primary_document": "NIST_SP_800-234",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-234_tbl_00001_p01"
+    ],
+    "expected_answer_summary": "Table on Page 10 specifies zone overlay allocations: AC-2 is designated across All Zones (D), Access Zone (G), Management Zone (G), Computing Zone (G), and Data Storage Zone (GD), while AC-3 is designated in All Zones (G).",
+    "source_section": "Table on Page 10 (Part 1 of 2)",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Table chunk from HPC Overlay on Page 10 specifying zone allocations for AC-2 and AC-3 across compute and storage zones."
+  },
+  "Q43": {
+    "question_id": "Q43",
+    "question": "According to the Federal Cryptographic Key Management System (FCKMS) profile table for NIST SP 800-53 control AC-2, what distinct operational roles must a Federal CKMS support?",
+    "category": "table_structured",
+    "primary_document": "NIST_SP_800-152",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-152_tbl_00035_p01"
+    ],
+    "expected_answer_summary": "Table on Page 46 specifies requirement PR:5.1 (mapped to AC-2), mandating that a Federal CKMS support five distinct roles: System Authority, System Administrator, Audit Administrator, Cryptographic Officer, and User.",
+    "source_section": "Table on Page 46",
+    "source_page": "46",
+    "verification_status": "verified",
+    "verification_notes": "Table chunk on Page 46 specifying requirement PR:5.1 mapped to AC-2, mandating 5 distinct FCKMS roles."
+  },
+  "Q44": {
+    "question_id": "Q44",
+    "question": "In the Secure Software Development Framework (SSDF) practice table, what is the stated objective of Practice PO.1 (Define Security Requirements for Software Development)?",
+    "category": "table_structured",
+    "primary_document": "NIST_SP_800-218",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-218_tbl_00001_p02"
+    ],
+    "expected_answer_summary": "Table on Page 17 specifies Practice PO.1: ensuring that security requirements for software development are known, documented, and integrated into the organization's software development practices.",
+    "source_section": "Table on Page 17 (Part 2 of 5)",
+    "source_page": "17",
+    "verification_status": "verified",
+    "verification_notes": "Table chunk on Page 17 defining SSDF Practice PO.1, Task PO.1.1, and notional implementation examples."
+  },
+  "Q45": {
+    "question_id": "Q45",
+    "question": "In the cloud computing security control mapping table, which NIST SP 800-53 control families are categorized under the Technical class versus the Operational class?",
+    "category": "table_structured",
+    "primary_document": "NIST_SP_800-146",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-146_tbl_00005_p01"
+    ],
+    "expected_answer_summary": "Table on Page 71 categorizes Access Control, Audit and Accountability, Identification and Authentication, and System and Communication Protection under Technical controls, while Awareness and Training, Configuration Management, Contingency Planning, Incident Response, Maintenance, Media Protection, Physical Protection, Personnel Security, and System/Information Integrity are categorized under Operational controls.",
+    "source_section": "Table on Page 71",
+    "source_page": "71",
+    "verification_status": "verified",
+    "verification_notes": "Table chunk on Page 71 categorizing all NIST SP 800-53 control families into Technical, Operational, and Management classes."
+  },
+  "Q46": {
+    "question_id": "Q46",
+    "question": "How do secure build tasks and attestation mechanisms in DevSecOps CI/CD pipelines (NIST SP 800-204D) integrate with Software Bill of Materials (SBOM) supply chain transparency requirements in NIST SP 800-161 Revision 1?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-204",
+    "supporting_documents": [
+      "NIST_SP_800-161"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-204_txt_00054",
+      "NIST_SP_800-161_txt_00777"
+    ],
+    "expected_answer_summary": "NIST SP 800-204D mandates secure isolated build environments, policy enforcement engines, and automated generation of build attestations during CI/CD execution, which operationalize NIST SP 800-161 Rev. 1 requirements for formal Software Bills of Materials (SBOMs) to verify component provenance, track open source dependencies, and detect supply chain tampering.",
+    "source_section": "5.1.1. Secure Build | Glossary: Software Bill of Materials",
+    "source_page": "20, 309",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes DevSecOps CI/CD build security tasks (SP 800-204D Section 5.1.1) with C-SCRM Software Bill of Materials supply chain verification (SP 800-161 Rev. 1 Glossary & Section 3)."
+  },
+  "Q47": {
+    "question_id": "Q47",
+    "question": "How does the core Policy Decision Point (PDP) and Policy Enforcement Point (PEP) architecture in Zero Trust (NIST SP 800-207) integrate with cloud access control systems described in NIST SP 800-210?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-207",
+    "supporting_documents": [
+      "NIST_SP_800-210"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-207_txt_00030",
+      "NIST_SP_800-210_txt_00028"
+    ],
+    "expected_answer_summary": "NIST SP 800-207 establishes the global control plane consisting of PDP and PEP for continuous session evaluation, which NIST SP 800-210 applies to cloud systems by mediating user requests across virtualized cloud multi-tenant boundaries.",
+    "source_section": "3.1 Core Zero Trust Architecture Logical Components | 2 Cloud Access Control Characteristics",
+    "source_page": "9, 11",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes Zero Trust PEP/PDP logical architecture with SP 800-210 Section 2 cloud access control characteristics and multi-tenant virtualization mediation."
+  },
+  "Q48": {
+    "question_id": "Q48",
+    "question": "How do Authenticator Assurance Level 3 (AAL3) hardware cryptographic requirements in NIST SP 800-63 relate to physical facility access controls using PIV credentials in NIST SP 800-116?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-63",
+    "supporting_documents": [
+      "NIST_SP_800-116"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-63_txt_00081",
+      "NIST_SP_800-116_txt_00067"
+    ],
+    "expected_answer_summary": "NIST SP 800-63 requires AAL3 authenticators to use hardware-based cryptographic keys that provide proof of possession and verifier impersonation resistance, which matches the cryptographic challenge-response mechanisms executed by PIV card credentials at Physical Access Control Systems (PACS) per SP 800-116.",
+    "source_section": "5.1.3 Authenticator Assurance Level 3 | 4.3 Selection of PIV Authentication Factors",
+    "source_page": "38, 24",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes AAL3 hardware cryptographic authenticator requirements with SP 800-116 Section 4.3 risk-based PIV authentication factor selection for facility access."
+  },
+  "Q49": {
+    "question_id": "Q49",
+    "question": "How do cryptographic key management lifecycle considerations in NIST SP 800-57 align with the system framework components of a Cryptographic Key Management System (CKMS) in NIST SP 800-130?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-130",
+    "supporting_documents": [
+      "NIST_SP_800-57"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-130_txt_00063",
+      "NIST_SP_800-57_txt_00033"
+    ],
+    "expected_answer_summary": "NIST SP 800-130 defines the architectural framework for CKMS (governance, policy, components, and automated services), providing the structural design to enforce the key lifecycle states (generation, activation, deactivation, destruction) and cloud key management policies outlined in SP 800-57.",
+    "source_section": "2.10 CKMS Framework Components and Devices | 8.3 Cryptographic Key Management Lifecycle",
+    "source_page": "21, 35",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes CKMS Framework components/devices (SP 800-130 Section 2.10) with SP 800-57 Part 1 key management lifecycle phases."
+  },
+  "Q50": {
+    "question_id": "Q50",
+    "question": "How do coordinated vulnerability disclosure intake policies in NIST SP 800-216 integrate with the vulnerability response practice group (RV) in the Secure Software Development Framework (NIST SP 800-218)?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-216",
+    "supporting_documents": [
+      "NIST_SP_800-218"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-216_txt_00061",
+      "NIST_SP_800-218_txt_00029"
+    ],
+    "expected_answer_summary": "NIST SP 800-216 establishes federal guidelines for receiving and coordinating external vulnerability reports, directly feeding the intake phase of SSDF Practice Group RV (Respond to Vulnerabilities) in SP 800-218 to identify root causes and remediate software flaws.",
+    "source_section": "3.2.4. Development of Vulnerability Disclosure Handling Procedures | Respond to Vulnerabilities (RV)",
+    "source_page": "27, 32",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes SP 800-216 Section 3.2.4 internal vulnerability handling procedures with SSDF Practice RV.1 / RV.2 vulnerability response."
+  },
+  "Q51": {
+    "question_id": "Q51",
+    "question": "How do forensic chain of custody and evidence handling requirements in NIST SP 800-61 support mobile device forensic investigations outlined in NIST SP 800-101?",
+    "category": "cross_document",
+    "primary_document": "NIST_SP_800-61",
+    "supporting_documents": [
+      "NIST_SP_800-101"
+    ],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-61_txt_00087",
+      "NIST_SP_800-101_txt_00060"
+    ],
+    "expected_answer_summary": "NIST SP 800-61 establishes core forensic evidence handling, documentation, and chain-of-custody protocols during incident response, which NIST SP 800-101 operationalizes for the specialized collection, preservation, and isolation of mobile device hardware and volatile memory.",
+    "source_section": "3.3.2 Evidence Handling | 4.1 Securing and Evaluating the Scene",
+    "source_page": "37, 37",
+    "verification_status": "verified",
+    "verification_notes": "Synthesizes incident evidence preservation/chain of custody (SP 800-61 Section 3.3.2) with mobile device evidence handling rules during seizure (SP 800-101 Section 4.1)."
+  },
+  "Q52": {
+    "question_id": "Q52",
+    "question": "What core objectives and continuous monitoring activities are mandated under NIST SP 800-53 security control CA-7 to support ongoing system authorization?",
+    "category": "multi_chunk_reasoning",
+    "primary_document": "NIST_SP_800-53",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-53_txt_00280"
+    ],
+    "expected_answer_summary": "NIST SP 800-53 establishes that continuous monitoring under control CA-7 requires rigorous planning across the system lifecycle, ongoing assessment of control effectiveness, tracking system changes, and updating security plans to support risk-based re-authorization decisions.",
+    "source_section": "CA-7 CONTINUOUS MONITORING",
+    "source_page": "117",
+    "verification_status": "verified",
+    "verification_notes": "Direct retrieval from SP 800-53 control CA-7 specifying system-level continuous monitoring strategy and ongoing authorization."
+  },
+  "Q53": {
+    "question_id": "Q53",
+    "question": "How does NIST SP 800-161 guide organizations in identifying supply chain risks and enforcing security requirements through contractual supplier clauses?",
+    "category": "multi_chunk_reasoning",
+    "primary_document": "NIST_SP_800-161",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-161_txt_00380"
+    ],
+    "expected_answer_summary": "NIST SP 800-161 requires organizations to manage risks from products and services throughout the supply chain by implementing foundational practices (establishing visibility and contract requirements) and sustaining practices (continuous audit, SLA verification, and third-party supplier oversight).",
+    "source_section": "SA-1 POLICY AND PROCEDURES",
+    "source_page": "151",
+    "verification_status": "verified",
+    "verification_notes": "Direct retrieval from SP 800-161 control SA-1 Supplemental C-SCRM Guidance on contractual supplier clauses throughout acquisition lifecycle."
+  },
+  "Q54": {
+    "question_id": "Q54",
+    "question": "In the public comments on NIST SP 800-57 Part 1 Rev. 6, what emerging key management terms and concepts, such as BYOK and KEM, are identified for formal definition?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-57",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-57_txt_00012"
+    ],
+    "expected_answer_summary": "The comments identify terms including BYOK (Bring Your Own Key), CUI, DKE (Double Key Encryption), HYOK (Hold Your Own Key), KEM (Key Encapsulation Mechanism), and OUP as used in cloud and modern key management text requiring formal definition.",
+    "source_section": "Editorial Comment 1 (Page 8)",
+    "source_page": "8",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-57 Part 1 Rev. 6 public comments identifying emerging key management terms BYOK and KEM."
+  },
+  "Q55": {
+    "question_id": "Q55",
+    "question": "What is the primary scope and purpose of the Cryptographic Key Management System (CKMS) design framework defined in NIST SP 800-130?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-130",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-130_txt_00043"
+    ],
+    "expected_answer_summary": "NIST SP 800-130 provides a framework for designing a Cryptographic Key Management System (CKMS), specifying architectural requirements, security policies, cryptographic services, and component specifications needed to protect cryptographic keys.",
+    "source_section": "1. Introduction",
+    "source_page": "9",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-130 Section 1 defining the primary scope and purpose of the CKMS design framework."
+  },
+  "Q56": {
+    "question_id": "Q56",
+    "question": "In the public comments on NIST SP 800-133 Revision 3, what technical topics are reviewed regarding cryptographic key generation and entropy requirements?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-133",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-133_txt_00134"
+    ],
+    "expected_answer_summary": "The public comments on SP 800-133 Rev. 3 review cryptographic key generation methods, symmetric and asymmetric key generation algorithms, and the role of approved random bit generators and entropy sources.",
+    "source_section": "Public Comments: COMMENT 4 (Section 4.2.2)",
+    "source_page": "64",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-133 Rev. 3 public comment 4 detailing entropy sources and key derivation requirements."
+  },
+  "Q57": {
+    "question_id": "Q57",
+    "question": "What are the four SHA-3 derived functions specified in NIST SP 800-185?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-185",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-185_txt_00017"
+    ],
+    "expected_answer_summary": "NIST SP 800-185 specifies four SHA-3 derived functions: cSHAKE (customizable SHAKE), KMAC (KECCAK Message Authentication Code), TupleHash, and ParallelHash.",
+    "source_section": "1 Introduction",
+    "source_page": "7",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-185 Section 1 defining cSHAKE, KMAC, TupleHash, and ParallelHash."
+  },
+  "Q58": {
+    "question_id": "Q58",
+    "question": "Which stateful hash-based signature schemes are approved for federal use in NIST SP 800-208?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-208",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-208_txt_00024"
+    ],
+    "expected_answer_summary": "NIST SP 800-208 recommends stateful hash-based signature schemes, specifically the Leighton-Micali Signature (LMS) system and the eXtended Merkle Signature Scheme (XMSS), along with their multi-tree variants (HSS and XMSS^MT).",
+    "source_section": "1 Introduction",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-208 Section 1 specifying LMS and XMSS stateful hash-based signature schemes."
+  },
+  "Q59": {
+    "question_id": "Q59",
+    "question": "What cryptographic functions are standardized under the Ascon family in NIST SP 800-232 for constrained environments?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-232",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-232_txt_00020"
+    ],
+    "expected_answer_summary": "NIST SP 800-232 standardizes Ascon-based lightweight cryptography, specifically Authenticated Encryption with Associated Data (AEAD), hash functions, and extendable output functions (XOF) optimized for constrained devices.",
+    "source_section": "1. Introduction",
+    "source_page": "12",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-232 Section 1 specifying the Ascon family of algorithms (AEAD, hashing, XOF)."
+  },
+  "Q60": {
+    "question_id": "Q60",
+    "question": "What is the role of the Cardholder Unique Identifier (CHUID) data object in NIST SP 800-73 PIV card interfaces?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-73",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-73_txt_00108"
+    ],
+    "expected_answer_summary": "The Cardholder Unique Identifier (CHUID) is a mandatory PIV card-edge data object that uniquely identifies the card and cardholder to access control systems without requiring biometric authentication.",
+    "source_section": "Appendix A. PIV Data Model",
+    "source_page": "48",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-73 Appendix A defining Cardholder Unique Identifier (CHUID) specifications."
+  },
+  "Q61": {
+    "question_id": "Q61",
+    "question": "Under NIST SP 800-76-2, what federal directive establishes the policy baseline for biometric specifications in PIV credentials?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-76",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-76_txt_00006"
+    ],
+    "expected_answer_summary": "Homeland Security Presidential Directive HSPD-12 (Policy for a Common Identification Standard for Federal Employees and Contractors) establishes the mandatory baseline for biometric specifications in PIV credentials.",
+    "source_section": "Abstract",
+    "source_page": "4",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-76-2 Abstract identifying HSPD-12 as the policy baseline for biometric specifications."
+  },
+  "Q62": {
+    "question_id": "Q62",
+    "question": "What is the stated scope of NIST SP 800-78-5 regarding cryptographic algorithms for Personal Identity Verification?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-78",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-78_txt_00023"
+    ],
+    "expected_answer_summary": "NIST SP 800-78-5 specifies the cryptographic algorithms and minimum key sizes required for PIV card credentials, covering PIV authentication, digital signatures, key establishment, and card management.",
+    "source_section": "1.4. Document Overview",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-78-5 Section 1.4 defining the scope of cryptographic algorithms and key sizes for PIV."
+  },
+  "Q63": {
+    "question_id": "Q63",
+    "question": "In NIST SP 800-79-3, what is the primary purpose of guidelines for PIV Card Issuing (PCI) organizations?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-79",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-79_txt_00092"
+    ],
+    "expected_answer_summary": "NIST SP 800-79-3 provides accreditation guidelines and assessment controls for PIV Card Issuing (PCI) organizations to ensure they maintain sufficient operational and physical security when issuing PIV credentials.",
+    "source_section": "Issuer Controls Assessment and the Authorization Decision Process",
+    "source_page": "37",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-79-3 on assessor activities and issuer controls for PIV Card Issuing (PCI) organizations."
+  },
+  "Q64": {
+    "question_id": "Q64",
+    "question": "What policy framework under HSPD-12 governs the issuance of Derived PIV Credentials in NIST SP 800-157?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-157",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-157_txt_00006"
+    ],
+    "expected_answer_summary": "OMB policy under HSPD-12 governs Derived PIV Credentials, enabling federal agencies to issue cryptographically secure credentials on mobile devices derived from an authentic, physically issued PIV card.",
+    "source_section": "II. Managing Identities, Credentials, and Access in Modern Government",
+    "source_page": "3",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-157 Section II on HSPD-12 policy baseline for Derived PIV Credentials."
+  },
+  "Q65": {
+    "question_id": "Q65",
+    "question": "What is the objective of NIST SP 800-217 regarding Personal Identity Verification (PIV) federation?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-217",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-217_txt_00022"
+    ],
+    "expected_answer_summary": "NIST SP 800-217 provides guidelines for federating PIV identity credentials, allowing secure cross-agency and external entity authentication using PIV credentials without duplicate credential issuance.",
+    "source_section": "1.2. Purpose and Scope",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-217 Section 1.2 defining the objectives of PIV identity account federation."
+  },
+  "Q66": {
+    "question_id": "Q66",
+    "question": "What is the primary objective of building a cybersecurity learning program as described in NIST SP 800-50?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-50",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-50_txt_00078"
+    ],
+    "expected_answer_summary": "NIST SP 800-50 provides guidance for federal agencies to design, develop, implement, and maintain a comprehensive organizational cybersecurity awareness and training program across the entire learning continuum.",
+    "source_section": "2.5.1. All Users",
+    "source_page": "36",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-50 Section 2.5.1 on CPLP participation and mandatory security awareness training."
+  },
+  "Q67": {
+    "question_id": "Q67",
+    "question": "What is the core focus of NIST SP 800-221A in measuring enterprise risk?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-221",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-221_txt_00024"
+    ],
+    "expected_answer_summary": "NIST SP 800-221A establishes the Information and Communications Technology (ICT) Risk Outcomes framework, providing a structure and catalog of outcomes for assessing and managing ICT risk across organizations.",
+    "source_section": "Information and Communications Technology Areas",
+    "source_page": "9",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-221A Section on ICT Areas defining the core focus of the ICT ROF on overarching risk governance and management."
+  },
+  "Q68": {
+    "question_id": "Q68",
+    "question": "In NIST SP 800-233, what are the primary data plane proxy models (architectures) defined for service mesh implementations in cloud-native applications?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-233",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-233_txt_00035",
+      "NIST_SP_800-233_txt_00036"
+    ],
+    "expected_answer_summary": "NIST SP 800-233 defines four primary data plane proxy architectures (DPAs): DPA-1 (Sidecar model: dedicated L4/L7 proxy per service instance), DPA-2 (Shared L4 node proxy with dedicated L7 per service), DPA-3 (Shared L4 and L7 proxy per node), and DPA-4 (Proxyless / gRPC library model with L4/L7 in application code).",
+    "source_section": "3. Proxy Models (Data Plane Architectures) in Service Mesh Implementations",
+    "source_page": "17",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from NIST SP 800-233 Section 3 defining the four data plane proxy models."
+  },
+  "Q69": {
+    "question_id": "Q69",
+    "question": "What core security capabilities and integration roles are defined for APIs in cloud-native architectures per NIST SP 800-228?",
+    "category": "direct_factual",
+    "primary_document": "NIST_SP_800-228",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-228_txt_00059"
+    ],
+    "expected_answer_summary": "NIST SP 800-228 defines that modern cloud-native systems rely on APIs for internal microservice and external integration, requiring explicit API protection mechanisms including gateway authentication, schema validation, and authorization controls.",
+    "source_section": "3. Recommended Controls for APIs",
+    "source_page": "27",
+    "verification_status": "verified",
+    "verification_notes": "Direct factual retrieval from SP 800-228 Section 3 defining the core recommended controls and security capabilities for APIs in cloud-native architectures."
+  },
+  "Q70": {
+    "question_id": "Q70",
+    "question": "In NIST SP 800-107 Revision 1, what are the fundamental security properties expected of cryptographic hash functions?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-107",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-107_txt_00018"
+    ],
+    "expected_answer_summary": "NIST SP 800-107 details the foundational security properties of cryptographic hash functions: pre-image resistance (one-way property), second pre-image resistance (weak collision resistance), and collision resistance (strong collision resistance).",
+    "source_section": "4.1 Hash Function Properties",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-107 Rev. 1 Section 4.1 defining preimage resistance, second preimage resistance, and collision resistance."
+  },
+  "Q71": {
+    "question_id": "Q71",
+    "question": "What strategic considerations guide federal agencies in selecting and transitioning cryptographic standards per NIST SP 800-175B?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-175",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-175_txt_00032"
+    ],
+    "expected_answer_summary": "NIST SP 800-175B provides strategic guidance for federal agencies on understanding cryptographic mechanisms, assessing algorithm security strengths over time, and adopting approved standards to protect federal information.",
+    "source_section": "2.2.1 The Use of FIPS and SPs",
+    "source_page": "23",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-175B Section 2.2.1 detailing federal agency transition and selection considerations for cryptographic standards."
+  },
+  "Q72": {
+    "question_id": "Q72",
+    "question": "How does NIST SP 800-178 compare policy expressiveness between XACML and Next Generation Access Control (NGAC)?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-178",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-178_txt_00124"
+    ],
+    "expected_answer_summary": "NIST SP 800-178 provides an in-depth comparison of Attribute Based Access Control (ABAC) standards, explaining that both XACML and NGAC provide standardized ways for expressing and enforcing diverse access control policies, but use fundamentally different underlying models (rule-based attribute evaluation vs. graph-based policy relations).",
+    "source_section": "6 Conclusion",
+    "source_page": "59",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-178 Section 6 comparing access policy expressiveness and data leakage prevention between XACML and NGAC."
+  },
+  "Q73": {
+    "question_id": "Q73",
+    "question": "In NIST SP 800-205, why are dynamic contextual attributes critical for modern access control systems?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-205",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-205_txt_00049"
+    ],
+    "expected_answer_summary": "NIST SP 800-205 discusses attribute considerations in access control, emphasizing that dynamic attributes (e.g. time, physical location, network threat state) enable real-time risk-adaptive authorization decisions.",
+    "source_section": "3.1.4 Environment Condition Preparation",
+    "source_page": "19",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-205 Section 3.1.4 explaining dynamic environmental/contextual conditions for access control."
+  },
+  "Q74": {
+    "question_id": "Q74",
+    "question": "What theoretical guarantees and trade-offs are evaluated using the epsilon privacy budget in differential privacy per NIST SP 800-226?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-226",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-226_txt_00042"
+    ],
+    "expected_answer_summary": "NIST SP 800-226 explains that differential privacy provides mathematical bounds on individual privacy leakage, where epsilon controls the trade-off between privacy protection (lower epsilon) and analytical utility (higher epsilon).",
+    "source_section": "2.1. The Promise of Differential Privacy",
+    "source_page": "20",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-226 Section 2.1 evaluating privacy loss bounds and the epsilon privacy budget parameter."
+  },
+  "Q75": {
+    "question_id": "Q75",
+    "question": "What are the foundational building blocks that comprise the Network of Things (NoT) conceptual model in NIST SP 800-183?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-183",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-183_txt_00044"
+    ],
+    "expected_answer_summary": "NIST SP 800-183 defines the five core primitives of the Network of Things (NoT): sensors, aggregators, communication channels, external utilities (e-utilities), and decision triggers.",
+    "source_section": "5 Reliability and Security Primitive Scenarios",
+    "source_page": "25",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-183 Section 5 defining the five primitives (sensor, aggregator, communication channel, external utility, decision trigger) of Network of Things."
+  },
+  "Q76": {
+    "question_id": "Q76",
+    "question": "How does NIST SP 800-215 frame the transition from static perimeter network defenses to software-defined enterprise landscapes?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-215",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-215_txt_00066"
+    ],
+    "expected_answer_summary": "NIST SP 800-215 details the evolution of enterprise network landscapes, moving from fixed IP-based boundary perimeters to dynamic, software-defined perimeters and microsegmentation consistent with zero trust principles.",
+    "source_section": "5.2 Software-defined Perimeter (SDP)",
+    "source_page": "30",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-215 Section 5.2 analyzing the shift from static perimeter firewalls to software-defined perimeters."
+  },
+  "Q77": {
+    "question_id": "Q77",
+    "question": "What conceptual model does the Bugs Framework (BF) in NIST SP 800-231 introduce to formalize software vulnerabilities?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-231",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-231_txt_00031"
+    ],
+    "expected_answer_summary": "NIST SP 800-231 introduces the Bugs Framework (BF), a formal taxonomy that models software execution bugs, faults, and failure chains through structured cause-and-effect transitions.",
+    "source_section": "3. Bugs Framework Formalism",
+    "source_page": "12",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-231 Section 3 formalizing software weaknesses and vulnerabilities using the Bugs Framework language."
+  },
+  "Q78": {
+    "question_id": "Q78",
+    "question": "What strategic research priorities and program milestones are highlighted in the NIST Cybersecurity and Privacy FY 2024 Annual Report (SP 800-236)?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-236",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-236_txt_00011"
+    ],
+    "expected_answer_summary": "NIST SP 800-236 highlights federal program milestones across post-quantum cryptography, Zero Trust Architecture implementation, cybersecurity supply chain risk management, and privacy engineering.",
+    "source_section": "Major Accomplishments in FY 2024",
+    "source_page": "8",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-236 detailing strategic milestones in FY 2024 (NICE Framework, PQC FIPS, AI RMF)."
+  },
+  "Q79": {
+    "question_id": "Q79",
+    "question": "In the NIST FY 2025 Cybersecurity and Privacy Annual Report (SP 800-238), what emerging technology areas are identified for federal standards development?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-238",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-238_txt_00016"
+    ],
+    "expected_answer_summary": "NIST SP 800-238 outlines emerging focus areas including artificial intelligence security, quantum-resistant algorithms, privacy-enhancing technologies, and cloud-native infrastructure protection.",
+    "source_section": "Major accomplishments",
+    "source_page": "12",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-238 identifying FY 2025 accomplishments in semiconductor security, hardware security, and emerging standards."
+  },
+  "Q80": {
+    "question_id": "Q80",
+    "question": "In the pre-draft public comments on NIST SP 800-197A, what international stakeholder perspectives are represented regarding lightweight block ciphers?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-197",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-197_txt_00007"
+    ],
+    "expected_answer_summary": "The pre-draft comments represent international and federal perspectives (including UK NCSC, NSA, and DOE) assessing security margins, implementation complexity, and standardization criteria for lightweight block ciphers.",
+    "source_section": "2. Comments from Bryan Queen (NSA Center for Cybersecurity Standards)",
+    "source_page": "4",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-197A pre-draft public comments on lightweight block ciphers and Accordion development."
+  },
+  "Q81": {
+    "question_id": "Q81",
+    "question": "What is the primary purpose of vulnerability naming schemes like CVE as outlined in NIST SP 800-51 Revision 1?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-51",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-51_txt_00017"
+    ],
+    "expected_answer_summary": "NIST SP 800-51 Rev. 1 explains that standardized vulnerability naming schemes (such as CVE) enable unambiguous cross-tool communication, automated security tracking, and consistent correlation of software flaws across databases.",
+    "source_section": "2.1 Common Vulnerabilities and Exposures (CVE)",
+    "source_page": "7",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-51 Rev. 1 Section 2.1 on the role of CVE in standardizing software flaw naming across security tools."
+  },
+  "Q82": {
+    "question_id": "Q82",
+    "question": "What types of non-invasive physical attack mitigations are evaluated under CMVP test metrics in NIST SP 800-140F Revision 1?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-140",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-140_txt_00019"
+    ],
+    "expected_answer_summary": "NIST SP 800-140F Rev. 1 defines CMVP test metrics for non-invasive attacks against cryptographic modules, evaluating mitigation techniques against side-channel analysis including power analysis and timing attacks.",
+    "source_section": "6.2 Approved non-invasive attack mitigation test metrics",
+    "source_page": "7",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-140F Rev. 1 Section 6.2 evaluating non-invasive physical attack mitigations (SPA/DPA, side-channels)."
+  },
+  "Q83": {
+    "question_id": "Q83",
+    "question": "How does NIST SP 800-223 characterize security and threat modeling challenges in High-Performance Computing (HPC) clusters?",
+    "category": "conceptual",
+    "primary_document": "NIST_SP_800-223",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-223_txt_00044"
+    ],
+    "expected_answer_summary": "NIST SP 800-223 explains that HPC systems feature unique threat surfaces due to massive multi-node interconnects, shared batch job schedulers, parallel file systems, and specialized hardware accelerators.",
+    "source_section": "3.2.2. Management Zone Threats",
+    "source_page": "19",
+    "verification_status": "verified",
+    "verification_notes": "Conceptual retrieval from SP 800-223 Section 3.2.2 on HPC cluster management zone threat modeling and clustered network security."
+  },
+  "Q84": {
+    "question_id": "Q84",
+    "question": "What validation assurances are required when generating digital signature keys according to NIST SP 800-89?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-89",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-89_txt_00018"
+    ],
+    "expected_answer_summary": "NIST SP 800-89 specifies assurance requirements for digital signature applications, including validating that key generation parameters comply with approved standards and verifying that private keys are generated with adequate entropy.",
+    "source_section": "4 Assurance of Domain Parameter Validity",
+    "source_page": "11",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-89 Section 4 establishing domain parameter validation assurances for digital signature keys."
+  },
+  "Q85": {
+    "question_id": "Q85",
+    "question": "Under NIST SP 800-38G Revision 1, what methods for Format-Preserving Encryption (FPE) are specified for block cipher modes?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-38",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-38_txt_00021"
+    ],
+    "expected_answer_summary": "NIST SP 800-38G Rev. 1 specifies Format-Preserving Encryption (FPE) modes FF1 and FF3-1, allowing plaintext data (such as credit card or Social Security numbers) to be encrypted into ciphertext of the identical length and character format.",
+    "source_section": "2. Introduction",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-38G Rev. 1 Section 2 specifying Format-Preserving Encryption methods (FF1 Feistel-based mode)."
+  },
+  "Q86": {
+    "question_id": "Q86",
+    "question": "What pair-wise key establishment schemes are recommended in NIST SP 800-56B Revision 2?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-56",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-56_txt_00042"
+    ],
+    "expected_answer_summary": "NIST SP 800-56B Rev. 2 specifies pair-wise key establishment schemes based on integer factorization cryptography (RSA-based key agreement and key transport mechanisms).",
+    "source_section": "4 Key-Establishment Schemes Overview",
+    "source_page": "26",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-56B Rev. 2 Section 4 specifying pair-wise key-establishment schemes based on RSA integer factorization."
+  },
+  "Q87": {
+    "question_id": "Q87",
+    "question": "What elliptic curve domain parameter recommendations are established in NIST SP 800-186 for discrete logarithm cryptography?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-186",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-186_txt_00009"
+    ],
+    "expected_answer_summary": "NIST SP 800-186 recommends approved elliptic curve domain parameters, specifying both traditional Weierstrass curves (P-256, P-384, P-521) and Edwards curves (Ed25519, Ed448) for federal cryptographic applications.",
+    "source_section": "Abstract",
+    "source_page": "5",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-186 specifying recommended elliptic curves for federal use (Weierstrass, Edwards Ed25519/Ed448)."
+  },
+  "Q88": {
+    "question_id": "Q88",
+    "question": "What recommendations are provided in NIST SP 800-132 for password-based key derivation functions (PBKDF)?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-132",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-132_txt_00019"
+    ],
+    "expected_answer_summary": "NIST SP 800-132 defines recommendations for PBKDF2, specifying minimum salt lengths (at least 128 bits), iteration counts, and approved underlying pseudo-random functions (HMAC) to mitigate brute-force dictionary attacks.",
+    "source_section": "5 Password-Based Key Derivation Functions",
+    "source_page": "9",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-132 Section 5 establishing password-based key derivation functions (PBKDF) and salt/iteration recommendations."
+  },
+  "Q89": {
+    "question_id": "Q89",
+    "question": "What verification and test methods are established in NIST SP 800-192 for access control policies and models?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-192",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-192_txt_00010"
+    ],
+    "expected_answer_summary": "NIST SP 800-192 provides formal methods and test algorithms for verifying access control policies, ensuring completeness, consistency, and freedom from conflicting, redundant, or unreachable authorization rules.",
+    "source_section": "Executive Summary",
+    "source_page": "5",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-192 Executive Summary defining verification and test methods for access control policies and models."
+  },
+  "Q90": {
+    "question_id": "Q90",
+    "question": "What technical specifications govern the Keyed-Hash Message Authentication Code (HMAC) in NIST SP 800-224?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-224",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-224_txt_00024"
+    ],
+    "expected_answer_summary": "NIST SP 800-224 specifies the HMAC construction using approved cryptographic hash functions (such as SHA-2 and SHA-3), defining key lengths, inner and outer padding (ipad/opad), and truncation rules.",
+    "source_section": "2. HMAC Construction",
+    "source_page": "14",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-224 Section 2 specifying HMAC construction, ipad/opad constants, and block sizes."
+  },
+  "Q91": {
+    "question_id": "Q91",
+    "question": "In NIST SP 800-153, what active monitoring mechanisms are recommended to detect rogue wireless access points?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-153",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-153_txt_00036"
+    ],
+    "expected_answer_summary": "NIST SP 800-153 Section 3.1.1 recommends active attack monitoring using Wireless Intrusion Detection Systems (WIDS) and radio frequency sensors to identify rogue access points, unauthorized ad-hoc networks, and man-in-the-middle attacks.",
+    "source_section": "3.1.1 Attack Monitoring",
+    "source_page": "16",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-153 Section 3.1.1 on rogue wireless access point monitoring and detection techniques."
+  },
+  "Q92": {
+    "question_id": "Q92",
+    "question": "What specific technical challenges and preservation techniques are identified for handheld digital device forensics in NIST SP 800-72?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-72",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-72_txt_00070"
+    ],
+    "expected_answer_summary": "NIST SP 800-72 outlines technical procedures for preserving volatile RAM in mobile handhelds, preventing device battery depletion that causes data loss, and isolating cellular and infrared interfaces.",
+    "source_section": "5.4 Collection",
+    "source_page": "38",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-72 Section 5.4 on PDA volatile information preservation and physical evidence collection precautions."
+  },
+  "Q93": {
+    "question_id": "Q93",
+    "question": "What architectural tiers comprise the NIST Cloud Computing Forensic Reference Architecture in NIST SP 800-201?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-201",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-201_txt_00029"
+    ],
+    "expected_answer_summary": "NIST SP 800-201 defines the Cloud Forensic Reference Architecture, identifying structural challenges across cloud deployment models and mapping forensic data collection to provider vs tenant responsibilities.",
+    "source_section": "1.2. The Approach",
+    "source_page": "13",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-201 Section 1.2 defining the foundational architectural tiers of the Cloud Computing Forensic Reference Architecture."
+  },
+  "Q94": {
+    "question_id": "Q94",
+    "question": "How does the High-Performance Computing (HPC) Security Overlay in NIST SP 800-234 adapt security controls for parallel computing environments?",
+    "category": "technical_control",
+    "primary_document": "NIST_SP_800-234",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-234_txt_00021"
+    ],
+    "expected_answer_summary": "NIST SP 800-234 establishes security control overlay modifications to accommodate HPC workflows, adapting authentication, job scheduling, and network segmentation controls without degrading high-throughput compute performance.",
+    "source_section": "2. HPC Security Overlay Summary",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Technical control retrieval from SP 800-234 Section 2 adapting 287 moderate baseline controls for parallel HPC environments."
+  },
+  "Q95": {
+    "question_id": "Q95",
+    "question": "In an enterprise telework deployment, what client endpoint security controls are recommended in NIST SP 800-114 Revision 1 for employee BYOD devices?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-114",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-114_txt_00057"
+    ],
+    "expected_answer_summary": "NIST SP 800-114 Rev. 1 specifies that telework employee devices must maintain host firewall protections, updated antivirus signatures, automated OS patching, and encrypted VPN tunnels before connecting to enterprise networks.",
+    "source_section": "5.1 Software Updates",
+    "source_page": "23",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-114 Rev. 1 Section 5.1 specifying client endpoint software updates and patching controls for employee BYOD telework."
+  },
+  "Q96": {
+    "question_id": "Q96",
+    "question": "When designing a physical access control system for secure federal facilities, what PIV authentication mechanisms does NIST SP 800-116 Revision 1 recommend for high-security perimeters?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-116",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-116_txt_00067"
+    ],
+    "expected_answer_summary": "NIST SP 800-116 Rev. 1 specifies that high-security facility perimeters should enforce multi-factor authentication by combining PIV cryptographic authentication (PKI-based challenge-response) with a PIV PIN or on-card biometric verification.",
+    "source_section": "4.3 Selection of PIV Authentication Factors",
+    "source_page": "24",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-116 Rev. 1 Section 4.3 specifying risk-based PIV authentication factors for high-security facility perimeters."
+  },
+  "Q97": {
+    "question_id": "Q97",
+    "question": "During an incident response investigation involving a seized smartphone, what evidence acquisition rules does NIST SP 800-101 Revision 1 specify to maintain evidence integrity?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-101",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-101_txt_00064"
+    ],
+    "expected_answer_summary": "NIST SP 800-101 Rev. 1 specifies that responders must immediately isolate the mobile device using Faraday shielding (blocking RF signals to prevent remote wiping), maintain battery power, and perform validated forensic imaging.",
+    "source_section": "4.3 Isolation",
+    "source_page": "39",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-101 Rev. 1 Section 4.3 detailing isolation and hardware seizure procedures for mobile device forensic integrity."
+  },
+  "Q98": {
+    "question_id": "Q98",
+    "question": "When deploying cloud-native applications with high-risk profiles per NIST SP 800-233, what specific service mesh capabilities and cryptographic isolation requirements must be enforced in the data plane?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-233",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-233_txt_00093"
+    ],
+    "expected_answer_summary": "For high-risk profile applications, NIST SP 800-233 mandates HIGH-REQ1 (full user-to-resource access control in addition to mutual authentication and service-to-service authorization), HIGH-REQ2 (mandatory L7 authorization with deep request inspection), and HIGH-REQ3 (cryptographic isolation requiring unique identities, per-service keys, and dedicated proxies to prevent cross-tenant key compromise).",
+    "source_section": "6.3 Cloud-Native Applications With High Risk Profiles",
+    "source_page": "40",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from NIST SP 800-233 Section 6.3 high-risk cloud-native application requirements."
+  },
+  "Q99": {
+    "question_id": "Q99",
+    "question": "When deploying cloud-native microservices, what role does an API gateway play in controlling exposure and authenticating external callers per NIST SP 800-228?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-228",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-228_txt_00086"
+    ],
+    "expected_answer_summary": "NIST SP 800-228 specifies that second- and third-party APIs are typically exposed to external callers via an API gateway, which serves as the enforcement boundary for mutual authentication, token verification, and exposure control.",
+    "source_section": "4.1. Centralized API Gateway",
+    "source_page": "42",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-228 Section 4.1 on API gateway exposure control and caller authentication for microservices."
+  },
+  "Q100": {
+    "question_id": "Q100",
+    "question": "In an enterprise cloud migration, how should an organization structure its Attribute Based Access Control (ABAC) policies to manage cross-tenant data access per NIST SP 800-210?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-210",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-210_txt_00053"
+    ],
+    "expected_answer_summary": "NIST SP 800-210 recommends defining standardized tenant ID attributes, resource sensitivity tags, and dynamic environmental rules evaluated at centralized Policy Decision Points to prevent unauthorized cross-tenant data access.",
+    "source_section": "5.9 Recommendations for SaaS Access Control",
+    "source_page": "23",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-210 Section 5.9 specifying centralized, decentralized, and hybrid ABAC architectures for multi-tenant cross-tenant access control."
+  },
+  "Q101": {
+    "question_id": "Q101",
+    "question": "In a shared multi-tenant AI cluster, what security controls does NIST SP 800-239 specify to protect GPU memory and prevent cross-job data leakage?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-239",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-239_txt_00048"
+    ],
+    "expected_answer_summary": "NIST SP 800-239 specifies that AI data centers must enforce hardware-level tenant isolation, zero out GPU and accelerator memory between batch workloads, and validate model weight integrity to prevent data leakage.",
+    "source_section": "3.8. Multi-Tenant Threats and the Three-Way \"Trust Dilemma\"",
+    "source_page": "22",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-239 Section 3.8 detailing multi-tenant threat models and GPU resource isolation controls to prevent cross-job data leakage."
+  },
+  "Q102": {
+    "question_id": "Q102",
+    "question": "When integrating supply chain security into an enterprise DevSecOps pipeline, what security gates does NIST SP 800-204D recommend prior to production release?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-204",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-204_txt_00048"
+    ],
+    "expected_answer_summary": "NIST SP 800-204D recommends enforcing automated build security gates: Software Bill of Materials (SBOM) generation, dependency vulnerability verification, static source code security scanning, and cryptographic artifact signing.",
+    "source_section": "4. CI/CD Pipelines - Background, Security Goals, and Entities to be Trusted",
+    "source_page": "22",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-204D Section 4 on pipeline security goals and release validation gates prior to production deployment."
+  },
+  "Q103": {
+    "question_id": "Q103",
+    "question": "When an agency establishes an enterprise Vulnerability Disclosure Policy (VDP) per NIST SP 800-216, what procedures should govern initial report intake and triage?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-216",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-216_txt_00061"
+    ],
+    "expected_answer_summary": "NIST SP 800-216 recommends publishing clear scope rules, establishing encrypted submission channels, acknowledging receipt within established timelines, and maintaining objective risk triage procedures.",
+    "source_section": "3.2.4. Development of Vulnerability Disclosure Handling Procedures",
+    "source_page": "27",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-216 Section 3.2.4 establishing internal procedures for vulnerability report intake, triage, and remediation."
+  },
+  "Q104": {
+    "question_id": "Q104",
+    "question": "During an enterprise risk assessment, how should an organization apply the ICT Risk Outcomes framework in NIST SP 800-221A to evaluate systemic supply chain disruptions?",
+    "category": "scenario_based",
+    "primary_document": "NIST_SP_800-221",
+    "supporting_documents": [],
+    "relevant_chunk_ids": [
+      "NIST_SP_800-221_txt_00025",
+      "NIST_SP_800-221_txt_00026"
+    ],
+    "expected_answer_summary": "NIST SP 800-221A recommends evaluating risks against defined ICT outcome categories (e.g. governance, operational disruption, compliance failure) to measure the systemic business impact of supplier failures.",
+    "source_section": "ICT Risk Outcomes Framework (ROF)",
+    "source_page": "10",
+    "verification_status": "verified",
+    "verification_notes": "Scenario-based retrieval from SP 800-221A Section on ICT Risk Outcomes Framework applying measurable risk outcomes, Functions (GV, MA), Categories (MA.RA, MA.RM), and implementation models to evaluate systemic disruptions."
+  }
+}

@@ -17,3 +17,16 @@ dependencies = [
     "sentence-transformers>=6.0.0",
     "tiktoken>=0.14.0",
 ]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+norecursedirs = [
+    ".git",
+    ".venv",
+    "scratch",
+    "scripts",
+    "data",
+    "documents",
+    "reports",
+    "docs",
+]

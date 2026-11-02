@@ -18,7 +18,7 @@ from app.retrieval.rrf_fusion import reciprocal_rank_fusion
 # ============================================================
 
 QUESTIONS_FILE = PROJECT_ROOT / "data" / "evaluation" / "evaluation_questions.json"
-GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth.json"
+GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth_current.json"
 
 QDRANT_PATH = PROJECT_ROOT / "data" / "qdrant"
 COLLECTION_NAME = "cybersecurity_chunks"

@@ -1,0 +1,4876 @@
+{
+  "metadata": {
+    "timestamp": "2026-10-21T05:26:25.500674",
+    "total_questions": 36,
+    "improved_count": 5,
+    "neutral_count": 23,
+    "regressed_count": 8,
+    "settings": {
+      "retrieval_top_k": 20,
+      "rrf_pool_top_k": 20,
+      "final_top_k": 5,
+      "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+      "embedding_model": "BAAI/bge-m3",
+      "rewriter_model": "qwen/qwen3.8-27b"
+    }
+  },
+  "aggregate_metrics": {
+    "baseline": {
+      "hit@1": 0.5,
+      "hit@5": 0.8333,
+      "hit@20": 0.8333,
+      "recall@5": 0.5903,
+      "recall@20": 0.5903,
+      "precision@5": 0.1889,
+      "mrr@5": 0.6222,
+      "mrr@20": 0.6222,
+      "ndcg@5": 0.5262,
+      "ndcg@20": 0.5262,
+      "avg_latency_ms": 5224.5
+    },
+    "revised_rewriter": {
+      "hit@1": 0.3889,
+      "hit@5": 0.7778,
+      "hit@20": 0.7778,
+      "recall@5": 0.5741,
+      "recall@20": 0.5741,
+      "precision@5": 0.1667,
+      "mrr@5": 0.5245,
+      "mrr@20": 0.5245,
+      "ndcg@5": 0.4717,
+      "ndcg@20": 0.4717,
+      "avg_rewriter_latency_ms": 287.29,
+      "avg_pipeline_latency_ms": 5154.13,
+      "avg_total_latency_ms": 5441.42
+    }
+  },
+  "per_question_results": [
+    {
+      "question_id": "Q1",
+      "original_question": "What are the security risks of public cloud computing?",
+      "rewritten_question": "public cloud computing security risks shared environment multi-tenant isolation data co-location data at rest encryption cryptographic key management",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00047",
+        "NIST_SP_800-144_txt_00048",
+        "NIST_SP_800-144_txt_00054"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.6666666666666666,
+          "recall@20": 0.6666666666666666,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.7039180890341347,
+          "ndcg@20": 0.7039180890341347
+        },
+        "latency_ms": 11133.17,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00047",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 5.809,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00030",
+            "document_id": "NIST_SP_800-144",
+            "section": "**1.2 Purpose and Scope**",
+            "score": 5.6608,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 5.5427,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00120",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>6. Conclusion</mark>**",
+            "score": 5.5325,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00040",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>3. Public Cloud Services</mark>**",
+            "score": 4.6007,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.2960819109658652,
+          "ndcg@20": 0.2960819109658652
+        },
+        "rewriter_latency_ms": 1260.37,
+        "pipeline_latency_ms": 4880.17,
+        "total_latency_ms": 6140.53,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00082",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 3.3938,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 3.0627,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00111",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 2.512,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00081",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 1.5448,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-201_txt_00031",
+            "document_id": "NIST_SP_800-201",
+            "section": "Unknown",
+            "score": 1.0999,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": -0.3333333333333333,
+        "mrr@5": -0.5,
+        "ndcg@5": -0.40783617806826944
+      }
+    },
+    {
+      "question_id": "Q3",
+      "original_question": "How can client-side malware affect public cloud security?",
+      "rewritten_question": "client-side malware public cloud security endpoint compromise credential theft lateral movement",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00025",
+        "NIST_SP_800-144_txt_00052",
+        "NIST_SP_800-146_txt_00067"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "latency_ms": 4122.02,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00025",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that the client-side computing environment meets organizational security and privacy requirements for cloud computing.**",
+            "score": 4.3047,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00073",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": 1.0206,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00072",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": 0.8364,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00099",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 0.4211,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-83_txt_00078",
+            "document_id": "NIST_SP_800-83",
+            "section": "Unknown",
+            "score": 0.3097,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.2960819109658652,
+          "ndcg@20": 0.2960819109658652
+        },
+        "rewriter_latency_ms": 230.31,
+        "pipeline_latency_ms": 4147.27,
+        "total_latency_ms": 4377.58,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00072",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": -2.0138,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00025",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that the client-side computing environment meets organizational security and privacy requirements for cloud computing.**",
+            "score": -2.4884,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00046",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": -3.3207,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-228_txt_00078",
+            "document_id": "NIST_SP_800-228",
+            "section": "Unknown",
+            "score": -3.9128,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00073",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": -5.1897,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.5,
+        "ndcg@5": -0.17319681505689122
+      }
+    },
+    {
+      "question_id": "Q4",
+      "original_question": "Why is governance important for public cloud security?",
+      "rewritten_question": "public cloud security governance shared responsibility model compliance risk management policy enforcement",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00055",
+        "NIST_SP_800-144_txt_00056"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.5,
+          "recall@20": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.3065735963827292,
+          "ndcg@20": 0.3065735963827292
+        },
+        "latency_ms": 4307.09,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00039",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 3.8046,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00026",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 3.2319,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00055",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.1 Governance**",
+            "score": 2.8721,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00040",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>3. Public Cloud Services</mark>**",
+            "score": 2.3936,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00021",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+            "score": 1.9976,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 219.37,
+        "pipeline_latency_ms": 4446.54,
+        "total_latency_ms": 4665.91,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00112",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 1.9581,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 1.7893,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00026",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 1.3506,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-57_txt_00026",
+            "document_id": "NIST_SP_800-57",
+            "section": "Unknown",
+            "score": 1.1622,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-146_txt_00146",
+            "document_id": "NIST_SP_800-146",
+            "section": "**9.1 Management**",
+            "score": 0.984,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -0.5,
+        "mrr@5": -0.3333333333333333,
+        "ndcg@5": -0.3065735963827292
+      }
+    },
+    {
+      "question_id": "Q5",
+      "original_question": "Who is responsible for security and privacy in public cloud computing?",
+      "rewritten_question": "public cloud computing shared responsibility model security privacy provider customer",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00022",
+        "NIST_SP_800-144_txt_00026",
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-144_txt_00060"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.25,
+          "recall@20": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.24630238874073,
+          "ndcg@20": 0.24630238874073
+        },
+        "latency_ms": 4055.73,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00031",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 7.6059,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 6.8225,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00002",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 6.8188,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00027",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 5.9265,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00043",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 5.7334,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.25,
+          "recall@5": 0.25,
+          "recall@20": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.3903800499921017,
+          "ndcg@20": 0.3903800499921017
+        },
+        "rewriter_latency_ms": 343.36,
+        "pipeline_latency_ms": 4093.97,
+        "total_latency_ms": 4437.33,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 4.5274,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00152",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>Appendix A - Roles and Responsibilities</mark>**",
+            "score": 3.3629,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00034",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.1 Deployment Models**",
+            "score": 3.327,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00023",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+            "score": 3.0853,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00020",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.7418,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.5,
+        "ndcg@5": 0.1440776612513717
+      }
+    },
+    {
+      "question_id": "Q7",
+      "original_question": "What privacy risks can arise when organizations use public cloud services?",
+      "rewritten_question": "public cloud services privacy risks data co-location multi-tenant isolation data at rest encryption cryptographic key management provider audit controls",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00048",
+        "NIST_SP_800-144_txt_00080",
+        "NIST_SP_800-144_txt_00108"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "latency_ms": 4976.12,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 5.7087,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00040",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>3. Public Cloud Services</mark>**",
+            "score": 5.3493,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00038",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 4.5216,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00099",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.1 General Concerns**",
+            "score": 4.3685,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00030",
+            "document_id": "NIST_SP_800-144",
+            "section": "**1.2 Purpose and Scope**",
+            "score": 4.1801,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "mrr@20": 0.25,
+          "ndcg@5": 0.20210734650054757,
+          "ndcg@20": 0.20210734650054757
+        },
+        "rewriter_latency_ms": 234.88,
+        "pipeline_latency_ms": 5006.08,
+        "total_latency_ms": 5240.96,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00111",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 3.3876,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00082",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 2.0796,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-146_txt_00050",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 0.4053,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 0.3449,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-146_txt_00135",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 0.2313,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.75,
+        "ndcg@5": -0.2671713795222089
+      }
+    },
+    {
+      "question_id": "Q8",
+      "original_question": "How does loss of control affect security in public cloud computing?",
+      "rewritten_question": "loss of control public cloud computing security shared responsibility model provider tenant",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-144_txt_00062",
+        "NIST_SP_800-146_txt_00080"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 6053.35,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00050",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 5.6937,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 3.9594,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00027",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 3.5785,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00099",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.1 General Concerns**",
+            "score": 3.4864,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00120",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>6. Conclusion</mark>**",
+            "score": 2.5178,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 230.37,
+        "pipeline_latency_ms": 5289.13,
+        "total_latency_ms": 5519.5,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00050",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 3.8616,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 3.2232,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-210_txt_00030",
+            "document_id": "NIST_SP_800-210",
+            "section": "**<mark>2 Cloud Access Control Characteristics</mark>**",
+            "score": 1.8558,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00023",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 1.3568,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00020",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 1.1239,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q9",
+      "original_question": "What security issues can result from outsourcing services to a cloud provider?",
+      "rewritten_question": "cloud computing security risks outsourcing shared responsibility model data co-location multi-tenant isolation provider audit controls",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00094",
+        "NIST_SP_800-144_txt_00099",
+        "NIST_SP_800-144_txt_00100"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "latency_ms": 4362.34,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00099",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.1 General Concerns**",
+            "score": 6.9923,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00039",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 5.3619,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00038",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 4.8345,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00032",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 4.8328,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00101",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.1 General Concerns**",
+            "score": 4.8055,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 243.69,
+        "pipeline_latency_ms": 5529.49,
+        "total_latency_ms": 5773.18,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00111",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 2.4131,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00081",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 0.8062,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-201_txt_00031",
+            "document_id": "NIST_SP_800-201",
+            "section": "Unknown",
+            "score": 0.3345,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-239_txt_00048",
+            "document_id": "NIST_SP_800-239",
+            "section": "Unknown",
+            "score": 0.2983,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00077",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": -0.3739,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -0.3333333333333333,
+        "mrr@5": -1.0,
+        "ndcg@5": -0.46927872602275644
+      }
+    },
+    {
+      "question_id": "Q10",
+      "original_question": "What are the security implications of storing organizational data in the public cloud?",
+      "rewritten_question": "public cloud data storage security implications data protection shared environment multi-tenant isolation data co-location database isolation data at rest encryption cryptographic key management",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00080",
+        "NIST_SP_800-144_txt_00081",
+        "NIST_SP_800-144_txt_00082"
+      ],
+      "status": "IMPROVED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 4474.45,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00021",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+            "score": 3.7604,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00043",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.2 The Security and Privacy Upside**",
+            "score": 3.7304,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00038",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 3.5729,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-146_txt_00135",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 3.046,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00024",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+            "score": 2.7044,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.6666666666666666,
+          "recall@20": 0.6666666666666666,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.7653606369886217,
+          "ndcg@20": 0.7653606369886217
+        },
+        "rewriter_latency_ms": 250.15,
+        "pipeline_latency_ms": 4739.4,
+        "total_latency_ms": 4989.56,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00082",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 3.6241,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00081",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": 1.9003,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00111",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 0.9949,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 0.2122,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-201_txt_00031",
+            "document_id": "NIST_SP_800-201",
+            "section": "Unknown",
+            "score": -0.0046,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 1.0,
+        "recall@5": 0.6666666666666666,
+        "mrr@5": 1.0,
+        "ndcg@5": 0.7653606369886217
+      }
+    },
+    {
+      "question_id": "Q11",
+      "original_question": "What responsibilities does an organization retain after moving to a public cloud?",
+      "rewritten_question": "shared responsibility model public cloud provider customer responsibilities retained",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00026",
+        "NIST_SP_800-144_txt_00038",
+        "NIST_SP_800-144_txt_00039",
+        "NIST_SP_800-144_txt_00060"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.25,
+          "recall@5": 0.25,
+          "recall@20": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.3903800499921017,
+          "ndcg@20": 0.3903800499921017
+        },
+        "latency_ms": 5130.02,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00039",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 4.3525,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00130",
+            "document_id": "NIST_SP_800-146",
+            "section": "**8.4 Compliance**",
+            "score": 3.0542,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00094",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>5. Public Cloud Outsourcing</mark>**",
+            "score": 2.5168,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 2.4753,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00024",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+            "score": 2.1714,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 239.57,
+        "pipeline_latency_ms": 4637.67,
+        "total_latency_ms": 4877.24,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-210_txt_00030",
+            "document_id": "NIST_SP_800-210",
+            "section": "Unknown",
+            "score": 3.0373,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00058",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 3.0317,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST.SP.800-61r3_txt_00034",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 2.8371,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-61_txt_00034",
+            "document_id": "NIST_SP_800-61",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 2.8371,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-146_txt_00152",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>Appendix A - Roles and Responsibilities</mark>**",
+            "score": 2.6378,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -0.25,
+        "mrr@5": -1.0,
+        "ndcg@5": -0.3903800499921017
+      }
+    },
+    {
+      "question_id": "Q12",
+      "original_question": "What security responsibilities are shared between a cloud provider and a cloud customer?",
+      "rewritten_question": "shared responsibility model cloud provider customer security responsibilities",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00022",
+        "NIST_SP_800-144_txt_00036",
+        "NIST_SP_800-146_txt_00080",
+        "NIST_SP_800-146_txt_00094"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.25,
+          "recall@5": 0.5,
+          "recall@20": 0.5,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.5413996682199069,
+          "ndcg@20": 0.5413996682199069
+        },
+        "latency_ms": 4339.91,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 5.7162,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00152",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>Appendix A - Roles and Responsibilities</mark>**",
+            "score": 5.6737,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-146_txt_00016",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 5.283,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-210_txt_00030",
+            "document_id": "NIST_SP_800-210",
+            "section": "**<mark>2 Cloud Access Control Characteristics</mark>**",
+            "score": 4.4598,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00036",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.2 Service Models**",
+            "score": 3.8615,
+            "is_relevant": true
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 208.8,
+        "pipeline_latency_ms": 7426.84,
+        "total_latency_ms": 7635.64,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-146_txt_00152",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>Appendix A - Roles and Responsibilities</mark>**",
+            "score": 5.2961,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-210_txt_00030",
+            "document_id": "NIST_SP_800-210",
+            "section": "Unknown",
+            "score": 4.6391,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST.SP.800-61r3_txt_00034",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 4.2864,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-61_txt_00034",
+            "document_id": "NIST_SP_800-61",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 4.2864,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-223_txt_00069",
+            "document_id": "NIST_SP_800-223",
+            "section": "**A.3. Cloud HPC Environments**",
+            "score": 4.18,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -0.5,
+        "mrr@5": -1.0,
+        "ndcg@5": -0.5413996682199069
+      }
+    },
+    {
+      "question_id": "Q13",
+      "original_question": "What risks are associated with relying on a third-party cloud service provider?",
+      "rewritten_question": "third-party cloud service provider risks shared responsibility model data co-location multi-tenant isolation provider audit controls incident response forensics limitations",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00064",
+        "NIST_SP_800-144_txt_00086",
+        "NIST_SP_800-146_txt_00122"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.2960819109658652,
+          "ndcg@20": 0.2960819109658652
+        },
+        "latency_ms": 4374.58,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00038",
+            "document_id": "NIST_SP_800-144",
+            "section": "**2.3 Outsourcing and Accountability**",
+            "score": 4.8202,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00064",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": 4.3646,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00066",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": 2.9434,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00087",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.8187,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00100",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.5665,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.18154179253735267,
+          "ndcg@20": 0.18154179253735267
+        },
+        "rewriter_latency_ms": 307.16,
+        "pipeline_latency_ms": 5391.42,
+        "total_latency_ms": 5698.58,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST.SP.800-61r3_txt_00034",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 2.4139,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-61_txt_00034",
+            "document_id": "NIST_SP_800-61",
+            "section": "**2.2. Incident Response Roles and Responsibilities**",
+            "score": 2.4139,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00111",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 1.038,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00087",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 0.1495,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00064",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": 0.0432,
+            "is_relevant": true
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.3,
+        "ndcg@5": -0.11454011842851256
+      }
+    },
+    {
+      "question_id": "Q14",
+      "original_question": "How can social engineering attacks affect public cloud security?",
+      "rewritten_question": "social engineering attacks public cloud security phishing credential theft multi-tenant environment access control identity management",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00073",
+        "NIST_SP_800-144_txt_00025"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.5,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5779.84,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00073",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": 4.5383,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00025",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that the client-side computing environment meets organizational security and privacy requirements for cloud computing.**",
+            "score": 2.3327,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-115_txt_00092",
+            "document_id": "NIST_SP_800-115",
+            "section": "**5.3 Social Engineering**",
+            "score": -0.1571,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00063",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": -1.3051,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-146_txt_00050",
+            "document_id": "NIST_SP_800-146",
+            "section": "**4.6 The Public Cloud Scenario**",
+            "score": -1.4251,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.5,
+          "recall@20": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.3065735963827292,
+          "ndcg@20": 0.3065735963827292
+        },
+        "rewriter_latency_ms": 363.77,
+        "pipeline_latency_ms": 5886.7,
+        "total_latency_ms": 6250.47,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00048",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": -0.938,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00081",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.7 Data Protection**",
+            "score": -1.7767,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00073",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.4 Architecture**",
+            "score": -2.0997,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00050",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": -2.3204,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00075",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": -2.5309,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": -0.5,
+        "mrr@5": -0.6666666666666667,
+        "ndcg@5": -0.6934264036172708
+      }
+    },
+    {
+      "question_id": "Q16",
+      "original_question": "Why are security and privacy considerations important throughout the cloud system lifecycle?",
+      "rewritten_question": "cloud system lifecycle security privacy considerations design implementation operation decommissioning",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00021",
+        "NIST_SP_800-144_txt_00104",
+        "NIST_SP_800-144_txt_00115"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.25,
+          "mrr@20": 0.25,
+          "ndcg@5": 0.20210734650054757,
+          "ndcg@20": 0.20210734650054757
+        },
+        "latency_ms": 6930.81,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00120",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>6. Conclusion</mark>**",
+            "score": 4.8934,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-53_txt_00669",
+            "document_id": "NIST_SP_800-53",
+            "section": "Unknown",
+            "score": 4.6834,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00065",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": 4.5109,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00021",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+            "score": 4.2088,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00043",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.2 The Security and Privacy Upside**",
+            "score": 3.0311,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.18154179253735267,
+          "ndcg@20": 0.18154179253735267
+        },
+        "rewriter_latency_ms": 267.15,
+        "pipeline_latency_ms": 5196.6,
+        "total_latency_ms": 5463.75,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-53_txt_00669",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>SA-3</u> SYSTEM DEVELOPMENT LIFE CYCLE**",
+            "score": 2.4866,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-53_txt_00675",
+            "document_id": "NIST_SP_800-53",
+            "section": "Unknown",
+            "score": 2.1719,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-53_txt_00529",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>PL-2</u> SYSTEM SECURITY AND PRIVACY PLANS**",
+            "score": 2.1106,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00120",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.0573,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00021",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+            "score": 1.7433,
+            "is_relevant": true
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.04999999999999999,
+        "ndcg@5": -0.0205655539631949
+      }
+    },
+    {
+      "question_id": "Q17",
+      "original_question": "What governance practices are important when using public cloud services?",
+      "rewritten_question": "cloud governance practices public cloud services shared responsibility model compliance risk management",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00055",
+        "NIST_SP_800-144_txt_00056"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.4,
+          "mrr@5": 0.25,
+          "mrr@20": 0.25,
+          "ndcg@5": 0.5012658353418871,
+          "ndcg@20": 0.5012658353418871
+        },
+        "latency_ms": 4793.61,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00026",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 4.9908,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00021",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+            "score": 3.1046,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00104",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.9752,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00056",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.1 Governance**",
+            "score": 2.6922,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00055",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.1 Governance**",
+            "score": 2.4586,
+            "is_relevant": true
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 230.23,
+        "pipeline_latency_ms": 6266.43,
+        "total_latency_ms": 6496.65,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00026",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 4.0602,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 3.5413,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00104",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 3.3602,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00112",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 2.9485,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00027",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 1.2279,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -1.0,
+        "mrr@5": -0.25,
+        "ndcg@5": -0.5012658353418871
+      }
+    },
+    {
+      "question_id": "Q19",
+      "original_question": "What challenges can organizations face when monitoring security in public cloud environments?",
+      "rewritten_question": "public cloud security monitoring challenges event logs provider audit controls incident response forensics limitations",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00065",
+        "NIST_SP_800-144_txt_00087",
+        "NIST_SP_800-146_txt_00134"
+      ],
+      "status": "IMPROVED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 5373.18,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00030",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 5.1375,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00008",
+            "document_id": "NIST_SP_800-144",
+            "section": "Unknown",
+            "score": 4.9504,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00120",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>6. Conclusion</mark>**",
+            "score": 4.7616,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00026",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**",
+            "score": 4.7335,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00050",
+            "document_id": "NIST_SP_800-144",
+            "section": "**3.3 The Security and Privacy Downside**",
+            "score": 4.05,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "rewriter_latency_ms": 265.63,
+        "pipeline_latency_ms": 4572.21,
+        "total_latency_ms": 4837.85,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00087",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.9 Incident Response**",
+            "score": 3.2896,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-201_txt_00032",
+            "document_id": "NIST_SP_800-201",
+            "section": "**2. Overview of NIST Cloud Forensic Challenges**",
+            "score": 2.4894,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-201_txt_00031",
+            "document_id": "NIST_SP_800-201",
+            "section": "**2. Overview of NIST Cloud Forensic Challenges**",
+            "score": 2.4454,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00088",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.9 Incident Response**",
+            "score": 1.6047,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-201_txt_00026",
+            "document_id": "NIST_SP_800-201",
+            "section": "Unknown",
+            "score": 0.0455,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 1.0,
+        "recall@5": 0.3333333333333333,
+        "mrr@5": 1.0,
+        "ndcg@5": 0.46927872602275644
+      }
+    },
+    {
+      "question_id": "Q20",
+      "original_question": "What factors should organizations consider when evaluating the security of a public cloud provider?",
+      "rewritten_question": "public cloud provider security evaluation factors shared responsibility model third-party risk assessment",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00041",
+        "NIST_SP_800-144_txt_00104",
+        "NIST_SP_800-144_txt_00111",
+        "NIST_SP_800-144_txt_00112"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.25,
+          "recall@20": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.19519002499605084,
+          "ndcg@20": 0.19519002499605084
+        },
+        "latency_ms": 5187.43,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-146_txt_00016",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 5.579,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 4.9607,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00112",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 4.9053,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-144_txt_00040",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>3. Public Cloud Services</mark>**",
+            "score": 4.7848,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00023",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+            "score": 4.7647,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.25,
+          "recall@5": 0.25,
+          "recall@20": 0.25,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.3903800499921017,
+          "ndcg@20": 0.3903800499921017
+        },
+        "rewriter_latency_ms": 248.83,
+        "pipeline_latency_ms": 5643.39,
+        "total_latency_ms": 5892.22,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-144_txt_00112",
+            "document_id": "NIST_SP_800-144",
+            "section": "**5.2 Preliminary Activities**",
+            "score": 2.6246,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00050",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 2.2772,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-144_txt_00022",
+            "document_id": "NIST_SP_800-144",
+            "section": "**Understand the public cloud computing environment offered by the cloud provider.**",
+            "score": 2.1897,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-146_txt_00146",
+            "document_id": "NIST_SP_800-146",
+            "section": "Unknown",
+            "score": 2.1198,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00064",
+            "document_id": "NIST_SP_800-144",
+            "section": "**4.3 Trust**",
+            "score": 1.8526,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.6666666666666667,
+        "ndcg@5": 0.19519002499605084
+      }
+    },
+    {
+      "question_id": "Q21",
+      "original_question": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?",
+      "rewritten_question": "NIST incident handling guidance incident response life cycle core phases preparation detection and analysis containment eradication recovery post-incident activity",
+      "expected_chunks": [
+        "NIST_SP_800-83_txt_00071"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5408.06,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-83_txt_00071",
+            "document_id": "NIST_SP_800-83",
+            "section": "**<mark>4. Malware Incident Response</mark>**",
+            "score": 6.8323,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-83_txt_00032",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 5.1659,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST.SP.800-61r3_txt_00030",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.1. Incident Response Life Cycle Model**",
+            "score": 3.3653,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-61_txt_00030",
+            "document_id": "NIST_SP_800-61",
+            "section": "**2.1. Incident Response Life Cycle Model**",
+            "score": 3.3653,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST.SP.800-61r3_txt_00023",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**Executive Summary**",
+            "score": 3.2859,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 261.45,
+        "pipeline_latency_ms": 5647.04,
+        "total_latency_ms": 5908.49,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-83_txt_00071",
+            "document_id": "NIST_SP_800-83",
+            "section": "**<mark>4. Malware Incident Response</mark>**",
+            "score": 7.6151,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-83_txt_00032",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 6.7318,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST.SP.800-61r3_txt_00030",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.1. Incident Response Life Cycle Model**",
+            "score": 3.6291,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-61_txt_00030",
+            "document_id": "NIST_SP_800-61",
+            "section": "**2.1. Incident Response Life Cycle Model**",
+            "score": 3.6291,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST.SP.800-61r3_txt_00029",
+            "document_id": "NIST.SP.800-61r3",
+            "section": "**2.1. Incident Response Life Cycle Model**",
+            "score": 3.1017,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q22",
+      "original_question": "What key considerations and trade-offs should guide organizations when making malware containment decisions?",
+      "rewritten_question": "malware containment decisions trade-offs incident response preparation detection analysis containment eradication recovery",
+      "expected_chunks": [
+        "NIST_SP_800-83_txt_00090"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@20": 0.6309297535714575
+        },
+        "latency_ms": 5071.06,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-83_txt_00033",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 4.8147,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-83_txt_00090",
+            "document_id": "NIST_SP_800-83",
+            "section": "**4.3 Containment**",
+            "score": 4.0684,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-83_txt_00093",
+            "document_id": "NIST_SP_800-83",
+            "section": "**4.3.1 Containment Through User Participation**",
+            "score": 3.341,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-83_txt_00100",
+            "document_id": "NIST_SP_800-83",
+            "section": "**4.3.5 Containment Recommendations**",
+            "score": 3.2252,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-83_txt_00032",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 3.1505,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "ndcg@20": 0.38685280723454163
+        },
+        "rewriter_latency_ms": 270.39,
+        "pipeline_latency_ms": 8865.89,
+        "total_latency_ms": 9136.28,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-83_txt_00032",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 5.377,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-83_txt_00071",
+            "document_id": "NIST_SP_800-83",
+            "section": "**<mark>4. Malware Incident Response</mark>**",
+            "score": 5.0033,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-83_txt_00033",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 4.6815,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-83_txt_00034",
+            "document_id": "NIST_SP_800-83",
+            "section": "**Organizations should have a robust incident response process capability that addresses malware incident handling.**",
+            "score": 3.9725,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-83_txt_00090",
+            "document_id": "NIST_SP_800-83",
+            "section": "**4.3 Containment**",
+            "score": 3.49,
+            "is_relevant": true
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.3,
+        "ndcg@5": -0.2440769463369159
+      }
+    },
+    {
+      "question_id": "Q23",
+      "original_question": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?",
+      "rewritten_question": "Zero Trust Architecture implicit trust network perimeter boundary continuous verification",
+      "expected_chunks": [
+        "NIST_SP_800-207_txt_00009"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 6535.41,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-207_txt_00009",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Abstract**",
+            "score": 6.2184,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-207_txt_00023",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Background  -  Zero Trust Principles and Zero Trust Architecture**",
+            "score": 4.747,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-215_txt_00057",
+            "document_id": "NIST_SP_800-215",
+            "section": "**Enterprise-Wide Network Security Framework - Zero Trust Network Access (ZTNA)**",
+            "score": 2.7387,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-207_txt_00020",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Executive Summary**",
+            "score": 2.2936,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-207_txt_00022",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Introduction**",
+            "score": 1.3167,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@20": 0.6309297535714575
+        },
+        "rewriter_latency_ms": 384.72,
+        "pipeline_latency_ms": 7247.02,
+        "total_latency_ms": 7631.74,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-207_txt_00023",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Background  -  Zero Trust Principles and Zero Trust Architecture**",
+            "score": 4.7203,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-207_txt_00009",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Abstract**",
+            "score": 4.4088,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-207_txt_00020",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Executive Summary**",
+            "score": 3.1782,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-215_txt_00057",
+            "document_id": "NIST_SP_800-215",
+            "section": "Unknown",
+            "score": 3.1688,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-239_txt_00060",
+            "document_id": "NIST_SP_800-239",
+            "section": "Unknown",
+            "score": 2.8216,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.5,
+        "ndcg@5": -0.36907024642854247
+      }
+    },
+    {
+      "question_id": "Q24",
+      "original_question": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?",
+      "rewritten_question": "network segmentation virtual machine protection security recommendations",
+      "expected_chunks": [
+        "NIST_SP_800-125_txt_00053"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 4951.9,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-125_txt_00053",
+            "document_id": "NIST_SP_800-125",
+            "section": "**2.6 Security Recommendations for Network Segmentation**",
+            "score": 6.8276,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-125_txt_00054",
+            "document_id": "NIST_SP_800-125",
+            "section": "**2.6 Security Recommendations for Network Segmentation**",
+            "score": 6.1443,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-125_txt_00010",
+            "document_id": "NIST_SP_800-125",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 3.8542,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-125_txt_00058",
+            "document_id": "NIST_SP_800-125",
+            "section": "Unknown",
+            "score": 3.7293,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-125_txt_00029",
+            "document_id": "NIST_SP_800-125",
+            "section": "**1.1 Purpose and Scope**",
+            "score": 3.5668,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 233.57,
+        "pipeline_latency_ms": 4605.93,
+        "total_latency_ms": 4839.5,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-125_txt_00053",
+            "document_id": "NIST_SP_800-125",
+            "section": "**2.6 Security Recommendations for Network Segmentation**",
+            "score": 8.7626,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-125_txt_00054",
+            "document_id": "NIST_SP_800-125",
+            "section": "**2.6 Security Recommendations for Network Segmentation**",
+            "score": 7.9279,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-125_txt_00008",
+            "document_id": "NIST_SP_800-125",
+            "section": "**Abstract**",
+            "score": 6.0096,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-125_txt_00010",
+            "document_id": "NIST_SP_800-125",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 5.6159,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-125_txt_00031",
+            "document_id": "NIST_SP_800-125",
+            "section": "**<mark>2. Network Segmentation Configurations for VM Protection</mark>**",
+            "score": 5.0643,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q25",
+      "original_question": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?",
+      "rewritten_question": "SSDF Secure Software Development Framework core practice groups Prepare the Organization PO Protect Software PS Produce Well-Secured Software PW Respond to Vulnerabilities RV",
+      "expected_chunks": [
+        "NIST_SP_800-218_txt_00029"
+      ],
+      "status": "IMPROVED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 4750.81,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-218_txt_00011",
+            "document_id": "NIST_SP_800-218",
+            "section": "1 **Abstract**",
+            "score": 5.4929,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-218_txt_00023",
+            "document_id": "NIST_SP_800-218",
+            "section": "**For the initial release (February 2022):**",
+            "score": 4.7757,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-218_txt_00028",
+            "document_id": "NIST_SP_800-218",
+            "section": "**1. Introduction**",
+            "score": 3.6687,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-218_txt_00026",
+            "document_id": "NIST_SP_800-218",
+            "section": "**1. Introduction**",
+            "score": 3.4671,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-218_txt_00012",
+            "document_id": "NIST_SP_800-218",
+            "section": "**Keywords**",
+            "score": 3.2834,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 268.04,
+        "pipeline_latency_ms": 4248.54,
+        "total_latency_ms": 4516.58,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-218_txt_00029",
+            "document_id": "NIST_SP_800-218",
+            "section": "**1. Introduction**",
+            "score": 4.8112,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-218_txt_00023",
+            "document_id": "NIST_SP_800-218",
+            "section": "**For the initial release (February 2022):**",
+            "score": 4.082,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-218_txt_00011",
+            "document_id": "NIST_SP_800-218",
+            "section": "1 **Abstract**",
+            "score": 3.5297,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-218_txt_00139",
+            "document_id": "NIST_SP_800-218",
+            "section": "Unknown",
+            "score": 3.1555,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-218_txt_00026",
+            "document_id": "NIST_SP_800-218",
+            "section": "**1. Introduction**",
+            "score": 2.6027,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr@5": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "question_id": "Q26",
+      "original_question": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?",
+      "rewritten_question": "enterprise patch management actionable metrics remediation prioritization vulnerability risk scoring",
+      "expected_chunks": [
+        "NIST_SP_800-40_txt_00049"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 4005.02,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-40_txt_00049",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 7.6531,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-40_txt_00050",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 5.2798,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-40_txt_00051",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 4.4877,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-57_txt_00026",
+            "document_id": "NIST_SP_800-57",
+            "section": "Unknown",
+            "score": 2.7427,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-40_txt_00005",
+            "document_id": "NIST_SP_800-40",
+            "section": "**Abstract**",
+            "score": 2.506,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 248.75,
+        "pipeline_latency_ms": 3958.68,
+        "total_latency_ms": 4207.42,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-40_txt_00049",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 6.9843,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-40_txt_00050",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 4.2993,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-40_txt_00051",
+            "document_id": "NIST_SP_800-40",
+            "section": "**3.6 Choose Actionable Enterprise-Level Patching Metrics**",
+            "score": 2.8936,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-40_txt_00005",
+            "document_id": "NIST_SP_800-40",
+            "section": "**Abstract**",
+            "score": 0.9556,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-40_txt_00034",
+            "document_id": "NIST_SP_800-40",
+            "section": "**<mark>3 Recommendations for Enterprise Patch Management Planning</mark>**",
+            "score": 0.8262,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q27",
+      "original_question": "What are the three tiers in the multitiered risk management approach and what scope does each cover?",
+      "rewritten_question": "multitiered risk management approach three tiers scope",
+      "expected_chunks": [
+        "NIST_SP_800-39_txt_00045",
+        "NIST_SP_800-39_txt_00046",
+        "NIST_SP_800-39_txt_00047"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "latency_ms": 5437.38,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-39_txt_00045",
+            "document_id": "NIST_SP_800-39",
+            "section": "**2.2   MULTITIERED RISK MANAGEMENT**",
+            "score": 6.4501,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-39_txt_00037",
+            "document_id": "NIST_SP_800-39",
+            "section": "**THE FUNDAMENTALS**",
+            "score": 5.0047,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-39_txt_00121",
+            "document_id": "NIST_SP_800-39",
+            "section": "**3.2   ASSESSING RISK**",
+            "score": 4.6318,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-39_txt_00035",
+            "document_id": "NIST_SP_800-39",
+            "section": "**1.4   ORGANIZATION OF THIS SPECIAL PUBLICATION**",
+            "score": 4.5733,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-161_txt_00104",
+            "document_id": "NIST_SP_800-161",
+            "section": "**2.3. Multilevel Risk Management**<sup>18</sup>",
+            "score": 2.73,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.3333333333333333,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 0.46927872602275644,
+          "ndcg@20": 0.46927872602275644
+        },
+        "rewriter_latency_ms": 230.08,
+        "pipeline_latency_ms": 4878.48,
+        "total_latency_ms": 5108.57,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-39_txt_00045",
+            "document_id": "NIST_SP_800-39",
+            "section": "**2.2   MULTITIERED RISK MANAGEMENT**",
+            "score": 8.3868,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-39_txt_00037",
+            "document_id": "NIST_SP_800-39",
+            "section": "**THE FUNDAMENTALS**",
+            "score": 6.5939,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-39_txt_00035",
+            "document_id": "NIST_SP_800-39",
+            "section": "**1.4   ORGANIZATION OF THIS SPECIAL PUBLICATION**",
+            "score": 6.1008,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-39_txt_00121",
+            "document_id": "NIST_SP_800-39",
+            "section": "**3.2   ASSESSING RISK**",
+            "score": 5.6921,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-39_fig_00003",
+            "document_id": "NIST_SP_800-39",
+            "section": "FIGURE 2: MULTITIERED ORGANIZATION-WIDE RISK MANAGEMENT",
+            "score": 4.599,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q28",
+      "original_question": "How does the security control tailoring process modify initial control baselines for specific organizational systems?",
+      "rewritten_question": "security control tailoring process modify initial control baselines organizational systems",
+      "expected_chunks": [
+        "NIST_SP_800-53_txt_00547"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5307.7,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-53_txt_00547",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>PL-11</u> BASELINE TAILORING**",
+            "score": 5.0371,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-161_txt_00189",
+            "document_id": "NIST_SP_800-161",
+            "section": "**A.1.2. Selecting, Tailoring, and Implementing C-SCRM Security Controls**",
+            "score": 4.6013,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-63_txt_00088",
+            "document_id": "NIST_SP_800-63",
+            "section": "**3.4. Tailor and Document Assurance Levels**",
+            "score": 4.3353,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-53_txt_00546",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>PL-10</u> BASELINE SELECTION**",
+            "score": 3.5631,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-63_txt_00346",
+            "document_id": "NIST_SP_800-63",
+            "section": "**tailoring**",
+            "score": 3.0531,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "ndcg@20": 0.5
+        },
+        "rewriter_latency_ms": 335.08,
+        "pipeline_latency_ms": 4209.91,
+        "total_latency_ms": 4544.99,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-63_txt_00088",
+            "document_id": "NIST_SP_800-63",
+            "section": "Unknown",
+            "score": 4.7525,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-161_txt_00189",
+            "document_id": "NIST_SP_800-161",
+            "section": "**A.1.2. Selecting, Tailoring, and Implementing C-SCRM Security Controls**",
+            "score": 4.7339,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-53_txt_00547",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>PL-11</u> BASELINE TAILORING**",
+            "score": 4.058,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-161_txt_00762",
+            "document_id": "NIST_SP_800-161",
+            "section": "**overlay**",
+            "score": 3.5691,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-53_txt_00546",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>PL-10</u> BASELINE SELECTION**",
+            "score": 3.4368,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.6666666666666667,
+        "ndcg@5": -0.5
+      }
+    },
+    {
+      "question_id": "Q29",
+      "original_question": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?",
+      "rewritten_question": "Authenticator Assurance Level AAL2 requirements authentication factors NIST SP 800-63B",
+      "expected_chunks": [
+        "NIST_SP_800-63_txt_00081"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5436.14,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-63_txt_00081",
+            "document_id": "NIST_SP_800-63",
+            "section": "**3.3.2.2. Authentication Assurance Level**",
+            "score": 6.0366,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-63_txt_00085",
+            "document_id": "NIST_SP_800-63",
+            "section": "**3.3.3.2. Selecting Initial AAL**",
+            "score": 4.8773,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-53_txt_00384",
+            "document_id": "NIST_SP_800-53",
+            "section": "Unknown",
+            "score": 3.5878,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-215_txt_00053",
+            "document_id": "NIST_SP_800-215",
+            "section": "**4.3 Network Configuration for User Authentication**",
+            "score": 3.0284,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-63_txt_00079",
+            "document_id": "NIST_SP_800-63",
+            "section": "**3.3.2.1. Identity Assurance Level**",
+            "score": 2.3833,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 238.96,
+        "pipeline_latency_ms": 4642.07,
+        "total_latency_ms": 4881.04,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-63_txt_00081",
+            "document_id": "NIST_SP_800-63",
+            "section": "**3.3.2.2. Authentication Assurance Level**",
+            "score": 8.3558,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-63_txt_00362",
+            "document_id": "NIST_SP_800-63",
+            "section": "**C.3. SP 800-63-3**",
+            "score": 6.5881,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-79_tbl_00066_p03",
+            "document_id": "NIST_SP_800-79",
+            "section": "Unknown",
+            "score": 5.318,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-63_txt_00032",
+            "document_id": "NIST_SP_800-63",
+            "section": "**1.2. How to Use This Suite of SPs**",
+            "score": 5.3017,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-79_tbl_00067_p01",
+            "document_id": "NIST_SP_800-79",
+            "section": "Table on Page 115",
+            "score": 5.2596,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q30",
+      "original_question": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?",
+      "rewritten_question": "Attribute Based Access Control ABAC attribute types subject attributes resource attributes environment attributes action attributes",
+      "expected_chunks": [
+        "NIST_SP_800-162_txt_00007",
+        "NIST_SP_800-162_txt_00044"
+      ],
+      "status": "REGRESSED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.5,
+          "recall@20": 0.5,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.23719771276929622,
+          "ndcg@20": 0.23719771276929622
+        },
+        "latency_ms": 4299.1,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-162_txt_00022",
+            "document_id": "NIST_SP_800-162",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 6.149,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-205_txt_00086",
+            "document_id": "NIST_SP_800-205",
+            "section": "**<mark>6 Conclusions</mark>**",
+            "score": 5.9629,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-178_txt_00038",
+            "document_id": "NIST_SP_800-178",
+            "section": "**<mark>2 Background</mark>**",
+            "score": 5.2493,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-162_txt_00027",
+            "document_id": "NIST_SP_800-162",
+            "section": "**1.1 Purpose and Scope**",
+            "score": 5.1278,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-162_txt_00007",
+            "document_id": "NIST_SP_800-162",
+            "section": "**Abstract**",
+            "score": 4.9299,
+            "is_relevant": true
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 215.44,
+        "pipeline_latency_ms": 4257.39,
+        "total_latency_ms": 4472.82,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-178_txt_00048",
+            "document_id": "NIST_SP_800-178",
+            "section": "Unknown",
+            "score": 6.1688,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-178_txt_00038",
+            "document_id": "NIST_SP_800-178",
+            "section": "**<mark>2 Background</mark>**",
+            "score": 6.1255,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-205_txt_00011",
+            "document_id": "NIST_SP_800-205",
+            "section": "Unknown",
+            "score": 5.927,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-205_txt_00039",
+            "document_id": "NIST_SP_800-205",
+            "section": "**<mark>2 Consideration Elements</mark>**",
+            "score": 5.7149,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-53_txt_00127",
+            "document_id": "NIST_SP_800-53",
+            "section": "Unknown",
+            "score": 5.3887,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": -1.0,
+        "recall@5": -0.5,
+        "mrr@5": -0.2,
+        "ndcg@5": -0.23719771276929622
+      }
+    },
+    {
+      "question_id": "Q31",
+      "original_question": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?",
+      "rewritten_question": "Full Disk Encryption FDE File Folder Encryption operational characteristics protection differences",
+      "expected_chunks": [
+        "NIST_SP_800-111_txt_00049"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5929.78,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-111_txt_00049",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.2 Protection Provided by Storage Encryption Technologies**",
+            "score": 2.8494,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-111_txt_00050",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.2 Protection Provided by Storage Encryption Technologies**",
+            "score": 1.8183,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-111_txt_00047",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.1.3 File/Folder Encryption**",
+            "score": 1.8181,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-111_txt_00039",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.1.1 Full Disk Encryption**",
+            "score": 0.7156,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-111_txt_00051",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.2 Protection Provided by Storage Encryption Technologies**",
+            "score": 0.6555,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 288.17,
+        "pipeline_latency_ms": 5561.95,
+        "total_latency_ms": 5850.12,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-111_txt_00049",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.2 Protection Provided by Storage Encryption Technologies**",
+            "score": 4.6422,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-111_txt_00039",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.1.1 Full Disk Encryption**",
+            "score": 4.0547,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-111_txt_00040",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.1.1 Full Disk Encryption**",
+            "score": 2.9355,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-111_txt_00050",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.2 Protection Provided by Storage Encryption Technologies**",
+            "score": 2.8604,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-111_txt_00042",
+            "document_id": "NIST_SP_800-111",
+            "section": "**3.1.1 Full Disk Encryption**",
+            "score": 2.1468,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q32",
+      "original_question": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?",
+      "rewritten_question": "application-proxy gateway packet filtering firewall network traffic inspection stateful inspection",
+      "expected_chunks": [
+        "NIST_SP_800-41_txt_00042"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 4611.33,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-41_txt_00042",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.4 Application-Proxy Gateways**",
+            "score": 6.8672,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-41_txt_00041",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.4 Application-Proxy Gateways**",
+            "score": 6.1086,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-41_txt_00043",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.5 Dedicated Proxy Servers**",
+            "score": 5.9132,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-41_txt_00098",
+            "document_id": "NIST_SP_800-41",
+            "section": "**<mark>Appendix A - Glossary</mark>**",
+            "score": 5.2552,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-41_txt_00079",
+            "document_id": "NIST_SP_800-41",
+            "section": "**4.2 Policies Based on Applications**",
+            "score": 3.2341,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 235.96,
+        "pipeline_latency_ms": 5105.67,
+        "total_latency_ms": 5341.62,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-41_txt_00042",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.4 Application-Proxy Gateways**",
+            "score": 6.7534,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-41_txt_00028",
+            "document_id": "NIST_SP_800-41",
+            "section": "Unknown",
+            "score": 5.766,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-41_txt_00036",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.2 Stateful Inspection**",
+            "score": 5.4741,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-41_txt_00098",
+            "document_id": "NIST_SP_800-41",
+            "section": "**<mark>Appendix A - Glossary</mark>**",
+            "score": 5.4604,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-41_txt_00039",
+            "document_id": "NIST_SP_800-41",
+            "section": "**2.1.3 Application Firewalls**",
+            "score": 4.6426,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q33",
+      "original_question": "What security controls and client software configurations are required to protect remote access in enterprise telework?",
+      "rewritten_question": "remote access security controls client software configuration enterprise telework",
+      "expected_chunks": [
+        "NIST_SP_800-46_txt_00030",
+        "NIST_SP_800-46_txt_00076"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 5247.12,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-46_txt_00074",
+            "document_id": "NIST_SP_800-46",
+            "section": "**3.4 Remote Access Client Software Security**",
+            "score": 5.6651,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-46_txt_00092",
+            "document_id": "NIST_SP_800-46",
+            "section": "**4.4 Summary of Key Recommendations**",
+            "score": 5.6185,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-46_txt_00036",
+            "document_id": "NIST_SP_800-46",
+            "section": "**2.1 Vulnerabilities, Threats, and Security Controls**",
+            "score": 5.6046,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-46_txt_00034",
+            "document_id": "NIST_SP_800-46",
+            "section": "Unknown",
+            "score": 5.3403,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-46_txt_00079",
+            "document_id": "NIST_SP_800-46",
+            "section": "**<mark>4. Telework Client Device Security</mark>**",
+            "score": 5.1017,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "rewriter_latency_ms": 211.67,
+        "pipeline_latency_ms": 4392.69,
+        "total_latency_ms": 4604.35,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-46_txt_00074",
+            "document_id": "NIST_SP_800-46",
+            "section": "**3.4 Remote Access Client Software Security**",
+            "score": 6.4875,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-46_txt_00075",
+            "document_id": "NIST_SP_800-46",
+            "section": "Unknown",
+            "score": 6.1593,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-46_txt_00034",
+            "document_id": "NIST_SP_800-46",
+            "section": "Unknown",
+            "score": 5.6681,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-46_txt_00049",
+            "document_id": "NIST_SP_800-46",
+            "section": "Unknown",
+            "score": 5.5058,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-46_txt_00092",
+            "document_id": "NIST_SP_800-46",
+            "section": "**4.4 Summary of Key Recommendations**",
+            "score": 5.3251,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q34",
+      "original_question": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?",
+      "rewritten_question": "cyber threat information sharing strategic benefits operational capabilities threat intelligence sharing ISAC ISAO",
+      "expected_chunks": [
+        "NIST_SP_800-150_txt_00040"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 5236.69,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-150_txt_00040",
+            "document_id": "NIST_SP_800-150",
+            "section": "**2.2 Benefits of Information Sharing**",
+            "score": 7.3142,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-150_txt_00012",
+            "document_id": "NIST_SP_800-150",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 6.4351,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-150_txt_00041",
+            "document_id": "NIST_SP_800-150",
+            "section": "**2.2 Benefits of Information Sharing**",
+            "score": 6.2064,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-150_txt_00017",
+            "document_id": "NIST_SP_800-150",
+            "section": "**Join and participate in information sharing efforts.**",
+            "score": 5.6724,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-150_txt_00076",
+            "document_id": "NIST_SP_800-150",
+            "section": "Unknown",
+            "score": 4.7179,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 292.37,
+        "pipeline_latency_ms": 4599.12,
+        "total_latency_ms": 4891.49,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-150_txt_00040",
+            "document_id": "NIST_SP_800-150",
+            "section": "**2.2 Benefits of Information Sharing**",
+            "score": 4.6161,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-150_txt_00012",
+            "document_id": "NIST_SP_800-150",
+            "section": "**<mark>Executive Summary</mark>**",
+            "score": 3.4226,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-161_txt_00378",
+            "document_id": "NIST_SP_800-161",
+            "section": "Unknown",
+            "score": 2.8048,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-150_txt_00035",
+            "document_id": "NIST_SP_800-150",
+            "section": "**1.3 Document Structure**",
+            "score": 1.5425,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-150_txt_00017",
+            "document_id": "NIST_SP_800-150",
+            "section": "**Join and participate in information sharing efforts.**",
+            "score": 1.4793,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q35",
+      "original_question": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?",
+      "rewritten_question": "technical penetration testing automated vulnerability scanning security assessment manual exploitation",
+      "expected_chunks": [
+        "NIST_SP_800-115_txt_00039"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "ndcg@20": 0.38685280723454163
+        },
+        "latency_ms": 5338.27,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-53_txt_00286",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>CA-8</u> PENETRATION TESTING**",
+            "score": 4.3232,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-115_txt_00087",
+            "document_id": "NIST_SP_800-115",
+            "section": "**5.2.1 Penetration Testing Phases**",
+            "score": 4.0738,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-115_txt_00040",
+            "document_id": "NIST_SP_800-115",
+            "section": "**2.2 Technical Assessment Techniques**",
+            "score": 3.9974,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-115_txt_00085",
+            "document_id": "NIST_SP_800-115",
+            "section": "**5.2 Penetration Testing**",
+            "score": 3.3263,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-115_txt_00039",
+            "document_id": "NIST_SP_800-115",
+            "section": "**2.2 Technical Assessment Techniques**",
+            "score": 3.3166,
+            "is_relevant": true
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "ndcg@20": 0.5
+        },
+        "rewriter_latency_ms": 240.27,
+        "pipeline_latency_ms": 4396.85,
+        "total_latency_ms": 4637.11,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-115_txt_00087",
+            "document_id": "NIST_SP_800-115",
+            "section": "**5.2.1 Penetration Testing Phases**",
+            "score": 5.3256,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-53_txt_00286",
+            "document_id": "NIST_SP_800-53",
+            "section": "**<u>CA-8</u> PENETRATION TESTING**",
+            "score": 5.0007,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-115_txt_00039",
+            "document_id": "NIST_SP_800-115",
+            "section": "**2.2 Technical Assessment Techniques**",
+            "score": 4.3056,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-115_txt_00040",
+            "document_id": "NIST_SP_800-115",
+            "section": "**2.2 Technical Assessment Techniques**",
+            "score": 4.0558,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-115_txt_00177",
+            "document_id": "NIST_SP_800-115",
+            "section": "**<mark>Appendix F - Glossary</mark>**",
+            "score": 3.0629,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.1333333333333333,
+        "ndcg@5": 0.11314719276545837
+      }
+    },
+    {
+      "question_id": "Q36",
+      "original_question": "What are the four phases of the digital forensics process and what is the primary objective of each phase?",
+      "rewritten_question": "digital forensics process four phases primary objective evidence collection preservation analysis presentation",
+      "expected_chunks": [
+        "NIST_SP_800-86_txt_00073"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "ndcg@20": 0.5
+        },
+        "latency_ms": 4525.85,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-86_txt_00251",
+            "document_id": "NIST_SP_800-86",
+            "section": "**A.2 Performing the Forensics Process**",
+            "score": 4.4614,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-86_txt_00088",
+            "document_id": "NIST_SP_800-86",
+            "section": "**3.5 Recommendations**",
+            "score": 3.2741,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-86_txt_00073",
+            "document_id": "NIST_SP_800-86",
+            "section": "**<mark>3. Performing the Forensic Process</mark>**",
+            "score": 1.8211,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-86_txt_00057",
+            "document_id": "NIST_SP_800-86",
+            "section": "**2.1 The Need for Forensics**",
+            "score": 1.5159,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-86_txt_00058",
+            "document_id": "NIST_SP_800-86",
+            "section": "**2.1 The Need for Forensics**",
+            "score": 0.9045,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.2,
+          "mrr@20": 0.2,
+          "ndcg@5": 0.38685280723454163,
+          "ndcg@20": 0.38685280723454163
+        },
+        "rewriter_latency_ms": 231.95,
+        "pipeline_latency_ms": 4102.51,
+        "total_latency_ms": 4334.47,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-86_txt_00088",
+            "document_id": "NIST_SP_800-86",
+            "section": "**3.5 Recommendations**",
+            "score": 4.5277,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-101_txt_00059",
+            "document_id": "NIST_SP_800-101",
+            "section": "4. Preservation",
+            "score": 3.9898,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-72_txt_00062",
+            "document_id": "NIST_SP_800-72",
+            "section": "4.3 Procedural Models",
+            "score": 3.9456,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-86_txt_00251",
+            "document_id": "NIST_SP_800-86",
+            "section": "**A.2 Performing the Forensics Process**",
+            "score": 2.6005,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-86_txt_00073",
+            "document_id": "NIST_SP_800-86",
+            "section": "**<mark>3. Performing the Forensic Process</mark>**",
+            "score": 2.3095,
+            "is_relevant": true
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": -0.1333333333333333,
+        "ndcg@5": -0.11314719276545837
+      }
+    },
+    {
+      "question_id": "Q37",
+      "original_question": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?",
+      "rewritten_question": "Cybersecurity Supply Chain Risk Management C-SCRM foundational practices sustaining practices",
+      "expected_chunks": [
+        "NIST_SP_800-161_txt_00147"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "latency_ms": 4104.0,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-161_txt_00147",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.2. Sustaining Practices**",
+            "score": 6.8251,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-161_txt_00145",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.1. Foundational Practices**",
+            "score": 5.838,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-161_txt_00144",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4. C-SCRM Key Practices**<sup>31</sup>",
+            "score": 4.7928,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-161_txt_00100",
+            "document_id": "NIST_SP_800-161",
+            "section": "Unknown",
+            "score": 4.5343,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-161_txt_00149",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.3. Enhancing Practices**",
+            "score": 4.2756,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 1.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 1.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 1.0,
+          "mrr@20": 1.0,
+          "ndcg@5": 1.0,
+          "ndcg@20": 1.0
+        },
+        "rewriter_latency_ms": 236.1,
+        "pipeline_latency_ms": 5775.0,
+        "total_latency_ms": 6011.1,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-161_txt_00147",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.2. Sustaining Practices**",
+            "score": 8.6132,
+            "is_relevant": true
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-161_txt_00145",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.1. Foundational Practices**",
+            "score": 7.3363,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-161_txt_00144",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4. C-SCRM Key Practices**<sup>31</sup>",
+            "score": 7.0443,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-161_txt_00072",
+            "document_id": "NIST_SP_800-161",
+            "section": "**1.1. Purpose**",
+            "score": 6.6035,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-161_txt_00149",
+            "document_id": "NIST_SP_800-161",
+            "section": "**3.4.3. Enhancing Practices**",
+            "score": 6.2181,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q38",
+      "original_question": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?",
+      "rewritten_question": "NIST SP 800-145 five essential characteristics cloud computing on-demand self-service broad network access resource pooling rapid elasticity measured service",
+      "expected_chunks": [
+        "NIST_SP_800-145_txt_00012"
+      ],
+      "status": "IMPROVED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 0.0,
+          "hit@20": 0.0,
+          "recall@1": 0.0,
+          "recall@5": 0.0,
+          "recall@20": 0.0,
+          "precision@5": 0.0,
+          "mrr@5": 0.0,
+          "mrr@20": 0.0,
+          "ndcg@5": 0.0,
+          "ndcg@20": 0.0
+        },
+        "latency_ms": 4359.57,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-146_txt_00021",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>2. Cloud Computing Definition</mark>**",
+            "score": 8.9707,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-201_txt_00031",
+            "document_id": "NIST_SP_800-201",
+            "section": "**2. Overview of NIST Cloud Forensic Challenges**",
+            "score": 6.2064,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-145_txt_00011",
+            "document_id": "NIST_SP_800-145",
+            "section": "**<mark>2. The NIST Definition of Cloud Computing</mark>**",
+            "score": 6.1913,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-201_txt_00064",
+            "document_id": "NIST_SP_800-201",
+            "section": "**cloud computing**",
+            "score": 3.6127,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-144_txt_00033",
+            "document_id": "NIST_SP_800-144",
+            "section": "**<mark>2. Background</mark>**",
+            "score": 2.1803,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.3333333333333333,
+          "mrr@20": 0.3333333333333333,
+          "ndcg@5": 0.5,
+          "ndcg@20": 0.5
+        },
+        "rewriter_latency_ms": 259.9,
+        "pipeline_latency_ms": 4938.2,
+        "total_latency_ms": 5198.1,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-146_txt_00021",
+            "document_id": "NIST_SP_800-146",
+            "section": "**<mark>2. Cloud Computing Definition</mark>**",
+            "score": 5.5756,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-146_txt_00022",
+            "document_id": "NIST_SP_800-146",
+            "section": "**Essential Characteristics:**",
+            "score": 3.9947,
+            "is_relevant": false
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-145_txt_00012",
+            "document_id": "NIST_SP_800-145",
+            "section": "**Essential Characteristics:**",
+            "score": 3.9443,
+            "is_relevant": true
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-145_txt_00011",
+            "document_id": "NIST_SP_800-145",
+            "section": "**<mark>2. The NIST Definition of Cloud Computing</mark>**",
+            "score": 2.6845,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-210_txt_00059",
+            "document_id": "NIST_SP_800-210",
+            "section": "Unknown",
+            "score": 1.435,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 1.0,
+        "recall@5": 1.0,
+        "mrr@5": 0.3333333333333333,
+        "ndcg@5": 0.5
+      }
+    },
+    {
+      "question_id": "Q39",
+      "original_question": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?",
+      "rewritten_question": "data-centric threat modeling security controls mitigation attack vectors procedure",
+      "expected_chunks": [
+        "NIST_SP_800-154_txt_00050"
+      ],
+      "status": "NEUTRAL",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@20": 0.6309297535714575
+        },
+        "latency_ms": 5647.28,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-154_txt_00042",
+            "document_id": "NIST_SP_800-154",
+            "section": "3. Characterize the security controls for mitigating the attack vectors; and",
+            "score": 6.9372,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-154_txt_00050",
+            "document_id": "NIST_SP_800-154",
+            "section": "**4.3 Step 3: Characterize the Security Controls for Mitigating the Attack Vectors**",
+            "score": 6.7611,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-154_txt_00016",
+            "document_id": "NIST_SP_800-154",
+            "section": "Table of Contents",
+            "score": 4.152,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-154_txt_00052",
+            "document_id": "NIST_SP_800-154",
+            "section": "**4.4 Step 4: Analyze the Threat Model**",
+            "score": 3.8495,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-46_txt_00037",
+            "document_id": "NIST_SP_800-46",
+            "section": "**2.1 Vulnerabilities, Threats, and Security Controls**",
+            "score": 3.8319,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 1.0,
+          "recall@20": 1.0,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.6309297535714575,
+          "ndcg@20": 0.6309297535714575
+        },
+        "rewriter_latency_ms": 235.4,
+        "pipeline_latency_ms": 5682.54,
+        "total_latency_ms": 5917.94,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-154_txt_00042",
+            "document_id": "NIST_SP_800-154",
+            "section": "3. Characterize the security controls for mitigating the attack vectors; and",
+            "score": 7.2861,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-154_txt_00050",
+            "document_id": "NIST_SP_800-154",
+            "section": "**4.3 Step 3: Characterize the Security Controls for Mitigating the Attack Vectors**",
+            "score": 6.0469,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-154_txt_00049",
+            "document_id": "NIST_SP_800-154",
+            "section": "560 **4.2 Step 2: Identify and Select the Attack Vectors to Be Included in the Model**",
+            "score": 5.2526,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-154_txt_00016",
+            "document_id": "NIST_SP_800-154",
+            "section": "Table of Contents",
+            "score": 5.1488,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-154_txt_00039",
+            "document_id": "NIST_SP_800-154",
+            "section": "**<mark>3. Introduction to System and Data-Centric System Threat Modeling</mark>**",
+            "score": 5.1123,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.0,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "question_id": "Q40",
+      "original_question": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?",
+      "rewritten_question": "service mesh infrastructure security assurances cloud-native microservices mutual TLS mTLS service-to-service authentication authorization encryption in transit traffic policy observability",
+      "expected_chunks": [
+        "NIST_SP_800-207_txt_00028",
+        "NIST_SP_800-207_txt_00032",
+        "NIST_SP_800-233_txt_00023"
+      ],
+      "status": "IMPROVED",
+      "baseline": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.3333333333333333,
+          "recall@20": 0.3333333333333333,
+          "precision@5": 0.2,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.2960819109658652,
+          "ndcg@20": 0.2960819109658652
+        },
+        "latency_ms": 6485.91,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-204_txt_00026",
+            "document_id": "NIST_SP_800-204",
+            "section": "**1. Introduction**",
+            "score": 6.1806,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-233_txt_00023",
+            "document_id": "NIST_SP_800-233",
+            "section": "**Executive Summary**",
+            "score": 5.9201,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-233_txt_00095",
+            "document_id": "NIST_SP_800-233",
+            "section": "**7. Summary and Conclusions**",
+            "score": 5.8925,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-207_txt_00024",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Relationship to Other NIST Guidance Documents**",
+            "score": 5.6961,
+            "is_relevant": false
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-233_txt_00025",
+            "document_id": "NIST_SP_800-233",
+            "section": "**1. Introduction**",
+            "score": 5.6429,
+            "is_relevant": false
+          }
+        ]
+      },
+      "revised_rewriter": {
+        "metrics": {
+          "hit@1": 0.0,
+          "hit@5": 1.0,
+          "hit@20": 1.0,
+          "recall@1": 0.0,
+          "recall@5": 0.6666666666666666,
+          "recall@20": 0.6666666666666666,
+          "precision@5": 0.4,
+          "mrr@5": 0.5,
+          "mrr@20": 0.5,
+          "ndcg@5": 0.49818925746641285,
+          "ndcg@20": 0.49818925746641285
+        },
+        "rewriter_latency_ms": 280.6,
+        "pipeline_latency_ms": 5279.81,
+        "total_latency_ms": 5560.41,
+        "top_5": [
+          {
+            "rank": 1,
+            "chunk_id": "NIST_SP_800-207_txt_00024",
+            "document_id": "NIST_SP_800-207",
+            "section": "**Relationship to Other NIST Guidance Documents**",
+            "score": 2.8805,
+            "is_relevant": false
+          },
+          {
+            "rank": 2,
+            "chunk_id": "NIST_SP_800-207_txt_00028",
+            "document_id": "NIST_SP_800-207",
+            "section": "**The Enterprise Cloud-Native Platform and its Components**",
+            "score": 2.3109,
+            "is_relevant": true
+          },
+          {
+            "rank": 3,
+            "chunk_id": "NIST_SP_800-233_txt_00026",
+            "document_id": "NIST_SP_800-233",
+            "section": "**1. Introduction**",
+            "score": 2.0949,
+            "is_relevant": false
+          },
+          {
+            "rank": 4,
+            "chunk_id": "NIST_SP_800-233_txt_00023",
+            "document_id": "NIST_SP_800-233",
+            "section": "**Executive Summary**",
+            "score": 1.7808,
+            "is_relevant": true
+          },
+          {
+            "rank": 5,
+            "chunk_id": "NIST_SP_800-233_txt_00095",
+            "document_id": "NIST_SP_800-233",
+            "section": "**7. Summary and Conclusions**",
+            "score": 1.52,
+            "is_relevant": false
+          }
+        ]
+      },
+      "deltas": {
+        "hit@5": 0.0,
+        "recall@5": 0.3333333333333333,
+        "mrr@5": 0.0,
+        "ndcg@5": 0.20210734650054762
+      }
+    }
+  ]
+}

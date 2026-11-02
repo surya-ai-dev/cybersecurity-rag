@@ -22,7 +22,7 @@ TOP_K_BM25 = 20
 TOP_K_FINAL = 5
 
 EVALUATION_FILE = PROJECT_ROOT / "data" / "evaluation" / "evaluation_questions.json"
-GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "ground_truth.json"
+GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth_current.json"
 
 
 # ============================================================
@@ -84,69 +84,60 @@ def get_question(item):
 def get_relevant_ids(
     ground_truth,
     question,
-    question_index
+    question_index,
+    question_item=None
 ):
-    # --------------------------------------------------------
-    # Dictionary format
-    #
-    # {
-    #   "Q1": ["chunk1", "chunk2"],
-    #   "Q2": ["chunk3", "chunk4"]
-    # }
-    # --------------------------------------------------------
+    qid = None
+    if isinstance(question_item, dict):
+        qid = question_item.get("id") or question_item.get("question_id")
+    if not qid:
+        q_key = f"Q{question_index + 1}"
+    else:
+        q_key = qid
 
     if isinstance(ground_truth, dict):
-
-        q_key = f"Q{question_index + 1}"
-
         if q_key in ground_truth:
-            return ground_truth[q_key]
+            entry = ground_truth[q_key]
+            if isinstance(entry, dict):
+                return entry.get("relevant_chunks") or entry.get("relevant_chunk_ids") or []
+            if isinstance(entry, list):
+                return entry
 
         if question in ground_truth:
-            return ground_truth[question]
+            entry = ground_truth[question]
+            if isinstance(entry, dict):
+                return entry.get("relevant_chunks") or entry.get("relevant_chunk_ids") or []
+            if isinstance(entry, list):
+                return entry
 
-        # Some files may wrap the data
         if "questions" in ground_truth:
             data = ground_truth["questions"]
-
-            if isinstance(data, list):
-                if question_index < len(data):
-                    item = data[question_index]
-
-                    if isinstance(item, dict):
-                        for key in [
-                            "relevant_chunks",
-                            "relevant_ids",
-                            "chunks",
-                            "ground_truth"
-                        ]:
-                            if key in item:
-                                return item[key]
-
-    # --------------------------------------------------------
-    # List format
-    # --------------------------------------------------------
+            if isinstance(data, list) and question_index < len(data):
+                item = data[question_index]
+                if isinstance(item, dict):
+                    for key in [
+                        "relevant_chunks",
+                        "relevant_ids",
+                        "chunks",
+                        "ground_truth"
+                    ]:
+                        if key in item:
+                            return item[key]
 
     if isinstance(ground_truth, list):
-
-        if question_index >= len(ground_truth):
-            return []
-
-        item = ground_truth[question_index]
-
-        if isinstance(item, list):
-            return item
-
-        if isinstance(item, dict):
-
-            for key in [
-                "relevant_chunks",
-                "relevant_ids",
-                "chunks",
-                "ground_truth"
-            ]:
-                if key in item:
-                    return item[key]
+        if question_index < len(ground_truth):
+            item = ground_truth[question_index]
+            if isinstance(item, list):
+                return item
+            if isinstance(item, dict):
+                for key in [
+                    "relevant_chunks",
+                    "relevant_ids",
+                    "chunks",
+                    "ground_truth"
+                ]:
+                    if key in item:
+                        return item[key]
 
     return []
 
@@ -397,13 +388,16 @@ def main():
         relevant_ids = get_relevant_ids(
             ground_truth,
             question,
-            index
+            index,
+            item
         )
+
+        qid = item.get("id") or item.get("question_id") or f"Q{index + 1}" if isinstance(item, dict) else f"Q{index + 1}"
 
         print("\n")
         print("=" * 70)
         print(
-            f"Q{index + 1}"
+            qid
         )
         print("=" * 70)
 

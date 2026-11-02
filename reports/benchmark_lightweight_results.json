@@ -1,0 +1,556 @@
+{
+  "benchmark_timestamp": "2026-10-16T12:40:45.015569",
+  "chunk_count": 396,
+  "query_count": 15,
+  "evaluated_models": [
+    {
+      "model_name": "BAAI/bge-small-en-v1.5",
+      "alias": "BGE-Small-en-v1.5",
+      "role": "Baseline",
+      "status": "COMPLETED",
+      "is_historical": false,
+      "dim": 384,
+      "load_time_sec": 3.0486972000217065,
+      "model_ram_delta_mb": 27.36328125,
+      "encoding_time_sec": 131.16418449999765,
+      "throughput_chunks_per_sec": 3.019116853503611,
+      "avg_query_latency_ms": 53.68928000874197,
+      "hit@1": 33.33333333333333,
+      "hit@3": 60.0,
+      "hit@5": 66.66666666666666,
+      "precision@5": 16.0,
+      "mrr": 0.4577777777777778,
+      "per_query_results": {
+        "Q1": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.4,
+          "mrr": 0.3333333333333333,
+          "query_latency_ms": 94.33510003145784,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00020",
+            "NIST_SP_800-144_txt_00047",
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00054"
+          ],
+          "top1_score": 0.8670830726623535
+        },
+        "Q3": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 52.16839996865019,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00025",
+            "NIST_SP_800-144_txt_00100",
+            "NIST_SP_800-144_txt_00020",
+            "NIST_SP_800-144_txt_00135",
+            "NIST_SP_800-144_txt_00051"
+          ],
+          "top1_score": 0.8260267972946167
+        },
+        "Q4": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 45.48260004958138,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00056",
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-144_txt_00024",
+            "NIST_SP_800-144_txt_00039"
+          ],
+          "top1_score": 0.8247063159942627
+        },
+        "Q5": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.3333333333333333,
+          "query_latency_ms": 52.726500027347356,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00027",
+            "NIST_SP_800-144_txt_00054"
+          ],
+          "top1_score": 0.8389447927474976
+        },
+        "Q7": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 49.034700030460954,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00040",
+            "NIST_SP_800-144_txt_00054",
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00038"
+          ],
+          "top1_score": 0.8404014110565186
+        },
+        "Q8": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 47.27169999387115,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00121",
+            "NIST_SP_800-144_txt_00047",
+            "NIST_SP_800-144_txt_00020"
+          ],
+          "top1_score": 0.8718315958976746
+        },
+        "Q9": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.4,
+          "mrr": 1.0,
+          "query_latency_ms": 48.82880003424361,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00099",
+            "NIST_SP_800-144_txt_00100",
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-146_txt_00016",
+            "NIST_SP_800-144_txt_00101"
+          ],
+          "top1_score": 0.8730835318565369
+        },
+        "Q10": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 47.00570000568405,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00020",
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00027",
+            "NIST_SP_800-144_txt_00054"
+          ],
+          "top1_score": 0.8464223742485046
+        },
+        "Q11": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.2,
+          "query_latency_ms": 47.36520000733435,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00094",
+            "NIST_SP_800-144_txt_00039",
+            "NIST_SP_800-144_txt_00024",
+            "NIST_SP_800-146_txt_00145",
+            "NIST_SP_800-144_txt_00038"
+          ],
+          "top1_score": 0.8090664744377136
+        },
+        "Q12": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 58.54150000959635,
+          "retrieved_chunks": [
+            "NIST_SP_800-146_txt_00152",
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-146_txt_00016",
+            "NIST_SP_800-144_txt_00064",
+            "NIST_SP_800-144_txt_00026"
+          ],
+          "top1_score": 0.8684216737747192
+        },
+        "Q13": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 51.58459994709119,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00064",
+            "NIST_SP_800-144_txt_00100",
+            "NIST_SP_800-144_txt_00063",
+            "NIST_SP_800-144_txt_00099",
+            "NIST_SP_800-146_txt_00125"
+          ],
+          "top1_score": 0.8055785894393921
+        },
+        "Q16": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 54.242399986833334,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00054",
+            "NIST_SP_800-144_txt_00021",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00120"
+          ],
+          "top1_score": 0.8461460471153259
+        },
+        "Q17": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 46.96720000356436,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00056",
+            "NIST_SP_800-144_txt_00024",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-146_txt_00148",
+            "NIST_SP_800-144_txt_00021"
+          ],
+          "top1_score": 0.8257634043693542
+        },
+        "Q19": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 57.08160001086071,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00054",
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00020",
+            "NIST_SP_800-144_txt_00026"
+          ],
+          "top1_score": 0.843852162361145
+        },
+        "Q20": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 52.70320002455264,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-144_txt_00024",
+            "NIST_SP_800-144_txt_00040"
+          ],
+          "top1_score": 0.839002251625061
+        }
+      }
+    },
+    {
+      "model_name": "sentence-transformers/all-MiniLM-L6-v2",
+      "alias": "MiniLM-L6-v2",
+      "role": "Candidate",
+      "status": "COMPLETED",
+      "is_historical": false,
+      "dim": 384,
+      "load_time_sec": 1.1004870000178926,
+      "model_ram_delta_mb": 12.05859375,
+      "encoding_time_sec": 33.34184919996187,
+      "throughput_chunks_per_sec": 11.876965720319221,
+      "avg_query_latency_ms": 26.799939991906285,
+      "hit@1": 26.666666666666668,
+      "hit@3": 60.0,
+      "hit@5": 66.66666666666666,
+      "precision@5": 14.666666666666666,
+      "mrr": 0.44666666666666666,
+      "per_query_results": {
+        "Q1": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 30.84999998100102,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00047",
+            "NIST_SP_800-144_txt_00030",
+            "NIST_SP_800-144_txt_00020",
+            "NIST_SP_800-144_txt_00027",
+            "NIST_SP_800-144_txt_00008"
+          ],
+          "top1_score": 0.7374569177627563
+        },
+        "Q3": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 35.707500006537884,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00073",
+            "NIST_SP_800-144_txt_00052",
+            "NIST_SP_800-146_txt_00139",
+            "NIST_SP_800-144_txt_00051",
+            "NIST_SP_800-144_txt_00047"
+          ],
+          "top1_score": 0.5688893795013428
+        },
+        "Q4": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 24.96479998808354,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00021",
+            "NIST_SP_800-144_txt_00055",
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00121"
+          ],
+          "top1_score": 0.6741624474525452
+        },
+        "Q5": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 25.29699995648116,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00031",
+            "NIST_SP_800-144_txt_00120",
+            "NIST_SP_800-144_txt_00027",
+            "NIST_SP_800-144_txt_00039"
+          ],
+          "top1_score": 0.7507705688476562
+        },
+        "Q7": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 29.816300026141107,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00038",
+            "NIST_SP_800-144_txt_00040",
+            "NIST_SP_800-144_txt_00024",
+            "NIST_SP_800-144_txt_00047",
+            "NIST_SP_800-144_txt_00099"
+          ],
+          "top1_score": 0.6936661005020142
+        },
+        "Q8": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 26.155700033996254,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00121",
+            "NIST_SP_800-144_txt_00047",
+            "NIST_SP_800-144_txt_00027",
+            "NIST_SP_800-146_txt_00050"
+          ],
+          "top1_score": 0.705081582069397
+        },
+        "Q9": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.4,
+          "mrr": 1.0,
+          "query_latency_ms": 28.166400035843253,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00099",
+            "NIST_SP_800-144_txt_00101",
+            "NIST_SP_800-144_txt_00008",
+            "NIST_SP_800-144_txt_00039",
+            "NIST_SP_800-144_txt_00094"
+          ],
+          "top1_score": 0.7766895294189453
+        },
+        "Q10": {
+          "hit@1": 1.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 1.0,
+          "query_latency_ms": 25.415099982637912,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00081",
+            "NIST_SP_800-144_txt_00040",
+            "NIST_SP_800-144_txt_00043",
+            "NIST_SP_800-146_txt_00137",
+            "NIST_SP_800-144_txt_00062"
+          ],
+          "top1_score": 0.619565486907959
+        },
+        "Q11": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.2,
+          "query_latency_ms": 25.02409997396171,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-146_txt_00145",
+            "NIST_SP_800-144_txt_00094",
+            "NIST_SP_800-144_txt_00095",
+            "NIST_SP_800-144_txt_00038"
+          ],
+          "top1_score": 0.6433184146881104
+        },
+        "Q12": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 24.94719997048378,
+          "retrieved_chunks": [
+            "NIST_SP_800-146_txt_00152",
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-146_txt_00016",
+            "NIST_SP_800-144_txt_00064"
+          ],
+          "top1_score": 0.7665313482284546
+        },
+        "Q13": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 23.902199987787753,
+          "retrieved_chunks": [
+            "NIST_SP_800-146_txt_00029",
+            "NIST_SP_800-144_txt_00100",
+            "NIST_SP_800-144_txt_00099",
+            "NIST_SP_800-146_txt_00050",
+            "NIST_SP_800-144_txt_00101"
+          ],
+          "top1_score": 0.6727278828620911
+        },
+        "Q16": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 24.872599984519184,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-144_txt_00043",
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00027"
+          ],
+          "top1_score": 0.710602343082428
+        },
+        "Q17": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 25.806299992837012,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00021",
+            "NIST_SP_800-144_txt_00055",
+            "NIST_SP_800-144_txt_00121",
+            "NIST_SP_800-144_txt_00094",
+            "NIST_SP_800-144_txt_00027"
+          ],
+          "top1_score": 0.6556254625320435
+        },
+        "Q19": {
+          "hit@1": 0.0,
+          "hit@3": 0.0,
+          "hit@5": 0.0,
+          "precision@5": 0.0,
+          "mrr": 0.0,
+          "query_latency_ms": 26.03889995953068,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00056",
+            "NIST_SP_800-144_txt_00039",
+            "NIST_SP_800-144_txt_00026",
+            "NIST_SP_800-144_txt_00050",
+            "NIST_SP_800-144_txt_00027"
+          ],
+          "top1_score": 0.7015096545219421
+        },
+        "Q20": {
+          "hit@1": 0.0,
+          "hit@3": 1.0,
+          "hit@5": 1.0,
+          "precision@5": 0.2,
+          "mrr": 0.5,
+          "query_latency_ms": 25.034999998752028,
+          "retrieved_chunks": [
+            "NIST_SP_800-144_txt_00022",
+            "NIST_SP_800-144_txt_00112",
+            "NIST_SP_800-144_txt_00040",
+            "NIST_SP_800-144_txt_00039",
+            "NIST_SP_800-144_txt_00021"
+          ],
+          "top1_score": 0.71806800365448
+        }
+      }
+    }
+  ],
+  "skipped_models": [
+    {
+      "name": "intfloat/e5-small-v2",
+      "alias": "E5-Small-v2",
+      "role": "Candidate",
+      "dim": 384,
+      "query_prefix": "query: ",
+      "passage_prefix": "passage: ",
+      "description": "BERT-based 12-layer model (33.4M params), asymmetric query/passage prefixes."
+    }
+  ],
+  "historical_reference": {
+    "model_name": "BAAI/bge-m3",
+    "alias": "BGE-M3 [Historical Reference]",
+    "role": "Historical Reference (Heavyweight)",
+    "dim": 1024,
+    "is_historical": true,
+    "hit@1": 46.67,
+    "hit@3": 73.33,
+    "hit@5": 73.33,
+    "precision@5": 21.33,
+    "mrr": 0.6,
+    "encoding_time_sec": 1600.021,
+    "throughput_chunks_per_sec": 0.25,
+    "avg_query_latency_ms": 564.58,
+    "load_time_sec": 7.0,
+    "model_ram_delta_mb": 338.04,
+    "notes": "Historical reference recorded during Stage 2 pilot benchmark (1,679.3s encoding time, 0.24-0.25 chunks/s on CPU)."
+  }
+}

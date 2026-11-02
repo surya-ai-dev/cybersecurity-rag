@@ -2,7 +2,9 @@
 
 from app.retrieval.bm25 import BM25Retriever
 from app.retrieval.dense import DenseRetriever
+from app.retrieval.confidence import ConfidenceEvaluator, ConfidenceResult, merge_candidate_pools
 from app.retrieval.hybrid import HybridRetriever
+from app.retrieval.query_rewriter import QueryRewriter, RewriteResult, rewrite_query
 from app.retrieval.reranker import CrossEncoderReranker, rerank_documents
 from app.retrieval.retriever import close_retriever, retrieve
 from app.retrieval.rrf import RRFFusion, reciprocal_rank_fusion
@@ -17,4 +19,10 @@ __all__ = [
     "rerank_documents",
     "retrieve",
     "close_retriever",
+    "QueryRewriter",
+    "RewriteResult",
+    "rewrite_query",
+    "ConfidenceEvaluator",
+    "ConfidenceResult",
+    "merge_candidate_pools",
 ]

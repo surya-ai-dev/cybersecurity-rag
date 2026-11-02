@@ -1,0 +1,968 @@
+[
+  {
+    "qid": "Q1",
+    "query": "What are the security risks of public cloud computing?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00047",
+      "NIST_SP_800-144_txt_00054"
+    ],
+    "sorted_dense_top1": 0.734,
+    "sorted_dense_mean3": 0.7022,
+    "sorted_dense_mean5": 0.6903,
+    "old_rrf_dense_top1": 0.675,
+    "old_rrf_dense_mean3": 0.6912,
+    "mismatch_diff": 0.059,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00047"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00047",
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00054"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 10,
+    "top_bm25_score": 29.15
+  },
+  {
+    "qid": "Q3",
+    "query": "How can client-side malware affect public cloud security?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00052",
+      "NIST_SP_800-144_txt_00025",
+      "NIST_SP_800-146_txt_00067"
+    ],
+    "sorted_dense_top1": 0.6652,
+    "sorted_dense_mean3": 0.6559,
+    "sorted_dense_mean5": 0.6489,
+    "old_rrf_dense_top1": 0.6652,
+    "old_rrf_dense_mean3": 0.6463,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 0.6667,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00025"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00025",
+      "NIST_SP_800-144_txt_00052"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 4,
+    "top_bm25_score": 27.17
+  },
+  {
+    "qid": "Q4",
+    "query": "Why is governance important for public cloud security?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00056",
+      "NIST_SP_800-144_txt_00055"
+    ],
+    "sorted_dense_top1": 0.6638,
+    "sorted_dense_mean3": 0.6573,
+    "sorted_dense_mean5": 0.6511,
+    "old_rrf_dense_top1": 0.6338,
+    "old_rrf_dense_mean3": 0.6474,
+    "mismatch_diff": 0.0299,
+    "hit5": 1.0,
+    "recall5": 0.5,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00055"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00055",
+      "NIST_SP_800-144_txt_00056"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 5,
+    "top_bm25_score": 17.7
+  },
+  {
+    "qid": "Q5",
+    "query": "Who is responsible for security and privacy in public cloud computing?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00060",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00026"
+    ],
+    "sorted_dense_top1": 0.6634,
+    "sorted_dense_mean3": 0.6615,
+    "sorted_dense_mean5": 0.6598,
+    "old_rrf_dense_top1": 0.6568,
+    "old_rrf_dense_mean3": 0.6459,
+    "mismatch_diff": 0.0067,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 0.5,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00038"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 7,
+    "top_bm25_score": 32.41
+  },
+  {
+    "qid": "Q7",
+    "query": "What privacy risks can arise when organizations use public cloud services?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00108",
+      "NIST_SP_800-144_txt_00048",
+      "NIST_SP_800-144_txt_00080"
+    ],
+    "sorted_dense_top1": 0.7388,
+    "sorted_dense_mean3": 0.7297,
+    "sorted_dense_mean5": 0.7227,
+    "old_rrf_dense_top1": 0.715,
+    "old_rrf_dense_mean3": 0.7103,
+    "mismatch_diff": 0.0238,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 0.3333,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00048"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 6,
+    "top_bm25_score": 23.79
+  },
+  {
+    "qid": "Q8",
+    "query": "How does loss of control affect security in public cloud computing?",
+    "gt_chunks": [
+      "NIST_SP_800-146_txt_00080",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00062"
+    ],
+    "sorted_dense_top1": 0.6712,
+    "sorted_dense_mean3": 0.6533,
+    "sorted_dense_mean5": 0.6474,
+    "old_rrf_dense_top1": 0.6712,
+    "old_rrf_dense_mean3": 0.6395,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 0.3333,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00062"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 7,
+    "top_bm25_score": 28.52
+  },
+  {
+    "qid": "Q9",
+    "query": "What security issues can result from outsourcing services to a cloud provider?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00099",
+      "NIST_SP_800-144_txt_00100",
+      "NIST_SP_800-144_txt_00094"
+    ],
+    "sorted_dense_top1": 0.7765,
+    "sorted_dense_mean3": 0.7333,
+    "sorted_dense_mean5": 0.7164,
+    "old_rrf_dense_top1": 0.7765,
+    "old_rrf_dense_mean3": 0.7333,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.6667,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00099",
+      "NIST_SP_800-144_txt_00094"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00099",
+      "NIST_SP_800-144_txt_00094",
+      "NIST_SP_800-144_txt_00100"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 10,
+    "top_bm25_score": 33.54
+  },
+  {
+    "qid": "Q10",
+    "query": "What are the security implications of storing organizational data in the public cloud?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00081",
+      "NIST_SP_800-144_txt_00080",
+      "NIST_SP_800-144_txt_00082"
+    ],
+    "sorted_dense_top1": 0.6928,
+    "sorted_dense_mean3": 0.6822,
+    "sorted_dense_mean5": 0.677,
+    "old_rrf_dense_top1": 0.6928,
+    "old_rrf_dense_mean3": 0.6768,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 0.0,
+    "recall20": 0.0,
+    "top5_hits": [],
+    "top20_hits": [],
+    "current_triggers_rewrite": true,
+    "overlap_count": 9,
+    "top_bm25_score": 33.2
+  },
+  {
+    "qid": "Q11",
+    "query": "What responsibilities does an organization retain after moving to a public cloud?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00060",
+      "NIST_SP_800-144_txt_00039",
+      "NIST_SP_800-144_txt_00038",
+      "NIST_SP_800-144_txt_00026"
+    ],
+    "sorted_dense_top1": 0.7008,
+    "sorted_dense_mean3": 0.6852,
+    "sorted_dense_mean5": 0.677,
+    "old_rrf_dense_top1": 0.6826,
+    "old_rrf_dense_mean3": 0.6852,
+    "mismatch_diff": 0.0183,
+    "hit5": 1.0,
+    "recall5": 0.25,
+    "hit20": 1.0,
+    "recall20": 0.5,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00039"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00039",
+      "NIST_SP_800-144_txt_00038"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 10,
+    "top_bm25_score": 26.31
+  },
+  {
+    "qid": "Q12",
+    "query": "What security responsibilities are shared between a cloud provider and a cloud customer?",
+    "gt_chunks": [
+      "NIST_SP_800-146_txt_00094",
+      "NIST_SP_800-146_txt_00080",
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00036"
+    ],
+    "sorted_dense_top1": 0.7257,
+    "sorted_dense_mean3": 0.7097,
+    "sorted_dense_mean5": 0.6959,
+    "old_rrf_dense_top1": 0.7257,
+    "old_rrf_dense_mean3": 0.7045,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.5,
+    "hit20": 1.0,
+    "recall20": 0.5,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00036"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00022",
+      "NIST_SP_800-144_txt_00036"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 6,
+    "top_bm25_score": 39.82
+  },
+  {
+    "qid": "Q13",
+    "query": "What risks are associated with relying on a third-party cloud service provider?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00064",
+      "NIST_SP_800-146_txt_00122",
+      "NIST_SP_800-144_txt_00086"
+    ],
+    "sorted_dense_top1": 0.6678,
+    "sorted_dense_mean3": 0.6647,
+    "sorted_dense_mean5": 0.6605,
+    "old_rrf_dense_top1": 0.66,
+    "old_rrf_dense_mean3": 0.658,
+    "mismatch_diff": 0.0078,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 0.3333,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00064"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00064"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 4,
+    "top_bm25_score": 26.68
+  },
+  {
+    "qid": "Q14",
+    "query": "How can social engineering attacks affect public cloud security?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00025",
+      "NIST_SP_800-144_txt_00073"
+    ],
+    "sorted_dense_top1": 0.6835,
+    "sorted_dense_mean3": 0.6416,
+    "sorted_dense_mean5": 0.6301,
+    "old_rrf_dense_top1": 0.6835,
+    "old_rrf_dense_mean3": 0.6306,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00073",
+      "NIST_SP_800-144_txt_00025"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00073",
+      "NIST_SP_800-144_txt_00025"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 4,
+    "top_bm25_score": 22.1
+  },
+  {
+    "qid": "Q16",
+    "query": "Why are security and privacy considerations important throughout the cloud system lifecycle?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00115",
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00021"
+    ],
+    "sorted_dense_top1": 0.6829,
+    "sorted_dense_mean3": 0.6786,
+    "sorted_dense_mean5": 0.6753,
+    "old_rrf_dense_top1": 0.6829,
+    "old_rrf_dense_mean3": 0.6718,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 0.3333,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00021"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00021"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 7,
+    "top_bm25_score": 29.34
+  },
+  {
+    "qid": "Q17",
+    "query": "What governance practices are important when using public cloud services?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00056",
+      "NIST_SP_800-144_txt_00055"
+    ],
+    "sorted_dense_top1": 0.6862,
+    "sorted_dense_mean3": 0.67,
+    "sorted_dense_mean5": 0.6646,
+    "old_rrf_dense_top1": 0.6862,
+    "old_rrf_dense_mean3": 0.6654,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.5,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00056"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00056",
+      "NIST_SP_800-144_txt_00055"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 7,
+    "top_bm25_score": 18.96
+  },
+  {
+    "qid": "Q19",
+    "query": "What challenges can organizations face when monitoring security in public cloud environments?",
+    "gt_chunks": [
+      "NIST_SP_800-146_txt_00134",
+      "NIST_SP_800-144_txt_00087",
+      "NIST_SP_800-144_txt_00065"
+    ],
+    "sorted_dense_top1": 0.7106,
+    "sorted_dense_mean3": 0.6963,
+    "sorted_dense_mean5": 0.6913,
+    "old_rrf_dense_top1": 0.7106,
+    "old_rrf_dense_mean3": 0.6888,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 0.0,
+    "recall20": 0.0,
+    "top5_hits": [],
+    "top20_hits": [],
+    "current_triggers_rewrite": true,
+    "overlap_count": 6,
+    "top_bm25_score": 23.47
+  },
+  {
+    "qid": "Q20",
+    "query": "What factors should organizations consider when evaluating the security of a public cloud provider?",
+    "gt_chunks": [
+      "NIST_SP_800-144_txt_00104",
+      "NIST_SP_800-144_txt_00112",
+      "NIST_SP_800-144_txt_00111",
+      "NIST_SP_800-144_txt_00041"
+    ],
+    "sorted_dense_top1": 0.7262,
+    "sorted_dense_mean3": 0.7227,
+    "sorted_dense_mean5": 0.7154,
+    "old_rrf_dense_top1": 0.7252,
+    "old_rrf_dense_mean3": 0.7227,
+    "mismatch_diff": 0.0009,
+    "hit5": 1.0,
+    "recall5": 0.25,
+    "hit20": 1.0,
+    "recall20": 0.5,
+    "top5_hits": [
+      "NIST_SP_800-144_txt_00112"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-144_txt_00112",
+      "NIST_SP_800-144_txt_00111"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 6,
+    "top_bm25_score": 32.18
+  },
+  {
+    "qid": "Q21",
+    "query": "What are the core phases of the incident response life cycle defined in NIST incident handling guidance?",
+    "gt_chunks": [
+      "NIST_SP_800-83_txt_00071"
+    ],
+    "sorted_dense_top1": 0.6862,
+    "sorted_dense_mean3": 0.6841,
+    "sorted_dense_mean5": 0.6799,
+    "old_rrf_dense_top1": 0.68,
+    "old_rrf_dense_mean3": 0.6821,
+    "mismatch_diff": 0.0062,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-83_txt_00071"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-83_txt_00071"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 12,
+    "top_bm25_score": 51.6
+  },
+  {
+    "qid": "Q22",
+    "query": "What key considerations and trade-offs should guide organizations when making malware containment decisions?",
+    "gt_chunks": [
+      "NIST_SP_800-83_txt_00090"
+    ],
+    "sorted_dense_top1": 0.7185,
+    "sorted_dense_mean3": 0.703,
+    "sorted_dense_mean5": 0.6963,
+    "old_rrf_dense_top1": 0.7185,
+    "old_rrf_dense_mean3": 0.6959,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-83_txt_00090"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-83_txt_00090"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 8,
+    "top_bm25_score": 35.0
+  },
+  {
+    "qid": "Q23",
+    "query": "What fundamental paradigm shift does Zero Trust Architecture introduce regarding implicit trust and network perimeters?",
+    "gt_chunks": [
+      "NIST_SP_800-207_txt_00009"
+    ],
+    "sorted_dense_top1": 0.7099,
+    "sorted_dense_mean3": 0.6768,
+    "sorted_dense_mean5": 0.6487,
+    "old_rrf_dense_top1": 0.6996,
+    "old_rrf_dense_mean3": 0.674,
+    "mismatch_diff": 0.0103,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-207_txt_00009"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-207_txt_00009"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 12,
+    "top_bm25_score": 48.69
+  },
+  {
+    "qid": "Q24",
+    "query": "What security recommendations should organizations follow when implementing network segmentation for virtual machine protection?",
+    "gt_chunks": [
+      "NIST_SP_800-125_txt_00053"
+    ],
+    "sorted_dense_top1": 0.7435,
+    "sorted_dense_mean3": 0.7324,
+    "sorted_dense_mean5": 0.7084,
+    "old_rrf_dense_top1": 0.7421,
+    "old_rrf_dense_mean3": 0.7324,
+    "mismatch_diff": 0.0013,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-125_txt_00053"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-125_txt_00053"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 10,
+    "top_bm25_score": 35.18
+  },
+  {
+    "qid": "Q25",
+    "query": "What are the core practice groups that comprise the Secure Software Development Framework (SSDF)?",
+    "gt_chunks": [
+      "NIST_SP_800-218_txt_00029"
+    ],
+    "sorted_dense_top1": 0.7095,
+    "sorted_dense_mean3": 0.6955,
+    "sorted_dense_mean5": 0.686,
+    "old_rrf_dense_top1": 0.7095,
+    "old_rrf_dense_mean3": 0.6905,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-218_txt_00029"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 15,
+    "top_bm25_score": 40.9
+  },
+  {
+    "qid": "Q26",
+    "query": "How should organizations leverage actionable metrics to prioritize remediation in enterprise patch management?",
+    "gt_chunks": [
+      "NIST_SP_800-40_txt_00049"
+    ],
+    "sorted_dense_top1": 0.7435,
+    "sorted_dense_mean3": 0.7168,
+    "sorted_dense_mean5": 0.698,
+    "old_rrf_dense_top1": 0.7435,
+    "old_rrf_dense_mean3": 0.7021,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-40_txt_00049"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-40_txt_00049"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 11,
+    "top_bm25_score": 41.67
+  },
+  {
+    "qid": "Q27",
+    "query": "What are the three tiers in the multitiered risk management approach and what scope does each cover?",
+    "gt_chunks": [
+      "NIST_SP_800-39_txt_00047",
+      "NIST_SP_800-39_txt_00046",
+      "NIST_SP_800-39_txt_00045"
+    ],
+    "sorted_dense_top1": 0.7686,
+    "sorted_dense_mean3": 0.7005,
+    "sorted_dense_mean5": 0.6814,
+    "old_rrf_dense_top1": 0.7686,
+    "old_rrf_dense_mean3": 0.6765,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 0.3333,
+    "top5_hits": [
+      "NIST_SP_800-39_txt_00045"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-39_txt_00045"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 8,
+    "top_bm25_score": 45.41
+  },
+  {
+    "qid": "Q28",
+    "query": "How does the security control tailoring process modify initial control baselines for specific organizational systems?",
+    "gt_chunks": [
+      "NIST_SP_800-53_txt_00547"
+    ],
+    "sorted_dense_top1": 0.7214,
+    "sorted_dense_mean3": 0.6953,
+    "sorted_dense_mean5": 0.6821,
+    "old_rrf_dense_top1": 0.7214,
+    "old_rrf_dense_mean3": 0.6798,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-53_txt_00547"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-53_txt_00547"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 5,
+    "top_bm25_score": 36.97
+  },
+  {
+    "qid": "Q29",
+    "query": "What are the core requirements and authentication factors necessary to achieve Authenticator Assurance Level 2 (AAL2)?",
+    "gt_chunks": [
+      "NIST_SP_800-63_txt_00081"
+    ],
+    "sorted_dense_top1": 0.7254,
+    "sorted_dense_mean3": 0.6844,
+    "sorted_dense_mean5": 0.6626,
+    "old_rrf_dense_top1": 0.7254,
+    "old_rrf_dense_mean3": 0.6713,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-63_txt_00081"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-63_txt_00081"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 5,
+    "top_bm25_score": 40.01
+  },
+  {
+    "qid": "Q30",
+    "query": "What are the fundamental attribute types evaluated in an Attribute Based Access Control (ABAC) enterprise system?",
+    "gt_chunks": [
+      "NIST_SP_800-162_txt_00007",
+      "NIST_SP_800-162_txt_00044"
+    ],
+    "sorted_dense_top1": 0.7005,
+    "sorted_dense_mean3": 0.6991,
+    "sorted_dense_mean5": 0.6964,
+    "old_rrf_dense_top1": 0.7005,
+    "old_rrf_dense_mean3": 0.6919,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-162_txt_00007",
+      "NIST_SP_800-162_txt_00044"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 8,
+    "top_bm25_score": 39.42
+  },
+  {
+    "qid": "Q31",
+    "query": "What are the primary operational characteristics and protection differences between Full Disk Encryption and File/Folder Encryption?",
+    "gt_chunks": [
+      "NIST_SP_800-111_txt_00049"
+    ],
+    "sorted_dense_top1": 0.7105,
+    "sorted_dense_mean3": 0.6956,
+    "sorted_dense_mean5": 0.6886,
+    "old_rrf_dense_top1": 0.7105,
+    "old_rrf_dense_mean3": 0.6955,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-111_txt_00049"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-111_txt_00049"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 12,
+    "top_bm25_score": 53.31
+  },
+  {
+    "qid": "Q32",
+    "query": "How do application-proxy gateways differ from packet filtering firewalls in inspecting network traffic?",
+    "gt_chunks": [
+      "NIST_SP_800-41_txt_00042"
+    ],
+    "sorted_dense_top1": 0.7428,
+    "sorted_dense_mean3": 0.7303,
+    "sorted_dense_mean5": 0.7077,
+    "old_rrf_dense_top1": 0.7428,
+    "old_rrf_dense_mean3": 0.7303,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-41_txt_00042"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-41_txt_00042"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 12,
+    "top_bm25_score": 48.81
+  },
+  {
+    "qid": "Q33",
+    "query": "What security controls and client software configurations are required to protect remote access in enterprise telework?",
+    "gt_chunks": [
+      "NIST_SP_800-46_txt_00076",
+      "NIST_SP_800-46_txt_00030"
+    ],
+    "sorted_dense_top1": 0.7289,
+    "sorted_dense_mean3": 0.7282,
+    "sorted_dense_mean5": 0.725,
+    "old_rrf_dense_top1": 0.7173,
+    "old_rrf_dense_mean3": 0.7196,
+    "mismatch_diff": 0.0117,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 0.5,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-46_txt_00030"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 12,
+    "top_bm25_score": 40.82
+  },
+  {
+    "qid": "Q34",
+    "query": "What strategic benefits and operational capabilities do organizations gain by participating in cyber threat information sharing?",
+    "gt_chunks": [
+      "NIST_SP_800-150_txt_00040"
+    ],
+    "sorted_dense_top1": 0.74,
+    "sorted_dense_mean3": 0.7386,
+    "sorted_dense_mean5": 0.7333,
+    "old_rrf_dense_top1": 0.7388,
+    "old_rrf_dense_mean3": 0.7303,
+    "mismatch_diff": 0.0012,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-150_txt_00040"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-150_txt_00040"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 13,
+    "top_bm25_score": 47.96
+  },
+  {
+    "qid": "Q35",
+    "query": "How does technical penetration testing differ from automated vulnerability scanning in security assessments?",
+    "gt_chunks": [
+      "NIST_SP_800-115_txt_00039"
+    ],
+    "sorted_dense_top1": 0.7273,
+    "sorted_dense_mean3": 0.6859,
+    "sorted_dense_mean5": 0.6742,
+    "old_rrf_dense_top1": 0.7273,
+    "old_rrf_dense_mean3": 0.6839,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-115_txt_00039"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-115_txt_00039"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 9,
+    "top_bm25_score": 34.44
+  },
+  {
+    "qid": "Q36",
+    "query": "What are the four phases of the digital forensics process and what is the primary objective of each phase?",
+    "gt_chunks": [
+      "NIST_SP_800-86_txt_00073"
+    ],
+    "sorted_dense_top1": 0.6658,
+    "sorted_dense_mean3": 0.6529,
+    "sorted_dense_mean5": 0.6442,
+    "old_rrf_dense_top1": 0.6658,
+    "old_rrf_dense_mean3": 0.6494,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-86_txt_00073"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-86_txt_00073"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 8,
+    "top_bm25_score": 55.93
+  },
+  {
+    "qid": "Q37",
+    "query": "What distinguishes foundational practices from sustaining practices in Cybersecurity Supply Chain Risk Management (C-SCRM)?",
+    "gt_chunks": [
+      "NIST_SP_800-161_txt_00147"
+    ],
+    "sorted_dense_top1": 0.7537,
+    "sorted_dense_mean3": 0.7311,
+    "sorted_dense_mean5": 0.7094,
+    "old_rrf_dense_top1": 0.7537,
+    "old_rrf_dense_mean3": 0.7076,
+    "mismatch_diff": 0.0,
+    "hit5": 1.0,
+    "recall5": 1.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [
+      "NIST_SP_800-161_txt_00147"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-161_txt_00147"
+    ],
+    "current_triggers_rewrite": false,
+    "overlap_count": 10,
+    "top_bm25_score": 53.45
+  },
+  {
+    "qid": "Q38",
+    "query": "What are the five essential characteristics of cloud computing defined by NIST SP 800-145?",
+    "gt_chunks": [
+      "NIST_SP_800-145_txt_00012"
+    ],
+    "sorted_dense_top1": 0.7337,
+    "sorted_dense_mean3": 0.6792,
+    "sorted_dense_mean5": 0.6533,
+    "old_rrf_dense_top1": 0.7337,
+    "old_rrf_dense_mean3": 0.6773,
+    "mismatch_diff": 0.0,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 0.0,
+    "recall20": 0.0,
+    "top5_hits": [],
+    "top20_hits": [],
+    "current_triggers_rewrite": true,
+    "overlap_count": 12,
+    "top_bm25_score": 49.74
+  },
+  {
+    "qid": "Q39",
+    "query": "What is the procedure for characterizing security controls to mitigate identified attack vectors in data-centric threat modeling?",
+    "gt_chunks": [
+      "NIST_SP_800-154_txt_00050"
+    ],
+    "sorted_dense_top1": 0.7262,
+    "sorted_dense_mean3": 0.6967,
+    "sorted_dense_mean5": 0.6776,
+    "old_rrf_dense_top1": 0.6514,
+    "old_rrf_dense_mean3": 0.6826,
+    "mismatch_diff": 0.0747,
+    "hit5": 0.0,
+    "recall5": 0.0,
+    "hit20": 1.0,
+    "recall20": 1.0,
+    "top5_hits": [],
+    "top20_hits": [
+      "NIST_SP_800-154_txt_00050"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 16,
+    "top_bm25_score": 57.74
+  },
+  {
+    "qid": "Q40",
+    "query": "What core security assurances does a service mesh infrastructure provide for cloud-native microservices applications?",
+    "gt_chunks": [
+      "NIST_SP_800-233_txt_00023",
+      "NIST_SP_800-207_txt_00032",
+      "NIST_SP_800-207_txt_00028"
+    ],
+    "sorted_dense_top1": 0.7073,
+    "sorted_dense_mean3": 0.6972,
+    "sorted_dense_mean5": 0.6909,
+    "old_rrf_dense_top1": 0.6933,
+    "old_rrf_dense_mean3": 0.6874,
+    "mismatch_diff": 0.014,
+    "hit5": 1.0,
+    "recall5": 0.3333,
+    "hit20": 1.0,
+    "recall20": 0.6667,
+    "top5_hits": [
+      "NIST_SP_800-207_txt_00028"
+    ],
+    "top20_hits": [
+      "NIST_SP_800-207_txt_00028",
+      "NIST_SP_800-233_txt_00023"
+    ],
+    "current_triggers_rewrite": true,
+    "overlap_count": 10,
+    "top_bm25_score": 47.43
+  }
+]

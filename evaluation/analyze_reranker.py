@@ -8,6 +8,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from qdrant_client import QdrantClient
+from app.core.config import settings
 
 
 # ============================================================
@@ -15,13 +16,13 @@ from qdrant_client import QdrantClient
 # ============================================================
 
 QDRANT_PATH = str(PROJECT_ROOT / "data" / "qdrant")
-COLLECTION_NAME = "cybersecurity_chunks"
+COLLECTION_NAME = getattr(settings, "qdrant_collection", "cybersecurity_chunks_bge_m3")
 
-EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+EMBEDDING_MODEL_NAME = getattr(settings, "embedding_model", "BAAI/bge-m3")
 RERANKER_MODEL_NAME = "cross-encoder/ms-marco-MiniLM-L-6-v2"
 
 QUESTIONS_FILE = PROJECT_ROOT / "data" / "evaluation" / "evaluation_questions.json"
-GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "ground_truth.json"
+GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth_current.json"
 
 VECTOR_TOP_K = 10
 RERANK_TOP_K = 5
@@ -177,12 +178,16 @@ def analyze_question(
     client
 ):
 
-    question_id = question_item["id"]
-    question = question_item["question"]
+    question_id = question_item.get("id") or question_item.get("question_id") or "Unknown"
+    question = question_item.get("question") or question_item.get("query") or ""
 
-    relevant_chunks = set(
-        ground_truth[question_id]
-    )
+    gt_entry = ground_truth.get(question_id, {})
+    if isinstance(gt_entry, dict):
+        relevant_chunks = set(gt_entry.get("relevant_chunks") or gt_entry.get("relevant_chunk_ids") or [])
+    elif isinstance(gt_entry, (list, set)):
+        relevant_chunks = set(gt_entry)
+    else:
+        relevant_chunks = set()
 
     print("\n")
     print("=" * 70)

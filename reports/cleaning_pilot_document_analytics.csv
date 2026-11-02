@@ -1,0 +1,11 @@
+doc_id,cohort,category,total_pages,orig_chars,cleaned_chars,delta_chars,pct_change,headers_removed,footers_removed,hyphens_repaired,hyphen_warnings,encoding_transforms,encoding_warnings,boilerplate_blocks_tagged,controls_preserved,cves_preserved,crypto_preserved,urls_preserved,tables_preserved,figures_preserved,pilot_verdict
+NIST_SP_800-152,Pilot v3,cryptography_security,147,333548,329577,-3971,-1.19%,143,145,0,0,191,1,3,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-186,Pilot v3,cryptography_security,75,156341,149412,-6929,-4.43%,73,70,0,0,90,2,4,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-39,Pilot v3,risk_management,88,325311,321262,-4049,-1.24%,87,78,0,0,89,0,3,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-53,Pilot v3,risk_management,492,1554054,1492997,-61057,-3.93%,490,490,0,0,261,0,3,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-236,Pilot v3,root,29,33638,33280,-358,-1.06%,0,16,0,0,44,0,2,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-116,Corpus 68 (Batch 2),identity_access,71,180260,177777,-2483,-1.38%,68,63,0,0,136,0,4,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-234,Corpus 68 (Batch 1),root,31,68832,67156,-1676,-2.43%,28,27,0,0,28,0,3,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-218,Corpus 68 (Batch 4),vulnerability_management,57,125829,121945,-3884,-3.09%,53,53,0,0,96,0,3,100%,100%,100%,100%,100%,100%,PASSED
+NIST_SP_800-238,Corpus 68 (Batch 1),root,19,20822,20518,-304,-1.46%,0,16,0,0,31,0,2,100%,100%,100%,100%,100%,100%,PASSED
+NIST.SP.800-61r3,Corpus 68 (Batch 1),root,48,109251,105017,-4234,-3.88%,46,44,0,0,76,0,3,100%,100%,100%,100%,100%,100%,PASSED

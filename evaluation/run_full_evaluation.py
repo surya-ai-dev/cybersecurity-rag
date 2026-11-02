@@ -11,11 +11,14 @@ import argparse
 import contextlib
 import io
 import json
+import logging
 import os
 import re
 import sys
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Sequence, Set, Tuple
+
+logger = logging.getLogger(__name__)
 
 # Bootstrap project root
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
@@ -103,6 +106,74 @@ def parse_ground_truth_ids(gt_item: Any) -> Set[str]:
     return set()
 
 
+def filter_eligible_questions(
+    questions: List[Dict[str, Any]],
+    ground_truth: Dict[str, Any],
+    verbose: bool = False,
+) -> List[Dict[str, Any]]:
+    """Filter questions for retrieval evaluation based on ground truth eligibility.
+
+    A question is eligible if and only if:
+    1. It has a valid question ID.
+    2. It exists in ground_truth.
+    3. ground_truth[qid].get("evaluation_eligible") is True.
+    4. ground_truth[qid].get("verification_status") == "verified".
+    5. parse_ground_truth_ids(ground_truth[qid]) returns a non-empty set of chunk IDs.
+
+    Ineligible or missing questions are safely skipped with a warning.
+    """
+    eligible = []
+    for q_item in questions:
+        qid = q_item.get("id") or q_item.get("question_id")
+        if not qid:
+            msg = f"Skipping question with missing ID: {q_item}"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        if qid not in ground_truth:
+            msg = f"Skipping question {qid}: not found in ground truth"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        gt_entry = ground_truth[qid]
+        if not isinstance(gt_entry, dict):
+            msg = f"Skipping question {qid}: ground truth entry is not a dict"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        if gt_entry.get("evaluation_eligible") is not True:
+            msg = f"Skipping question {qid}: evaluation_eligible is not True"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        if gt_entry.get("verification_status") != "verified":
+            msg = f"Skipping question {qid}: verification_status is '{gt_entry.get('verification_status')}', expected 'verified'"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        rel_ids = parse_ground_truth_ids(gt_entry)
+        if not rel_ids:
+            msg = f"Skipping question {qid}: no relevant chunks specified in ground truth"
+            logger.warning(msg)
+            if verbose:
+                print_progress(f"  WARNING: {msg}")
+            continue
+
+        eligible.append(q_item)
+
+    return eligible
+
+
 def extract_citations(text: str) -> List[int]:
     """Extract 1-based source indices from citation tags like [Source 1] or [Source 2]."""
     matches = re.findall(r"\[Source[\s\u202f]*(\d+)\]", text, re.IGNORECASE)
@@ -125,11 +196,26 @@ def format_score(val: Optional[float], is_percent: bool = True) -> str:
 def run_retrieval_evaluation(
     questions: List[Dict[str, Any]],
     ground_truth: Dict[str, Any],
-    bm25_ground_truth: Dict[str, Any],
     verbose: bool = False,
+    max_questions: Optional[int] = None,
 ) -> Dict[str, Dict[str, float]]:
     """Evaluate Dense, BM25, RRF Hybrid, and Cross-Encoder Reranker."""
     print_progress("[1/3] Running retrieval evaluation...")
+
+    # Filter to eligible questions if not already filtered
+    eval_questions = filter_eligible_questions(questions, ground_truth, verbose=verbose)
+    if max_questions is not None and max_questions > 0:
+        eval_questions = eval_questions[:max_questions]
+
+    if not eval_questions:
+        print_progress("  WARNING: No eligible questions found for retrieval evaluation.")
+        empty_metrics = {"count": 0.0, "hit1": 0.0, "hit3": 0.0, "hit5": 0.0, "prec5": 0.0, "mrr": 0.0}
+        return {
+            "dense": empty_metrics,
+            "bm25": empty_metrics,
+            "rrf": empty_metrics,
+            "reranker": empty_metrics,
+        }
 
     with silence_stdout(not verbose):
         dense_retriever = DenseRetriever()
@@ -140,15 +226,15 @@ def run_retrieval_evaluation(
     bm25_metrics = []
     rrf_metrics = []
     rerank_metrics = []
-    bm25_cached_results: Dict[int, Any] = {}
 
     try:
-        print_progress("  Evaluating Dense, BM25, RRF, and Reranking (15 benchmark questions)...")
-        # Evaluate standard 15 benchmark questions for Dense, RRF, and Reranking
-        for idx, q_item in enumerate(questions[:15]):
-            qid = q_item["id"]
+        print_progress(
+            f"  Evaluating Dense, BM25, RRF, and Reranking ({len(eval_questions)} benchmark questions)..."
+        )
+        for idx, q_item in enumerate(eval_questions):
+            qid = q_item.get("id") or q_item.get("question_id")
             query = q_item["question"]
-            rel_ids = parse_ground_truth_ids(ground_truth.get(qid, []))
+            rel_ids = parse_ground_truth_ids(ground_truth[qid])
 
             # 1. Dense retrieval (Top-20)
             with silence_stdout(not verbose):
@@ -162,10 +248,17 @@ def run_retrieval_evaluation(
                 "mrr": calc_mrr(dense_ids[:5], rel_ids),
             })
 
-            # 2. BM25 retrieval (Top-20) - cache results to avoid duplicate execution
+            # 2. BM25 retrieval (Top-20)
             with silence_stdout(not verbose):
                 bm25_res = bm25_retriever.retrieve(query, top_k=20)
-            bm25_cached_results[idx] = bm25_res
+            bm25_ids = [c.chunk_id for c in bm25_res]
+            bm25_metrics.append({
+                "hit1": calc_hit_at_k(bm25_ids, rel_ids, 1),
+                "hit3": calc_hit_at_k(bm25_ids, rel_ids, 3),
+                "hit5": calc_hit_at_k(bm25_ids, rel_ids, 5),
+                "prec5": calc_precision_at_k(bm25_ids, rel_ids, 5),
+                "mrr": calc_mrr(bm25_ids, rel_ids),
+            })
 
             # 3. RRF Fusion (Top-20)
             rrf_res = reciprocal_rank_fusion([dense_res, bm25_res], top_k=20)
@@ -190,33 +283,13 @@ def run_retrieval_evaluation(
                 "mrr": calc_mrr(rerank_ids, rel_ids),
             })
 
-        print_progress("  Evaluating standalone BM25 benchmark...")
-        # Evaluate BM25 standalone against its ground-truth benchmark (matching evaluate_bm25.py)
-        # Reuses cached results for indices 0..14 to avoid redundant BM25 searches
-        for idx in range(len(questions)):
-            q_key = f"Q{idx + 1}"
-            rel_ids = parse_ground_truth_ids(bm25_ground_truth.get(q_key, []))
-            if idx in bm25_cached_results:
-                bm25_res = bm25_cached_results[idx]
-            else:
-                query = questions[idx]["question"]
-                with silence_stdout(not verbose):
-                    bm25_res = bm25_retriever.retrieve(query, top_k=20)
-            bm25_ids = [c.chunk_id for c in bm25_res]
-            bm25_metrics.append({
-                "hit1": calc_hit_at_k(bm25_ids, rel_ids, 1),
-                "hit3": calc_hit_at_k(bm25_ids, rel_ids, 3),
-                "hit5": calc_hit_at_k(bm25_ids, rel_ids, 5),
-                "prec5": calc_precision_at_k(bm25_ids, rel_ids, 5),
-                "mrr": calc_mrr(bm25_ids, rel_ids),
-            })
-
     finally:
         dense_retriever.close()
 
     def aggregate(items: List[Dict[str, float]]) -> Dict[str, float]:
         n = max(1, len(items))
         return {
+            "count": float(len(items)),
             "hit1": sum(x["hit1"] for x in items) / n * 100.0,
             "hit3": sum(x["hit3"] for x in items) / n * 100.0,
             "hit5": sum(x["hit5"] for x in items) / n * 100.0,
@@ -226,7 +299,7 @@ def run_retrieval_evaluation(
 
     return {
         "dense": aggregate(dense_metrics),
-        "bm25": aggregate(bm25_metrics) if bm25_metrics else aggregate(dense_metrics),
+        "bm25": aggregate(bm25_metrics),
         "rrf": aggregate(rrf_metrics),
         "reranker": aggregate(rerank_metrics),
     }
@@ -479,6 +552,12 @@ def main():
         help="Number of questions to evaluate for End-to-End and Generation (default: 5)",
     )
     parser.add_argument(
+        "--retrieval-count",
+        type=int,
+        default=None,
+        help="Number of eligible questions to evaluate for retrieval (default: all eligible questions)",
+    )
+    parser.add_argument(
         "--skip-generation",
         action="store_true",
         help="Skip LLM generation and E2E evaluation (retrieval only)",
@@ -492,8 +571,7 @@ def main():
 
     # Load benchmark files
     eval_q_file = settings.evaluation_dir / "evaluation_questions.json"
-    eval_gt_file = settings.evaluation_dir / "retrieval_ground_truth.json"
-    bm25_gt_file = settings.evaluation_dir / "ground_truth.json"
+    eval_gt_file = settings.evaluation_dir / "retrieval_ground_truth_current.json"
 
     with open(eval_q_file, "r", encoding="utf-8") as f:
         questions = json.load(f)
@@ -501,15 +579,18 @@ def main():
     with open(eval_gt_file, "r", encoding="utf-8") as f:
         ground_truth = json.load(f)
 
-    with open(bm25_gt_file, "r", encoding="utf-8") as f:
-        bm25_gt = json.load(f)
+    eligible_questions = filter_eligible_questions(questions, ground_truth, verbose=args.verbose)
+    print_progress(
+        f"Benchmark dataset: {len(eligible_questions)} eligible verified questions "
+        f"(filtered from {len(questions)} candidates)"
+    )
 
     # 1. Run Level 1: Retrieval Evaluation
     retrieval_results = run_retrieval_evaluation(
-        questions=questions,
+        questions=eligible_questions,
         ground_truth=ground_truth,
-        bm25_ground_truth=bm25_gt,
         verbose=args.verbose,
+        max_questions=args.retrieval_count,
     )
 
     # 2. Run Levels 2 & 3: Generation & End-to-End Evaluation
@@ -517,7 +598,7 @@ def main():
         print_progress("[2/3] Running generation evaluation...")
         print_progress("[3/3] Running end-to-end evaluation...")
         gen_results, e2e_results, generation_errors = run_e2e_and_generation_evaluation(
-            eval_questions=questions,
+            eval_questions=eligible_questions,
             e2e_count=args.e2e_count,
             verbose=args.verbose,
         )
@@ -564,6 +645,8 @@ def main():
     r = retrieval_results["rrf"]
     rk = retrieval_results["reranker"]
 
+    num_eval = int(d.get("count", 0))
+
     print()
     print("=" * 60)
     print("              CYBERSECURITY RAG EVALUATION")
@@ -571,6 +654,7 @@ def main():
     print()
     print("[1] RETRIEVAL EVALUATION")
     print("-" * 60)
+    print(f"Benchmark Questions Evaluated: {num_eval} (Dense, BM25, RRF, Cross-Encoder)")
     print()
     print("Dense Retrieval")
     print(f"  Hit@1          : {d['hit1']:.2f}%")

@@ -1,0 +1,1091 @@
+{
+  "benchmark_metadata": {
+    "timestamp": "2026-10-21T04:13:49.690358",
+    "total_questions": 1,
+    "evaluated_question_ids": [
+      "Q1"
+    ],
+    "retrieval_top_k": 20,
+    "rerank_top_n": 20,
+    "reranker_model": "cross-encoder/ms-marco-MiniLM-L-6-v2",
+    "embedding_model": "BAAI/bge-m3",
+    "production_cutoff_k": 5
+  },
+  "aggregate_metrics": {
+    "A_dense_only": {
+      "name": "Dense Retrieval Only (BGE-M3)",
+      "evaluated_queries": 1,
+      "latency_ms": {
+        "mean": 3884.9,
+        "median": 3884.9,
+        "p95": 3884.9
+      },
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 0.3333,
+        "precision@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 0.6667,
+        "precision@3": 0.6667,
+        "ndcg@3": 0.7654,
+        "hit@5": 1.0,
+        "recall@5": 0.6667,
+        "precision@5": 0.4,
+        "ndcg@5": 0.7654,
+        "hit@10": 1.0,
+        "recall@10": 0.6667,
+        "precision@10": 0.2,
+        "ndcg@10": 0.7654,
+        "hit@20": 1.0,
+        "recall@20": 1.0,
+        "precision@20": 0.15,
+        "ndcg@20": 0.8886,
+        "mrr@5": 1.0,
+        "mrr@20": 1.0
+      }
+    },
+    "B_bm25_only": {
+      "name": "BM25 Retrieval Only (Okapi)",
+      "evaluated_queries": 1,
+      "latency_ms": {
+        "mean": 560.04,
+        "median": 560.04,
+        "p95": 560.04
+      },
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 0.0,
+        "recall@3": 0.0,
+        "precision@3": 0.0,
+        "ndcg@3": 0.0,
+        "hit@5": 1.0,
+        "recall@5": 0.3333,
+        "precision@5": 0.2,
+        "ndcg@5": 0.1815,
+        "hit@10": 1.0,
+        "recall@10": 0.3333,
+        "precision@10": 0.1,
+        "ndcg@10": 0.1815,
+        "hit@20": 1.0,
+        "recall@20": 1.0,
+        "precision@20": 0.15,
+        "ndcg@20": 0.4121,
+        "mrr@5": 0.2,
+        "mrr@20": 0.2
+      }
+    },
+    "C_hybrid_rrf": {
+      "name": "Hybrid Retrieval (Dense + BM25 + RRF)",
+      "evaluated_queries": 1,
+      "latency_ms": {
+        "mean": 4445.79,
+        "median": 4445.79,
+        "p95": 4445.79
+      },
+      "metrics": {
+        "hit@1": 0.0,
+        "recall@1": 0.0,
+        "precision@1": 0.0,
+        "ndcg@1": 0.0,
+        "hit@3": 1.0,
+        "recall@3": 0.3333,
+        "precision@3": 0.3333,
+        "ndcg@3": 0.2961,
+        "hit@5": 1.0,
+        "recall@5": 0.3333,
+        "precision@5": 0.2,
+        "ndcg@5": 0.2961,
+        "hit@10": 1.0,
+        "recall@10": 1.0,
+        "precision@10": 0.3,
+        "ndcg@10": 0.5989,
+        "hit@20": 1.0,
+        "recall@20": 1.0,
+        "precision@20": 0.15,
+        "ndcg@20": 0.5989,
+        "mrr@5": 0.5,
+        "mrr@20": 0.5
+      }
+    },
+    "D_hybrid_reranked": {
+      "name": "Hybrid + Cross-Encoder Reranker",
+      "evaluated_queries": 1,
+      "latency_ms": {
+        "mean": 9947.79,
+        "median": 9947.79,
+        "p95": 9947.79
+      },
+      "metrics": {
+        "hit@1": 1.0,
+        "recall@1": 0.3333,
+        "precision@1": 1.0,
+        "ndcg@1": 1.0,
+        "hit@3": 1.0,
+        "recall@3": 0.6667,
+        "precision@3": 0.6667,
+        "ndcg@3": 0.7039,
+        "hit@5": 1.0,
+        "recall@5": 0.6667,
+        "precision@5": 0.4,
+        "ndcg@5": 0.7039,
+        "hit@10": 1.0,
+        "recall@10": 0.6667,
+        "precision@10": 0.2,
+        "ndcg@10": 0.7039,
+        "hit@20": 1.0,
+        "recall@20": 1.0,
+        "precision@20": 0.15,
+        "ndcg@20": 0.8212,
+        "mrr@5": 1.0,
+        "mrr@20": 1.0
+      }
+    }
+  },
+  "per_question_results": [
+    {
+      "question_id": "Q1",
+      "question": "What are the security risks of public cloud computing?",
+      "expected_chunks": [
+        "NIST_SP_800-144_txt_00047",
+        "NIST_SP_800-144_txt_00048",
+        "NIST_SP_800-144_txt_00054"
+      ],
+      "expected_documents": [
+        "NIST_SP_800-144"
+      ],
+      "configurations": {
+        "A_dense_only": {
+          "name": "Dense Retrieval Only (BGE-M3)",
+          "latency_ms": 3884.9,
+          "retrieved_count": 20,
+          "metrics": {
+            "hit@1": 1.0,
+            "recall@1": 0.3333333333333333,
+            "precision@1": 1.0,
+            "ndcg@1": 1.0,
+            "hit@3": 1.0,
+            "recall@3": 0.6666666666666666,
+            "precision@3": 0.6666666666666666,
+            "ndcg@3": 0.7653606369886217,
+            "hit@5": 1.0,
+            "recall@5": 0.6666666666666666,
+            "precision@5": 0.4,
+            "ndcg@5": 0.7653606369886217,
+            "hit@10": 1.0,
+            "recall@10": 0.6666666666666666,
+            "precision@10": 0.2,
+            "ndcg@10": 0.7653606369886217,
+            "hit@20": 1.0,
+            "recall@20": 1.0,
+            "precision@20": 0.15,
+            "ndcg@20": 0.8886164761813452,
+            "mrr@5": 1.0,
+            "mrr@20": 1.0
+          },
+          "top_chunks": [
+            {
+              "rank": 1,
+              "chunk_id": "NIST_SP_800-144_txt_00047",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.7340207048522001,
+              "score_type": "dense_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides its many potential benefits for security and privacy, public cloud computing also brings with it potentia..."
+            },
+            {
+              "rank": 2,
+              "chunk_id": "NIST_SP_800-144_txt_00048",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.6974665671580373,
+              "score_type": "dense_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Decreases in security also heighten privacy risks related to the loss or unauthorized access, destruction, use, m..."
+            },
+            {
+              "rank": 3,
+              "chunk_id": "NIST_SP_800-144_txt_00120",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>6. Conclusion</mark>**",
+              "score": 0.6750150421395464,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Cloud computing promises to have far-reaching effects on the systems and networks of federal agencies and other organization..."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "NIST_SP_800-144_txt_00038",
+              "document_id": "NIST_SP_800-144",
+              "section": "**2.3 Outsourcing and Accountability**",
+              "score": 0.6729019858755263,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **2.3 Outsourcing and Accountability**  While cloud computing can be implemented exclusively for an organization as an internal private cloud, its main thru..."
+            },
+            {
+              "rank": 5,
+              "chunk_id": "NIST_SP_800-144_txt_00050",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.6718615369735991,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  When taken together with the previous two items, a highly complex, multi-tenanted computing environment, whose se..."
+            },
+            {
+              "rank": 6,
+              "chunk_id": "NIST_SP_800-144_txt_00099",
+              "document_id": "NIST_SP_800-144",
+              "section": "**5.1 General Concerns**",
+              "score": 0.6716898555338748,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **5.1 General Concerns**  The terms of traditional information technology outsourcing contracts, particularly those involving sensitive data, can serve as g..."
+            },
+            {
+              "rank": 7,
+              "chunk_id": "NIST_SP_800-146_txt_00050",
+              "document_id": "NIST_SP_800-146",
+              "section": "**4.6 The Public Cloud Scenario**",
+              "score": 0.6669868505909126,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **4.6 The Public Cloud Scenario**  Generally, consumers are not in a position to verify that location restrictions have been enforced.  - **Risks from multi..."
+            },
+            {
+              "rank": 8,
+              "chunk_id": "NIST_SP_800-144_txt_00051",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.6647463057933494,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides providing a computing platform or substitute for in-house applications, public cloud services such as the..."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "NIST_SP_800-144_txt_00020",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>Executive Summary</mark>**",
+              "score": 0.6645930056981701,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  Cloud computing has been defined by NIST as a model for enabling convenient, on-demand network access to a shared pool o..."
+            },
+            {
+              "rank": 10,
+              "chunk_id": "NIST_SP_800-144_txt_00040",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>3. Public Cloud Services</mark>**",
+              "score": 0.6632929213880281,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>3. Public Cloud Services</mark>**  The outlook on cloud computing services can vary significantly among organizations, because of inherent differenc..."
+            },
+            {
+              "rank": 11,
+              "chunk_id": "NIST_SP_800-144_txt_00030",
+              "document_id": "NIST_SP_800-144",
+              "section": "**1.2 Purpose and Scope**",
+              "score": 0.6597360667843069,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **1.2 Purpose and Scope**  The purpose of this document is to provide an overview of public cloud computing and the security and privacy challenges involved..."
+            },
+            {
+              "rank": 12,
+              "chunk_id": "NIST_SP_800-144_txt_00049",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.6572502771796532,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  > 6 Recommended solutions for mitigating Internet borne threats exist, including NIST Special publications SP 800..."
+            },
+            {
+              "rank": 13,
+              "chunk_id": "NIST_SP_800-144_txt_00054",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>4. Key Security and Privacy Issues</mark>**",
+              "score": 0.6555686191160401,
+              "score_type": "dense_score",
+              "is_relevant": true,
+              "text_preview": "### **<mark>4. Key Security and Privacy Issues</mark>**  Although the emergence of cloud computing is a recent development, insights into critical aspects of se..."
+            },
+            {
+              "rank": 14,
+              "chunk_id": "NIST_SP_800-144_txt_00043",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.2 The Security and Privacy Upside**",
+              "score": 0.649094600012669,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **3.2 The Security and Privacy Upside**  While one of the biggest obstacles facing public cloud computing is security, the cloud computing paradigm provides..."
+            },
+            {
+              "rank": 15,
+              "chunk_id": "NIST_SP_800-144_txt_00101",
+              "document_id": "NIST_SP_800-144",
+              "section": "**5.1 General Concerns**",
+              "score": 0.6467893557233233,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **5.1 General Concerns**  One confounding issue is that increased security efforts are not guaranteed to result in noticeable improvements (e.g., fewer inci..."
+            },
+            {
+              "rank": 16,
+              "chunk_id": "NIST_SP_800-144_txt_00095",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>5. Public Cloud Outsourcing</mark>**",
+              "score": 0.6458460293116761,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>5. Public Cloud Outsourcing</mark>**  Each cloud provider and service arrangement has distinct costs and risks associated with it. A decision based..."
+            },
+            {
+              "rank": 17,
+              "chunk_id": "NIST_SP_800-144_txt_00073",
+              "document_id": "NIST_SP_800-144",
+              "section": "**4.4 Architecture**",
+              "score": 0.6449951631943971,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **4.4 Architecture**  As a safeguard, organizations can prohibit or strictly limit access to PII and other sensitive data from portable and mobile devices a..."
+            },
+            {
+              "rank": 18,
+              "chunk_id": "NIST_SP_800-144_txt_00023",
+              "document_id": "NIST_SP_800-144",
+              "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+              "score": 0.6386443471781895,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**  Public cloud providers' default offerings generally..."
+            },
+            {
+              "rank": 19,
+              "chunk_id": "NIST_SP_800-146_txt_00121",
+              "document_id": "NIST_SP_800-146",
+              "section": "**8.2.1 Network Dependence**",
+              "score": 0.6375987664553232,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **8.2.1 Network Dependence**  Cloud computing, as well as most enterprise applications, depends on network connectivity.  For most clouds, the Internet must..."
+            },
+            {
+              "rank": 20,
+              "chunk_id": "NIST_SP_800-144_txt_00021",
+              "document_id": "NIST_SP_800-144",
+              "section": "**Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**",
+              "score": 0.6364220952321599,
+              "score_type": "dense_score",
+              "is_relevant": false,
+              "text_preview": "### **Carefully plan the security and privacy aspects of cloud computing solutions before engaging them.**  Public cloud computing represents a significant para..."
+            }
+          ]
+        },
+        "B_bm25_only": {
+          "name": "BM25 Retrieval Only (Okapi)",
+          "latency_ms": 560.04,
+          "retrieved_count": 20,
+          "metrics": {
+            "hit@1": 0.0,
+            "recall@1": 0.0,
+            "precision@1": 0.0,
+            "ndcg@1": 0.0,
+            "hit@3": 0.0,
+            "recall@3": 0.0,
+            "precision@3": 0.0,
+            "ndcg@3": 0.0,
+            "hit@5": 1.0,
+            "recall@5": 0.3333333333333333,
+            "precision@5": 0.2,
+            "ndcg@5": 0.18154179253735267,
+            "hit@10": 1.0,
+            "recall@10": 0.3333333333333333,
+            "precision@10": 0.1,
+            "ndcg@10": 0.18154179253735267,
+            "hit@20": 1.0,
+            "recall@20": 1.0,
+            "precision@20": 0.15,
+            "ndcg@20": 0.41212984329450136,
+            "mrr@5": 0.2,
+            "mrr@20": 0.2
+          },
+          "top_chunks": [
+            {
+              "rank": 1,
+              "chunk_id": "NIST_SP_800-144_txt_00120",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 29.145732248470107,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Cloud computing promises to have far-reaching effects on the systems and networks of federal agencies and other organization..."
+            },
+            {
+              "rank": 2,
+              "chunk_id": "NIST_SP_800-146_txt_00014",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 29.12736480356167,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  _Cloud computing_ allows computer users to conveniently rent access to fully featured applications, to software developm..."
+            },
+            {
+              "rank": 3,
+              "chunk_id": "NIST_SP_800-144_txt_00020",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 27.92808983749448,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  Cloud computing has been defined by NIST as a model for enabling convenient, on-demand network access to a shared pool o..."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "NIST_SP_800-144_txt_00030",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 27.50188866241709,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **1.2 Purpose and Scope**  The purpose of this document is to provide an overview of public cloud computing and the security and privacy challenges involved..."
+            },
+            {
+              "rank": 5,
+              "chunk_id": "NIST_SP_800-144_txt_00047",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 26.776417466417442,
+              "score_type": "bm25_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides its many potential benefits for security and privacy, public cloud computing also brings with it potentia..."
+            },
+            {
+              "rank": 6,
+              "chunk_id": "NIST_SP_800-144_txt_00094",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 26.74554134414631,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>5. Public Cloud Outsourcing</mark>**  Although cloud computing is a new computing paradigm, outsourcing information technology services is not.  The..."
+            },
+            {
+              "rank": 7,
+              "chunk_id": "NIST_SP_800-144_txt_00121",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.833027051024512,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Too many controls can be inefficient and ineffective. Federal agencies and other organizations must work diligently to maint..."
+            },
+            {
+              "rank": 8,
+              "chunk_id": "NIST_SP_800-146_txt_00124",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 25.771653717993917,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **8.3 Economic Goals**  In public and outsourced scenarios, cloud computing offers an opportunity for consumers to use computing resources with small or mod..."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "NIST_SP_800-144_txt_00040",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.575778635226033,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>3. Public Cloud Services</mark>**  The outlook on cloud computing services can vary significantly among organizations, because of inherent differenc..."
+            },
+            {
+              "rank": 10,
+              "chunk_id": "NIST_SP_800-144_txt_00023",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.373711509928313,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**  Public cloud providers' default offerings generally..."
+            },
+            {
+              "rank": 11,
+              "chunk_id": "NIST_SP_800-144_txt_00038",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.29131983489991,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **2.3 Outsourcing and Accountability**  While cloud computing can be implemented exclusively for an organization as an internal private cloud, its main thru..."
+            },
+            {
+              "rank": 12,
+              "chunk_id": "NIST_SP_800-144_txt_00022",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.14288907914422,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **Understand the public cloud computing environment offered by the cloud provider.**  The responsibilities of both the organization and the cloud provider v..."
+            },
+            {
+              "rank": 13,
+              "chunk_id": "NIST_SP_800-144_txt_00008",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.14053956384371,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **Abstract**  Cloud computing can and does mean different things to different people.  The common characteristics most interpretations share are on-demand s..."
+            },
+            {
+              "rank": 14,
+              "chunk_id": "NIST_SP_800-144_txt_00048",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 25.06236603123792,
+              "score_type": "bm25_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Decreases in security also heighten privacy risks related to the loss or unauthorized access, destruction, use, m..."
+            },
+            {
+              "rank": 15,
+              "chunk_id": "NIST_SP_800-144_txt_00031",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.973325818891063,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **1.3 Audience**  The intended audience for this document includes the following categories of individuals:  - System managers, executives, and information..."
+            },
+            {
+              "rank": 16,
+              "chunk_id": "NIST_SP_800-144_txt_00039",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.573584270811423,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **2.3 Outsourcing and Accountability**  While services are able to be tailored to the needs of the organization, the costs are generally dependent on the de..."
+            },
+            {
+              "rank": 17,
+              "chunk_id": "NIST_SP_800-144_txt_00026",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.542897940697397,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**  Organiz..."
+            },
+            {
+              "rank": 18,
+              "chunk_id": "NIST_SP_800-144_txt_00054",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.343087721264638,
+              "score_type": "bm25_score",
+              "is_relevant": true,
+              "text_preview": "### **<mark>4. Key Security and Privacy Issues</mark>**  Although the emergence of cloud computing is a recent development, insights into critical aspects of se..."
+            },
+            {
+              "rank": 19,
+              "chunk_id": "NIST_SP_800-144_txt_00027",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.31400962314605,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **Maintain accountability over the privacy and security of data and applications implemented and deployed in public cloud computing environments.**  Ultimat..."
+            },
+            {
+              "rank": 20,
+              "chunk_id": "NIST_SP_800-144_txt_00050",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 24.30632909870706,
+              "score_type": "bm25_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  When taken together with the previous two items, a highly complex, multi-tenanted computing environment, whose se..."
+            }
+          ]
+        },
+        "C_hybrid_rrf": {
+          "name": "Hybrid Retrieval (Dense + BM25 + RRF)",
+          "latency_ms": 4445.79,
+          "fusion_latency_ms": 0.86,
+          "retrieved_count": 20,
+          "metrics": {
+            "hit@1": 0.0,
+            "recall@1": 0.0,
+            "precision@1": 0.0,
+            "ndcg@1": 0.0,
+            "hit@3": 1.0,
+            "recall@3": 0.3333333333333333,
+            "precision@3": 0.3333333333333333,
+            "ndcg@3": 0.2960819109658652,
+            "hit@5": 1.0,
+            "recall@5": 0.3333333333333333,
+            "precision@5": 0.2,
+            "ndcg@5": 0.2960819109658652,
+            "hit@10": 1.0,
+            "recall@10": 1.0,
+            "precision@10": 0.3,
+            "ndcg@10": 0.5988943393645153,
+            "hit@20": 1.0,
+            "recall@20": 1.0,
+            "precision@20": 0.15,
+            "ndcg@20": 0.5988943393645153,
+            "mrr@5": 0.5,
+            "mrr@20": 0.5
+          },
+          "top_chunks": [
+            {
+              "rank": 1,
+              "chunk_id": "NIST_SP_800-144_txt_00120",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>6. Conclusion</mark>**",
+              "score": 0.032266458495966696,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Cloud computing promises to have far-reaching effects on the systems and networks of federal agencies and other organization..."
+            },
+            {
+              "rank": 2,
+              "chunk_id": "NIST_SP_800-144_txt_00047",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.03177805800756621,
+              "score_type": "rrf_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides its many potential benefits for security and privacy, public cloud computing also brings with it potentia..."
+            },
+            {
+              "rank": 3,
+              "chunk_id": "NIST_SP_800-144_txt_00020",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>Executive Summary</mark>**",
+              "score": 0.03036576949620428,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  Cloud computing has been defined by NIST as a model for enabling convenient, on-demand network access to a shared pool o..."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "NIST_SP_800-144_txt_00030",
+              "document_id": "NIST_SP_800-144",
+              "section": "**1.2 Purpose and Scope**",
+              "score": 0.029709507042253523,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **1.2 Purpose and Scope**  The purpose of this document is to provide an overview of public cloud computing and the security and privacy challenges involved..."
+            },
+            {
+              "rank": 5,
+              "chunk_id": "NIST_SP_800-144_txt_00038",
+              "document_id": "NIST_SP_800-144",
+              "section": "**2.3 Outsourcing and Accountability**",
+              "score": 0.029709507042253523,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **2.3 Outsourcing and Accountability**  While cloud computing can be implemented exclusively for an organization as an internal private cloud, its main thru..."
+            },
+            {
+              "rank": 6,
+              "chunk_id": "NIST_SP_800-144_txt_00048",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.02964254577157803,
+              "score_type": "rrf_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Decreases in security also heighten privacy risks related to the loss or unauthorized access, destruction, use, m..."
+            },
+            {
+              "rank": 7,
+              "chunk_id": "NIST_SP_800-144_txt_00040",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>3. Public Cloud Services</mark>**",
+              "score": 0.02877846790890269,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>3. Public Cloud Services</mark>**  The outlook on cloud computing services can vary significantly among organizations, because of inherent differenc..."
+            },
+            {
+              "rank": 8,
+              "chunk_id": "NIST_SP_800-144_txt_00050",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.027884615384615386,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  When taken together with the previous two items, a highly complex, multi-tenanted computing environment, whose se..."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "NIST_SP_800-144_txt_00023",
+              "document_id": "NIST_SP_800-144",
+              "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+              "score": 0.027106227106227107,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**  Public cloud providers' default offerings generally..."
+            },
+            {
+              "rank": 10,
+              "chunk_id": "NIST_SP_800-144_txt_00054",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>4. Key Security and Privacy Issues</mark>**",
+              "score": 0.02651914295749912,
+              "score_type": "rrf_score",
+              "is_relevant": true,
+              "text_preview": "### **<mark>4. Key Security and Privacy Issues</mark>**  Although the emergence of cloud computing is a recent development, insights into critical aspects of se..."
+            },
+            {
+              "rank": 11,
+              "chunk_id": "NIST_SP_800-146_txt_00014",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 0.016129032258064516,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  _Cloud computing_ allows computer users to conveniently rent access to fully featured applications, to software developm..."
+            },
+            {
+              "rank": 12,
+              "chunk_id": "NIST_SP_800-144_txt_00094",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 0.015151515151515152,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>5. Public Cloud Outsourcing</mark>**  Although cloud computing is a new computing paradigm, outsourcing information technology services is not.  The..."
+            },
+            {
+              "rank": 13,
+              "chunk_id": "NIST_SP_800-144_txt_00099",
+              "document_id": "NIST_SP_800-144",
+              "section": "**5.1 General Concerns**",
+              "score": 0.015151515151515152,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **5.1 General Concerns**  The terms of traditional information technology outsourcing contracts, particularly those involving sensitive data, can serve as g..."
+            },
+            {
+              "rank": 14,
+              "chunk_id": "NIST_SP_800-144_txt_00121",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 0.014925373134328358,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Too many controls can be inefficient and ineffective. Federal agencies and other organizations must work diligently to maint..."
+            },
+            {
+              "rank": 15,
+              "chunk_id": "NIST_SP_800-146_txt_00050",
+              "document_id": "NIST_SP_800-146",
+              "section": "**4.6 The Public Cloud Scenario**",
+              "score": 0.014925373134328358,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **4.6 The Public Cloud Scenario**  Generally, consumers are not in a position to verify that location restrictions have been enforced.  - **Risks from multi..."
+            },
+            {
+              "rank": 16,
+              "chunk_id": "NIST_SP_800-144_txt_00051",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.014705882352941176,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides providing a computing platform or substitute for in-house applications, public cloud services such as the..."
+            },
+            {
+              "rank": 17,
+              "chunk_id": "NIST_SP_800-146_txt_00124",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 0.014705882352941176,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **8.3 Economic Goals**  In public and outsourced scenarios, cloud computing offers an opportunity for consumers to use computing resources with small or mod..."
+            },
+            {
+              "rank": 18,
+              "chunk_id": "NIST_SP_800-144_txt_00022",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 0.013888888888888888,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **Understand the public cloud computing environment offered by the cloud provider.**  The responsibilities of both the organization and the cloud provider v..."
+            },
+            {
+              "rank": 19,
+              "chunk_id": "NIST_SP_800-144_txt_00049",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.013888888888888888,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  > 6 Recommended solutions for mitigating Internet borne threats exist, including NIST Special publications SP 800..."
+            },
+            {
+              "rank": 20,
+              "chunk_id": "NIST_SP_800-144_txt_00008",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 0.0136986301369863,
+              "score_type": "rrf_score",
+              "is_relevant": false,
+              "text_preview": "### **Abstract**  Cloud computing can and does mean different things to different people.  The common characteristics most interpretations share are on-demand s..."
+            }
+          ]
+        },
+        "D_hybrid_reranked": {
+          "name": "Hybrid + Cross-Encoder Reranker",
+          "latency_ms": 9947.79,
+          "reranker_latency_ms": 5501.99,
+          "retrieved_count": 20,
+          "metrics": {
+            "hit@1": 1.0,
+            "recall@1": 0.3333333333333333,
+            "precision@1": 1.0,
+            "ndcg@1": 1.0,
+            "hit@3": 1.0,
+            "recall@3": 0.6666666666666666,
+            "precision@3": 0.6666666666666666,
+            "ndcg@3": 0.7039180890341347,
+            "hit@5": 1.0,
+            "recall@5": 0.6666666666666666,
+            "precision@5": 0.4,
+            "ndcg@5": 0.7039180890341347,
+            "hit@10": 1.0,
+            "recall@10": 0.6666666666666666,
+            "precision@10": 0.2,
+            "ndcg@10": 0.7039180890341347,
+            "hit@20": 1.0,
+            "recall@20": 1.0,
+            "precision@20": 0.15,
+            "ndcg@20": 0.8212377705398237,
+            "mrr@5": 1.0,
+            "mrr@20": 1.0
+          },
+          "top_chunks": [
+            {
+              "rank": 1,
+              "chunk_id": "NIST_SP_800-144_txt_00047",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 5.808961391448975,
+              "score_type": "reranker_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides its many potential benefits for security and privacy, public cloud computing also brings with it potentia..."
+            },
+            {
+              "rank": 2,
+              "chunk_id": "NIST_SP_800-144_txt_00030",
+              "document_id": "NIST_SP_800-144",
+              "section": "**1.2 Purpose and Scope**",
+              "score": 5.6607513427734375,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **1.2 Purpose and Scope**  The purpose of this document is to provide an overview of public cloud computing and the security and privacy challenges involved..."
+            },
+            {
+              "rank": 3,
+              "chunk_id": "NIST_SP_800-144_txt_00048",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 5.542694568634033,
+              "score_type": "reranker_score",
+              "is_relevant": true,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Decreases in security also heighten privacy risks related to the loss or unauthorized access, destruction, use, m..."
+            },
+            {
+              "rank": 4,
+              "chunk_id": "NIST_SP_800-144_txt_00120",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>6. Conclusion</mark>**",
+              "score": 5.532507419586182,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Cloud computing promises to have far-reaching effects on the systems and networks of federal agencies and other organization..."
+            },
+            {
+              "rank": 5,
+              "chunk_id": "NIST_SP_800-144_txt_00040",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>3. Public Cloud Services</mark>**",
+              "score": 4.600725173950195,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>3. Public Cloud Services</mark>**  The outlook on cloud computing services can vary significantly among organizations, because of inherent differenc..."
+            },
+            {
+              "rank": 6,
+              "chunk_id": "NIST_SP_800-144_txt_00121",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 4.479736328125,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>6. Conclusion</mark>**  Too many controls can be inefficient and ineffective. Federal agencies and other organizations must work diligently to maint..."
+            },
+            {
+              "rank": 7,
+              "chunk_id": "NIST_SP_800-144_txt_00022",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 4.257973670959473,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **Understand the public cloud computing environment offered by the cloud provider.**  The responsibilities of both the organization and the cloud provider v..."
+            },
+            {
+              "rank": 8,
+              "chunk_id": "NIST_SP_800-144_txt_00023",
+              "document_id": "NIST_SP_800-144",
+              "section": "**Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**",
+              "score": 4.1985931396484375,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **Ensure that a cloud computing solution satisfies organizational security and privacy requirements.**  Public cloud providers' default offerings generally..."
+            },
+            {
+              "rank": 9,
+              "chunk_id": "NIST_SP_800-144_txt_00038",
+              "document_id": "NIST_SP_800-144",
+              "section": "**2.3 Outsourcing and Accountability**",
+              "score": 4.159026145935059,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **2.3 Outsourcing and Accountability**  While cloud computing can be implemented exclusively for an organization as an internal private cloud, its main thru..."
+            },
+            {
+              "rank": 10,
+              "chunk_id": "NIST_SP_800-146_txt_00050",
+              "document_id": "NIST_SP_800-146",
+              "section": "**4.6 The Public Cloud Scenario**",
+              "score": 4.117822647094727,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **4.6 The Public Cloud Scenario**  Generally, consumers are not in a position to verify that location restrictions have been enforced.  - **Risks from multi..."
+            },
+            {
+              "rank": 11,
+              "chunk_id": "NIST_SP_800-144_txt_00020",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>Executive Summary</mark>**",
+              "score": 4.107686996459961,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  Cloud computing has been defined by NIST as a model for enabling convenient, on-demand network access to a shared pool o..."
+            },
+            {
+              "rank": 12,
+              "chunk_id": "NIST_SP_800-144_txt_00099",
+              "document_id": "NIST_SP_800-144",
+              "section": "**5.1 General Concerns**",
+              "score": 3.7302517890930176,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **5.1 General Concerns**  The terms of traditional information technology outsourcing contracts, particularly those involving sensitive data, can serve as g..."
+            },
+            {
+              "rank": 13,
+              "chunk_id": "NIST_SP_800-144_txt_00050",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 3.1140666007995605,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  When taken together with the previous two items, a highly complex, multi-tenanted computing environment, whose se..."
+            },
+            {
+              "rank": 14,
+              "chunk_id": "NIST_SP_800-144_txt_00008",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 3.0716071128845215,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **Abstract**  Cloud computing can and does mean different things to different people.  The common characteristics most interpretations share are on-demand s..."
+            },
+            {
+              "rank": 15,
+              "chunk_id": "NIST_SP_800-144_txt_00054",
+              "document_id": "NIST_SP_800-144",
+              "section": "**<mark>4. Key Security and Privacy Issues</mark>**",
+              "score": 2.9179325103759766,
+              "score_type": "reranker_score",
+              "is_relevant": true,
+              "text_preview": "### **<mark>4. Key Security and Privacy Issues</mark>**  Although the emergence of cloud computing is a recent development, insights into critical aspects of se..."
+            },
+            {
+              "rank": 16,
+              "chunk_id": "NIST_SP_800-144_txt_00051",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 2.8572115898132324,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  Besides providing a computing platform or substitute for in-house applications, public cloud services such as the..."
+            },
+            {
+              "rank": 17,
+              "chunk_id": "NIST_SP_800-146_txt_00014",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 2.8095779418945312,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>Executive Summary</mark>**  _Cloud computing_ allows computer users to conveniently rent access to fully featured applications, to software developm..."
+            },
+            {
+              "rank": 18,
+              "chunk_id": "NIST_SP_800-144_txt_00094",
+              "document_id": "NIST_SP_800-144",
+              "section": "Unknown",
+              "score": 2.493678092956543,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **<mark>5. Public Cloud Outsourcing</mark>**  Although cloud computing is a new computing paradigm, outsourcing information technology services is not.  The..."
+            },
+            {
+              "rank": 19,
+              "chunk_id": "NIST_SP_800-146_txt_00124",
+              "document_id": "NIST_SP_800-146",
+              "section": "Unknown",
+              "score": 2.179104804992676,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **8.3 Economic Goals**  In public and outsourced scenarios, cloud computing offers an opportunity for consumers to use computing resources with small or mod..."
+            },
+            {
+              "rank": 20,
+              "chunk_id": "NIST_SP_800-144_txt_00049",
+              "document_id": "NIST_SP_800-144",
+              "section": "**3.3 The Security and Privacy Downside**",
+              "score": 0.31131958961486816,
+              "score_type": "reranker_score",
+              "is_relevant": false,
+              "text_preview": "### **3.3 The Security and Privacy Downside**  > 6 Recommended solutions for mitigating Internet borne threats exist, including NIST Special publications SP 800..."
+            }
+          ]
+        }
+      },
+      "errors": {}
+    }
+  ]
+}

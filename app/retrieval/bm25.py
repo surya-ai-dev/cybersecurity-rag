@@ -27,51 +27,73 @@ def tokenize(text: str) -> List[str]:
 # ============================================================
 
 def load_documents(metadata_dir: Optional[Union[str, Path]] = None) -> List[Dict[str, Any]]:
-    """Scan and load chunk metadata JSON files from the data directory.
+    """Scan and load chunk JSON/JSONL files from the authoritative data directory.
 
     Args:
-        metadata_dir: Directory containing chunk JSON files. Defaults to settings.data_dir.
+        metadata_dir: Directory containing chunk files. Defaults to chunks_pilot + chunks_corpus.
 
     Returns:
         Deduplicated list of chunk dictionaries with 'chunk_id', 'text', and 'metadata'.
     """
-    search_dir = Path(metadata_dir) if metadata_dir else settings.data_dir
+    if metadata_dir:
+        search_dirs = [Path(metadata_dir)]
+    else:
+        pilot_dir = settings.data_dir / "chunks_pilot"
+        corpus_dir = settings.data_dir / "chunks_corpus"
+        if pilot_dir.exists() or corpus_dir.exists():
+            search_dirs = [p for p in [pilot_dir, corpus_dir] if p.exists()]
+        elif (settings.data_dir / "chunks").exists():
+            search_dirs = [settings.data_dir / "chunks"]
+        else:
+            search_dirs = [settings.data_dir]
 
-    json_files = list(search_dir.rglob("*.json"))
+    all_files: List[Path] = []
+    for s_dir in search_dirs:
+        all_files.extend(list(s_dir.rglob("*.jsonl")))
+        all_files.extend(list(s_dir.rglob("*.json")))
 
-    if not json_files:
+    if not all_files:
         raise FileNotFoundError(
-            f"No JSON metadata files found inside: {search_dir}"
+            f"No JSON or JSONL chunk files found inside: {search_dirs}"
         )
 
     documents: List[Dict[str, Any]] = []
 
-    for file_path in json_files:
-        try:
-            with open(file_path, "r", encoding="utf-8") as f:
-                data = json.load(f)
-        except Exception:
-            continue
+    for file_path in sorted(all_files):
+        if file_path.suffix == ".jsonl":
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    for line in f:
+                        line_str = line.strip()
+                        if not line_str:
+                            continue
+                        try:
+                            item = json.loads(line_str)
+                        except Exception:
+                            continue
+                        if not isinstance(item, dict):
+                            continue
+                        chunk_id = item.get("chunk_id") or item.get("id") or item.get("chunkId")
+                        text = item.get("text") or item.get("content") or item.get("chunk")
+                        if chunk_id and text:
+                            documents.append({
+                                "chunk_id": str(chunk_id),
+                                "text": str(text),
+                                "metadata": item,
+                            })
+            except Exception:
+                continue
 
-        # Case 1: JSON contains a list of chunks
-        if isinstance(data, list):
-            for item in data:
-                if not isinstance(item, dict):
-                    continue
-                chunk_id = item.get("chunk_id") or item.get("id") or item.get("chunkId")
-                text = item.get("text") or item.get("content") or item.get("chunk")
-                if chunk_id and text:
-                    documents.append({
-                        "chunk_id": str(chunk_id),
-                        "text": str(text),
-                        "metadata": item,
-                    })
+        elif file_path.suffix == ".json":
+            try:
+                with open(file_path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except Exception:
+                continue
 
-        # Case 2: JSON contains {"chunks": [...]}
-        elif isinstance(data, dict):
-            chunks = data.get("chunks")
-            if isinstance(chunks, list):
-                for item in chunks:
+            # Case 1: JSON contains a list of chunks
+            if isinstance(data, list):
+                for item in data:
                     if not isinstance(item, dict):
                         continue
                     chunk_id = item.get("chunk_id") or item.get("id") or item.get("chunkId")
@@ -83,16 +105,33 @@ def load_documents(metadata_dir: Optional[Union[str, Path]] = None) -> List[Dict
                             "metadata": item,
                         })
 
-    # Deduplicate chunk IDs
+            # Case 2: JSON contains {"chunks": [...]}
+            elif isinstance(data, dict):
+                chunks = data.get("chunks")
+                if isinstance(chunks, list):
+                    for item in chunks:
+                        if not isinstance(item, dict):
+                            continue
+                        chunk_id = item.get("chunk_id") or item.get("id") or item.get("chunkId")
+                        text = item.get("text") or item.get("content") or item.get("chunk")
+                        if chunk_id and text:
+                            documents.append({
+                                "chunk_id": str(chunk_id),
+                                "text": str(text),
+                                "metadata": item,
+                            })
+
+    # Deduplicate chunk IDs while preserving order
     unique_documents: Dict[str, Dict[str, Any]] = {}
     for doc in documents:
-        unique_documents[doc["chunk_id"]] = doc
+        if doc["chunk_id"] not in unique_documents:
+            unique_documents[doc["chunk_id"]] = doc
 
     result = list(unique_documents.values())
 
     if not result:
         raise RuntimeError(
-            f"JSON files were found in {search_dir}, but no valid chunks could be loaded."
+            f"Chunk files were found in {search_dirs}, but no valid chunks could be loaded."
         )
 
     return result

@@ -104,15 +104,19 @@ class RetrievedChunk:
             "reranker_score": self.reranker_score,
         }
 
-    def __getitem__(self, key: str) -> Any:
+    def __getitem__(self, key: Any) -> Any:
         """Allow subscript access for backwards compatibility."""
-        if hasattr(self, key):
+        if isinstance(key, str) and hasattr(self, key):
             return getattr(self, key)
         raise KeyError(key)
 
     def __setitem__(self, key: str, value: Any) -> None:
         """Allow subscript assignment for backwards compatibility."""
         setattr(self, key, value)
+
+    def __contains__(self, key: Any) -> bool:
+        """Allow 'in' membership check for backwards compatibility."""
+        return isinstance(key, str) and hasattr(self, key)
 
     def get(self, key: str, default: Any = None) -> Any:
         """Allow dict-style get access for backwards compatibility."""

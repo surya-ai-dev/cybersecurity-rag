@@ -12,19 +12,20 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from sentence_transformers import SentenceTransformer, CrossEncoder
 from qdrant_client import QdrantClient
+from app.core.config import settings
 
 
 # ============================================================
 # CONFIG
 # ============================================================
 
-EMBEDDING_MODEL_NAME = "BAAI/bge-small-en-v1.5"
+EMBEDDING_MODEL_NAME = getattr(settings, "embedding_model", "BAAI/bge-m3")
 
 RERANKER_MODEL_NAME = (
     "cross-encoder/ms-marco-MiniLM-L-6-v2"
 )
 
-COLLECTION_NAME = "cybersecurity_chunks"
+COLLECTION_NAME = getattr(settings, "qdrant_collection", "cybersecurity_chunks_bge_m3")
 
 TOP_K_VECTOR = 10
 TOP_K_FINAL = 5
@@ -33,7 +34,7 @@ vector_weight=0.8,
 reranker_weight=0.2
 
 EVALUATION_FILE = PROJECT_ROOT / "data" / "evaluation" / "evaluation_questions.json"
-GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "ground_truth.json"
+GROUND_TRUTH_FILE = PROJECT_ROOT / "data" / "evaluation" / "retrieval_ground_truth_current.json"
 
 
 # ============================================================
@@ -117,113 +118,55 @@ def get_question(item):
 def get_relevant_ids(
     ground_truth,
     question,
-    question_index
+    question_index,
+    question_item=None
 ):
-    
-    # Handle dictionary format:
-    # {
-    #   "Q1": ["chunk1", "chunk2"],
-    #   "Q2": ["chunk3", "chunk4"]
-    # }
-    if isinstance(ground_truth, dict):
+    qid = None
+    if isinstance(question_item, dict):
+        qid = question_item.get("id") or question_item.get("question_id")
+    if not qid:
         q_key = f"Q{question_index + 1}"
+    else:
+        q_key = qid
 
-        if q_key in ground_truth:
-            return ground_truth[q_key]
-
-        # Also support question text as a key
-        if question in ground_truth:
-            return ground_truth[question]
-
-        return []
-
-    # --------------------------------------------------------
-    # Format 1:
-    #
-    # {
-    #   "questions": [
-    #       {
-    #           "question": "...",
-    #           "relevant_chunks": [...]
-    #       }
-    #   ]
-    # }
-    # --------------------------------------------------------
-
+    # Handle dictionary format
     if isinstance(ground_truth, dict):
+        if q_key in ground_truth:
+            entry = ground_truth[q_key]
+            if isinstance(entry, dict):
+                return entry.get("relevant_chunks") or entry.get("relevant_chunk_ids") or []
+            if isinstance(entry, list):
+                return entry
+
+        if question in ground_truth:
+            entry = ground_truth[question]
+            if isinstance(entry, dict):
+                return entry.get("relevant_chunks") or entry.get("relevant_chunk_ids") or []
+            if isinstance(entry, list):
+                return entry
 
         if "questions" in ground_truth:
-
             items = ground_truth["questions"]
+            if isinstance(items, list):
+                for item in items:
+                    if not isinstance(item, dict):
+                        continue
+                    q = item.get("question") or item.get("query")
+                    if q == question or item.get("id") == q_key or item.get("question_id") == q_key:
+                        return (
+                            item.get("relevant_chunks")
+                            or item.get("relevant_chunk_ids")
+                            or item.get("relevant")
+                            or []
+                        )
 
-            for item in items:
-
-                if not isinstance(item, dict):
-                    continue
-
-                q = (
-                    item.get("question")
-                    or item.get("query")
-                )
-
-                if q == question:
-
-                    return (
-                        item.get("relevant_chunks")
-                        or item.get("relevant_chunk_ids")
-                        or item.get("relevant")
-                        or []
-                    )
-
-        # ----------------------------------------------------
-        # Format 2:
-        #
-        # {
-        #   "question": [...]
-        # }
-        # ----------------------------------------------------
-
-        if question in ground_truth:
-
-            value = ground_truth[question]
-
-            if isinstance(value, list):
-                return value
-
-            if isinstance(value, dict):
-
-                return (
-                    value.get("relevant_chunks")
-                    or value.get("relevant_chunk_ids")
-                    or value.get("relevant")
-                    or []
-                )
-
-    # --------------------------------------------------------
-    # Format 3:
-    #
-    # [
-    #   {
-    #       "question": "...",
-    #       "relevant_chunks": [...]
-    #   }
-    # ]
-    # --------------------------------------------------------
-
+    # Handle list format
     if isinstance(ground_truth, list):
-
         for item in ground_truth:
-
             if not isinstance(item, dict):
                 continue
-
-            q = (
-                item.get("question")
-                or item.get("query")
-            )
-
-            if q == question:
-
+            q = item.get("question") or item.get("query")
+            if q == question or item.get("id") == q_key or item.get("question_id") == q_key:
                 return (
                     item.get("relevant_chunks")
                     or item.get("relevant_chunk_ids")
@@ -231,14 +174,11 @@ def get_relevant_ids(
                     or []
                 )
 
-        # Fallback by position
-
         if question_index < len(ground_truth):
-
             item = ground_truth[question_index]
-
+            if isinstance(item, list):
+                return item
             if isinstance(item, dict):
-
                 return (
                     item.get("relevant_chunks")
                     or item.get("relevant_chunk_ids")
@@ -660,12 +600,15 @@ def main():
         relevant_ids = get_relevant_ids(
             ground_truth,
             question,
-            index
+            index,
+            item
         )
+
+        qid = item.get("id") or item.get("question_id") or f"Q{index + 1}" if isinstance(item, dict) else f"Q{index + 1}"
 
         print("\n")
         print("=" * 70)
-        print(f"Q{index + 1}")
+        print(qid)
         print("=" * 70)
 
         print("\nQuestion:")
