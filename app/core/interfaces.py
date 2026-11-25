@@ -5,12 +5,13 @@ from typing import (
     Dict,
     Iterator,
     List,
+    Optional,
     Protocol,
     Union,
     runtime_checkable,
 )
 
-from app.core.models import Message, RetrievedChunk
+from app.core.models import MemoryContext, Message, RetrievedChunk
 
 
 @runtime_checkable
@@ -79,6 +80,27 @@ class BaseConversationMemory(Protocol):
         self,
     ) -> List[Union[Message, Dict[str, str]]]:
         """Retrieve the recorded conversation history."""
+        ...
+
+
+@runtime_checkable
+class BaseMemoryManager(BaseConversationMemory, Protocol):
+    """Protocol for three-tier persistent, summarized, and scoped memory managers."""
+
+    def get_context(
+        self,
+        query: str = "",
+        session_id: Optional[str] = None,
+    ) -> MemoryContext:
+        """Assemble short-term, summarized, and long-term memory context."""
+        ...
+
+    def clear(self, session_id: Optional[str] = None) -> None:
+        """Clear memory for the active or specified session."""
+        ...
+
+    def close(self) -> None:
+        """Release underlying persistence and memory resources cleanly."""
         ...
 
 

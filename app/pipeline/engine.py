@@ -6,10 +6,11 @@ from app.core.config import settings
 from app.core.interfaces import (
     BaseConversationMemory,
     BaseLLMProvider,
+    BaseMemoryManager,
     BaseReranker,
     BaseRetriever,
 )
-from app.core.models import Message, RAGResponse, RetrievedChunk
+from app.core.models import MemoryContext, Message, RAGResponse, RetrievedChunk
 from app.conversation.conversation_memory import ConversationMemory
 from app.conversation.query_rewriter import rewrite_question
 from app.generation.build_context import build_context
@@ -60,6 +61,69 @@ RETRIEVED CONTEXT:
 Now provide the answer."""
 
 
+def _is_memory_manager(memory: Any) -> bool:
+    """Return True when memory implements BaseMemoryManager and is not an un-spec'd mock."""
+    try:
+        from unittest.mock import NonCallableMock
+
+        if isinstance(memory, NonCallableMock) and getattr(memory, "_spec_class", None) is None:
+            return False
+    except Exception:
+        pass
+    return isinstance(memory, BaseMemoryManager)
+
+
+def format_preference_instructions(preferences: Optional[Any]) -> str:
+    """Format user presentation/focus preferences into grounded prompt instructions."""
+    if preferences is None:
+        return ""
+
+    if isinstance(preferences, dict):
+        detail = preferences.get("detail_level")
+        fmt = preferences.get("response_format")
+        lens = preferences.get("focus_lens")
+        custom = preferences.get("custom_instructions")
+    else:
+        detail = getattr(preferences, "detail_level", None)
+        fmt = getattr(preferences, "response_format", None)
+        lens = getattr(preferences, "focus_lens", None)
+        custom = getattr(preferences, "custom_instructions", None)
+
+    detail_map = {
+        "Concise": "Keep the answer concise, direct, and high-signal without filler.",
+        "Balanced": "Provide a clear, balanced explanation with essential context and requirements.",
+        "Deep Dive": "Provide a thorough deep dive covering control details, caveats, and nuances supported by the sources.",
+    }
+    format_map = {
+        "Structured Bullets & Tables": "Organize using clean headings, structured bullets, and a concise Markdown table when comparing items.",
+        "Step-by-Step": "Present requirements or guidance in a clear, numbered step-by-step sequence.",
+        "TL;DR First": "Start with a brief 1-2 sentence TL;DR takeaway, followed by supporting evidence.",
+    }
+    lens_map = {
+        "AI / Product Engineering": "Emphasize system architecture, product trade-offs, and integration reliability grounded in the retrieved context.",
+        "Security & Compliance": "Emphasize NIST control objectives, risk posture, governance, and compliance assurance.",
+        "Hands-On Code": "Emphasize actionable implementation specifics, configuration parameters, schemas, and verification checks from the retrieved context.",
+    }
+
+    lines: List[str] = []
+    if detail:
+        lines.append(f"- Detail Level ({detail}): {detail_map.get(detail, detail)}")
+    if fmt:
+        lines.append(f"- Response Format ({fmt}): {format_map.get(fmt, fmt)}")
+    if lens:
+        lines.append(f"- Focus Lens ({lens}): {lens_map.get(lens, lens)}")
+    if custom and str(custom).strip():
+        lines.append(f"- Additional User Note: {str(custom).strip()[:300]}")
+
+    if not lines:
+        return ""
+
+    lines.append(
+        "- Grounding Constraint: Strictly use only facts in RETRIEVED CONTEXT and cite every claim with [Source X]."
+    )
+    return "\n".join(lines)
+
+
 class RAGEngine:
     """Orchestrates end-to-end question answering lifecycle using injected components."""
 
@@ -76,6 +140,7 @@ class RAGEngine:
         retrieval_top_k: Optional[int] = None,
         rerank_top_n: Optional[int] = None,
         enable_reranking: Optional[bool] = None,
+        session_id: Optional[str] = None,
     ) -> None:
         """Initialize RAGEngine with injected component strategies.
 
@@ -85,12 +150,14 @@ class RAGEngine:
             query_rewriter: Function/callable for conversation rewriting (default: rewrite_question).
             context_builder: Function/callable for context formatting (default: build_context).
             llm_provider: Component implementing BaseLLMProvider (default: GroqProvider).
-            memory: Component implementing BaseConversationMemory (default: ConversationMemory).
+            memory: Component implementing BaseConversationMemory (default: MemoryManager when
+                settings.enable_persistent_memory is True, else ConversationMemory).
             retrieval_query_rewriter: Component implementing QueryRewriter for search query optimization.
             confidence_evaluator: Component implementing ConfidenceEvaluator for adaptive rewriting decisions.
             retrieval_top_k: Candidate retrieval limit (default: 20).
             rerank_top_n: Reranked top document limit (default: 5).
             enable_reranking: Optional flag to toggle cross-encoder reranking (default: settings.enable_reranking).
+            session_id: Optional session identifier used when persistent MemoryManager is active.
         """
         from app.retrieval.confidence import ConfidenceEvaluator
 
@@ -99,7 +166,18 @@ class RAGEngine:
         self.query_rewriter: Callable[..., str] = query_rewriter if query_rewriter is not None else rewrite_question
         self.context_builder: Callable[[Sequence[Any]], str] = context_builder if context_builder is not None else build_context
         self.llm_provider: BaseLLMProvider = llm_provider if llm_provider is not None else GroqProvider()
-        self.memory: BaseConversationMemory = memory if memory is not None else ConversationMemory()
+
+        if memory is not None:
+            self.memory: BaseConversationMemory = memory
+        elif getattr(settings, "enable_persistent_memory", False):
+            from app.conversation.memory_manager import MemoryManager
+
+            self.memory = MemoryManager(
+                session_id=session_id,
+                llm_provider=self.llm_provider,
+            )
+        else:
+            self.memory = ConversationMemory()
         rewriter_enabled = (
             getattr(settings, "enable_query_rewriting", False)
             or getattr(settings, "enable_adaptive_query_rewriting", False)
@@ -123,9 +201,40 @@ class RAGEngine:
             else getattr(settings, "enable_reranking", True)
         )
 
-    def _rewrite_query(self, question: str, history: List[Union[Message, dict]]) -> str:
-        """Rewrite question into standalone form using conversational history."""
-        if not history:
+    def _get_rewrite_context(self, question: str) -> Union[MemoryContext, List[Any]]:
+        """Fetch MemoryContext from BaseMemoryManager or flat messages from BaseConversationMemory."""
+        if _is_memory_manager(self.memory):
+            return self.memory.get_context(question)  # type: ignore[union-attr]
+        return self.memory.get_messages()
+
+    def _record_turn(
+        self,
+        question: str,
+        answer: str,
+        standalone_question: str,
+        final_chunks: Sequence[RetrievedChunk],
+    ) -> None:
+        """Persist turn metadata when using BaseMemoryManager, preserving 2-arg calls for mocks."""
+        if _is_memory_manager(self.memory):
+            self.memory.add_message(
+                question,
+                answer,
+                standalone_question=standalone_question,  # type: ignore[call-arg]
+                source_chunk_ids=[c.chunk_id for c in final_chunks],  # type: ignore[call-arg]
+            )
+        else:
+            self.memory.add_message(question, answer)
+
+    def _rewrite_query(
+        self,
+        question: str,
+        history: Union[MemoryContext, Sequence[Union[Message, dict]]],
+    ) -> str:
+        """Rewrite question into standalone form using conversational context."""
+        if isinstance(history, MemoryContext):
+            if not history.has_context:
+                return question
+        elif not history:
             return question
 
         try:
@@ -133,9 +242,22 @@ class RAGEngine:
         except TypeError:
             return self.query_rewriter(question, history)
 
-    def _build_prompt(self, question: str, context: str) -> str:
-        """Build grounded prompt formatted with standalone question and context blocks."""
-        return RAG_PROMPT_TEMPLATE.format(question=question, context=context)
+    def _build_prompt(
+        self,
+        question: str,
+        context: str,
+        preferences: Optional[Any] = None,
+    ) -> str:
+        """Build grounded prompt formatted with standalone question, context, and user preferences."""
+        prompt = RAG_PROMPT_TEMPLATE.format(question=question, context=context)
+        pref_block = format_preference_instructions(preferences)
+        if not pref_block:
+            return prompt
+        marker = "\nUSER QUESTION:\n"
+        injection = f"\nUSER PREFERENCES (adapt presentation while staying strictly grounded):\n{pref_block}\n"
+        if marker in prompt:
+            return prompt.replace(marker, f"{injection}{marker}", 1)
+        return f"{prompt}\n\n{injection}"
 
     def _retrieve_and_rank(
         self,
@@ -240,6 +362,7 @@ class RAGEngine:
         self,
         question: str,
         stream: bool = True,
+        preferences: Optional[Any] = None,
     ) -> RAGResponse:
         """Execute the full RAG pipeline and return a structured RAGResponse domain object.
 
@@ -250,8 +373,8 @@ class RAGEngine:
         Returns:
             RAGResponse object with question, standalone_question, answer, and sources.
         """
-        # 1. Retrieve conversation history
-        history = self.memory.get_messages()
+        # 1. Retrieve conversation history / structured memory context
+        history = self._get_rewrite_context(question)
 
         # 2. Rewrite query if needed
         standalone_question = self._rewrite_query(question, history)
@@ -270,7 +393,7 @@ class RAGEngine:
         print("\n" + "=" * 70)
         print("STEP 4 — GENERATING ANSWER")
         print("=" * 70)
-        prompt = self._build_prompt(standalone_question, context)
+        prompt = self._build_prompt(standalone_question, context, preferences=preferences)
 
         if stream:
             answer_parts = []
@@ -290,7 +413,7 @@ class RAGEngine:
             )
 
         # 6. Record turn to memory
-        self.memory.add_message(question, answer)
+        self._record_turn(question, answer, standalone_question, final_chunks)
 
         return RAGResponse(
             question=question,
@@ -303,18 +426,22 @@ class RAGEngine:
         """Alias for query() to provide simple intuitive interface."""
         return self.query(question, stream=stream)
 
-    def stream(self, question: str) -> Iterator[str]:
+    def stream(
+        self,
+        question: str,
+        preferences: Optional[Any] = None,
+    ) -> Iterator[str]:
         """Stream generated answer tokens while executing retrieval and memory updates.
 
         Yields:
             Token text chunks from the LLM provider.
         """
-        history = self.memory.get_messages()
+        history = self._get_rewrite_context(question)
         standalone_question = self._rewrite_query(question, history)
 
         final_chunks, search_query = self._retrieve_and_rank(standalone_question)
         context = self.context_builder(final_chunks)
-        prompt = self._build_prompt(standalone_question, context)
+        prompt = self._build_prompt(standalone_question, context, preferences=preferences)
 
         full_answer = []
         try:
@@ -328,14 +455,16 @@ class RAGEngine:
         finally:
             accumulated = "".join(full_answer)
             if accumulated:
-                self.memory.add_message(question, accumulated)
+                self._record_turn(question, accumulated, standalone_question, final_chunks)
 
     def close(self) -> None:
-        """Cleanly release underlying retriever and reranker resources."""
+        """Cleanly release underlying retriever, reranker, and memory resources."""
         if hasattr(self.retriever, "close"):
             self.retriever.close()
         if hasattr(self.reranker, "close"):
             self.reranker.close()
+        if hasattr(self.memory, "close"):
+            self.memory.close()
 
     def __enter__(self) -> "RAGEngine":
         return self

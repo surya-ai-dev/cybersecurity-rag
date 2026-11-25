@@ -145,37 +145,104 @@ class Message:
 
     user: str
     assistant: str
+    timestamp: Optional[str] = None
+    standalone_question: Optional[str] = None
+    source_chunk_ids: List[str] = field(default_factory=list)
+    turn_index: Optional[int] = None
 
     @classmethod
-    def from_dict(cls, data: Dict[str, str]) -> "Message":
+    def from_dict(cls, data: Dict[str, Any]) -> "Message":
         """Instantiate Message from a user-assistant dictionary."""
+        raw_chunks = data.get("source_chunk_ids")
+        source_chunk_ids = (
+            [str(cid) for cid in raw_chunks]
+            if isinstance(raw_chunks, list)
+            else []
+        )
+        raw_turn = data.get("turn_index")
+        turn_index = int(raw_turn) if raw_turn is not None else None
+        raw_ts = data.get("timestamp")
+        raw_sq = data.get("standalone_question")
+
         return cls(
             user=str(data.get("user", "")),
             assistant=str(data.get("assistant", "")),
+            timestamp=str(raw_ts) if raw_ts is not None else None,
+            standalone_question=str(raw_sq) if raw_sq is not None else None,
+            source_chunk_ids=source_chunk_ids,
+            turn_index=turn_index,
         )
 
-    def to_dict(self) -> Dict[str, str]:
+    def to_dict(self) -> Dict[str, Any]:
         """Convert Message to dictionary representation."""
-        return {
+        result: Dict[str, Any] = {
             "user": self.user,
             "assistant": self.assistant,
         }
+        if self.timestamp is not None:
+            result["timestamp"] = self.timestamp
+        if self.standalone_question is not None:
+            result["standalone_question"] = self.standalone_question
+        if self.source_chunk_ids:
+            result["source_chunk_ids"] = list(self.source_chunk_ids)
+        if self.turn_index is not None:
+            result["turn_index"] = self.turn_index
+        return result
 
-    def __getitem__(self, key: str) -> str:
+    def __getitem__(self, key: str) -> Any:
         """Allow subscript access for backwards compatibility with dictionary format."""
-        if key == "user":
-            return self.user
-        elif key == "assistant":
-            return self.assistant
+        if key in {"user", "assistant", "timestamp", "standalone_question", "source_chunk_ids", "turn_index"}:
+            return getattr(self, key)
         raise KeyError(key)
 
     def get(self, key: str, default: Any = None) -> Any:
         """Allow dict-style get access for backwards compatibility."""
-        if key == "user":
-            return self.user
-        elif key == "assistant":
-            return self.assistant
+        if key in {"user", "assistant", "timestamp", "standalone_question", "source_chunk_ids", "turn_index"}:
+            val = getattr(self, key)
+            return val if val is not None else default
         return default
+
+
+@dataclass
+class SessionMetadata:
+    """Metadata describing a persisted multi-turn conversation session."""
+
+    session_id: str
+    title: str = "New Session"
+    summary: str = ""
+    turn_count: int = 0
+    created_at: str = ""
+    updated_at: str = ""
+
+
+@dataclass
+class MemoryFact:
+    """Durable domain scope, constraint, or entity fact tracked across turns."""
+
+    fact_id: str
+    session_id: str
+    category: str
+    key: str
+    value: str
+    source_turn: Optional[int] = None
+    confidence: float = 1.0
+    updated_at: str = ""
+
+
+@dataclass
+class MemoryContext:
+    """Aggregated three-tier memory context supplied to query disambiguation."""
+
+    session_id: Optional[str] = None
+    recent_messages: List[Message] = field(default_factory=list)
+    summary: str = ""
+    active_facts: List[MemoryFact] = field(default_factory=list)
+    total_tokens: int = 0
+
+    @property
+    def has_context(self) -> bool:
+        """Return True when any tier contains usable conversational context."""
+        return bool(self.recent_messages or self.summary.strip() or self.active_facts)
 
 
 @dataclass

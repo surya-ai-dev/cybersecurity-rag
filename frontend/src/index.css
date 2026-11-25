@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@layer base {
+  html,
+  body {
+    background-color: #212121;
+    color: #ececec;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.14);
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.28);
+  }
+}
+
+/* Clean ChatGPT-style markdown typography without requiring @tailwindcss/typography */
+.prose.prose-invert {
+  color: #ececec;
+  font-size: 0.9375rem;
+  line-height: 1.7;
+  word-break: break-word;
+}
+
+.prose.prose-invert > :first-child {
+  margin-top: 0;
+}
+
+.prose.prose-invert > :last-child {
+  margin-bottom: 0;
+}
+
+.prose.prose-invert p {
+  margin: 0.65rem 0;
+}
+
+.prose.prose-invert h1,
+.prose.prose-invert h2,
+.prose.prose-invert h3,
+.prose.prose-invert h4 {
+  color: #ececec;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 1.15rem 0 0.5rem;
+}
+
+.prose.prose-invert h1 {
+  font-size: 1.25rem;
+}
+
+.prose.prose-invert h2 {
+  font-size: 1.125rem;
+}
+
+.prose.prose-invert h3 {
+  font-size: 1rem;
+}
+
+.prose.prose-invert ul,
+.prose.prose-invert ol {
+  margin: 0.65rem 0;
+  padding-left: 1.35rem;
+}
+
+.prose.prose-invert ul {
+  list-style-type: disc;
+}
+
+.prose.prose-invert ol {
+  list-style-type: decimal;
+}
+
+.prose.prose-invert li {
+  margin: 0.25rem 0;
+}
+
+.prose.prose-invert strong {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.prose.prose-invert blockquote {
+  margin: 0.75rem 0;
+  border-left: 3px solid rgba(255, 255, 255, 0.2);
+  padding-left: 0.875rem;
+  color: #9b9b9b;
+}
+
+.prose.prose-invert code {
+  border-radius: 0.375rem;
+  background-color: #2f2f2f;
+  padding: 0.125rem 0.375rem;
+  font-size: 0.85em;
+  color: #ececec;
+}
+
+.prose.prose-invert pre {
+  margin: 0.85rem 0;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: #171717;
+  padding: 0.875rem 1rem;
+}
+
+.prose.prose-invert pre code {
+  background-color: transparent;
+  padding: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.prose.prose-invert table {
+  margin: 0.85rem 0;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.8125rem;
+}
+
+.prose.prose-invert th,
+.prose.prose-invert td {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.45rem 0.75rem;
+  text-align: left;
+}
+
+.prose.prose-invert th {
+  background-color: #2f2f2f;
+  color: #ececec;
+  font-weight: 600;
+}
+
+.prose.prose-invert hr {
+  margin: 1rem 0;
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}

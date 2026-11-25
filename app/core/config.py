@@ -3,12 +3,21 @@
 import os
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 from dotenv import load_dotenv
 
 # Load environment variables from .env file if present
 load_dotenv(override=True)
+
+
+def _parse_cors_origins(raw: str) -> List[str]:
+    """Parse comma-separated CORS origins, falling back to local Vite defaults."""
+    default_origins = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    if not raw or not raw.strip():
+        return default_origins
+    origins = [origin.strip() for origin in raw.split(",") if origin.strip()]
+    return origins or default_origins
 
 
 @dataclass
@@ -66,6 +75,17 @@ class Settings:
     def evaluation_dir(self) -> Path:
         """Directory containing benchmark datasets and ground truth."""
         return self.data_dir / "evaluation"
+
+    @property
+    def memory_dir(self) -> Path:
+        """Directory for persisted conversational and long-term memory stores."""
+        return self.data_dir / "memory"
+
+    @property
+    def memory_db_path(self) -> Path:
+        """Path to the SQLite database used for persistent memory storage."""
+        override = os.getenv("MEMORY_DB_PATH", "").strip()
+        return Path(override) if override else self.memory_dir / "memory.sqlite"
 
     # --------------------------------------------------------
     # Vector Database & Embeddings Configuration
@@ -152,9 +172,43 @@ class Settings:
     final_top_n: int = 5
 
     # --------------------------------------------------------
-    # Conversation Configuration
+    # Conversation & Memory Layer Configuration
     # --------------------------------------------------------
     conversation_history_limit: int = 6
+    enable_persistent_memory: bool = field(
+        default_factory=lambda: os.getenv("ENABLE_PERSISTENT_MEMORY", "false").lower() in ("true", "1", "yes")
+    )
+    enable_memory_summarization: bool = field(
+        default_factory=lambda: os.getenv("ENABLE_MEMORY_SUMMARIZATION", "false").lower() in ("true", "1", "yes")
+    )
+    enable_long_term_memory: bool = field(
+        default_factory=lambda: os.getenv("ENABLE_LONG_TERM_MEMORY", "false").lower() in ("true", "1", "yes")
+    )
+    memory_max_history_tokens: int = field(
+        default_factory=lambda: int(os.getenv("MEMORY_MAX_HISTORY_TOKENS", "1500"))
+    )
+    memory_max_summary_tokens: int = field(
+        default_factory=lambda: int(os.getenv("MEMORY_MAX_SUMMARY_TOKENS", "300"))
+    )
+    memory_summarize_after_turns: int = field(
+        default_factory=lambda: int(os.getenv("MEMORY_SUMMARIZE_AFTER_TURNS", "6"))
+    )
+    memory_long_term_top_k: int = field(
+        default_factory=lambda: int(os.getenv("MEMORY_LONG_TERM_TOP_K", "3"))
+    )
+
+    # --------------------------------------------------------
+    # Backend API Server Configuration
+    # --------------------------------------------------------
+    api_host: str = field(
+        default_factory=lambda: os.getenv("API_HOST", "127.0.0.1")
+    )
+    api_port: int = field(
+        default_factory=lambda: int(os.getenv("API_PORT", "8000"))
+    )
+    api_cors_origins: List[str] = field(
+        default_factory=lambda: _parse_cors_origins(os.getenv("API_CORS_ORIGINS", ""))
+    )
 
     def require_groq_api_key(self) -> str:
         """Validate and return the Groq API key, raising ValueError if missing."""
